@@ -56,7 +56,7 @@ impl<CS> Researcher<CS> for Me {
 
 ### About Me
 
-I "waste" a lot of time sorting out and structuring my acquired knowledge and skills. This helps me identify the importance of what I am currently doing. You probably have different views on these fields and they may diverge from my understanding - I totally agree on them.
+I "waste" a lot of time sorting out and structuring my acquired knowledge and skills. This helps me identify the importance of what I am currently doing. You probably have different views on these fields and they may diverge from my understanding - I totally agree.
 
 ![Fields](/assets/img/knowledge-graph.png)
 
