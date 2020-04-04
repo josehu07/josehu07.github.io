@@ -4,7 +4,16 @@ title: "Guanzhou (Jose) Hu"
 permalink: /
 ---
 
-I am an undergraduate majoring in computer science at ShanghaiTech University. My interest mostly lies in **computer systems**, especially operating systems, storage systems, parallel/distributed processing, and cloud computing. I always enjoy building practical system frameworks for new and real-world workloads that are not yet efficiently handled.
+# About Me
+
+<p class="navigation-bar">
+  <b>About Me</b> | 
+  <a href="/publications.html">Publications</a> | 
+  <a href="/blogs.html">Blogs</a> | 
+  <a href="/notes.html">Notes</a>
+</p>
+
+I am an undergraduate majoring in computer science at [ShanghaiTech University](http://www.shanghaitech.edu.cn/). My interest mostly lies in **computer systems**, especially *operating systems*, *storage systems*, *parallel/distributed processing*, and *cloud computing*. I always enjoy building practical system frameworks for new and real-world workloads that are not yet efficiently handled.
 
 Becoming a Ph.D. candidate at UW-Madison starting Fall 2020.
 
@@ -54,9 +63,9 @@ impl<CS> Researcher<CS> for Me {
   </tbody>
 </table>
 
-### About Me
+### Potpourri
 
-I "waste" a lot of time sorting out and structuring my acquired knowledge and skills. This helps me identify the importance of what I am currently doing. You probably have different views on these fields and they may diverge from my understanding - I totally agree.
+I "waste" a lot of time sorting out and structuring my acquired knowledge and skills. This helps me identify the importance of what I am currently doing. You probably have different views on these fields and they may diverge from my understanding - *I totally agree.*
 
 ![Fields](/assets/img/knowledge-graph.png)
 
