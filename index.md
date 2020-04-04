@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: main
 title: "Guanzhou (Jose) Hu"
 permalink: /
 ---
@@ -34,7 +34,7 @@ impl<CS> Researcher<CS> for Me {
 
 ### Contact
 
-- Email: *{{ site.email }}*
+- Email: <i>{{ site.email }}</i>
 
 ### Education
 
