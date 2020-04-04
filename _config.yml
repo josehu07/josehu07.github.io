@@ -1,6 +1,11 @@
 theme: jekyll-theme-minimal
 
-title: Guanzhou's Kernel
-description: Guanzhou's personal stuff storage & blog posts. Work hard, dream hard :)
+title: Guanzhou (Jose) Hu
+description: Guanzhou's personal storage for lecture notes, blog posts, & good mood.
 
 logo: /assets/img/Shark-sq.svg
+
+resume_link: /assets/file/Resume_HGZ.pdf
+linkedin_link: https://www.linkedin.com/in/josehu/
+
+email: hugzh1 (at) shanghaitech (dot) edu (dot) cn
