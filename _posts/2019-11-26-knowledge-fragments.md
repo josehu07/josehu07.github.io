@@ -4,6 +4,7 @@ title: "Noting Down Some Knowledge Fragments Encountered"
 date: 2019-11-26 05:12:40
 author: Guanzhou Hu
 categories: Memo
+enable_math: "enable"
 ---
 
 Memory fragments encountered, mostly not in my major fields. Noting them down just for a memorandum. 这篇用于记录一些学习中遇到的细碎知识。大多不是主要领域的知识，所以并未系统地学习和整理，权当备忘和随笔啦。
@@ -19,9 +20,9 @@ Memory fragments encountered, mostly not in my major fields. Noting them down ju
 
 (For using Mininet...) Essential coding differences that may sometimes disturb me:
 
-- `print a` - `print(a)`
-- Integer `/` division $\rightarrow$ integer - $\rightarrow$ float
-- `xrange()` iterating - `range()`
+- `print a` vs. `print(a)`
+- Integer `/` division $\rightarrow$ integer vs. $\rightarrow$ float
+- `xrange()` iterating vs. `range()`
 
 
 ### Julia Language
@@ -67,10 +68,14 @@ Notes about Julia during the 6.S083 course at MIT:
 1. 首先，将所有初等函数的导数求值方式 hardcode 成表，e.g.，$(x)’_{x=a} = 1$, $(e^x)’_{x=a} = e^a$
 2. 然后，任一复杂函数都是初等函数通过各种算符在计算图上组合而成的，故只需要将二元数各类运算的规则定义好，e.g.，$(a + b \epsilon) \cdot (c + d  \epsilon) = ac + (ad+bc) \epsilon$, $r (a + b \epsilon) = a r+ b r \epsilon$：[Read](https://en.wikipedia.org/wiki/Dual_number)
 3. 从而，函数 $f(x) = 3 x e^x$ 在 $x=a$ 处的导数的一种计算过程如下：
-    1. $g(x) = x, g(a + b \epsilon) = g(a) + b g’(a) \epsilon = a + b \epsilon$ *[查表了初等函数 $x$ 的导数]*
-    2. $h(x) = e^x, h(a + b \epsilon) = h(a) + b h’(a) \epsilon = e^a + b e^a \epsilon$ *[查表了初等函数 $e^x$ 的导数]*
-    3. $k(x) = 3 g(x), k(a + b \epsilon) = 3 g(a + b \epsilon) = 3(a + b \epsilon) = 3 a + 3 b \epsilon$ *[代入了 step.1 中 $g(x)$ 的结果，而后使用了二元数乘实数运算规则]*
-    4. $f(x) = k(x) \cdot h(x), f(a + b \epsilon) = k(a + b \epsilon) \cdot h(a + b \epsilon) = (3 a + 3 b \epsilon) \cdot (e^a + b e^a \epsilon) = 3 a e^a + (3 a b e^a + 3 b e^a) \epsilon$ *[代入了 step.2-3 中 $h(x), k(x)$ 的结果，而后使用了二元数乘二元数运算规则]*
+    1. $g(x) = x, g(a + b \epsilon) = g(a) + b g’(a) \epsilon = a + b \epsilon$
+        *[查表了初等函数 $x$ 的导数]*
+    2. $h(x) = e^x, h(a + b \epsilon) = h(a) + b h’(a) \epsilon = e^a + b e^a \epsilon$
+        *[查表了初等函数 $e^x$ 的导数]*
+    3. $k(x) = 3 g(x), k(a + b \epsilon) = 3 g(a + b \epsilon) = 3(a + b \epsilon) = 3 a + 3 b \epsilon$
+        *[代入了 step.1 中 $g(x)$ 的结果，而后使用了二元数乘实数运算规则]*
+    4. $f(x) = k(x) \cdot h(x), f(a + b \epsilon) = k(a + b \epsilon) \cdot h(a + b \epsilon) =$ $(3 a + 3 b \epsilon) \cdot (e^a + b e^a \epsilon) = 3 a e^a + (3 a b e^a + 3 b e^a) \epsilon$
+        *[代入了 step.2-3 中 $h(x), k(x)$ 的结果，而后使用了二元数乘二元数运算规则]*
     5. 得 $f’(a) = (3 a b e^a + 3 b e^a) / b = 3 (a+1) e^a$
 
 这么做的原因：
