@@ -52,6 +52,16 @@
 
       {{ content }}
 
+      <p class="navigation-bar">
+        <script type="text/javascript">
+          function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+          }
+        </script>
+        <a href="javascript:topFunction();">Back to Top</a>
+      </p>
+
       </section>
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>

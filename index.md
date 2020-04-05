@@ -69,3 +69,16 @@ I "waste" a lot of time sorting out and structuring my acquired knowledge and sk
 ![Fields](/assets/img/knowledge-graph.png)
 
 I know very little about these fields and am always willing to learn, explore, and contribute more.
+
+
+<p><strong>Please comment below anything you wanna say! 😉</strong></p>
+
+<!-- For Utterance comments -->
+<script src="https://utteranc.es/client.js"
+        repo="josehu07/josehu07.github.io"
+        issue-term="pathname"
+        label="Utterances🔮"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+</script>
