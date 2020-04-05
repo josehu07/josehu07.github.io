@@ -21,12 +21,11 @@ Becoming a Ph.D. candidate at UW-Madison starting Fall 2020.
 /// Keep calm & do good research!
 impl<CS> Researcher<CS> for Me {
     // TODO: This method is far from complete.
-    fn new_week(&mut self, paper: CS, project: CS)
+    fn week(&mut self, paper: CS, project: CS)
         -> Result<(), Box<dyn Error>> {
-        let report = paper.read()?.summarize()?;
+        let report = paper.read()?.mark()?;
         let progress = project.exec()?;
-        println!("Say {} and {} on group meeting",
-                 report, progress);
+        self.group_meeting(report, progress)?;
         Ok(())
     }
 }
