@@ -26,5 +26,7 @@ Publishing to Github Pages:
 
 ```bash
 # Simply push to the repository.
-
+gaa
+gcam "commit message"
+gp
 ```
