@@ -14,6 +14,7 @@ This post summarizes my personal development environment configuration on macOS 
 |:--:|:--|
 | Terminal software | iTerm2 |
 | Shell | Z Shell: `zsh` |
+| Dev Font | Fira Code |
 | Package manager | Homebrew |
 | Text editor | Sublime Text 3 (with Vim as auxilliary) |
 | Markdown notebook | Typora |
@@ -29,7 +30,7 @@ This post summarizes my personal development environment configuration on macOS 
 ### Z Shell
 
 - Extension: `oh-my-zsh`
-- Theme: my own `jose-ys`
+- Theme: Starship.rs (w/ customizations)
 - Plugins:
     - autojump
     - zsh-syntax-highlighting
@@ -49,7 +50,7 @@ export ZSH="/Users/jose/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="jose-ys"
+ZSH_THEME="minimal"
 
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
@@ -74,63 +75,69 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 # Autojump
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
 
+# Starship Theme
+eval "$(starship init zsh)"
+
 # Homebrew Bottle Source
-export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
+# export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
 ```
 
-My own customized theme (`~/.oh-my-zsh/themes/jose-ys.zsh-theme`), built upon the `ys` theme:
+My starship theme customizations (`~/.config/starship.toml`):
 
 ```bash
-# ~/.oh-my-zsh/themes/jose-ys.zsh-theme
+# Enabled modules and ordering.
+prompt_order = [
+    "username",
+    "hostname",
+    "kubernetes",
+    "directory",
+    "git_branch",
+    "git_commit",
+    "git_state",
+    "git_status",
+    "hg_branch",
+    "docker_context",
+    "package",
+    "terraform",
+    "nix_shell",
+    "conda",
+    "memory_usage",
+    "aws",
+    "env_var",
+    "cmd_duration",
+    "custom",
+    "line_break",
+    "jobs",
+    "battery",
+    "time",
+    "character",
+]
 
-# Mar 2013 Yad Smood
+# Battery symbol.
+[[battery.display]]
+threshold = 20
 
-# VCS
-YS_VCS_PROMPT_PREFIX1=" %{$fg[white]%}on%{$reset_color%} "
-YS_VCS_PROMPT_PREFIX2=":%{$fg[cyan]%}"
-YS_VCS_PROMPT_SUFFIX="%{$reset_color%}"
-YS_VCS_PROMPT_DIRTY=" %{$fg[red]%}x"
-YS_VCS_PROMPT_CLEAN=" %{$fg[green]%}o"
+# Git branch.
+[git_branch]
+style = "bold purple"
 
-# Git info
-local git_info='$(git_prompt_info)'
-ZSH_THEME_GIT_PROMPT_PREFIX="${YS_VCS_PROMPT_PREFIX1}git${YS_VCS_PROMPT_PREFIX2}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="$YS_VCS_PROMPT_SUFFIX"
-ZSH_THEME_GIT_PROMPT_DIRTY="$YS_VCS_PROMPT_DIRTY"
-ZSH_THEME_GIT_PROMPT_CLEAN="$YS_VCS_PROMPT_CLEAN"
+# Git repo status.
+[git_status]
+style = "bold blue"
 
-# HG info
-local hg_info='$(ys_hg_prompt_info)'
-ys_hg_prompt_info() {
-    # make sure this is a hg dir
-    if [ -d '.hg' ]; then
-        echo -n "${YS_VCS_PROMPT_PREFIX1}hg${YS_VCS_PROMPT_PREFIX2}"
-        echo -n $(hg branch 2>/dev/null)
-        if [ -n "$(hg status 2>/dev/null)" ]; then
-            echo -n "$YS_VCS_PROMPT_DIRTY"
-        else
-            echo -n "$YS_VCS_PROMPT_CLEAN"
-        fi
-        echo -n "$YS_VCS_PROMPT_SUFFIX"
-    fi
-}
+# Memory usage.
+[memory_usage]
+disabled = false
 
-local exit_code="%(?,,C:%{$fg[red]%}%?%{$reset_color%})"
-
-# Prompt format
-PROMPT="
-%{$terminfo[bold]$fg[blue]%}J%{$reset_color%} \
-%(#,%{$bg[yellow]%}%{$fg[black]%}%n%{$reset_color%},%{$fg[cyan]%}%n) \
-%{$terminfo[bold]$fg[blue]%}#%{$reset_color%} \
-%{$terminfo[bold]$fg[yellow]%}%~%{$reset_color%}\
-${hg_info}\
-${git_info}
-%{$terminfo[bold]$fg[red]%}$ %{$reset_color%}"
+# Command duration.
+[cmd_duration]
+prefix = "took ⏳ "
 ```
 
 ### Sublime Text 3
 
 - Theme: Monokai Pro (Filter Spectrum)
+- Font: Fira Code (w/ Antalias)
 - Packages (functional):
     - Package Control
     - Package Resource Viewer
@@ -170,6 +177,12 @@ Sublimt Text 3 user preferences settings:
     "close_windows_when_empty": false,
     "color_scheme": "Packages/Theme - Monokai Pro/Monokai Pro (Filter Spectrum).sublime-color-scheme",
     "copy_with_empty_selection": false,
+    "font_face": "Fira Code",
+    "font_options":
+    [
+        "subpixel_antialias",
+        "gray_antialias"
+    ],
     "font_size": 12,
     "highlight_line": true,
     "margin": 0,
