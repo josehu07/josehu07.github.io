@@ -123,7 +123,7 @@ style = "bold black"
 style = "bold black"
 
 [git_branch]
-symbol = " "
+symbol = "שׂ "
 
 [golang]
 symbol = " "
@@ -153,11 +153,11 @@ symbol = " "
 style = "bold black"
 
 [nodejs]
-symbol = " "
+symbol = " "
 style = "bold black"
 
 [package]
-symbol = " "
+symbol = " "
 style = "bold black"
 
 [php]
@@ -173,7 +173,7 @@ symbol = " "
 style = "bold black"
 
 [rust]
-symbol = " "
+symbol = " "
 style = "bold black"
 
 [cmd_duration]
