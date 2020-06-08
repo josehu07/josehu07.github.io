@@ -131,7 +131,7 @@ disabled = false
 
 # Command duration.
 [cmd_duration]
-prefix = "took ⏳ "
+prefix = "...⏳ "
 ```
 
 ### Sublime Text 3
