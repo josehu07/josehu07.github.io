@@ -14,7 +14,7 @@ This post summarizes my personal development environment configuration on macOS 
 |:--:|:--|
 | Terminal software | iTerm2 |
 | Shell | Z Shell: `zsh` |
-| Dev Font | Fira Code |
+| Dev Font | FiraCode Nerd Font |
 | Package manager | Homebrew |
 | Text editor | Sublime Text 3 (with Vim as auxilliary) |
 | Markdown notebook | Typora |
@@ -85,53 +85,103 @@ eval "$(starship init zsh)"
 My starship theme customizations (`~/.config/starship.toml`):
 
 ```bash
-# Enabled modules and ordering.
-prompt_order = [
-    "username",
-    "hostname",
-    "kubernetes",
-    "directory",
-    "git_branch",
-    "git_commit",
-    "git_state",
-    "git_status",
-    "hg_branch",
-    "docker_context",
-    "package",
-    "terraform",
-    "nix_shell",
-    "conda",
-    "memory_usage",
-    "aws",
-    "env_var",
-    "cmd_duration",
-    "custom",
-    "line_break",
-    "jobs",
-    "battery",
-    "time",
-    "character",
-]
-
-# Battery symbol.
-[[battery.display]]
-threshold = 20
-
-# Git branch.
-[git_branch]
-style = "bold purple"
-
 # Git repo status.
 [git_status]
 style = "bold blue"
 
-# Memory usage.
+# Nerd Font symbols.
+[aws]
+symbol = "ﲳ "
+style = "bold black"
+
+[battery]
+full_symbol = ""
+charging_symbol = ""
+discharging_symbol = ""
+
+[conda]
+symbol = " "
+style = "bold black"
+
+[crystal]
+symbol = " "
+style = "bold black"
+
+[docker]
+symbol = " "
+style = "bold black"
+
+[elixir]
+symbol = " "
+style = "bold black"
+
+[elm]
+symbol = " "
+style = "bold black"
+
+[erlang]
+style = "bold black"
+
+[git_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+style = "bold black"
+
+[haskell]
+symbol = " "
+style = "bold black"
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+style = "bold black"
+
+[julia]
+symbol = " "
+style = "bold black"
+
 [memory_usage]
 disabled = false
+symbol = " "
 
-# Command duration.
+[nix_shell]
+symbol = " "
+style = "bold black"
+
+[nodejs]
+symbol = " "
+style = "bold black"
+
+[package]
+symbol = " "
+style = "bold black"
+
+[php]
+symbol = " "
+style = "bold black"
+
+[python]
+symbol = " "
+style = "bold black"
+
+[ruby]
+symbol = " "
+style = "bold black"
+
+[rust]
+symbol = " "
+style = "bold black"
+
 [cmd_duration]
-prefix = "...⏳ "
+prefix = "... ⏳ "
+
+# Battery symbol.
+[[battery.display]]
+threshold = 20
 ```
 
 ### Sublime Text 3
