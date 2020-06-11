@@ -144,10 +144,6 @@ style = "bold black"
 symbol = " "
 style = "bold black"
 
-[memory_usage]
-disabled = false
-symbol = " "
-
 [nix_shell]
 symbol = " "
 style = "bold black"
@@ -183,6 +179,8 @@ prefix = "... ⏳ "
 [[battery.display]]
 threshold = 20
 ```
+
+> Special Nerd Font symbols may not appear correctly on this webpage.
 
 ### Sublime Text 3
 
