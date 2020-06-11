@@ -18,7 +18,7 @@ Sometimes, I write down what I learned, what I thought, what suprised me, and wh
 ### Memorandum
 
 - [Research (Conference) Paper Writing Streamline](/assets/file/paper-writing.pdf)
-- [Basic GDB Usage Cheatsheet](/assets/file/gdb-usage.pdf)
+- [Basic GDB Debugger Usage Cheatsheet](/assets/file/gdb-usage.pdf)
 - [Operating Systems History Summary in an XMind Tree](https://www.xmind.net/m/2cpqNJ/)
 
 <ul>
