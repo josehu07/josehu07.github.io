@@ -6,7 +6,7 @@ author: Guanzhou Hu
 categories: Technical
 ---
 
-TL; DR: Try not to use GDB on macOS >= 10.14 Mojave directly (app verification scheme on newer macOS gets really complicated). If you really wanna make it, please strictly follow these steps. This procedure is what finally worked or me.
+TL;DR: Use `lldb` instead of GNU `gdb` on macOS >= 10.14 Mojave directly (app verification scheme on newer macOS gets really complicated). If you really wanna make it, the following procedure is what finally worked or me.
 如下是在 Mojave 上 GDB debugger 安装使用踩坑后，最终成功的步骤总结。
 
 ### Prerequisites
