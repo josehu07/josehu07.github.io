@@ -13,9 +13,7 @@ permalink: /
   <a href="/notes.html">Notes</a>
 </p>
 
-I am an undergraduate majoring in computer science at [ShanghaiTech University](http://www.shanghaitech.edu.cn/). My interest mostly lies in **computer systems**, especially *operating systems*, *storage systems*, *parallel/distributed processing*, and *cloud computing*. I always enjoy building practical system frameworks for new and real-world workloads that are not yet efficiently handled.
-
-Becoming a Ph.D. candidate at UW-Madison starting Fall 2020.
+I am a computer science Ph.D. student in [ADSL lab](https://research.cs.wisc.edu/adsl/) at the [University of Wisconsin-Madison](https://www.wisc.edu/), supervised by [Professor Andrea Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Professor Remzi Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/). My research interest mostly lies in **computer systems**, especially *operating systems*, *storage systems*, *parallel/distributed processing*, and *cloud computing*.
 
 ```rust
 /// Keep calm & do good research!
