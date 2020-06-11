@@ -28,7 +28,7 @@ Say the secret routine has just visited memory address `0xc4000`. The public rou
 
 Well, how can a memory address leak secret information to an attacker? Let's assume that hardware cache line is 4096 bytes in length. In the target process's virtual address space there is an array `arr[]` with valid length `10`. The attacker wants to steal a secret byte `arr[7654]` (i.e., at address `&arr + 7654`, somehow calculated by the attacker, perhaps pointing to a private key in kernel region). The attacker can use the following pattern to carry out such attack:
 
-```C
+```c
 /**
  * Leaking the secret byte `arr[7654]`.
  * Secret byte has possible value 0 - 255, so we create a
@@ -70,7 +70,7 @@ Figure from a Quora post[^4]. The attacker wants a secret byte at address `&secr
 
 Meltdown's core idea: speculative execution on raising exception + cache timing channel[^5].
 
-```C
+```c
 /**
  * Meltdown demo.
  * Wanna steal the byte `arr[x]`.
@@ -92,7 +92,7 @@ for (b = 0; b < 256; b++)
 
 Spectre's core idea: train the branch predictor to mis-predict + cache timing channel[^6].
 
-```C
+```c
 /**
  * Spectre demo.
  * Wanna steal the byte `arr[x]`.
