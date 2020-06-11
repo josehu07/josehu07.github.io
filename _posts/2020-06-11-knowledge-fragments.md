@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Noting Down Some Knowledge Fragments Encountered"
-date: 2019-11-26 05:12:40
+date: 2020-06-11 05:12:40
 author: Guanzhou Hu
 categories: Memo
 enable_math: "enable"
@@ -9,6 +9,22 @@ enable_math: "enable"
 
 Memory fragments encountered, mostly not in my major fields. Noting them down just for a memorandum. 这篇用于记录一些学习中遇到的细碎知识。大多不是主要领域的知识，所以并未系统地学习和整理，权当备忘和随笔啦。
 
+### Messaging Security
+
+Messaging security 中的加密主要重点考虑一下三个维度的安全性：
+
+1. *Confidentiality* (机密性)：数据消息通路被监听，监听者不能轻易地解析出数据内容；对称/非对称加密都保障了 confidentiality 这一基本维度
+2. *Integrity* （数据完整性）：消息的接收方能确认这个数据包就是发送方发出来的样子 (as-is)，中途没有被篡改；MAC-tagging 等操作保障了 integrity 这一维度
+3. *Authenticity* (身份验证)：消息的接收方能确认这个消息来自正确的另一方，即能确认对方的身份 (中间人攻击 MITM 中，中间人的伪装往往也被视为打破了 authenticity)；非对称加密的签名机制同时保障了 integrity 和 authenticity 两个维度
+
+特殊情境下，也考虑一些额外的维度：
+
+- *Privacy* (私密性)：匿名网络中，用户的请求在网络中传输时，不能被其他参与者判断出这个请求来自哪个用户；经典例子为洋葱路由与 Tor
+- *Forward Secrecy* (前向加密)：开启 session 时，使用 long-term 的 key 来交换一个 short-lived 的 session key，而后基于 session key 来交换消息，这样在攻击者破解了这个 session 时，之前 sessions 所有的老消息不受影响
+- Performance：性能是现在互联网大规模扩展的基石，理论上绝对安全但性能上不 pratical 的方案是没有实际使用价值的
+- ...
+
+维度之间是有冲突的，所以设计一个安全的 messaging 网络系统往往也需要做大量 trade-off。
 
 ### Quaternion & Rotations
 

@@ -4,6 +4,7 @@ title: "Serializable Distributed Transactions over Sharded Scenario"
 date: 2020-05-31 15:14:27
 author: Guanzhou Hu
 categories: Technical
+enable_math: "enable"
 ---
 
 *Sharding* is a common distributed system design to scale out and achieve better performance. *Distributed transactions* (concurrency control + atomic commits) are used to coordinate sharded nodes. It is important to implement *serializable* distributed transactions for such a system to act correctly.
