@@ -39,7 +39,7 @@ impl<CS> Researcher<CS> for Me {
   <tbody>
     <tr>
       <td style="text-align: center">2020.08 - 20??.??</td>
-      <td style="text-align: left">Ph.D. in CS (candidate)</td>
+      <td style="text-align: left">Ph.D. student in CS</td>
       <td style="text-align: left">UW-Madison</td>
     </tr>
     <tr>
