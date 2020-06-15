@@ -43,8 +43,6 @@ How to manage this log then?
 
 <u>Solution 2</u>: Build the entire log as an *append-only B tree*[^4] ([READ HERE](http://www.bzero.se/ldapd/btree.html)). The problem is that append-only B trees have significant write-amplification problems, thus not very attractive.
 
-> We must also pay attention to *garbage collection* under these designs.
-
 <u>Solution 3</u>: Use a *Log-Structured Merge Tree* (LSM Tree)[^5]. This sacrifices a little bit of read performance.
 
 ### LSM Tree & Details
@@ -70,6 +68,8 @@ Reading the value of a key $$l$$ follows three steps:
 3. Starting from level-1, check the batch whose range covers $$l$$. If found, return its value; Else, go one level deeper and repeat step 3.
 
 Say we restrict number of level-0 batches to $$t$$ and the maximum depth is level-$$d$$. Define the approximate time taken to search for a key in a sorted batch as $$1$$ unit (ignore size differences among batches). Reading a value from an LSM tree takes at most $$1 + t + d$$.
+
+> Multiple versions of a key can exist in the log at the same time, where the newest version resides in the "highest" level. In practical systems, we must also pay attention to *garbage collection* to clear out obselete versions.
 
 Systems that adopt LSM tree design include Google Bigtable, LevelDB, RocksDB, Cassandra, InfluxDB, and many more.
 
