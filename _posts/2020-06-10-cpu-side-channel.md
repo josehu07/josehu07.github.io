@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "CPU Cache Side-Channel Attacks: Meltdown & Spectre"
+title: "CPU Cache Side-Channel Attacks: <i>Meltdown</i> & <i>Spectre</i>"
 date: 2020-06-10 18:50:51
 author: Guanzhou Hu
 categories: Technical
