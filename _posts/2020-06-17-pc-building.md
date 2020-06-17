@@ -21,7 +21,7 @@ categories: Personal
 | Case | Cooler Master Q300L M-ATX Dust Filter | x1 |
 | Motherboard | MSI Z390M Gaming Edge AC LGA1151 | x1 |
 | CPU | Intel i7-9700KF LGA1151 8 cores 4.7GHz | x1 |
-| Memory | Corsair 16 GB (x2) DDR4 Memory 3000MHz | x2 |
+| Memory | Corsair 16GB (x2) DDR4 Memory 3000MHz | x2 |
 | Graphics | MSI Nvidia GeForce RTX 2070 8GB GDDR6 | x1 |
 | CPU Cooler | Dark Rock 4 be quiet! 200W | x1 |
 | Storage SSD | Samsung 970 EVO M.2 NVMe V-NAND SSD 500GB | x2 |

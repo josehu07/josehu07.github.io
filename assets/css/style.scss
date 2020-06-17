@@ -171,7 +171,7 @@ th { color: #444; }
 
 img { max-width: 100%; }
 
-header { width: 300px; float: left; position: fixed; -webkit-font-smoothing: subpixel-antialiased; }
+header { text-align: left; width: 300px; float: left; position: fixed; -webkit-font-smoothing: subpixel-antialiased; }
 
 header ul { list-style: none; height: 40px; padding: 0; background: #f4f4f4; border-radius: 5px; border: 1px solid #e0e0e0; width: 295px; }
 
@@ -199,7 +199,7 @@ small { font-size: 11px; }
 
 hr { border: 0; background: #e5e5e5; height: 1px; margin: 0 0 20px; }
 
-footer { width: 300px; float: left; position: fixed; bottom: 50px; -webkit-font-smoothing: subpixel-antialiased; }
+footer { text-align: left; width: 300px; float: left; position: fixed; bottom: 50px; -webkit-font-smoothing: subpixel-antialiased; }
 
 @media print, screen and (max-width: 960px) { div.wrapper { width: auto; margin: 0; }
   header, section, footer { float: none; position: static; width: auto; }
@@ -244,6 +244,10 @@ footer { width: 300px; float: left; position: fixed; bottom: 50px; -webkit-font-
     border-radius: 50%;
     margin-top: 5px;
     margin-bottom: 10px;
+}
+
+#site-description {
+    text-align: left;
 }
 
 .navigation-bar {
