@@ -94,6 +94,9 @@ The name NVM sometimes refers to Optane Memory / Optane SSDs specifically. Desig
 
 #### References
 
+- My reading record of《大话存储》: [HERE](https://www.josehu.com/assets/file/book-dahuacunchu-zhangdong.pdf)
+- My blog post on I/O interfaces: [HERE](https://www.josehu.com/technical/2019/10/17/storage-acronyms.html)
+
 [^1]: [https://en.wikipedia.org/wiki/Non-volatile_memory](https://en.wikipedia.org/wiki/Non-volatile_memory)
 [^2]: [https://en.wikipedia.org/wiki/Write_amplification](https://en.wikipedia.org/wiki/Write_amplification)
 [^3]: [https://www.rutronik.com/article/detail/News/what-is-the-difference-between-2d-nand-3d-nand-and-3d-xpoint-flash-memory/](https://www.rutronik.com/article/detail/News/what-is-the-difference-between-2d-nand-3d-nand-and-3d-xpoint-flash-memory/)
