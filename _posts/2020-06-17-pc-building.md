@@ -187,7 +187,7 @@ categories: Personal
 
 按机箱电源键测试，成功点亮！
 
-![Building9.1](/assets/img/pc-building-9.1.jpg)
+![Building9](/assets/img/pc-building-9.jpg)
 
 接上外设，用安装介质（U 盘）安装系统于固态盘。成功进入系统后，做最后检测：
 
@@ -198,8 +198,8 @@ categories: Personal
 - 在磁盘管理中，添加非系统盘，各自分为一简单卷
 - 设备需要驱动 / 管理程序的，安装并保持更新
 
-正常运行，小家算是搭好了：
+### Finish XD
 
-![Building9.2](/assets/img/pc-building-9.2.jpg)
+正常运行，小家算是搭好了。现在就是非常爽，非常爽.jpg：
 
-书桌区域的全景图，等 4K monitor 到了之后再补 XD
+![FinishXD](/assets/img/pc-building-finish.jpeg)
