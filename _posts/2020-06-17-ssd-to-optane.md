@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "From 2D NAND SSD to <i>3D XPoint</i> (<i>Optane</i>) NVM"
+title: "From 2D NAND SSD to Intel <i>3D XPoint</i> (<i>Optane</i>) NVM"
 date: 2020-06-17 17:53:38
 author: Guanzhou Hu
 categories: Technical
