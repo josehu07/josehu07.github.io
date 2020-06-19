@@ -1,24 +1,24 @@
 ---
 layout: post
-title: "Personal Dev Environment & Tools Configuration on macOS X"
+title: "Personal Dev Environment & Tools Configuration Record"
 date: 2020-02-10 03:44:09
 author: Guanzhou Hu
 categories: Memo
 ---
 
-This post summarizes my personal development environment configuration on macOS X. Just for memo. 记录一下我在 macOS X >= 10.14 上的个人开发环境 & 工具配置，以便将来需要时 refer。
+This post summarizes my personal development environment configuration on macOS X. Setting up WSL 2 on Windows 10 is also included. Just for memo. 记录一下我在 macOS X >= 10.14 上的个人开发环境 & 工具配置，以及在 Windows 10 上设置起 WSL 2 的过程，以便将来需要时 refer。
 
 ### Summary Table
 
 | Category | Choice |
 |:--:|:--|
-| Terminal software | iTerm2 |
+| Terminal software | iTerm2 / Windows Terminal |
 | Shell | Z Shell: `zsh` |
 | Dev Font | FiraCode Nerd Font |
-| Package manager | Homebrew |
+| Package manager | Homebrew / Chocolatey |
 | Text editor | Sublime Text 3 (with Vim as auxilliary) |
 | Markdown notebook | Typora |
-| PDF reader | PDF Expert |
+| PDF reader | PDF Expert / Adobe Acrobat |
 | Latex editor | Overleaf (online) |
 | Office documents | MS Office 365 subscription |
 | Chart drawing | ProcessOn, Draw.io, ... (online) |
@@ -297,3 +297,75 @@ call plug#end()
 colorscheme gruvbox
 set background=dark
 ```
+
+### Setting up on Windows 10
+
+First, download the following:
+
+- Sublime Text 3
+- Windows Terminal (from MS Store)
+- Ubuntu 20.04 LTS (from MS Store)
+
+> To fix Sublime Text title bar inactive color, follow this link: [https://winaero.com/blog/change-color-of-inactive-title-bars-in-windows-10/](https://winaero.com/blog/change-color-of-inactive-title-bars-in-windows-10/).
+
+> Yet, I don't know how to change the menu bar color. Hiding it partially fixes the problem.
+
+Install the Chocolatey package manager `choco`. Then, install both *Fira Code* and *FiraCode Nerd Font* by:
+
+```bash
+# Do this in an administrative PowerShell!
+choco install firacode
+choco install firacodenf
+```
+
+> On OS X, installing only the patched *FiraCode Nerd Font* works just fine, but here we need both of them. What I will be doing here is that I use Nerd Font in Windows Terminal and the original Fira Code in Sublime Text. This is the only way I got this around. Sigh...
+
+Open "Turn Windows features on or off" from start menu, and check the following options:
+
+- "Windows HyperV"
+- "Windows Subsystem for Linux"
+
+Launch the Ubuntu app in MS Store and wait for the initialization installation to complete. Then, in a Powershell terminal, use:
+
+```bash
+wsl -l -v
+```
+
+to check the Linux subsystems versions, and use:
+
+```bash
+wsl --set-version Ubuntu-20.04 2
+```
+
+to switch to WSL 2 permanently. There might be some extra installation prompting up - just follow them as well.
+
+Open Windows Terminal and open its settings `json` file. Change the `defaultProfile` field to:
+
+```json
+    "defaultProfile": "{guid-of-your-Ubuntu-profile}",  // Copy your Ubuntu guid here from below.
+```
+
+and add to your Ubuntu profile section a `startingDirectory` field:
+
+```json
+            {
+                "guid": "{guid-of-your-Ubuntu-profile}",
+                "hidden": false,
+                ...
+                "startingDirectory": "\\\\wsl$\\Ubuntu-20.04\\home\\<username>"     // Change start dir to `~`.
+            }
+```
+
+Add to the `default` region the following options:
+
+```json
+        "defaults":
+        {
+            // Put settings here that you want to apply to all profiles.
+            "fontFace": "FiraCode NF",    // Change font face to FiraCode Nerd Font.
+            "fontSize": 11,
+            "background": "#242424"
+        },
+```
+
+Then, close and reopen Windows Terminal. You should enter a default profile of Ubuntu 20.04 subsystem automatically, and should be in the home `~` directory. Install Zsh and all the other tools/themes as desired.
