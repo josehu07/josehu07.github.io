@@ -6,7 +6,7 @@ author: Guanzhou Hu
 categories: Memo
 ---
 
-This post summarizes my personal development environment configuration on macOS X. Setting up WSL 2 on Windows 10 is also included. Just for memo. 记录一下我在 macOS X >= 10.14 上的个人开发环境 & 工具配置，以及在 Windows 10 上设置起 WSL 2 的过程，以便将来需要时 refer。
+This post summarizes my personal development environment configuration on macOS X. Setting up WSL 2 on Windows 10 is also included. Just for memo. 记录一下我在 macOS X >= 10.14 上的个人开发环境 & 工具配置，以及在 Windows 10 上搭建基于 WSL 2 的开发环境的简要过程，以便将来需要时 refer。
 
 ### Summary Table
 
@@ -241,6 +241,14 @@ Sublimt Text 3 user preferences settings:
 }
 ```
 
+Sublime Text 3 user key bindings:
+
+```json
+[
+    { "keys": ["ctrl+k", "ctrl+m"], "command": "toggle_menu" },
+]
+```
+
 ### Vim
 
 - Plugin manager: vim-plug
@@ -369,3 +377,5 @@ Add to the `default` region the following options:
 ```
 
 Then, close and reopen Windows Terminal. You should enter a default profile of Ubuntu 20.04 subsystem automatically, and should be in the home `~` directory. Install Zsh and all the other tools/themes as desired.
+
+Currently, Windows Terminal does not support proper bold text display yet. It treats bold text as "brighter" text, like in some older terminal software. Still waiting for future updates on Windows Terminal...
