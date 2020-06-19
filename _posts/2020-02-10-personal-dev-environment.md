@@ -89,6 +89,11 @@ My starship theme customizations (`~/.config/starship.toml`):
 [git_status]
 style = "bold blue"
 
+# Username display.
+[username]
+style_user = "bold black"
+show_always = true
+
 # Nerd Font symbols.
 [aws]
 symbol = "ﲳ "
@@ -185,7 +190,7 @@ threshold = 20
 ### Sublime Text 3
 
 - Theme: Monokai Pro (Filter Spectrum)
-- Font: Fira Code (w/ Antalias)
+- Font: Fira Code (w/ Antaliasing & Ligatures)
 - Packages (functional):
     - Package Control
     - Package Resource Viewer
