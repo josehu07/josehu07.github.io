@@ -8,7 +8,7 @@ categories: Personal
 
 在美国勉强算是安顿下来了。这个小公寓可能一呆就是 5 年，故干脆狠下心配了一套 2020 年中高配的【游戏+工作站】的 PC，作为自己 5 年学习生涯的小家。在此将自己第一次亲力亲为的装机过程，尽可能详细地记录下来。
 
-### 整体配置情况
+## 整体配置情况
 
 先来一张开箱前的全家福：
 
@@ -28,9 +28,9 @@ categories: Personal
 | Storage HDD | Western Digital Performance 3.5" HDD 1TB | x1 |
 | Power Supply | GameMax Bronze Modular 650W | x1 |
 
-### 安装流程
+## 安装流程
 
-#### 1. CPU & 散热
+### 1. CPU & 散热
 
 取出主板、CPU、散热器：
 
@@ -47,7 +47,7 @@ categories: Personal
 
 ![Building1.2](/assets/img/pc-building-1.2.jpg)
 
-#### 2. 内存
+### 2. 内存
 
 取出内存条：
 
@@ -62,7 +62,7 @@ categories: Personal
 
 ![Building2.2](/assets/img/pc-building-2.2.jpg)
 
-#### 3. 主板入机箱
+### 3. 主板入机箱
 
 机箱拆下侧板，平躺：
 
@@ -87,7 +87,7 @@ categories: Personal
 
 ![Building3.3](/assets/img/pc-building-3.3.jpg)
 
-#### 4. 显卡
+### 4. 显卡
 
 取出显卡：
 
@@ -103,7 +103,7 @@ categories: Personal
 
 ![Building4.2](/assets/img/pc-building-4.2.jpg)
 
-#### 5. M.2 固态硬盘
+### 5. M.2 固态硬盘
 
 > 使用额外大型 CPU 散热器时，这一步可以在安散热前做，避免螺丝难拧。
 
@@ -122,7 +122,7 @@ categories: Personal
 
 ![Building5.2](/assets/img/pc-building-5.2.jpg)
 
-#### 6. 电源
+### 6. 电源
 
 > 使用大型独立显卡 + 小型机箱时，这一步可以在安显卡之前做，避免电源无法顺利放入机箱。
 
@@ -145,7 +145,7 @@ categories: Personal
 
 ![Building6.3](/assets/img/pc-building-6.3.jpg)
 
-#### 7. 机械硬盘
+### 7. 机械硬盘
 
 取出机械硬盘：
 
@@ -161,7 +161,7 @@ categories: Personal
 
 ![Building7.2](/assets/img/pc-building-7.2.jpg)
 
-#### 8. 供电线安插
+### 8. 供电线安插
 
 所需电源供电线从合适的走线口拉回，在对应部件上插紧：
 
@@ -175,7 +175,7 @@ categories: Personal
 
 ![Building8](/assets/img/pc-building-8.jpg)
 
-#### 9. 收尾
+### 9. 收尾
 
 做如下收尾工作：
 
@@ -198,7 +198,7 @@ categories: Personal
 - 在磁盘管理中，添加非系统盘，各自分为一简单卷
 - 设备需要驱动 / 管理程序的，安装并保持更新
 
-### Finish XD
+## Finish XD
 
 正常运行，小家算是搭好了。现在就是非常爽，非常爽.jpg：
 

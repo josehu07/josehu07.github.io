@@ -8,7 +8,7 @@ categories: Memo
 
 This post summarizes my personal development environment configuration on macOS X. Setting up WSL 2 on Windows 10 is also included. Just for memo. 记录一下我在 macOS X >= 10.14 上的个人开发环境 & 工具配置，以及在 Windows 10 上搭建基于 WSL 2 的开发环境的简要过程，以便将来需要时 refer。
 
-### Summary Table
+## Summary Table
 
 | Category | Choice |
 |:--:|:--|
@@ -27,7 +27,7 @@ This post summarizes my personal development environment configuration on macOS 
 | Browser | Google Chrome |
 | Code Distribution | GitHub, BitBucket |
 
-### Z Shell
+## Z Shell
 
 - Extension: `oh-my-zsh`
 - Theme: Starship.rs (w/ customizations)
@@ -187,7 +187,7 @@ threshold = 20
 
 > Special Nerd Font symbols may not appear correctly on this webpage.
 
-### Sublime Text 3
+## Sublime Text 3
 
 - Theme: Monokai Pro (Filter Spectrum)
 - Font: Fira Code (w/ Antaliasing & Ligatures)
@@ -254,7 +254,7 @@ Sublime Text 3 user key bindings:
 ]
 ```
 
-### Vim
+## Vim
 
 - Plugin manager: vim-plug
 - Theme: Gruvbox
@@ -311,7 +311,7 @@ colorscheme gruvbox
 set background=dark
 ```
 
-### Setting up on Windows 10
+## Setting up on Windows 10
 
 First, download the following:
 

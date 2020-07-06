@@ -9,13 +9,13 @@ categories: Technical
 TL;DR: Use `lldb` instead of GNU `gdb` on macOS >= 10.14 Mojave directly (app verification scheme on newer macOS gets really complicated). If you really wanna make it, the following procedure is what finally worked or me.
 如下是在 Mojave 上 GDB debugger 安装使用踩坑后，最终成功的步骤总结。
 
-### Prerequisites
+## Prerequisites
 
 1. macOS X Mojave (10.14.x).
 2. Met problems considering *Codesign* or "*During startup program terminated with signal ...*" / "*unknown load command 0x32*", etc.
 3. Do NOT install `gdb` in advance. If you already have it (with `brew` for example), make a clean uninstallation (e.g. `brew uninstall --force gdb`).
 
-### Turn off System Intergrity (Debugging Component)
+## Turn off System Intergrity (Debugging Component)
 
 1. Shut down your Mac. Turn it on again, **hold `cmd + R` when booting up**, until  logo shows up. You should now be booting into *Recovery Mode*.
 2. Select a language and enter the Recovery Mode UI. In the Menu, select **"Utilities" → "Terminal" to open a terminal**.
@@ -32,7 +32,7 @@ csrutil status
 ```
 in your terminal to see if the Debugging Restriction component is "Disabled".
 
-### Create Codesign Certificate
+## Create Codesign Certificate
 
 1. Open **Keychain Access** app.
 2. **Make sure there aren't any GDB-related certificates**. If you tried some steps before and left some previous (unsuccessful) certificates & keys in *login* / *System* keychain, delete them all, then `cmd + Q` to quit Keychain Access app and reopen for a refresh.
@@ -61,7 +61,7 @@ security dump-trust-settings -d
 ```
 to see if the trust info of your certificate is set.
 
-### Install GDB 8.0.1
+## Install GDB 8.0.1
 
 Newer GDB versions are known to have "*During startup program terminated with signal ...*" problems on macOS X. If you have installed them in advance, uninstall them cleanly. GDB 8.0.1, however, has the "*unknown load command 0x32*"" issues on Mojave which has not been patched on homebrew. (see [^3]) So we will need to build it from source, and manually patch the `bfd` component during the procedure.
 
@@ -90,7 +90,7 @@ file /path/to/your/gdb  # normally /usr/local/bin/gdb
 ```
 to check that it really is an executable, not a shell script or alias or something else.
 
-### Entitle and Codesign Your GDB
+## Entitle and Codesign Your GDB
 
 1. In some arbitrary user location, create an entitlement file `gdb-entitlement.xml`, whose content is as follows:
     ```xml
@@ -130,7 +130,7 @@ to examine the entitlement information.
 
 **You should now be able to use GDB Debugger as expected!**
 
-#### References
+## References
 
 [^1]: GDB Wiki: https://sourceware.org/gdb/wiki/PermissionsDarwin.
 [^2]: Stackoverflow: https://stackoverflow.com/questions/49001329/gdb-doesnt-work-on-macos-high-sierra-10-13-3.

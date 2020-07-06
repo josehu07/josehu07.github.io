@@ -9,7 +9,7 @@ enable_math: "enable"
 
 In file system design, *write-ahead logging* is a commonly-used technology to avoid in-place updates and only expose sequential writes to disks. *Log-Structured Merge Tree* (LSM tree) is a modern practical solution which sacrifices a little bit of read performance to enable efficient write-ahead logging. *Journaling* is another file system terminology which is often confused with logging. In short, write-ahead logging is for write performance and journaling is for crash recovery - they are different, but can be combined.
 
-### Background
+## Background
 
 In file systems and databases where files/records are allowed to grow, a file made up of multiple contiguous logical blocks may actually consist of multiple noncontiguous physical blocks on disk. Thus, **a mapping from a logical block number to a physical block** is at the essence.
 
@@ -31,7 +31,7 @@ Notice that the navigation structure itself is also stored in persistent storage
 
 The downside of using a navigation structure is that writes perform badly. **Disks are way better at sequential appends than at random in-place updates**, especially on HDDs. To write to a file, we **always have to go back to the structure and update the structure**. Worse, if the write itself is an update to file content, we end up with two in-place updates. To optimize for write-heavy workloads, people use *write-ahead logging*.
 
-### Write-Ahead Logging Solutions
+## Write-Ahead Logging Solutions
 
 This section is based on [Ben's blog post](http://www.benstopford.com/2015/02/14/log-structured-merge-trees/)[^3]. The essential motivation of write-ahead logging is to transform write operations into pure sequential appends. We call a logical# as a *key* and its corresponding block content as its *value*. (This model also naturally fits in a key-value database.) The disk purely stores a monotonically growing log whose entries are new key-value pairs.
 
@@ -45,7 +45,7 @@ How to manage this log then?
 
 <u>Solution 3</u>: Use a *Log-Structured Merge Tree* (LSM Tree)[^5]. This sacrifices a little bit of read performance.
 
-### LSM Tree & Details
+## LSM Tree & Details
 
 An LSM tree requires coordination between an in-memory small sorted log and persisted data log on disk. We **reserve space for a small sorted data structure, e.g., a red-black tree, in memory**. As new writes come, we insert the new key-value pair into this red-black tree, sorted by keys. **When this small in-memory log becomes nearly full, a flush is triggered to persist this sorted batch to disk**. The on-disk log is called the level-0 log and is monotonically growing. This is the "log-structured" part of an LSM tree.
 
@@ -73,7 +73,7 @@ Say we restrict number of level-0 batches to $$t$$ and the maximum depth is leve
 
 Systems that adopt LSM tree design include Google Bigtable, LevelDB, RocksDB, Cassandra, InfluxDB, and many more.
 
-### Journaling $$\ne$$ Write-Ahead Logging
+## Journaling $$\ne$$ Write-Ahead Logging
 
 Another confusing term also used in file systems is *journaling*. Journaling describes an advanced way of "flushing things from memory to disk" to support fast crash recovery[^7]. Originally, if the system crashes in the middle of a read/write/delete operation and later restarts, data on persistent storage might be partial and inconsistent. This inconsistency can only be recovered through a complete checksum walk over the whole file system (a file system check, `fsck`).
 
@@ -83,7 +83,7 @@ For a file system which uses write-ahead logging, it is natural to think that, s
 
 Examples of non-logging journaling file systems include Ext3 and Ext4. Examples of log-structured file systems include ZFS, Btrfs, and NOVA.
 
-#### References
+## References
 
 [^1]: [https://en.wikipedia.org/wiki/ISAM](https://en.wikipedia.org/wiki/ISAM)
 [^2]: [https://en.wikipedia.org/wiki/B%2B_tree](https://en.wikipedia.org/wiki/B%2B_tree)

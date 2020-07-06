@@ -8,19 +8,19 @@ categories: Technical
 
 分布式系统中，基础的共识算法（Consensus Algorithms）希望解决的是在节点可能 crash / restart、节点间网络消息可能乱序、丢失、重复的情况下，让所有节点对 clients 一串提案达成 strong consistency (linearizability)，从而实现 Replicated State Machines，做到有效的 fault-tolerence。
 
-### 共识算法针对的问题
+## 共识算法针对的问题
 
 分布式系统中，基础的 **共识算法（Consensus Algorithm）** 希望解决的是如下问题：**节点可能 crash / restart、节点间网络消息可能乱序、丢失、重复的情况下，让所有节点对 clients 一串提案达成强一致**[^1]（see newer post for explanation of strong consistency）。
 
 - 不考虑消息内容的篡改（*Byzantine*）
 - 假设节点的 persistent 存储是可靠的
 
-### 为什么对 Paxos、Raft 等的研究很重要
+## 为什么对 Paxos、Raft 等的研究很重要
 
 传统 *2PC*（两阶段提交）、*3PC*（三阶段提交） 在用于 transactions
  之外也可以用于共识一个提案的问题，但缺点是一个节点宕机则系统不可用（或在出现 network partition 后存在 [脑裂](https://en.wikipedia.org/wiki/Split-brain_(computing)) 无法解决）；这些共识算法的目标就是在有多个副本同时参与、超半数仍正常工作的情况下（少数副本可以挂掉，从而**可用性更高**了）仍能**保证 100% 一致性**。
 
-### Paxos、Multi-Paxos、Raft
+## Paxos、Multi-Paxos、Raft
 
 - **Paxos**: 保证单个提案的一致
     - 方法：多个 acceptors；proposal = (ID, V)，ID 有全序关系；超半数同意
@@ -41,11 +41,11 @@ categories: Technical
         2. Raft 论文 from Stanford, extended ver. - [In Search of an Understandable Consensus Algorithm](https://raft.github.io/raft.pdf)[^6]
         3. 非常好的在线演示：[http://thesecretlivesofdata.com/raft/](http://thesecretlivesofdata.com/raft/)
 
-### 其他共识算法
+## 其他共识算法
 
 其他在部署中成功的共识算法有 Zab（即 Zookeeper 所基于的 replication）、ViewStamps 等等。
 
-#### References
+## References
 
 [^1]: [https://zhuanlan.zhihu.com/p/46531628](https://zhuanlan.zhihu.com/p/46531628)
 [^2]: [http://lamport.azurewebsites.net/pubs/lamport-Paxos.pdf](http://lamport.azurewebsites.net/pubs/lamport-Paxos.pdf)

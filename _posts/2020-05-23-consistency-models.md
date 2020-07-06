@@ -9,7 +9,7 @@ enable_math: "enable"
 
 *Replicated state machine* is a common distributed system design to achieve fault-tolerance against *fail-stops*. *Consistency* among distributed replicas thus arise as a crucial problem. People have defined different levels of consistency models throughout distributed systems research. Some of them are strong and easier to reason about and program with, while others weaken the constraints to pursue higher performance.
 
-### Replicated State Machines
+## Replicated State Machines
 
 Consider a classic key-value store scenario. To provide fault-tolerance, data is replicated over multiple server nodes and coordinated (using a consensus algorithm such as Paxos or Raft, or a coordination service such as ZooKeeper, or other models with weaker consistency).
 
@@ -19,7 +19,7 @@ We assume nodes can fail independently at any time (losing temporary states) and
 
 Clients talk to a distribteud KV store service hoping that it performs just as a single machine executing orders serially. This is the ideal case under *strong consistency* (*linearizability*). Different designs of how data gets replicated expose different levels of consistency. Strong consistency acts just like a single machine and is easier for application programmers to reason about, but it mostly means limited scalability and poorer performance. Weaker consistency models are typically more scalable, has lower latency, and much higher throughput.
 
-### The "CAP" Theorem
+## The "CAP" Theorem
 
 The CAP Theorem[^1] states that every distributed replicated state machine cannot achieve all the following three properties at the same time.
 
@@ -29,7 +29,7 @@ The CAP Theorem[^1] states that every distributed replicated state machine canno
 
 The [wikipedia page](https://en.wikipedia.org/wiki/CAP_theorem) clearly states why. This theorem illustrates that when network partitioning is possible, we must tradeoff between consistency and availability.
 
-### Consistency Models
+## Consistency Models
 
 Consider a distributed data store system with two kinds of operations: `v = read(x)` (Rxv) and `write(x, v)` (Wxv). A partial rank of strictness of common consistency models, based on the COPS paper by Lloyd et al.[^2], is:
 
@@ -78,7 +78,7 @@ Because all replicas still need to agree on a consistent value at the end, such 
 
 Examples include AWS DynamoDB and Cassandra.
 
-#### References
+## References
 
 [^1]: [https://en.wikipedia.org/wiki/CAP_theorem](https://en.wikipedia.org/wiki/CAP_theorem)
 [^2]: [https://www.cs.cmu.edu/~dga/papers/cops-sosp2011.pdf](https://www.cs.cmu.edu/~dga/papers/cops-sosp2011.pdf)

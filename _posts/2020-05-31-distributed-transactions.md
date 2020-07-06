@@ -9,7 +9,7 @@ enable_math: "enable"
 
 *Sharding* is a common distributed system design to scale out and achieve better performance. *Distributed transactions* (concurrency control + atomic commits) are used to coordinate sharded nodes. It is important to implement *serializable* distributed transactions for such a system to act correctly.
 
-### Sharding & Distributed Transactions
+## Sharding & Distributed Transactions
 
 Consider a classic key-value store scenario. Sharding represents the practice of partitioning data (key-value pairs) into multiple parts and put different parts on different nodes. Unlike replication which is for fault-tolerance, sharding is for performance & scalability - more nodes bring larger capacity and better load sharing.
 
@@ -27,7 +27,7 @@ When data is sharded (which is often the case in real-world scenario), `x` and `
 
 ![DistributedTransactions](/assets/img/distributed-transactions.png)
 
-### The "ACID" Principle & Serializability
+## The "ACID" Principle & Serializability
 
 An ideal database should satisfy the "ACID" principle[^1].
 
@@ -42,10 +42,10 @@ Serializability describes a history of multiple concurrent distributed transacti
 
 To provide ACID distributed transactions, a distributed system must solve the following two questions at the same time:
 
-- *Concurrency control*: how to prevent data race and coordinate among concurrent transactions?
-- *Atomic commit*: how to ensure all-or-none commit (Atomic requirement in "ACID")?
+1. **Concurrency control**: how to prevent data race and coordinate among concurrent transactions?
+2. **Atomic commit**: how to ensure all-or-none commit (Atomic requirement in "ACID")?
 
-### Pessimistic/Optimistic Concurrency Control
+## 1. Pessimistic/Optimistic Concurrency Control
 
 Concurrency control typically take two different forms - pessimistic/optimistic.
 
@@ -59,7 +59,7 @@ Concurrency control typically take two different forms - pessimistic/optimistic.
 
 Examples of optimistic concurrency control include Microsoft FaRM system[^2] which explores OCC over RDMA direct read and writes.
 
-### Atomic Commit with Two-Phase Commit (2PC)
+## 2. Atomic Commit with Two-Phase Commit (2PC)
 
 Atomic commit is typically implemented by using *two-phase commit* (2PC)[^3]. This is so common that I would put a link to its wikipedia page instead of rephrasing its definition here again: [READ](https://en.wikipedia.org/wiki/Two-phase_commit_protocol).
 
@@ -77,7 +77,7 @@ How to keep timestamps on all nodes synchronized now becomes a significant probl
 
 Another way to enhance 2PC is to **replicate each participant** over multiple replicas that form a logical participant. In this way, each participant is very unlikely to fail, thus 2PC is very unlikely to block. Google Spanner DB does this over Paxos.
 
-#### References
+## References
 
 [^1]: [https://en.wikipedia.org/wiki/ACID](https://en.wikipedia.org/wiki/ACID)
 [^2]: [https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/SOSP15-final227.pdf](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/SOSP15-final227.pdf)

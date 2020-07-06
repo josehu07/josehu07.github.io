@@ -8,7 +8,7 @@ categories: Technical
 
 One of the most dangerous kinds of security attacks is *side-channel attacks* since they are not part of the designed threat model. *Meltdown* & *Spectre*, the most recent side-channel vulnerabilities found on modern microprocessors, are good demonstration of the sneakiness and danger of side-channel attacks. These attacks combine *CPU speculative execution* + *cache timing side-channel*.
 
-### Side-Channel Attacks
+## Side-Channel Attacks
 
 A **side channel** is some indirect signal / side effect / shared-state change produced by the processing of hidden secret which may leak information about the secret[^1]. Side channels may include:
 
@@ -20,7 +20,7 @@ A **side channel** is some indirect signal / side effect / shared-state change p
 
 In general, **any states / signals shared between the secret and the outside world** can become a potential side channel and might be used for attacking.
 
-### Cache Timing Side-Channel
+## Cache Timing Side-Channel
 
 Modern processors all use caching to boost performance. However, processor-level cache is a shared state. Suppose a secret routine and a public routine are running on a machine at the same time. The shared state here is a little bit tricky: memory addresses that the secret routine has recently visited is somewhat visible to the public routine.
 
@@ -50,13 +50,13 @@ for (b = 0; b < 256; b++)
 
 Note that such simple pattern won't work in most normal cases. Directly reading a protected memory address `&arr + 7654` is prohibited by OS paging. So, with a sequential processor and a trusted OS, such attacks can hardly be carried out.
 
-### Speculative Execution
+## Speculative Execution
 
 What makes such attacks possible is a modern microprocessor feature called *speculative execution*. Since modern processors have dedicated pipelines, they guess aggressively what will be executed ahead on branching / exception raising, so that empty CPU cycles won't always be wasted[^2].
 
 The problem is that **memory protection checks are not triggered (or are delayed) on speculatively executed code**. Though execution result is revoked if the processor later finds out that it guessed wrong, the side effect - loading `probe[secret * 4096]` into cache - remains.
 
-### Meltdown & Spectre
+## Meltdown & Spectre
 
 Meltdown & Spectre attacks are formally published in the year 2018 (check their [page](https://meltdownattack.com/)[^3]). Combining cache timing channel with speculative execution, they exploit one of most sneaky vulnerabilities in modern ISA and low-level hardware, affecting many computers across multiple operating systems.
 
@@ -118,14 +118,14 @@ for (b = 0; b < 256; b++)
 > 
 > If the attacker wants to steal a secret from another victim process (instead of from the kernel data region of the same attacker process), and there is actually a victim gadget of the exact branching pattern, then Spectre can exploit it. In contrast, Meltdown can only be used to leak data from the kernel memory region within the same process.
 
-### Mitigations Against These Attacks
+## Mitigations Against These Attacks
 
 Many mitigation patches have come out since the announcement of Meltdown & Spectre. Some of them are microprocessor architecture enhancements and some of them are OS software enhancements. Examples include:
 
 - Architecture level: permission bit checking on speculatively executed instructions.
 - OS software level: *kernel address space layout randomization* (KASLR) - randomize the kernel memory mapping within the process's virtual address space, so that the attacker can hardly know the address of a kernel secret.
 
-#### References
+## References
 
 [^1]: [https://en.wikipedia.org/wiki/Side-channel_attack](https://en.wikipedia.org/wiki/Side-channel_attack)
 [^2]: [https://en.wikipedia.org/wiki/Speculative_execution](https://en.wikipedia.org/wiki/Speculative_execution)

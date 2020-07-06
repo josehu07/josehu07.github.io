@@ -9,7 +9,7 @@ enable_math: "enable"
 
 As minimization and cell density of traditional 2D NAND SSDs reach a manufacturing bottleneck, 3D NAND SSDs come on the market. They push block capacity a little bit forward, but suffer from severer *write amplification* and are more expensive, thus are not a perfect solution. Intel *3D XPoint* (official brand name as *Optane*), a hybrid design sitting in-between DRAM and NAND flash storage, adds a new possibility in the storage hierarchy.
 
-### Non-Volatile Memory (NVM)
+## Non-Volatile Memory (NVM)
 
 The name *non-volatile memory* (NVM) may refer to different ranges of things under different contexts.
 
@@ -19,7 +19,7 @@ The name *non-volatile memory* (NVM) may refer to different ranges of things und
 
 In the context of storage systems research, when people say NVM, they often mean the third definition. Designing storage policies and building file systems for novel NVM hardware is currently a hot topic.
 
-### 2D NAND Flash Architecture
+## 2D NAND Flash Architecture
 
 A traditional 2D NAND SDD consists of a bunch of NAND flash packages together with an on-device *controller* and an on-device DRAM cache.
 
@@ -65,13 +65,15 @@ The fact that NAND SSDs must erase a whole block before updating it is a signifi
 
 When a write arrives at the drive, wear leveling and garbage collection cause a lot more data (than the size of the original write) to be actually moved and written. This is the notorious effect called **write amplification**. Typical *write-amplification factor* (WAF) on NAND SSDs ranges from 5x - 20x. This makes NAND SSDs **perform dramatically poor at workloads involving many random writes**.
 
+> Well..., is it acutally? Maybe we should avoid using terms like "random writes" as they are designed for HDDs! Check out [this paper](http://pages.cs.wisc.edu/~jhe/eurosys17-he.pdf).
+
 ![SSDvsHDDSpeed](/assets/img/ssd-hdd-speed.jpg)
 
 Figure from [this post](https://www.enterprisestorageforum.com/storage-hardware/ssd-vs-hdd-speed.html).
 
 > NOR flash has independent bit lines and is byte-addressable, but is much larger in size and not very practical.
 
-### 3D NAND Flash Design
+## 3D NAND Flash Design
 
 As the manufacturing of 2D NAND SSDs reaches its limit, people start to jump out of pure planar design and explore a third dimension.
 
@@ -80,7 +82,7 @@ As the manufacturing of 2D NAND SSDs reaches its limit, people start to jump out
 
 These **3D designs give larger capacity to each flash block. However, that also makes write-amplification worse**. Manufacturing cost also becomes a lot higher. It is believed that 3D NAND SSDs will not fully replace 2D NAND SSDs[^3].
 
-### 3D XPoint (Optane) Technology
+## 3D XPoint (Optane) Technology
 
 Intel proposes a new design of solid-state storage hardware called *3D XPoint* on 2015 and release it to market under the brand name *Optane* on 2017[^4]. Through several years of development, this design yields the fastest SSDs available on market, and is often thought of as the next-generation state-of-the-art persistent storage hardware.
 
@@ -92,7 +94,7 @@ The most appealing property of 3D XPoint is that **it is persistent meanwhile by
 
 The name NVM sometimes refers to Optane Memory / Optane SSDs specifically. Designing storage systems and building file systems for NVM is currently a very hot topic in storage systems research. This is a good example of how an evolution in hardware leads systems software research. I believe this technology adds a new possibility in building storage systems and will make future storage systems design more flexible and more efficient.
 
-#### References
+## References
 
 - My reading record of《大话存储》: [HERE](https://www.josehu.com/assets/file/book-dahuacunchu-zhangdong.pdf)
 - My blog post on I/O interfaces: [HERE](https://www.josehu.com/technical/2019/10/17/storage-acronyms.html)

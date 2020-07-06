@@ -9,7 +9,7 @@ enable_math: "enable"
 
 Memory fragments encountered, mostly not in my major fields. Noting them down just for a memorandum. 这篇用于记录一些学习中遇到的细碎知识。大多不是主要领域的知识，所以并未系统地学习和整理，权当备忘和随笔啦。
 
-### Messaging Security
+## Messaging Security
 
 Messaging security 中的加密主要重点考虑一下三个维度的安全性：
 
@@ -26,13 +26,13 @@ Messaging security 中的加密主要重点考虑一下三个维度的安全性�
 
 维度之间是有冲突的，所以设计一个安全的 messaging 网络系统往往也需要做大量 trade-off。
 
-### Quaternion & Rotations
+## Quaternion & Rotations
 
 - 二维中绕任意点旋转需要三维矩阵（平移 $$\times$$ 旋转 $$\times$$ 平移）：[Read](https://blog.csdn.net/csxiaoshui/article/details/65446125)
 - 三维中绕任意轴旋转需要四维矩阵（四元数表示法）：[Read](https://www.zhihu.com/question/23005815/answer/33971127)
 
 
-### Python 2 vs. 3 Syntax
+## Python 2 vs. 3 Syntax
 
 (For using Mininet...) Essential coding differences that may sometimes disturb me:
 
@@ -41,7 +41,7 @@ Messaging security 中的加密主要重点考虑一下三个维度的安全性�
 - `xrange()` iterating vs. `range()`
 
 
-### Julia Language
+## Julia Language
 
 Notes about Julia during the 6.S083 course at MIT:
 
@@ -64,7 +64,7 @@ Notes about Julia during the 6.S083 course at MIT:
 > Julia looks like a strange hybrid of Python + Matlab + Lisp to me. But its spirit is great and it is developing really fast. I like it.
 
 
-### Statistics
+## Statistics
 
 - **中心极限定理**：对一个总体，做无穷次同样大小样本的抽样，这些样本的均值会呈现一种正态分布
     - 该正态分布的均值即总体的均值（i.e., 样本均值是对总体均值的无偏估计）
@@ -77,7 +77,7 @@ Notes about Julia during the 6.S083 course at MIT:
 > 将一切未知都交给 random 是一种聪明但有些懒惰的做法 (?)。
 
 
-### Dual Number & Differentiation
+## Dual Number & Differentiation
 
 **二元数**（*Dual Number*）：$$a + b \epsilon$$ with $$\epsilon^2 = 0$$，可用于 model 计算机前向自动微分中的**导数计算**过程：$$f(a + b \epsilon) = f(a) + b f’(a) \epsilon$$，故求解 $$\epsilon$$ 的系数即可得出 $$a$$ 处的导数值：
 
@@ -102,7 +102,7 @@ Notes about Julia during the 6.S083 course at MIT:
     - 前向自动求导则是在计算图推进的每一步中都将到这一节点为止的表达式值求出，在下一步中利用运算规则，调取前一步算出的子表达式（每个子表达式值 essentially 只是一个二元数）进行相应组合，因而避免了表达式膨胀；见上述例子中 step.4
 
 
-### Programming Models
+## Programming Models
 
 - OOP: Design a `sendMoney` method for a class `Person`
 - SP: Design a `sendFromA2B` routine
