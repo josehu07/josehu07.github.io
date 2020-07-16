@@ -7,7 +7,7 @@ categories: Technical
 enable_math: "enable"
 ---
 
-The name *Blockchain* has been a hot word in the past few years. Despite the controversy behind some of its applications such as virtual concurrency, blockchain itself is actually an appealing proposal towards *decentralized trust* over the Internet. It is worth looking into when studying modern distributed systems, especially as a good example of the design and implementation of decentralized systems.
+The name *Blockchain* has been a hot word in the past few years. Despite the controversy behind some of its applications such as virtual currency, blockchain itself is actually an appealing proposal towards *decentralized trust* over the Internet. It is worth looking into when studying modern distributed systems, especially as a good example of the design and implementation of decentralized systems.
 
 ## Centralized Trust vs. Decentralized Trust
 
@@ -89,7 +89,7 @@ $$
 
 Examples of DApps include[^5]:
 
-- Virtual concurrency: Bitcoin, Ethereum, ...
+- Virtual currency: Bitcoin, Ethereum, ...
 - Internet naming infrastructure: Blockstack[^6]
 
 > The true identity of Nakamoto - the first to solve the private double-spending problem and author the Bitcoin paper -  is still a myth as of today. Many have claimed but none provided convincing evidence. See [here](https://en.wikipedia.org/wiki/Satoshi_Nakamoto). This is kind of interesting.
