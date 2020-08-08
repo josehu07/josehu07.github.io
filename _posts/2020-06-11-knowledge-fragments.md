@@ -9,6 +9,7 @@ enable_math: "enable"
 
 Memory fragments encountered, mostly not in my major fields. Noting them down just for a memorandum. 这篇用于记录一些学习中遇到的细碎知识。大多不是主要领域的知识，所以并未系统地学习和整理，权当备忘和随笔啦。
 
+
 ## Messaging Security
 
 Messaging security 中的加密主要重点考虑一下三个维度的安全性：
@@ -25,6 +26,7 @@ Messaging security 中的加密主要重点考虑一下三个维度的安全性�
 - ...
 
 维度之间是有冲突的，所以设计一个安全的 messaging 网络系统往往也需要做大量 trade-off。
+
 
 ## Quaternion & Rotations
 
