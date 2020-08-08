@@ -80,7 +80,7 @@ As you can see, every cache reference operation will now trigger a traverse over
 
 Each segment maintains its own LRU list, which will be much shorter than an LRU list of the whole cache. Thus, the overhead of a cache reference operation to traverse over the linked list will be less significant.
 
-### 6) NFU, Aging
+### 5) NFU, Aging
 
 *Not Frequently Used* (NFU) keeps a *reference counter* for each cache line. For each time interval, all cache lines referenced during this interval will increment its counter by `1`. At eviction, NFU evicts the cache line with the smallest counter value.
 
@@ -99,7 +99,7 @@ Time tick #2:              0b01000000
 Time tick #3: referenced   0b10100000
 ```
 
-### 7) ARC, CAR
+### 6) ARC, CAR
 
 *Adaptive Replacement Cache* (ARC) is an advanced eviction algorithm that has better cache performance than LRU and NFU. It keeps track of BOTH frequently used and recently used cache lines. This [Wikipedia page](https://en.wikipedia.org/wiki/Adaptive_replacement_cache) gives a good demonstration of how this algorithm works[^4] [^5].
 
@@ -128,7 +128,7 @@ This text-based representation is from the above mentioned Wikipedia page[^4].
 
 *CLOCK with Adaptive Replacement* (CAR) is an implementation-level improvement to ARC which replaces the two queues `T1` and `T2` with two clocks.
 
-### 8) LIRS, CLOCK-Pro
+### 7) LIRS, CLOCK-Pro
 
 *Low Inter-reference Recency Set* (LIRS) is another advanced eviction algorithm that has better cache performance than LRU. It uses the concepts of *reuse distance* and *recency* to dynamically rank cache lines' locality, and uses these metrics to decide which cache line to evict. This [Wikipedia page](https://en.wikipedia.org/wiki/LIRS_caching_algorithm) gives a good demonstration of how this algorithm works[^5] [^6] [^7].
 
@@ -155,7 +155,7 @@ This figure from the above mentioned Wikipedia page[^6] demonstrates the status 
 
 *CLOCK-Pro* is an implementation-level improvement and an approximation to LIRS. It replaces the two queues `S` and `Q` with two clocks.
 
-### 9) 2Q, MQ, CLOCK-2Q
+### 8) 2Q, MQ, CLOCK-2Q
 
 *Multi Queue* (MQ) algorithms maintain 2 or more LRU queues, each representing a different lifetime length defined by the algorithm dynamically. Say we use $$m$$ LRU queues. $$Q_{m-1}$$ represents the shortest lifetime $$l_{m-1}$$ and $$Q_0$$ represents the longest lifetime $$l_0$$. Each entry in the queues also keeps an *access count* (frequency).
 
@@ -171,7 +171,7 @@ There will also be a *ghost list* $$Q_{out}$$ holding recently-evicted entries' 
 
 *CLOCK-2Q* is an implementation-level improvement and an approximation to 2Q algorithm, by replacing the LRU queues with clocks.
 
-### 10) Random
+### 9) Random
 
 Of course, you can simply adopt random eviction. Random eviction is very efficient and it actually has a rather good cache performance, considering that many of the complicated real-world workloads do not actually have a high degree of locality.
 
