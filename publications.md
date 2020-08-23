@@ -13,11 +13,11 @@ permalink: /publications.html
   <a href="/notes.html">Notes</a>
 </p>
 
-I am interested in computer systems research, including *operating systems*, *storage systems*, *distributed systems*, and *cloud computing*.
+I am working with [Prof. Andrea Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Prof. Remzi Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/) on operating systems, storage systems, caching, and NVM devices.
 
 I worked with [Prof. Harry Xu](http://web.cs.ucla.edu/~harryxu/) as a summer intern on scaling and accelerating graph neural networks computation using serverless computing.
 
-I also learned a lot from [Prof. Shu Yin](http://sist.shanghaitech.edu.cn/2018/0502/c2739a24245/page.htm) during my undergraduate study on optimizing file structures and file systems organization for inherently-structured workload, such as robot operating system message bags and cluster trace logs.
+I also learned a lot from [Prof. Shu Yin](http://sist.shanghaitech.edu.cn/2018/0502/c2739a24245/page.htm) during my undergraduate study on optimizing file system organization for inherently-structured workload.
 
 ### Conferences
 
@@ -25,4 +25,4 @@ I also learned a lot from [Prof. Shu Yin](http://sist.shanghaitech.edu.cn/2018/0
 
 ### Patents
 
-- <b>A Storage System Management Policy Based on Data Content Locality.</b> CN. Yin, S. and <b>Hu, G.</b>, filed in June 2019. Patent application 201910499391.9. [Patent pending.]
+- <b>A Storage System Management Policy Based on Data Content Locality.</b> CN. Yin, S. and Hu, G., filed in June 2019. Patent application 201910499391.9.
