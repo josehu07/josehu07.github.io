@@ -15,6 +15,12 @@ permalink: /notes.html
 
 Here lies all of my lecture notes. I am used to taking structured notes on things I learned about. Keep going.
 
+### Memorandum
+
+- [Research (Conference) Paper Writing Streamline](/assets/file/paper-writing.pdf)
+- [Basic GDB Debugger Usage Cheatsheet](/assets/file/gdb-usage.pdf)
+- [Operating Systems History Summary in an XMind Tree](https://www.xmind.net/m/2cpqNJ/)
+
 ### Computer Science
 
 - <img class="note-icon" src="/assets/note-icon/security-show.png" /> [Computer Systems Security (*MIT-6.858*)](/assets/file/security.pdf)
@@ -24,11 +30,13 @@ Here lies all of my lecture notes. I am used to taking structured notes on thing
 - <img class="note-icon" src="/assets/note-icon/machine-learning-show.png" /> [Introduction to Machine Learning (*MIT-6.036*)](/assets/file/machine-learning.pdf)
 - <img class="note-icon" src="/assets/note-icon/artificial-intelligence-show.png" /> [Artificial Intelligence (*MIT-6.034*)](/assets/file/artificial-intelligence.pdf)
 - <img class="note-icon" src="/assets/note-icon/theory-computation-show.png" /> [Automata, Computability, & Complexity (*MIT-6.045*)](/assets/file/theory-computation.pdf)
-- <img class="note-icon" src="/assets/note-icon/parallel-computing-show.png" /> [Parallel Computing (*ST-CS121*)](/assets/file/parallel-computing.pdf)
 - <img class="note-icon" src="/assets/note-icon/computer-architecture-2-show.png" /> [Computer Architecture II (*ST-CS210*)](/assets/file/computer-architecture-2.pdf)
+- <img class="note-icon" src="/assets/note-icon/parallel-computing-show.png" /> [Parallel Computing (*ST-CS121*)](/assets/file/parallel-computing.pdf)
 - <img class="note-icon" src="/assets/note-icon/compilers-show.png" /> [Computer Language & Compilers (*ST-CS131*)](/assets/file/compilers.pdf)
-- <img class="note-icon" src="/assets/note-icon/computer-architecture-show.png" /> [Computer Architecture I (*ST-CS110*)](/assets/file/computer-architecture.pdf)
+- <img class="note-icon" src="/assets/note-icon/operating-systems-show.png" /> [Operating Systems (*Wisc-OSTEP*)](/assets/file/operating-systems-ostep.pdf)
 - <img class="note-icon" src="/assets/note-icon/operating-systems-show.png" /> [Operating Systems (*ST-CS130*)](/assets/file/operating-systems.pdf)
+- <img class="note-icon" src="/assets/note-icon/computer-architecture-show.png" /> [Computer Architecture (*Wisc-CS552*)](/assets/file/computer-architecture-wisc.pdf)
+- <img class="note-icon" src="/assets/note-icon/computer-architecture-show.png" /> [Computer Architecture (*ST-CS110*)](/assets/file/computer-architecture.pdf)
 - <img class="note-icon" src="/assets/note-icon/data-structures-show.png" /> [Data Structures (*ST-CS101*)](/assets/file/data-structures.pdf)
 - <img class="note-icon" src="/assets/note-icon/algorithms-show.png" /> [Introduction to Algorithms (*ST-CS140*)](/assets/file/algorithms.pdf)
 
