@@ -77,9 +77,14 @@ Systems that adopt LSM tree design include Google Bigtable, LevelDB, RocksDB, Ca
 
 Another confusing term also used in file systems is *journaling*. Journaling describes an advanced way of "flushing things from memory to disk" to support fast crash recovery[^7]. Originally, if the system crashes in the middle of a read/write/delete operation and later restarts, data on persistent storage might be partial and inconsistent. This inconsistency can only be recovered through a complete checksum walk over the whole file system (a file system check, `fsck`).
 
-A journaling file system keeps a journal on disk (should call it journal here to avoid confusion with the log in write-ahead logging). **It logs an operation into the journal, acks this logging, and only then applies this operation**. After crashing, it simply replays uncommitted operations in the journal to recover. The downside is that every write must be carried out twice, called *write-twice penalty*.
+A journaling file system keeps a journal on disk (should call it journal here to avoid confusion with the log in write-ahead logging). **It logs an operation into the journal, *commits* this logging, and only then acks the user and applies this operation**. After crashing, it simply replays committed operations in the journal to recover and ignores all uncommited entries. The downside is that every write must be carried out twice, called *write-twice penalty*.
 
-For a file system which uses write-ahead logging, it is natural to think that, since the actual data itself is a log (or something like a log, e.g., an LSM tree), why don't we just use this as the journal? A file system which combines write-ahead logging and journaling in this way is called a **log-structured file system** (LFS)[^8] [^9]. The log itself is the FS. It benefits from both sequential writes and faster crash recovery, without write-twice penalty. (When metadata also follows this pattern, it is sometimes called a *copy-on-write file system*.)
+For a weaker consistency model, some jnournaling file systems perform in a so-called *ordered* mode, which
+just journals metadata updates but not updates to data blocks. Data block allocation and writes happen first,
+followed by metadata journal append. In this mode, operations like `append` are crash-consistent, but in-place
+`write` updates are vulnerable to crashes.
+
+For a file system which uses write-ahead logging, it is natural to think that, since the actual data itself is a log (or something like a log, e.g., an LSM tree), why don't we just use this as the journal? A file system which combines write-ahead logging and journaling in this way is called a **log-structured file system** (LFS) or **copy-on-write** file system[^8] [^9]. The log itself is the FS. It benefits from both sequential writes and faster crash recovery, without write-twice penalty.
 
 Examples of non-logging journaling file systems include Ext3 and Ext4. Examples of log-structured file systems include ZFS, Btrfs, and NOVA.
 
