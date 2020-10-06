@@ -15,7 +15,7 @@ permalink: /blogs.html
 
 Sometimes, I write down what I learned, what I thought, what suprised me, and what I wanted to remember.
 
-<div style="text-align: center;">
+<div style="text-align: center; padding-bottom: 10px;">
   <style>
     a.btn-rss {
       color: #212F3D;
