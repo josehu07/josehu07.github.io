@@ -45,7 +45,15 @@
         </p>
 
         <p class="view">
-          Email: <i>{{ site.email }}</i>
+          <table class="emailtable">
+            <tr class="emailtable">
+              <td class="emailtable" rowspan="2" style="padding-right:6px;">Email</td>
+              <td class="emailtable"><i>{{ site.email_one }}</i></td>
+            </tr>
+            <tr class="emailtable">
+              <td class="emailtable"><i>{{ site.email_two }}</i></td>
+            </tr>
+          </table>
         </p>
 
         <p>

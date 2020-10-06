@@ -1,5 +1,8 @@
 theme: jekyll-theme-minimal
 
+plugins:
+  - jekyll-feed
+
 title: Guanzhou (Jose) Hu
 description: Guanzhou's personal storage for lecture notes, blog posts, & good mood.
 
@@ -8,7 +11,5 @@ logo: /assets/img/Shark-sq.svg
 resume_link: /assets/file/Resume_HGZ.pdf
 linkedin_link: https://www.linkedin.com/in/josehu/
 
-email: guanzhou.hu (at) wisc (dot) edu
-
-plugins:
-  - jekyll-feed
+email_one: guanzhou (dot) hu (at) wisc (dot) edu
+email_two: josehu (at) cs (dot) wisc (dot) edu
