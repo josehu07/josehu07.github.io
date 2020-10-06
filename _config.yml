@@ -9,3 +9,6 @@ resume_link: /assets/file/Resume_HGZ.pdf
 linkedin_link: https://www.linkedin.com/in/josehu/
 
 email: guanzhou.hu (at) wisc (dot) edu
+
+plugins:
+  - jekyll-feed
