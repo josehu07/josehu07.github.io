@@ -15,6 +15,27 @@ permalink: /blogs.html
 
 Sometimes, I write down what I learned, what I thought, what suprised me, and what I wanted to remember.
 
+<div style="text-align: center;">
+  <style>
+    a.btn-rss {
+      color: #212F3D;
+      opacity: 0.8;
+      display: inline-block;
+    }
+    a.btn-rss:hover, a.btn-rss:focus {
+      opacity: 1;
+    }
+    img.subscribe-rss {
+      height: 24px;
+      vertical-align: middle;
+      padding-left: 3px;
+    }
+  </style>
+  <a class="btn-rss" href="/feed.xml" target="_blank">
+    <b>Subscribe to my RSS feed <img class="subscribe-rss" src="/assets/img/RSS-icon.svg" /></b>
+  </a>
+</div>
+
 ### Technical
 
 <ul>
