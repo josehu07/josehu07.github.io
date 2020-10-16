@@ -13,7 +13,7 @@ permalink: /
   <a href="/notes.html">Notes</a>
 </p>
 
-I am a computer science Ph.D. student in [ADSL lab](https://research.cs.wisc.edu/adsl/) at the [University of Wisconsin-Madison](https://www.wisc.edu/), supervised by [Professor Andrea Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Professor Remzi Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/). My research interest mostly lies in **computer systems**, especially *operating systems*, *storage systems*, *parallel/distributed processing*, and *cloud computing*.
+I am a computer science Ph.D. student in [ADSL lab](https://research.cs.wisc.edu/adsl/) at the [University of Wisconsin-Madison](https://www.wisc.edu/), advised by [Professor Andrea Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Professor Remzi Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/). My research interest mostly lies in **computer systems**, especially *operating systems*, *storage systems*, *parallel/distributed processing*, and *cloud computing*. I am currently focusing on file systems, caching, and NVM devices. We are re-thinking the concept of *storage hierarchy* in the context of various modern storage devices with complex performance characteristics.
 
 ```rust
 /// Keep calm & do good research!

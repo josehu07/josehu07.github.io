@@ -13,11 +13,11 @@ permalink: /publications.html
   <a href="/notes.html">Notes</a>
 </p>
 
-I am working with [Prof. Andrea Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Prof. Remzi Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/) on operating systems, storage systems, caching, and NVM devices.
+I am working with [Prof. Andrea Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Prof. Remzi Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/) on storage systems, in particular, file systems, caching, and NVM devices. We are re-thinking the concept of *storage hierarchy* in the context of various modern storage devices with complex performance characteristics.
 
 I worked with [Prof. Harry Xu](http://web.cs.ucla.edu/~harryxu/) as a summer intern on scaling and accelerating graph neural networks computation using serverless computing.
 
-I also learned a lot from [Prof. Shu Yin](http://sist.shanghaitech.edu.cn/2018/0502/c2739a24245/page.htm) during my undergraduate study on optimizing file system organization for inherently-structured workload.
+I learned a lot from [Prof. Shu Yin](http://sist.shanghaitech.edu.cn/2018/0502/c2739a24245/page.htm) during my undergraduate study on optimizing file system organization for inherently-structured workload.
 
 ### Conferences
 
