@@ -29,10 +29,6 @@ impl<CS> Researcher<CS> for Me {
 }
 ```
 
-### Contact
-
-- Email: <i>{{ site.email }}</i>
-
 ### Education
 
 <table>
