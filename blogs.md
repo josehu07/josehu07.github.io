@@ -18,7 +18,7 @@ Sometimes, I write down what I learned, what I thought, what suprised me, and wh
 <div style="text-align: center; padding-bottom: 10px;">
   <style>
     a.btn-rss {
-      color: #212F3D;
+      color: #EC7063;
       opacity: 0.8;
       display: inline-block;
     }
