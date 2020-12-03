@@ -45,7 +45,7 @@ I learned a lot from [Prof. Shu Yin](http://sist.shanghaitech.edu.cn/2018/0502/c
 
 ### Conferences
 
-- **BORA: A Bag Optimizer for Robotic Analysis**. Jian Zhang, Tao Xie, Yuzhuo Jing, Yanjie Song, Guanzhou Hu, Si Chen, and Shu Yin. 2020. In Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis (SC '20). IEEE Press, Article 12, 1–15.
+- <b>BORA: A Bag Optimizer for Robotic Analysis</b>. Jian Zhang, Tao Xie, Yuzhuo Jing, Yanjie Song, Guanzhou Hu, Si Chen, and Shu Yin. 2020. In Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis (SC '20). IEEE Press, Article 12, 1–15.
     <a class="btn-acm" href="https://dl.acm.org/doi/abs/10.5555/3433701.3433716" target="_blank"><img class="paper-button" src="/assets/img/acm-button.svg" /> DOI</a>
     <a class="btn-pdf" href="https://dl.acm.org/doi/pdf/10.5555/3433701.3433716" target="_blank"><img class="paper-button" src="/assets/img/pdf-button.svg" /> PDF</a>
 
