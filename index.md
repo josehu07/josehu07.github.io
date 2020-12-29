@@ -13,7 +13,7 @@ permalink: /
   <a href="/notes.html">Notes</a>
 </p>
 
-I am a computer science Ph.D. student in [ADSL lab](https://research.cs.wisc.edu/adsl/) at the [University of Wisconsin-Madison](https://www.wisc.edu/), advised by [Professor Andrea Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Professor Remzi Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/). My research interest mostly lies in **computer systems**, especially *operating system kernels* and *storage systems*. I am currently focusing on two aspects: 1) storage stack technologies with modern ultra-fast NVM devices, and 2) measurement and re-designing of kernel syscall interfaces.
+I am a computer science Ph.D. student in [ADSL lab](https://research.cs.wisc.edu/adsl/) at the [University of Wisconsin-Madison](https://www.wisc.edu/), advised by [Professor Andrea Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Professor Remzi Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/). My research interest mostly lies in **computer systems**, especially *operating system kernel* and *storage systems*. I am currently focusing on two aspects: 1) storage stack technologies with modern ultra-fast NVM devices, and 2) measurement and re-designing of kernel syscall interfaces.
 
 ```rust
 /// Keep calm & do good research!
