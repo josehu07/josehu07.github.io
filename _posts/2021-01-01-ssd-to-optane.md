@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "From 2D NAND SSD to Intel <i>3D XPoint</i> (<i>Optane</i>) NVM"
-date: 2020-06-17 17:53:38
+title: "Modern Storage Hierarchy: From NAND SSD to <i>3D XPoint</i> (<i>Optane</i>) PM"
+date: 2021-01-01 15:37:38
 author: Guanzhou Hu
 categories: Technical
 enable_math: "enable"
@@ -9,15 +9,17 @@ enable_math: "enable"
 
 As minimization and cell density of traditional 2D NAND SSDs reach a manufacturing bottleneck, 3D NAND SSDs come on the market. They push block capacity a little bit forward, but suffer from severer *write amplification* and are more expensive, thus are not a perfect solution. Intel *3D XPoint* (official brand name as *Optane*), a hybrid design sitting in-between DRAM and NAND flash storage, adds a new possibility in the storage hierarchy.
 
-## Non-Volatile Memory (NVM)
+## Non-Volatile Memory (NVM) & The Modern Storage "Hierarchy"
 
 The name *non-volatile memory* (NVM) may refer to different ranges of things under different contexts.
 
 1. Broadly speaking, NVM refers to all kinds of persistent storage that maintains information "even after having been power cycled"[^1];
 2. Narrowly speaking, NVM refers to semiconductor memory chips without mechanical structures, including flash memory (such as flash chips, SSD) and ROM;
-3. Recently, NVM may refer to memory chips that are both *persistent* and *byte-addressable*. One example is Intel 3D XPoint.
+3. Recently, NVM may refer to memory chips that are both *persistent* and *byte-addressable*. One example is Intel 3D XPoint. This category is often refered to as *persistent memory* (PM), NVRAM, or NVDIMM.
 
-In the context of storage systems research, when people say NVM, they often mean the third definition. Designing storage policies and building file systems for novel NVM hardware is currently a hot topic.
+In the context of storage systems research, when people say NVM, they often mean the third definition. Designing storage policies and building file systems for novel NVM hardware is currently a hot topic. The storage "hierarchy" has now become an entangled pyramid where different types of devices have complex & overlapping performance characteristics. To be strict, it is not a hierarchy any more.
+
+![ModernStorageHierarchy](/assets/img/modern-storage-hierarchy.png)
 
 ## 2D NAND Flash Architecture
 
@@ -86,13 +88,32 @@ These **3D designs give larger capacity to each flash block. However, that also 
 
 Intel proposes a new design of solid-state storage hardware called *3D XPoint* on 2015 and release it to market under the brand name *Optane* on 2017[^4]. Through several years of development, this design yields the fastest SSDs available on market, and is often thought of as the next-generation state-of-the-art persistent storage hardware.
 
-As the name 3D XPoint describes, memory cells are put at cross points of a 3D grid. It truly makes SSDs "3-dimensional".
+This technology is a successful example of *phace-change memory* (PCM) hardware - one of the most promising directions towards building non-volatile RAM. As the name 3D XPoint describes, memory cells are put at cross points of a 3D grid. It truly makes persistent storage "3-dimensional".
 
 ![3DXPointDemo](/assets/img/3d-xpoint-diagram.jpg)
 
 The most appealing property of 3D XPoint is that **it is persistent meanwhile byte-addressable**. This means that it sits in between current NAND SSDs and DRAM volatile memory on the storage hierarchy (has smaller capacity than NAND flash but comparable capacity than DRAMs; has lower speed than DRAMs but faster speed than NAND flash; and it is durable). It can be treated as either, depending on the workload.
 
-The name NVM sometimes refers to Optane Memory / Optane SSDs specifically. Designing storage systems and building file systems for NVM is currently a very hot topic in storage systems research. This is a good example of how an evolution in hardware leads systems software research. I believe this technology adds a new possibility in building storage systems and will make future storage systems design more flexible and more efficient.
+The name sometimes refers to Optane DIMM / Optane SSDs specifically. Optane DIMMs connect to the memory bus and is directly controlled by the processor cache system. Details about its internals can be found in [this recent paper](https://www.usenix.org/conference/fast20/presentation/yang) [^5]. Optane SSD products use the same PCM media technology, but expose a traditional NVMe SSD interface.
+
+## Optane DIMM Performance & Consistency
+
+As [this paper](https://www.usenix.org/conference/fast20/presentation/yang) pointed out, the current state of Optane DIMM exposes some interesting performance characteristics that lie in the middle of SSDs and DRAM:
+
+- Latency performance approaches DRAM, but has larger vvariation;
+- Though the whole device appears to be byte-addressable, small random accesses matter - they will bring down performance due to the 256B actual media granularity;
+- DRAM is serial, SSDs have high internal parallelism across packages, and Optane DIMM sits in between - it has limited degree of internal parallelism and hence degraded performance under high concurrency;
+- Ordering of temporal accesses to the same memory address is important due to consistency issues.
+
+![OptaneBandwidth](/assets/img/optane-bandwidth.png)
+
+Figure from [the Yang, et al. paper](https://www.usenix.org/conference/fast20/presentation/yang), Figure 4.
+
+Whenever there is caching across volatile/non-volatile media, there are consistency issues. Imagine two user requests: ① appending a new element to a data structure, followed by ② incrementing a counter in data structure header. It is possible that both requests hit in cache and, at some time later, the update ② gets evicted earlier than ①. If the system crashes at this point, the state is left inconsistent. After recovery, the user may check the header counter and may believe that the newly appended index contains valid data, while it is not - that data has not yet been persisted on storage media - so the user may read out some garbage.
+
+For traditional disk-based FS, the volatile cache is the in-memory buffer cache, and the persistent storage is the disk drive. We do journaling with `fsync()`'s to maintain the ordering of requests. For NVDIMM, the volatile cache is the CPU cache, and the persistent storage is the NVDIMM chip on memory bus. NVM systems do journaling with `mfence` & `clflush` instructions to maintain such ordering. Some ad-hoc data structures (e.g., B-trees) running over NVM may directly deploy their own ordering constraints w/o the help of a system layer.
+
+Designing storage systems and building file systems for NVM is currently a very hot topic in storage systems research. This is a good example of how an evolution in hardware leads system software research. I believe this technology adds a new possibility in building storage systems and will make future storage systems design more flexible and more efficient.
 
 ## References
 
@@ -103,3 +124,4 @@ The name NVM sometimes refers to Optane Memory / Optane SSDs specifically. Desig
 [^2]: [https://en.wikipedia.org/wiki/Write_amplification](https://en.wikipedia.org/wiki/Write_amplification)
 [^3]: [https://www.rutronik.com/article/detail/News/what-is-the-difference-between-2d-nand-3d-nand-and-3d-xpoint-flash-memory/](https://www.rutronik.com/article/detail/News/what-is-the-difference-between-2d-nand-3d-nand-and-3d-xpoint-flash-memory/)
 [^4]: [https://en.wikipedia.org/wiki/3D_XPoint](https://en.wikipedia.org/wiki/3D_XPoint)
+[^5]: [https://www.usenix.org/conference/fast20/presentation/yang](https://www.usenix.org/conference/fast20/presentation/yang)
