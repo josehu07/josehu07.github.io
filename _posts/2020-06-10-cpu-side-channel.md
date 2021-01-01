@@ -123,7 +123,10 @@ for (b = 0; b < 256; b++)
 Many mitigation patches have come out since the announcement of Meltdown & Spectre. Some of them are microprocessor architecture enhancements and some of them are OS software enhancements. Examples include:
 
 - Architecture level: permission bit checking on speculatively executed instructions.
-- OS software level: *kernel address space layout randomization* (KASLR) - randomize the kernel memory mapping within the process's virtual address space, so that the attacker can hardly know the address of a kernel secret.
+- OS software level:
+    - *Kernel address space layout randomization* (KASLR) - randomize the kernel memory mapping within the process's virtual address space, so that the attacker can hardly know the address of a kernel secret; this is not a waterproof mitigation.
+    - *Kernel page table isolation* (KPTI) - remove kernel memory mapping from the virtual address space to defend against Meltdown; the price is that every syscall requires two extra page table & TLB switches.
+    - Avoid speculation on indirect branches (i.e., using *retpoline*) to defend against Spectre; the price is that code execution is slowed down when branching is common.
 
 ## References
 
