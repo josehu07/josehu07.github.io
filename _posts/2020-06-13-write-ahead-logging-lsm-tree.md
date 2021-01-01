@@ -79,7 +79,7 @@ Another confusing term also used in file systems is *journaling*. Journaling des
 
 A journaling file system keeps a journal on disk (should call it journal here to avoid confusion with the log in write-ahead logging). **It logs an operation into the journal, *commits* this logging, and only then acks the user and applies this operation**. After crashing, it simply replays committed operations in the journal to recover and ignores all uncommited entries. The downside is that every write must be carried out twice, called *write-twice penalty*.
 
-For a weaker consistency model, some jnournaling file systems perform in a so-called *ordered* mode, which
+For a weaker consistency model, some journaling file systems perform in a so-called *ordered* mode, which
 just journals metadata updates but not updates to data blocks. Data block allocation and writes happen first,
 followed by metadata journal append. In this mode, operations like `append` are crash-consistent, but in-place
 `write` updates are vulnerable to crashes.
