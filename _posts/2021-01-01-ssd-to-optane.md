@@ -15,7 +15,7 @@ The name *non-volatile memory* (NVM) may refer to different ranges of things und
 
 1. Broadly speaking, NVM refers to all kinds of persistent storage that maintains information "even after having been power cycled"[^1];
 2. Narrowly speaking, NVM refers to semiconductor memory chips without mechanical structures, including flash memory (such as flash chips, SSD) and ROM;
-3. Recently, NVM may refer to memory chips that are both *persistent* and *byte-addressable*. One example is Intel 3D XPoint. This category is often refered to as *persistent memory* (PM), NVRAM, or NVDIMM.
+3. Recently, NVM may refer to memory chips that are both *persistent* and *byte-addressable*. One example is Intel 3D XPoint. This category is often referred to as *persistent memory* (PM), NVRAM, or NVDIMM.
 
 In the context of storage systems research, when people say NVM, they often mean the third definition. Designing storage policies and building file systems for novel NVM hardware is currently a hot topic. The storage "hierarchy" has now become an entangled pyramid where different types of devices have complex & overlapping performance characteristics. To be strict, it is not a hierarchy any more.
 
@@ -67,7 +67,7 @@ The fact that NAND SSDs must erase a whole block before updating it is a signifi
 
 When a write arrives at the drive, wear leveling and garbage collection cause a lot more data (than the size of the original write) to be actually moved and written. This is the notorious effect called **write amplification**. Typical *write-amplification factor* (WAF) on NAND SSDs ranges from 5x - 20x. This makes NAND SSDs **perform dramatically poor at workloads involving many random writes**.
 
-> Well..., is it acutally? Maybe we should avoid using terms like "random writes" as they are designed for HDDs! Check out [this paper](http://pages.cs.wisc.edu/~jhe/eurosys17-he.pdf).
+> Well..., is it actually? Maybe we should avoid using terms like "random writes" as they are designed for HDDs! Check out [this paper](http://pages.cs.wisc.edu/~jhe/eurosys17-he.pdf).
 
 ![SSDvsHDDSpeed](/assets/img/ssd-hdd-speed.jpg)
 
@@ -88,7 +88,7 @@ These **3D designs give larger capacity to each flash block. However, that also 
 
 Intel proposes a new design of solid-state storage hardware called *3D XPoint* on 2015 and release it to market under the brand name *Optane* on 2017[^4]. Through several years of development, this design yields the fastest SSDs available on market, and is often thought of as the next-generation state-of-the-art persistent storage hardware.
 
-This technology is a successful example of *phace-change memory* (PCM) hardware - one of the most promising directions towards building non-volatile RAM. As the name 3D XPoint describes, memory cells are put at cross points of a 3D grid. It truly makes persistent storage "3-dimensional".
+This technology is a successful example of *phase-change memory* (PCM) hardware - one of the most promising directions towards building non-volatile RAM. As the name 3D XPoint describes, memory cells are put at cross points of a 3D grid. It truly makes persistent storage "3-dimensional".
 
 ![3DXPointDemo](/assets/img/3d-xpoint-diagram.jpg)
 
@@ -100,7 +100,7 @@ The name sometimes refers to Optane DIMM / Optane SSDs specifically. Optane DIMM
 
 As [this paper](https://www.usenix.org/conference/fast20/presentation/yang) pointed out, the current state of Optane DIMM exposes some interesting performance characteristics that lie in the middle of SSDs and DRAM:
 
-- Latency performance approaches DRAM, but has larger vvariation;
+- Latency performance approaches DRAM, but has larger variation;
 - Though the whole device appears to be byte-addressable, small random accesses matter - they will bring down performance due to the 256B actual media granularity;
 - DRAM is serial, SSDs have high internal parallelism across packages, and Optane DIMM sits in between - it has limited degree of internal parallelism and hence degraded performance under high concurrency;
 - Ordering of temporal accesses to the same memory address is important due to consistency issues.
