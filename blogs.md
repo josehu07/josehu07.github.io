@@ -56,7 +56,7 @@ Sometimes, I write down what I learned, what I thought, what suprised me, and wh
 
 <ul>
   {% for category in site.categories %}
-    {% if category[0] == "Personal" %}
+    {% if category[0] == "Memo" %}
       {% for post in category[1] %}
         <li>
           <a href="{{ post.url }}">{{ post.title }}</a><br>
@@ -70,7 +70,7 @@ Sometimes, I write down what I learned, what I thought, what suprised me, and wh
 
 <ul>
   {% for category in site.categories %}
-    {% if category[0] == "Memo" %}
+    {% if category[0] == "Personal" %}
       {% for post in category[1] %}
         <li>
           <a href="{{ post.url }}">{{ post.title }}</a><br>
