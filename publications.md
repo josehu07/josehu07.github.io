@@ -20,14 +20,24 @@ I worked with [Prof. Harry Xu](http://web.cs.ucla.edu/~harryxu/) as a summer int
 I learned a lot from [Prof. Shu Yin](http://sist.shanghaitech.edu.cn/2018/0502/c2739a24245/page.htm) during my undergraduate study on optimizing file system organization for inherently-structured workload.
 
 <style>
-  a.btn-acm {
+  a.btn-acmdoi {
     color: #5499C7;
     opacity: 0.8;
     display: inline-block;
   }
-  a.btn-acm:hover, a.btn-acm:focus {
+  a.btn-acmdoi:hover, a.btn-acmdoi:focus {
     opacity: 1;
   }
+
+  a.btn-usenix {
+    color: #ff6600;
+    opacity: 0.8;
+    display: inline-block;
+  }
+  a.btn-usenix:hover, a.btn-usenix:focus {
+    opacity: 1;
+  }
+  
   a.btn-pdf {
     color: #EC7063;
     opacity: 0.8;
@@ -36,6 +46,7 @@ I learned a lot from [Prof. Shu Yin](http://sist.shanghaitech.edu.cn/2018/0502/c
   a.btn-pdf:hover, a.btn-pdf:focus {
     opacity: 1;
   }
+
   img.paper-button {
     height: 24px;
     vertical-align: middle;
@@ -45,9 +56,12 @@ I learned a lot from [Prof. Shu Yin](http://sist.shanghaitech.edu.cn/2018/0502/c
 
 ### Conferences
 
+- <b>The Storage Hierarchy is Not a Hierarchy: Optimizing Caching on Modern Storage Devices with Orthus</b>. Kan Wu, Zhihan Guo, Guanzhou Hu, Kaiwei Tu, Ramnatthan Alagappan, Rathijit Sen, Kwanghyun Park, Andrea C. Arpaci-Dusseau, and Remzi H. Arpaci-Dusseau. 2021. In Proceedings of the 19th USENIX Conference on File and Storage Technologies (FAST '21). USENIX Association.
+    <a class="btn-usenix" href="https://www.usenix.org/conference/fast21/presentation/wu-kan" target="_blank"><img class="paper-button" src="/assets/img/usenix-button.svg" /> USENIX</a>
+    <!-- <a class="btn-pdf" href="https://dl.acm.org/doi/pdf/10.5555/3433701.3433716" target="_blank"><img class="paper-button" src="/assets/img/pdf-button.svg" /> PDF</a> -->
 - <b>BORA: A Bag Optimizer for Robotic Analysis</b>. Jian Zhang, Tao Xie, Yuzhuo Jing, Yanjie Song, Guanzhou Hu, Si Chen, and Shu Yin. 2020. In Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis (SC '20). IEEE Press, Article 12, 1–15.
-    <a class="btn-acm" href="https://dl.acm.org/doi/abs/10.5555/3433701.3433716" target="_blank"><img class="paper-button" src="/assets/img/acm-button.svg" /> DOI</a>
-    <a class="btn-pdf" href="https://dl.acm.org/doi/pdf/10.5555/3433701.3433716" target="_blank"><img class="paper-button" src="/assets/img/pdf-button.svg" /> PDF</a>
+    <a class="btn-acmdoi" href="https://dl.acm.org/doi/abs/10.5555/3433701.3433716" target="_blank"><img class="paper-button" src="/assets/img/acmdoi-button.svg" /> ACM-DOI</a>
+    <!-- a class="btn-pdf" href="https://dl.acm.org/doi/pdf/10.5555/3433701.3433716" target="_blank"><img class="paper-button" src="/assets/img/pdf-button.svg" /> PDF</a> -->
 
 ### Patents
 
