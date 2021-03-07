@@ -60,6 +60,7 @@ To build the kernel into an installable deb package, follow these steps:
 
 ```bash
 sudo make clean
+sudo rm -rf debian
 rm -f vmlinux-gdb.py
 
 sudo make -j32 KDEB_PKGVERSION=1.some-suffix deb-pkg
