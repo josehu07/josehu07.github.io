@@ -186,7 +186,7 @@ sudo qemu-system-x86_64 \
   -kernel linux-v.x.y/arch/x86_64/boot/bzImage \
   -nographic \
   -drive format=raw,file=buildroot/output/images/rootfs.ext4,if=virtio \
-  -append "root=/dev/vda console=ttyS0 other-paras-here-if-needed" \
+  -append "root=/dev/vda console=ttyS0 nokaslr other-paras-here-if-needed" \
   -m 4G \
   -enable-kvm \
   -cpu host \
@@ -196,7 +196,7 @@ sudo qemu-system-x86_64 \
   -s -S
 ```
 
-Please refer to [the QEMU documentation](https://www.qemu.org/docs/master/system/invocation.html) [^4] for what these command options stand for.
+Please refer to [the QEMU documentation](https://www.qemu.org/docs/master/system/invocation.html) [^4] for what these command options stand for. Notice that the `nokaslr` boot parameter is required, since gdb cannot work well with KASLR turned on.
 
 Specifically, using the `-s -S` combo holds QEMU from booting the kernel until a GDB instance is attached. Hence, in a separate shell window, start GDB and attach to QEMU, then start breaking & debugging the Linux kernel:
 
@@ -256,6 +256,13 @@ ssh -p 10022 root@localhost
 ```bash
 scp -P 10022 file root@localhost:/root/some/path
     # Notice the uppercase `P` for scp
+```
+
+Since our root filesystem is minimal, to send an executable into the guest to run, the executable must be statically linked with `-static` gcc option. Verify it is static by:
+
+```bash
+ldd executable_file
+    # Should say not a dynamically linked object
 ```
 
 ## References
