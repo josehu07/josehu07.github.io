@@ -30,7 +30,7 @@ Here lies all of my lecture notes. I am used to taking structured notes on thing
 - <img class="note-icon" src="/assets/note-icon/distributed-engineering-show.png" /> [Distributed Systems Engineering (*MIT-6.824*)](/assets/file/distributed-engineering.pdf)
 - <img class="note-icon" src="/assets/note-icon/distributed-systems-show.png" /> [Advanced Distributed Systems (*ST-CS290K*)](/assets/file/distributed-systems.pdf)
 - <img class="note-icon" src="/assets/note-icon/computer-networks-show.png" /> [Computer Networks (*MIT-6.829*)](/assets/file/computer-networks.pdf)
-- <img class="note-icon" src="/assets/note-icon/computer-graphics-show.png" /> Computer Graphics (*WISC-CS559*, WIP)
+- <img class="note-icon" src="/assets/note-icon/computer-graphics-show.png" /> [Computer Graphics (*WISC-CS559*)](/assets/file/computer-graphics.pdf)
 - <img class="note-icon" src="/assets/note-icon/machine-learning-show.png" /> [Introduction to Machine Learning (*MIT-6.036*)](/assets/file/machine-learning.pdf)
 - <img class="note-icon" src="/assets/note-icon/artificial-intelligence-show.png" /> [Artificial Intelligence (*MIT-6.034*)](/assets/file/artificial-intelligence.pdf)
 - <img class="note-icon" src="/assets/note-icon/theory-computation-show.png" /> [Automata, Computability, & Complexity (*MIT-6.045*)](/assets/file/theory-computation.pdf)
