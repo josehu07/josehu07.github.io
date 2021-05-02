@@ -26,7 +26,7 @@ Here lies all of my lecture notes. I am used to taking structured notes on thing
 - <img class="note-icon" src="/assets/note-icon/advanced-operating-systems-show.png" /> [Advanced Operating Systems (*Wisc-CS736*)](/assets/file/advanced-operating-systems.pdf)
 - <img class="note-icon" src="/assets/note-icon/database-management-show.png" /> [Database Management Systems (*Wisc-CS564*)](/assets/file/database-management.pdf)
 - <img class="note-icon" src="/assets/note-icon/security-show.png" /> [Computer Systems Security (*MIT-6.858*)](/assets/file/security.pdf)
-- <img class="note-icon" src="/assets/note-icon/distributed-engineering-show.png" /> Distributed Systems (*WISC-CS739*, WIP)
+- <img class="note-icon" src="/assets/note-icon/distributed-engineering-show.png" /> [Distributed Systems (*WISC-CS739*)](/assets/file/distributed-systems-wisc.pdf)
 - <img class="note-icon" src="/assets/note-icon/distributed-engineering-show.png" /> [Distributed Systems Engineering (*MIT-6.824*)](/assets/file/distributed-engineering.pdf)
 - <img class="note-icon" src="/assets/note-icon/distributed-systems-show.png" /> [Advanced Distributed Systems (*ST-CS290K*)](/assets/file/distributed-systems.pdf)
 - <img class="note-icon" src="/assets/note-icon/computer-networks-show.png" /> [Computer Networks (*MIT-6.829*)](/assets/file/computer-networks.pdf)
