@@ -56,6 +56,9 @@ I learned a lot from [Prof. Shu Yin](http://sist.shanghaitech.edu.cn/2018/0502/c
 
 ### Conferences
 
+- <b>Dorylus: Affordable, Scalable, and Accurate GNN Training over Billion-Edge Graphs</b>. John Thorpe, Yifan Qiao, Jonathan Eyolfson, Shen Teng, Guanzhou Hu, Zhihao Jia, Jinliang Wei, Keval Vora, Ravi Netravali, Miryung Kim, and Guoqing Harry Xu. 2021. In Proceedings of the 15th USENIX Symposium on Operating Systems Design and Implementation (OSDI '21). USENIX Association.
+    <a class="btn-usenix" href="https://www.usenix.org/conference/osdi21/presentation/thorpe" target="_blank"><img class="paper-button" src="/assets/img/usenix-button.svg" /> USENIX</a>
+    <!-- <a class="btn-pdf" href="https://dl.acm.org/doi/pdf/10.5555/3433701.3433716" target="_blank"><img class="paper-button" src="/assets/img/pdf-button.svg" /> PDF</a> -->
 - <b>The Storage Hierarchy is Not a Hierarchy: Optimizing Caching on Modern Storage Devices with Orthus</b>. Kan Wu, Zhihan Guo, Guanzhou Hu, Kaiwei Tu, Ramnatthan Alagappan, Rathijit Sen, Kwanghyun Park, Andrea C. Arpaci-Dusseau, and Remzi H. Arpaci-Dusseau. 2021. In Proceedings of the 19th USENIX Conference on File and Storage Technologies (FAST '21). USENIX Association.
     <a class="btn-usenix" href="https://www.usenix.org/conference/fast21/presentation/wu-kan" target="_blank"><img class="paper-button" src="/assets/img/usenix-button.svg" /> USENIX</a>
     <!-- <a class="btn-pdf" href="https://dl.acm.org/doi/pdf/10.5555/3433701.3433716" target="_blank"><img class="paper-button" src="/assets/img/pdf-button.svg" /> PDF</a> -->
