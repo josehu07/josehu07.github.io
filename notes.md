@@ -36,7 +36,7 @@ Here lies all of my lecture notes. I am used to taking structured notes on thing
 - <img class="note-icon" src="/assets/note-icon/theory-computation-show.png" /> [Automata, Computability, & Complexity (*MIT-6.045*)](/assets/file/theory-computation.pdf)
 - <img class="note-icon" src="/assets/note-icon/parallel-computing-show.png" /> [Parallel Computing (*ST-CS121*)](/assets/file/parallel-computing.pdf)
 - <img class="note-icon" src="/assets/note-icon/compilers-show.png" /> [Computer Language & Compilers (*ST-CS131*)](/assets/file/compilers.pdf)
-- <img class="note-icon" src="/assets/note-icon/operating-systems-show.png" /> Operating Systems (*Wisc-OSTEP*, WIP)
+- <img class="note-icon" src="/assets/note-icon/operating-systems-show.png" /> [Operating Systems (*Wisc-OSTEP*)](/assets/file/operating-systems-ostep.pdf)
 - <img class="note-icon" src="/assets/note-icon/operating-systems-show.png" /> [Operating Systems (*ST-CS130*)](/assets/file/operating-systems.pdf)
 - <img class="note-icon" src="/assets/note-icon/computer-architecture-2-show.png" /> [Computer Architecture II (*ST-CS210*)](/assets/file/computer-architecture-2.pdf)
 - <img class="note-icon" src="/assets/note-icon/computer-architecture-show.png" /> [Computer Architecture (*Wisc-CS552*)](/assets/file/computer-architecture-wisc.pdf)
@@ -54,4 +54,5 @@ Here lies all of my lecture notes. I am used to taking structured notes on thing
 
 ### Reading Records
 
-- [《大话存储》Final ver., 2015, by 张冬](/assets/file/book-dahuacunchu-zhangdong.pdf)
+- [《大话存储》Final ver. (终极版), 2015](/assets/file/book-dahuacunchu-zhangdong.pdf) -- Link to [Book](https://m.douban.com/book/subject/26325526/)
+- [《Operating Systems: Three Easy Pieces》(OSTEP), 2018](/assets/file/operating-systems-ostep.pdf) -- Link to [Book](https://pages.cs.wisc.edu/~remzi/OSTEP/)
