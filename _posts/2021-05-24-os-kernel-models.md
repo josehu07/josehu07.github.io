@@ -123,9 +123,11 @@ The hypervisor is just a software package/kernel module extension running on a h
 
 ![VMType2](/assets/img/vm-model-type-2.png)
 
-Examples include VMware Workstation [^18], Virtual Box [^19], and QEMU [^20].
+Examples include VMware Workstation [^18], Virtual Box [^19], and QEMU (on Linux, possibly with KVM support) [^20] [^21].
 
-> Pure software emulators deliver poor performance as they add in an expensive layer of abstraction. Modern hypervisors, whichever type it belongs to, often take advantage of dedicated hardware ISA support to provide more efficient virtualization if the guest ISA is the same as the host machine (e.g., running x86-64 VMs on an x86-64 platform).
+> Pure software emulators deliver poor performance as they add in an expensive layer of abstraction. Modern hypervisors, whichever type it belongs to, often take advantage of dedicated hardware support to provide more efficient virtualization if the guest ISA is the same as the host machine (e.g., running x86-64 VMs on an x86-64 platform).
+> 
+> For type-2 use cases, some host OSes like Linux also provides kernel-based virtual machine (KVM) support which allows emulators like QEMU to run more efficiently and "natively".
 
 ## References
 
@@ -149,3 +151,4 @@ Examples include VMware Workstation [^18], Virtual Box [^19], and QEMU [^20].
 [^18]: VMware Workstation: [https://www.vmware.com/products/workstation-pro.html](https://www.vmware.com/products/workstation-pro.html)
 [^19]: Virtual Box: [https://www.virtualbox.org/](https://www.virtualbox.org/)
 [^20]: QEMU: [https://www.qemu.org/](https://www.qemu.org/)
+[^21]: KVM: [https://en.wikipedia.org/wiki/Kernel-based_Virtual_Machine](https://en.wikipedia.org/wiki/Kernel-based_Virtual_Machine)
