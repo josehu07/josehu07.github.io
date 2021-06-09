@@ -15,14 +15,12 @@ Let's assume that the shared resource is a data structure on DRAM and that singl
 
 Based on this reasonable setup, it is possible to develop purely *software*-based algorithms. See [this section of Wikipedia](https://en.wikipedia.org/wiki/Mutual_exclusion#Software_solutions) [^1] for examples. Though very valuable in the theoretical aspect, these solutions are too sophisticated and quite inefficient to be deployed as locking primitives in an operating system under heavy load.
 
-Modern operating systems, instead, rely on *hardware atomic instructions* -- ISA supported instructions that are more than just single memory reads/writes, but are guaranteed by the hardware architecture to be atomic and unbreakable. The operating system implements (mutex) *locks* upon these instructions and the threads have their critical sections written in this form to get mutual exclusion:
+Modern operating systems, instead, rely on *hardware atomic instructions* -- ISA supported instructions that are more than just single memory reads/writes, but are guaranteed by the hardware architecture to be atomic and unbreakable. The operating system implements (mutex) *locks* upon these instructions (in a threading library, for example). Threads have their critical sections protected in this way to get mutual exclusion:
 
 ```cpp
-void critical_section(Lock& lock) {
-    lock.acquire();
-    ... // do stuff
-    lock.release();
-}
+lock.acquire();
+... // critical section
+lock.release();
 ```
 
 ## Hardware Atomic Instructions
@@ -78,6 +76,40 @@ void release() {
 }
 ```
 
+### Load-Linked (LL) & Store-Conditional (SC)
+
+Load-linked (LL) & store-conditional (SC) are a pair of atomic instructions used together. LL is just like a normal memory load. SC tries to store a value to the location and succeeds only if there's no LL going on at the same time, otherwise returning failure.
+
+```cpp
+LOAD_LINKED(addr) -> val
+// return *addr;
+```
+
+```cpp
+STORE_CONDITIONAL(addr, val) -> success?
+// if (no LL to addr happening) {
+//   *addr = val;
+//   return 1;  // success
+// } else
+//   return 0;  // failed
+```
+
+Building a spinlock out of LL/SC:
+
+```cpp
+void acquire() {
+    while (1) {
+        while (LOAD_LINKED(&flag) == 1) {}
+        if (STORE_CONDITIONAL(&flag, 1) == 1)
+            return;
+    }
+}
+
+void release() {
+    flag = 0;
+}
+```
+
 ### Fetch-and-Add (FAA)
 
 Fetch-and-add (FAA) is a less common atomic instruction that could be implemented upon CAS or just natively supported by the architecture. It operates on an integer counter.
@@ -96,14 +128,17 @@ Before we list a few lock implementations, I'd like to give a comparison between
 A *spinning* lock (or *spinlock*, *non-blocking* lock) is a lock implementation where lock waiters will spinning in a loop checking for some condition. The examples given above are basic spinlocks. Spinlocks are typically used for low-level critical sections that are short, small, but invoked very frequently, e.g., in device drivers.
 
 - $$\uparrow$$ Advantage: low latency for lock acquirement as there is no scheduling stuff kicking in -- value changes reflect almost immediately;
-- $$\downarrow$$ Disadvantage: spinning occupies the whole CPU core and wastes CPU power if the waiting time is long that could have been used for scheduling another free thread in to do useful work. Spinning also introduces the cache invalidation traffic throttling problem if not handled properly, as mentioned in the TAS section.
+- $$\downarrow$$ Disadvantage:
+    - Spinning occupies the whole CPU core and wastes CPU power if the waiting time is long that could have been used for scheduling another free thread in to do useful work;
+    - Spinning also introduces the cache invalidation traffic throttling problem if not handled properly, as mentioned in the TAS section;
+    - Spinning locks make sense only if the scheduler is *preemptive*, otherwise there is no way to interrupt and break out of an infinite loop spin.
 
 A *blocking* lock is a lock implementation where a lock waiter yields the core to the scheduler when the lock is currently taken. A lock waiter thread adds itself to the lock's wait queue and blocks the execution of itself (called *parking*) to let some other free thread run on the core, until it gets woken up (typically by the previous lock holder) and scheduled back. It is designed for higher-level critical sections. The pros and cons are exactly the opposite of a spinlock.
 
 - $$\uparrow$$ Advantage: not occupying full core during the waiting period, good for long critical sections;
 - $$\downarrow$$ Disadvantage: switching back and forth from/to the scheduler and doing scheduling stuff takes significant time, so if the critical sections are fast and invoked frequently, better just do spinning.
 
-It is possible to have smarter *hybrid* locks that combine spinning and blocking. POSIX mutex locks have the semantic option to first try to spin for a designed length of time. If the waiting time becomes too long, it switches to the scheduler to park.
+It is possible to have smarter *hybrid* locks that combine spinning and blocking. This is now referred to as *two-phase locking*. POSIX mutex locks have the semantic option to first try to spin for a designed length of time. If the waiting time becomes too long, it switches to the scheduler to park. The Linux lock based on its [*futex* syscall support](https://en.wikipedia.org/wiki/Futex) [^7] is a good example of such locks implementing the two-phase semantic.
 
 ## Representative Lock Implementations
 
@@ -185,3 +220,4 @@ However, fairness in this case is not guaranteed as a lock waiter could possibly
 [^4]: MCS: [https://lwn.net/Articles/590243/](https://lwn.net/Articles/590243/)
 [^5]: RCL: [https://www.usenix.org/conference/atc12/technical-sessions/presentation/lozi](https://www.usenix.org/conference/atc12/technical-sessions/presentation/lozi)
 [^6]: Shuffling: [https://taesoo.kim/pubs/2019/kashyap:shfllock.pdf](https://taesoo.kim/pubs/2019/kashyap:shfllock.pdf)
+[^7]: Futex: [https://en.wikipedia.org/wiki/Futex](https://en.wikipedia.org/wiki/Futex)
