@@ -1,13 +1,15 @@
 ---
 layout: post
-title: "Write-Ahead Logging, LSM Tree, & Journaling Summarized"
+title: "Write Buffering, LSM Tree, & Journaling Summarized"
 date: 2020-06-13 10:35:12
 author: Guanzhou Hu
 categories: Technical
 enable_math: "enable"
 ---
 
-In file system design, *write-ahead logging* is a commonly-used technology to avoid in-place updates and only expose sequential writes to disks. *Log-Structured Merge Tree* (LSM tree) is a modern practical solution which sacrifices a little bit of read performance to enable efficient write-ahead logging. *Journaling* is another file system terminology which is often confused with logging. In short, write-ahead logging is for write performance and journaling is for crash recovery - they are different, but can be combined.
+In file system & database design, *write buffering* (*write grouping* or *coalescing*) is a commonly-used technology to avoid in-place updates and only expose sequential writes to disks. *Log-Structured Merge Tree* (LSM tree) is a modern practical solution which sacrifices a little bit of read performance to enable efficient write buffering. *Journaling* (*write-ahead logging*) is another file system terminology which is sometimes confused with write buffering. In short, write buffering is for write performance and journaling is for crash recovery - they are different, but can be combined.
+
+(I previously misused the terminology of write-ahead logging and confused it with write buffering. This is now a newer version of the post.)
 
 ## Background
 
@@ -29,13 +31,13 @@ Notice that the navigation structure itself is also stored in persistent storage
 
 ![B+TreeLayout](/assets/img/disk-B+-tree-layout.png)
 
-The downside of using a navigation structure is that writes perform badly. **Disks are way better at sequential appends than at random in-place updates**, especially on HDDs. To write to a file, we **always have to go back to the structure and update the structure**. Worse, if the write itself is an update to file content, we end up with two in-place updates. To optimize for write-heavy workloads, people use *write-ahead logging*.
+The downside of using a navigation structure is that writes perform badly. **Disks are way better at sequential appends than at random in-place updates**, especially on HDDs. To write to a file, we **always have to go back to the structure and update the structure**. Worse, if the write itself is an update to file content, we end up with two in-place updates. To optimize for write-heavy workloads, people use *write buffering*.
 
-## Write-Ahead Logging Solutions
+## Write Buffering Solutions
 
-This section is based on [Ben's blog post](http://www.benstopford.com/2015/02/14/log-structured-merge-trees/)[^3]. The essential motivation of write-ahead logging is to transform write operations into pure sequential appends. We call a logical# as a *key* and its corresponding block content as its *value*. (This model also naturally fits in a key-value database.) The disk purely stores a monotonically growing log whose entries are new key-value pairs.
+This section is based on [Ben's blog post](http://www.benstopford.com/2015/02/14/log-structured-merge-trees/)[^3]. The essential motivation of write buffering is to transform write operations into pure sequential appends. We call a logical# as a *key* and its corresponding block content as its *value*. (This model also naturally fits in a key-value database.) The disk purely stores a monotonically growing log whose entries are new key-value pairs.
 
-![WriteAheadLog](/assets/img/write-ahead-log-layout.png)
+![WriteBufferingLog](/assets/img/write-buffering-log-layout.png)
 
 How to manage this log then?
 
@@ -73,20 +75,17 @@ Say we restrict number of level-0 batches to $$t$$ and the maximum depth is leve
 
 Systems that adopt LSM tree design include Google Bigtable, LevelDB, RocksDB, Cassandra, InfluxDB, and many more.
 
-## Journaling $$\ne$$ Write-Ahead Logging
+## Journaling (Write-Ahead Logging)
 
-Another confusing term also used in file systems is *journaling*. Journaling describes an advanced way of "flushing things from memory to disk" to support fast crash recovery[^7]. Originally, if the system crashes in the middle of a read/write/delete operation and later restarts, data on persistent storage might be partial and inconsistent. This inconsistency can only be recovered through a complete checksum walk over the whole file system (a file system check, `fsck`).
+Another confusing term also used in file systems is *journaling*, or *write-ahead logging*. Journaling describes an advanced way of "flushing things from memory to disk" to support fast crash recovery[^7]. Originally, if the system crashes in the middle of a read/write/delete operation and later restarts, data on persistent storage might be partial and inconsistent. This inconsistency can only be recovered through a complete checksum walk over the whole file system (a file system check, `fsck`).
 
-A journaling file system keeps a journal on disk (should call it journal here to avoid confusion with the log in write-ahead logging). **It logs an operation into the journal, *commits* this logging, and only then acks the user and applies this operation**. After crashing, it simply replays committed operations in the journal to recover and ignores all uncommited entries. The downside is that every write must be carried out twice, called *write-twice penalty*.
+A journaling file system keeps a journal on disk (should call it *journal* here to avoid confusion with the log in write buffering). **It logs an operation into the journal, *commits* this logging, and only then acks the user and applies this operation**. After crashing, it simply replays committed operations in the journal to recover and ignores all uncommited entries. The downside is that every write must be carried out twice, called *write-twice penalty*.
 
-For a weaker consistency model, some journaling file systems perform in a so-called *ordered* mode, which
-just journals metadata updates but not updates to data blocks. Data block allocation and writes happen first,
-followed by metadata journal append. In this mode, operations like `append` are crash-consistent, but in-place
-`write` updates are vulnerable to crashes.
+For a weaker consistency model, some journaling file systems perform in a so-called *ordered* mode, which just journals metadata updates but not updates to data blocks. Data block allocation and writes happen first, followed by metadata journal append. In this mode, operations like `append` are crash-consistent, but in-place `write` updates are vulnerable to crashes.
 
-For a file system which uses write-ahead logging, it is natural to think that, since the actual data itself is a log (or something like a log, e.g., an LSM tree), why don't we just use this as the journal? A file system which combines write-ahead logging and journaling in this way is called a **log-structured file system** (LFS) or **copy-on-write** file system[^8] [^9]. The log itself is the FS. It benefits from both sequential writes and faster crash recovery, without write-twice penalty.
+For a file system which uses write buffering, it is natural to think that, since the actual data itself is a log (or something like a log, e.g., an LSM tree), why don't we just use this as the journal? A file system which combines write buffering and journaling in this way is called a **log-structured file system** (LFS) or **copy-on-write** file system[^8] [^9]. The log itself is the FS. It benefits from both sequential writes and faster crash recovery, without write-twice penalty.
 
-Examples of non-logging journaling file systems include Ext3 and Ext4. Examples of log-structured file systems include ZFS, Btrfs, and NOVA.
+Examples of non-log-structured journaling file systems include Linux Ext3 and Ext4. Examples of log-structured file systems include LFS, ZFS, Btrfs, and NOVA.
 
 ## References
 
