@@ -85,7 +85,7 @@ For a weaker consistency model, some journaling file systems perform in a so-cal
 
 For a file system which uses write buffering, it is natural to think that, since the actual data itself is a log (or something like a log, e.g., an LSM tree), why don't we just use this as the journal? A file system which combines write buffering and journaling in this way is called a **log-structured file system** (LFS) or **copy-on-write** file system[^8] [^9]. The log itself is the FS. It benefits from both sequential writes and faster crash recovery, without write-twice penalty.
 
-Examples of non-log-structured journaling file systems include Linux Ext3 and Ext4. Examples of log-structured file systems include LFS, ZFS, Btrfs, and NOVA.
+Examples of non-log-structured journaling file systems include Linux Ext3 and Ext4. Examples of log-structured file systems include LFS, WAFL, ZFS, Btrfs, and NOVA.
 
 ## References
 
