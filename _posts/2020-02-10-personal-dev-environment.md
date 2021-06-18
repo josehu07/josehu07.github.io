@@ -15,7 +15,7 @@ This post summarizes my personal development environment configuration on macOS 
 | Terminal software | iTerm2 / Windows Terminal |
 | Shell | Z Shell: `zsh` |
 | Dev Font | FiraCode Nerd Font |
-| Package manager | Homebrew / Chocolatey |
+| Package manager | Homebrew / APT |
 | Text editor | Sublime Text 3 (with Vim as auxilliary) |
 | Markdown notebook | Typora |
 | PDF reader | PDF Expert / Adobe Acrobat |
@@ -85,24 +85,40 @@ eval "$(starship init zsh)"
 My starship theme customizations (`~/.config/starship.toml`):
 
 ```bash
-# Git repo status.
+# Git & related.
 [git_status]
 style = "bold blue"
 
-# Username display.
-[username]
-style_user = "bold black"
-show_always = true
+[git_branch]
+symbol = "שׂ "
+
+[git_commit]
+tag_symbol = " 笠 "
+
+[hg_branch]
+symbol = "שׂ "
+
+# Return status.
+[character]
+success_symbol = "[➜](bold green) "
+error_symbol = "[✗](bold red) "
+
+# Timing.
+[cmd_duration]
+format = "... ⏳ [$duration]($style)"
+
+# Battery.
+[[battery.display]]
+threshold = 20
 
 # Nerd Font symbols.
 [aws]
 symbol = "ﲳ "
 style = "bold black"
 
-[battery]
-full_symbol = ""
-charging_symbol = ""
-discharging_symbol = ""
+[cmake]
+symbol = "△ "
+style = "bold black"
 
 [conda]
 symbol = " "
@@ -112,8 +128,20 @@ style = "bold black"
 symbol = " "
 style = "bold black"
 
-[docker]
+[dart]
+symbol = " "
+style = "bold black"
+
+[deno]
+symbol = " "
+style = "bold black"
+
+[docker_context]
 symbol = " "
+style = "bold black"
+
+[dotnet]
+symbol = ".NET "
 style = "bold black"
 
 [elixir]
@@ -125,21 +153,20 @@ symbol = " "
 style = "bold black"
 
 [erlang]
+symbol = " "
 style = "bold black"
 
-[git_branch]
-symbol = "שׂ "
+[gcloud]
+symbol = "ﲳ "
+style = "bold black"
 
 [golang]
 symbol = " "
 style = "bold black"
 
-[haskell]
-symbol = " "
+[helm]
+symbol = "⎈ "
 style = "bold black"
-
-[hg_branch]
-symbol = " "
 
 [java]
 symbol = " "
@@ -149,24 +176,60 @@ style = "bold black"
 symbol = " "
 style = "bold black"
 
+[kotlin]
+symbol = "擄 "
+style = "bold black"
+
+[kubernetes]
+symbol = "☸ "
+style = "bold black"
+
+[lua]
+symbol = " "
+style = "bold black"
+
+[nim]
+symbol = " "
+style = "bold black"
+
 [nix_shell]
 symbol = " "
 style = "bold black"
 
 [nodejs]
-symbol = " "
+symbol = " "
+style = "bold black"
+
+[ocaml]
+symbol = " "
+style = "bold black"
+
+[openstack]
+symbol = "ﲳ "
 style = "bold black"
 
 [package]
 symbol = " "
 style = "bold black"
 
+[perl]
+symbol = " "
+style = "bold black"
+
 [php]
 symbol = " "
 style = "bold black"
 
+[purescript]
+symbol = "<=> "
+style = "bold black"
+
 [python]
 symbol = " "
+style = "bold black"
+
+[red]
+symbol = "卑 "
 style = "bold black"
 
 [ruby]
@@ -177,15 +240,36 @@ style = "bold black"
 symbol = " "
 style = "bold black"
 
-[cmd_duration]
-prefix = "... ⏳ "
+[scala]
+symbol = " "
+style = "bold black"
 
-# Battery symbol.
-[[battery.display]]
-threshold = 20
+[singularity]
+symbol = "🆂 "
+style = "bold black"
+
+[swift]
+symbol = " "
+style = "bold black"
+
+[terraform]
+symbol = "行 "
+style = "bold black"
+
+[vagrant]
+symbol = "⍱ "
+style = "bold black"
+
+[vlang]
+symbol = "V "
+style = "bold black"
+
+[zig]
+symbol = "↯ "
+style = "bold black"
 ```
 
-> Special Nerd Font symbols may not appear correctly on this webpage.
+> Special Nerd Font symbols may not appear correctly on this webpage. Copying + pasting should still work.
 
 ## Sublime Text 3
 
@@ -201,6 +285,7 @@ threshold = 20
     - SideBar Enhancements
     - Sublimerge 3
     - Word Count
+    - View in Browser
 - Packages (language support):
     - Anaconda
     - CMake Editor
@@ -209,7 +294,9 @@ threshold = 20
     - Dockerfile
     - Easy Clang Complete
     - Golang Build
+    - Javascript Completions
     - Julia
+    - Latex Tools
     - Linker Script
     - Makefile Improved
     - Rust Enhanced
@@ -241,8 +328,7 @@ Sublimt Text 3 user preferences settings:
     "margin": 0,
     "save_on_focus_lost": true,
     "theme": "Monokai Pro (Filter Spectrum).sublime-theme",
-    "translate_tabs_to_spaces": true,
-    "update_check": false
+    "translate_tabs_to_spaces": true
 }
 ```
 
