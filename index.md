@@ -29,6 +29,8 @@ impl<CS> Researcher<CS> for Me {
 }
 ```
 
+Check out [the Hux kernel](https://github.com/josehu07/hux-kernel)! It is a weekend toy operating system kernel project built to be minimal and understandable.
+
 ### Education
 
 <table>
