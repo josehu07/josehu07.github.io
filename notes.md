@@ -20,6 +20,7 @@ Here lies all of my lecture notes. I am used to taking structured notes on thing
 - [Research (Conference) Paper Writing Streamline](/assets/file/paper-writing.pdf)
 - [Basic GDB Debugger Usage Cheatsheet](/assets/file/gdb-usage.pdf)
 - [Operating Systems History Summary in an XMind Tree](https://www.xmind.net/m/2cpqNJ/)
+- [Development Document/Tutorial of the Hux OS Kernel](https://github.com/josehu07/hux-kernel/wiki)
 
 ### Computer Science
 
