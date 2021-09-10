@@ -43,7 +43,6 @@ Here lies all of my lecture notes. I am used to taking structured notes on thing
 - <img class="note-icon" src="/assets/note-icon/computer-architecture-show.png" /> [Computer Architecture (*Wisc-CS552*)](/assets/file/computer-architecture-wisc.pdf)
 - <img class="note-icon" src="/assets/note-icon/computer-architecture-show.png" /> [Computer Architecture (*ST-CS110*)](/assets/file/computer-architecture.pdf)
 - <img class="note-icon" src="/assets/note-icon/data-structures-show.png" /> [Data Structures (*ST-CS101*)](/assets/file/data-structures.pdf)
-- <img class="note-icon" src="/assets/note-icon/algorithms-show.png" /> [Introduction to Algorithms (*ST-CS140*)](/assets/file/algorithms.pdf)
 
 ### Others
 
