@@ -74,6 +74,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 # Autojump
 [[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh
+autoload -U compinit && compinit -u
 
 # Starship Theme
 eval "$(starship init zsh)"
