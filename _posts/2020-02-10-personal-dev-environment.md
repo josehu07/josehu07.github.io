@@ -85,6 +85,10 @@ eval "$(starship init zsh)"
 My starship theme customizations (`~/.config/starship.toml`):
 
 ```bash
+# Username.
+[username]
+format = "[$user]($style) @ "
+
 # Git & related.
 [git_status]
 style = "bold blue"
