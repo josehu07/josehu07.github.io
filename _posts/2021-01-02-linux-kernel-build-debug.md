@@ -11,9 +11,9 @@ When doing systems research, we sometimes need to modify/add new stuff into the 
 
 ## System Requirements & Preparations
 
-This workflow has been tested on x86_64 arch, Ubuntu 18.04/20.04 LTS, with Linux kernel versions 4.1 - 5.10.
+This workflow has been tested on x86_64 arch, Ubuntu 18.04/20.04 LTS, with Linux kernel versions 4.1 - 5.15.
 
-First, install the required dependencies:
+First, install the required dependencies (common things shipped with Ubuntu are not listed here):
 
 ```bash
 sudo apt update
@@ -118,7 +118,7 @@ Reboot and you should automatically enter the Ubuntu subversion with the custom 
 
 This section shows how to debug the Linux kernel via running it over QEMU and attaching QEMU to GDB.
 
-Before moving forward, install QEMYU & libvirt (and GDB if it does not come along) with:
+Before moving forward, install QEMU & libvirt (and GDB if it does not come along) with:
 
 ```bash
 sudo apt install qemu qemu-system qemu-kvm libvirt-daemon-system \
