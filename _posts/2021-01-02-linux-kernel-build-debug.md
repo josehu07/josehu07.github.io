@@ -69,6 +69,8 @@ sudo make -j32 KDEB_PKGVERSION=1.some-suffix deb-pkg
 
 This will take quite a while to build (~ 20-60 minutes). After successful compilation, you will find several `.deb` packages in the upper level folder, i.e., the folder that contains the Linux source root folder.
 
+> If you are not attempting to build a deb package for installation on bare-metal machine, but just want a `bzImage` of the kernel (to boot in QEMU, etc.), then `make bzImage` is sufficient.
+
 ### Installing the Kernel Image
 
 List the current list of Linux images on the machine:
