@@ -63,13 +63,17 @@ sudo make clean
 sudo rm -rf debian
 rm -f vmlinux-gdb.py
 
-sudo make -j32 KDEB_PKGVERSION=1.some-suffix deb-pkg
+sudo make -j$(nproc) KDEB_PKGVERSION=1.some-suffix deb-pkg
     # 1.some-suffix stands for some custom package version-suffix
 ```
 
 This will take quite a while to build (~ 20-60 minutes). After successful compilation, you will find several `.deb` packages in the upper level folder, i.e., the folder that contains the Linux source root folder.
 
-> If you are not attempting to build a deb package for installation on bare-metal machine, but just want a `bzImage` of the kernel (to boot in QEMU, etc.), then `make bzImage` is sufficient.
+> If you are not attempting to build a deb package for installation on bare-metal machine, but just want a `bzImage` of the kernel (to boot in QEMU, etc.), then set the trusted key option to empty through menuconfig:
+>
+> - Cryptographic API $$\rightarrow$$ Certificates for signature checking $$\rightarrow$$ Provide system-wide ring of trusted keys, change the additional key string in the line below to empty
+> 
+> then, doing `make -j$(nproc) bzImage` is sufficient.
 
 ### Installing the Kernel Image
 
@@ -174,7 +178,7 @@ The required options you need to set are:
 Save the config to its default location `.config`, then do:
 
 ```bash
-make -j32
+make -j$(nproc)
 ```
 
 After successful compilation, you will find the root filesystem image at `output/images/rootfs.ext4`.
