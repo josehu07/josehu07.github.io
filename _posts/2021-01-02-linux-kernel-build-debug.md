@@ -42,17 +42,22 @@ sudo make menuconfig
     #   read the paragraphs below.
 ```
 
-A graphical menu should now pop up in the terminal. Tweak any options you need (e.g., turning off KPTI, KASLR, ...). If you are later going to run & debug with QEMU, these options must be selected as *built-in*:
+A graphical menu should now pop up in the terminal. Tweak any options you need (e.g., turning off KPTI, KASLR, ...).
 
-- Device drivers $$\rightarrow$$ Network device support $$\rightarrow$$ Virtio network driver
-- Device drivers $$\rightarrow$$ Block devices $$\rightarrow$$ Virtio block driver
+If you are later going to run & debug with QEMU, these options must be selected as *built-in*:
+
+- Device drivers $$\rightarrow$$ Network device support $$\rightarrow$$ Virtio network driver `[*]`
+- Device drivers $$\rightarrow$$ Block devices $$\rightarrow$$ Virtio block driver `[*]`
+
+If you are later going to play with kernel modules, these changes will be necessary/helpful:
+
+- Binary Emulations $$\rightarrow$$ x32 ABI for 64-bit mode, turn this OFF `[ ]`
+- Enable loadable modules support $$\rightarrow$$ Module unloading - Forced module unloading `[*]`
 
 > A kernel feature's menu option may have three states:
-> 1. `< >`: not selected - will not be built
-> 2. `<*>`: selected as built-in - will be built within the monolithic kernel
-> 3. `<M>`: selected as a kernel module - will be built as a loadable kernel module instead of bulit-in; this is useful when you don't want the feature, e.g. a device driver, to bloat the kernel, but want it to be loadable after booting up whenever needed
-> 
-> For debugging purpose, the above two options must be selected as bulit-in, i.e., `<*>`, by typing `Y`.
+> 1. `[ ]`: not selected - will not be built
+> 2. `[*]`: selected as built-in - will be built within the monolithic kernel
+> 3. `[M]`: selected as a kernel module - will be built as a loadable kernel module instead of bulit-in; this is useful when you don't want the feature, e.g. a device driver, to bloat the kernel, but want it to be loadable after booting up whenever needed
 
 Save the tweaked config to default location `.config` under the source folder.
 
@@ -71,7 +76,7 @@ This will take quite a while to build (~ 20-60 minutes). After successful compil
 
 > If you are not attempting to build a deb package for installation on bare-metal machine, but just want a `bzImage` of the kernel (to boot in QEMU, etc.), then set the trusted key option to empty through menuconfig:
 >
-> - Cryptographic API $$\rightarrow$$ Certificates for signature checking $$\rightarrow$$ Provide system-wide ring of trusted keys, change the additional key string in the line below to empty
+> - Cryptographic API $$\rightarrow$$ Certificates for signature checking $$\rightarrow$$ Provide system-wide ring of trusted keys, change the additional key string in the line below to empty `""`
 > 
 > then, doing `make -j$(nproc) bzImage` is sufficient.
 
@@ -170,10 +175,10 @@ make menuconfig
 
 The required options you need to set are:
 
-- Target architecture $$\rightarrow$$ x86_64
-- Toolchain $$\rightarrow$$ Enable C++ support
-- Filesystem images $$\rightarrow$$ ext2/3/4 root filesystem; then choose ext4 variant below
-- Target packages $$\rightarrow$$ Network applications $$\rightarrow$$ openssh; this helps us to later send files into the QEMU guest through SSH conveniently
+- Target architecture $$\rightarrow$$ x86_64 `[*]`
+- Toolchain $$\rightarrow$$ Enable C++ support `[*]`
+- Filesystem images $$\rightarrow$$ ext2/3/4 root filesystem; then choose `ext4` variant below
+- Target packages $$\rightarrow$$ Network applications $$\rightarrow$$ openssh `[*]`; this helps us to later send files into the QEMU guest through SSH conveniently
 
 Save the config to its default location `.config`, then do:
 
