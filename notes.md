@@ -24,6 +24,7 @@ Here lies all of my lecture notes. I am used to taking structured notes on thing
 
 ### Computer Science
 
+- <img class="note-icon" src="/assets/note-icon/pmem-topics-show.png" /> [Topics in Persistent Memory (*Wisc-CS839*)](/assets/file/pmem-topics.pdf)
 - <img class="note-icon" src="/assets/note-icon/advanced-operating-systems-show.png" /> [Advanced Operating Systems (*Wisc-CS736*)](/assets/file/advanced-operating-systems.pdf)
 - <img class="note-icon" src="/assets/note-icon/database-management-show.png" /> [Database Management Systems (*Wisc-CS564*)](/assets/file/database-management.pdf)
 - <img class="note-icon" src="/assets/note-icon/security-show.png" /> [Computer Systems Security (*MIT-6.858*)](/assets/file/security.pdf)
