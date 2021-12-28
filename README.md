@@ -25,7 +25,7 @@ bundle exec jekyll serve
 Publishing to Github Pages:
 
 ```bash
-# Simply push to the repository.
+# Simply push to the github repository.
 gaa
 gcam "commit message"
 gp
