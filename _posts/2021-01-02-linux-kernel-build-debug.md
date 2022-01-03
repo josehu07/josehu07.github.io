@@ -36,7 +36,7 @@ To compile the custom kernel, produce the config file by:
 
 ```bash
 cd linux-v.x.y  # The root folder of the Linux source.
-sudo make menuconfig
+make menuconfig
     # Tweak options & save the config to default name;
     # If you are later going to run with QEMU, make sure to
     #   read the paragraphs below.
@@ -64,11 +64,11 @@ Save the tweaked config to default location `.config` under the source folder.
 To build the kernel into an installable deb package, follow these steps:
 
 ```bash
-sudo make clean
-sudo rm -rf debian
+make clean
+rm -rf debian
 rm -f vmlinux-gdb.py
 
-sudo make -j$(nproc) KDEB_PKGVERSION=1.some-suffix deb-pkg
+make -j$(nproc) KDEB_PKGVERSION=1.some-suffix deb-pkg
     # 1.some-suffix stands for some custom package version-suffix
 ```
 
