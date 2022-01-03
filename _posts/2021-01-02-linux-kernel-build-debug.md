@@ -121,7 +121,7 @@ sudo vim /etc/default/grub
     # If you need to add any boot-time command-line parameters,
     #   do so by appending to the variable GRUB_CMDLINE_LINUX.
 
-sudo update-grub
+sudo update-grub && sudo update-grub2
 ```
 
 Reboot and you should automatically enter the Ubuntu subversion with the custom kernel.
