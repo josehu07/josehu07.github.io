@@ -68,8 +68,9 @@ make clean
 rm -rf debian
 rm -f vmlinux-gdb.py
 
-make -j$(nproc) KDEB_PKGVERSION=1.some-suffix deb-pkg
-    # 1.some-suffix stands for some custom package version-suffix
+make -j$(nproc) LOCALVERSION=-some-suffix KDEB_PKGVERSION=1.some-suffix deb-pkg
+    # LOCALVERSION is the suffix to be concatenated to upstream kernel version
+    # KDEB_PKGVERSION is the suffix for the compiled .deb package
 ```
 
 This will take quite a while to build (~ 20-60 minutes). After successful compilation, you will find several `.deb` packages in the upper level folder, i.e., the folder that contains the Linux source root folder.
