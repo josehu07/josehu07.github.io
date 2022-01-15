@@ -305,7 +305,7 @@ style = "bold black"
     - Linker Script
     - Makefile Improved
     - Rust Enhanced
-    - Rust Autocomplete
+    - LSP w/ Rust Analyzer
     - TOML
     - x86 and x86_64 Assembly
 
