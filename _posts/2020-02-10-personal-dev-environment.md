@@ -295,18 +295,23 @@ style = "bold black"
     - Anaconda
     - CMake Editor
     - CUDA C++
-    - CUDA Snippets
     - Dockerfile
     - Easy Clang Complete
     - Golang Build
-    - Javascript Completions
+    - Javascript Snippets
+    - Jinja2
+    - JsFormat
     - Julia
-    - Latex Tools
     - Linker Script
+    - LSP
     - Makefile Improved
+    - Markdown Preview
+    - Power Shell
     - Rust Enhanced
     - LSP w/ Rust Analyzer
     - TOML
+    - Typescript
+    - Verilog
     - x86 and x86_64 Assembly
 
 Sublimt Text 3 user preferences settings:
