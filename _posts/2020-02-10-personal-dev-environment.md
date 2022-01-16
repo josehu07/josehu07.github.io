@@ -303,7 +303,6 @@ style = "bold black"
     - JsFormat
     - Julia
     - Linker Script
-    - LSP
     - Makefile Improved
     - Markdown Preview
     - Power Shell
