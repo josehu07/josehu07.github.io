@@ -13,7 +13,7 @@ permalink: /
   <a href="/notes.html">Notes</a>
 </p>
 
-I am a computer science Ph.D. student in [ADSL lab](https://research.cs.wisc.edu/adsl/) at the [University of Wisconsin-Madison](https://www.wisc.edu/), advised by [Professor Andrea Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Professor Remzi Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/). My research interest mostly lies in **computer systems**, especially *operating system kernel* and *storage systems*. I am currently focusing on two aspects: 1) storage stack technologies with modern ultra-fast NVM devices, and 2) measurement and re-designing of kernel syscall interfaces.
+I am a computer science Ph.D. student in the [ADSL lab](https://research.cs.wisc.edu/adsl/) at the [University of Wisconsin-Madison](https://www.wisc.edu/), advised by [Professor Andrea Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Professor Remzi Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/). My research interest lies in **computer systems**, especially in operating system kernel and storage systems. Currently, I am focusing on two aspects: 1) storage stack technologies with modern ultra-fast NVM devices, and 2) measurement and re-designing of kernel syscall interfaces.
 
 ```rust
 /// Keep calm & do good research!
@@ -58,6 +58,7 @@ Say hello to [the Hux OS kernel](https://github.com/josehu07/hux-kernel)! It is 
   </tbody>
 </table>
 
+<!--
 ### Potpourri
 
 I "waste" a lot of time sorting out and structuring my acquired knowledge and skills. This helps me identify the importance of what I am currently doing. You probably have different views on these fields and they may diverge from my understanding - *I totally agree.*
@@ -65,6 +66,7 @@ I "waste" a lot of time sorting out and structuring my acquired knowledge and sk
 ![Fields](/assets/img/knowledge-graph.png)
 
 I know very little about these fields and am always willing to learn, explore, and contribute more.
+-->
 
 
 <p><strong>Please comment below anything you wanna say! 😉</strong></p>
