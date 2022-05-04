@@ -13,7 +13,7 @@ permalink: /notes.html
   <b>Notes</b>
 </p>
 
-Here lies all of my lecture notes. I am used to taking structured notes on things I learned about. Keep going.
+Here lies all of my lecture notes. I am used to taking structured notes on things I learned about.
 
 ### Memorandum
 
@@ -28,11 +28,13 @@ Here lies all of my lecture notes. I am used to taking structured notes on thing
 - <img class="note-icon" src="/assets/note-icon/advanced-operating-systems-show.png" /> [Advanced Operating Systems (*Wisc-CS736*)](/assets/file/advanced-operating-systems.pdf)
 - <img class="note-icon" src="/assets/note-icon/database-management-show.png" /> [Database Management Systems (*Wisc-CS564*)](/assets/file/database-management.pdf)
 - <img class="note-icon" src="/assets/note-icon/security-show.png" /> [Computer Systems Security (*MIT-6.858*)](/assets/file/security.pdf)
-- <img class="note-icon" src="/assets/note-icon/distributed-engineering-show.png" /> [Distributed Systems (*WISC-CS739*)](/assets/file/distributed-systems-wisc.pdf)
+- <img class="note-icon" src="/assets/note-icon/distributed-engineering-show.png" /> [Advanced Distributed Systems (*WISC-CS739*)](/assets/file/distributed-systems-wisc.pdf)
 - <img class="note-icon" src="/assets/note-icon/distributed-engineering-show.png" /> [Distributed Systems Engineering (*MIT-6.824*)](/assets/file/distributed-engineering.pdf)
 - <img class="note-icon" src="/assets/note-icon/distributed-systems-show.png" /> [Advanced Distributed Systems (*ST-CS290K*)](/assets/file/distributed-systems.pdf)
+- <img class="note-icon" src="/assets/note-icon/computer-networks-show.png" /> [Advanced Computer Networks (*WISC-CS740*)](/assets/file/advanced-networks.pdf)
 - <img class="note-icon" src="/assets/note-icon/computer-networks-show.png" /> [Computer Networks (*MIT-6.829*)](/assets/file/computer-networks.pdf)
 - <img class="note-icon" src="/assets/note-icon/computer-graphics-show.png" /> [Computer Graphics (*WISC-CS559*)](/assets/file/computer-graphics.pdf)
+- <img class="note-icon" src="/assets/note-icon/mlsys-topics-show.png" /> [Topics in Machine Learning Systems (*WISC-CS839*)](/assets/file/mlsys-topics.pdf)
 - <img class="note-icon" src="/assets/note-icon/machine-learning-show.png" /> [Introduction to Machine Learning (*MIT-6.036*)](/assets/file/machine-learning.pdf)
 - <img class="note-icon" src="/assets/note-icon/artificial-intelligence-show.png" /> [Artificial Intelligence (*MIT-6.034*)](/assets/file/artificial-intelligence.pdf)
 - <img class="note-icon" src="/assets/note-icon/theory-computation-show.png" /> [Automata, Computability, & Complexity (*MIT-6.045*)](/assets/file/theory-computation.pdf)
