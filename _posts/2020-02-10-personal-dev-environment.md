@@ -27,6 +27,44 @@ This post summarizes my personal development environment configuration on macOS 
 | Browser | Google Chrome |
 | Code Distribution | GitHub, BitBucket |
 
+## Auto Setup Script
+
+For easy setup on e.g. CloudLab servers, I uploaded a setup script to help handle everything automatically. Please follow the steps stated below.
+
+First, verify that `zsh` and `vim` are already there:
+
+```bash
+which zsh
+which vim
+```
+
+Change default shell to `zsh` by:
+
+```bash
+chsh -s $(which zsh)
+```
+
+Logout and log back in. If a menu appears (on the first time we switch to `zsh`), select `0`.
+
+```bash
+echo $SHELL
+```
+
+Then, fetch and run the auto setup script:
+
+```bash
+wget https://josehu.com/assets/dev-env/dev-env-setup.sh
+chmod +x dev-env-setup.sh
+./dev-env-setup.sh
+```
+
+Hit enter to continue whenever entering a new section, or Ctrl-C to kill if anything goes wrong.
+
+> Note that after `oh-my-zsh` installation, it automatically starts a new shell session, so we have to give it an `exit` command to exit out, and the rest of the script should continue seamlessly.
+
+After all sections are done, log out and log back in. Should be all set!
+
+
 ## Z Shell
 
 - Extension: `oh-my-zsh`
