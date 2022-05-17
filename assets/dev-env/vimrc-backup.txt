@@ -1,0 +1,45 @@
+:syntax on
+
+set showmode
+set showcmd
+set mouse=a
+set encoding=utf-8
+set t_Co=256
+
+filetype indent on
+set autoindent
+set formatoptions-=t
+
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set softtabstop=4
+
+set number
+set relativenumber
+set cursorline
+set ruler
+
+set wrapmargin=2
+set scrolloff=5
+
+set showmatch
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
+set nobackup
+set noswapfile
+set autochdir
+set autoread
+
+set wildmenu
+set wildmode=longest:list,full
+
+call plug#begin('~/.vim/plugged')
+Plug 'morhetz/gruvbox'
+call plug#end()
+
+colorscheme gruvbox
+set background=dark
