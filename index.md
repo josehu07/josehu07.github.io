@@ -19,8 +19,11 @@ I am a computer science Ph.D. student in the [ADSL lab](https://research.cs.wisc
 /// Keep calm & do good research!
 impl<CS> Researcher<CS> for Me {
     // TODO: This method is far from complete.
-    fn week(&mut self, paper: CS, project: CS)
-        -> Result<(), Box<dyn Error>> {
+    fn week(
+        &mut self,
+        paper: CS,
+        project: CS,
+    ) -> Result<(), Box<dyn Error>> {
         let report = paper.read()?.mark()?;
         let progress = project.exec()?;
         self.group_meeting(report, progress)?;

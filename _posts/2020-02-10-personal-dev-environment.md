@@ -406,7 +406,7 @@ colorscheme gruvbox
 set background=dark
 ```
 
-## Setting up on Windows 10
+## Windows 10/11 with WSL2
 
 First, download the following:
 
