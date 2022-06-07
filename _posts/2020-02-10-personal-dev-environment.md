@@ -16,7 +16,7 @@ This post summarizes my personal development environment configuration on macOS 
 | Shell | Z Shell: `zsh` |
 | Dev Font | FiraCode Nerd Font |
 | Package manager | Homebrew / APT |
-| Text editor | Sublime Text 3 (with Vim as auxilliary) |
+| Text editor | Sublime Text 4 (with Vim as auxilliary) |
 | Markdown notebook | Typora |
 | PDF reader | PDF Expert / Adobe Acrobat |
 | Latex editor | Overleaf (online) |
@@ -314,7 +314,7 @@ style = "bold black"
 
 > Special Nerd Font symbols may not appear correctly on this webpage. Copying + pasting should still work.
 
-## Sublime Text 3
+## Sublime Text 4
 
 - Theme: Monokai Pro (Filter Spectrum)
 - Font: Fira Code (w/ Antaliasing & Ligatures)
@@ -326,7 +326,7 @@ style = "bold black"
     - Bracket Highlighter
     - DocBlockr
     - SideBar Enhancements
-    - Sublimerge 3
+    - Sublimerge 4
     - Word Count
     - View in Browser
 - Packages (language support):
@@ -351,7 +351,7 @@ style = "bold black"
     - Verilog
     - x86 and x86_64 Assembly
 
-Sublimt Text 3 user preferences settings:
+Sublimt Text 4 user preferences settings:
 
 ```json
 // Preferences.sublime-settings -- User
@@ -379,7 +379,7 @@ Sublimt Text 3 user preferences settings:
 }
 ```
 
-Sublime Text 3 user key bindings:
+Sublime Text 4 user key bindings:
 
 ```json
 [
@@ -448,7 +448,7 @@ set background=dark
 
 First, download the following:
 
-- Sublime Text 3
+- Sublime Text 4
 - Windows Terminal (from MS Store)
 - Ubuntu 20.04 LTS (from MS Store)
 
