@@ -128,6 +128,9 @@ My starship theme customizations (`~/.config/starship.toml`):
 [username]
 format = "[$user]($style) @ "
 
+[hostname]
+ssh_symbol = " "
+
 # Git & related.
 [git_status]
 style = "bold blue"
@@ -157,6 +160,18 @@ threshold = 20
 # Nerd Font symbols.
 [aws]
 symbol = "ﲳ "
+style = "bold black"
+
+[azure]
+symbol = "ﴃ "
+style = "bold black"
+
+[buf]
+symbol = " "
+style = "bold black"
+
+[c]
+symbol = "C "
 style = "bold black"
 
 [cmake]
@@ -207,6 +222,10 @@ style = "bold black"
 symbol = " "
 style = "bold black"
 
+[haskell]
+symbol = "λ "
+style = "bold black"
+
 [helm]
 symbol = "⎈ "
 style = "bold black"
@@ -224,7 +243,7 @@ symbol = "擄 "
 style = "bold black"
 
 [kubernetes]
-symbol = "☸ "
+symbol = "ﴱ "
 style = "bold black"
 
 [lua]
@@ -263,12 +282,20 @@ style = "bold black"
 symbol = " "
 style = "bold black"
 
+[pulumi]
+symbol = " "
+style = "bold black"
+
 [purescript]
 symbol = "<=> "
 style = "bold black"
 
 [python]
 symbol = " "
+style = "bold black"
+
+[rlang]
+symbol = " "
 style = "bold black"
 
 [red]
@@ -289,6 +316,10 @@ style = "bold black"
 
 [singularity]
 symbol = "🆂 "
+style = "bold black"
+
+[spack]
+symbol = "🅢 "
 style = "bold black"
 
 [swift]
