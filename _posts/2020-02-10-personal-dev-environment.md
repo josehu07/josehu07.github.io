@@ -6,7 +6,7 @@ author: Guanzhou Hu
 categories: Memo
 ---
 
-This post summarizes my personal development environment configuration on macOS X. Setting up WSL 2 on Windows 10 is also included. Just for memo. 记录一下我在 macOS X >= 10.14 上的个人开发环境 & 工具配置，以及在 Windows 10 上搭建基于 WSL 2 的开发环境的简要过程，以便将来需要时 refer。
+This post summarizes my personal development environment configuration on macOS X >= 10.14 and includes a brief memo of setting up WSL 2 on Windows >= 10. 记录一下我在 macOS X >= 10.14 上的个人开发环境 & 工具配置，以及在 Windows >= 10 上搭建基于 WSL 2 的开发环境的简要过程，以便将来需要时 refer。
 
 ## Summary Table
 
@@ -16,7 +16,7 @@ This post summarizes my personal development environment configuration on macOS 
 | Shell | Z Shell: `zsh` |
 | Dev Font | FiraCode Nerd Font |
 | Package manager | Homebrew / APT |
-| Text editor | Sublime Text 4 (with Vim as auxilliary) |
+| Text editor | VS Code (works like charm w/ WSL), Sublime Text, Vim |
 | Markdown notebook | Typora |
 | PDF reader | PDF Expert / Adobe Acrobat |
 | Latex editor | Overleaf (online) |
@@ -344,6 +344,14 @@ style = "bold black"
 ```
 
 > Special Nerd Font symbols may not appear correctly on this webpage. Copying + pasting should still work.
+
+## Visual Studio Code
+
+With the help of the seamless "Remote - WSL" extension, VS Code works like charm with WSL 2 under Windows 11. To my personal preference, the combination of a Win 11 workstation and WSL 2 + VS Code as the development environment is so far the best setup for a personal computer -- you enjoy both powerful gaming and powerful coding all at once.
+
+Another good thing about VS Code is its strong capability of remote development on an SSH target. As this is what I do daily, using VS Code with its "Remote - SSH" extension saves me a ton of time from `scp`ing and `rsync`ing code between my local host and the remote targets.
+
+Since VS Code syncs settings through the signed-in account, there's pretty much no need to record them down here.
 
 ## Sublime Text 4
 
