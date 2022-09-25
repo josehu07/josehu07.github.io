@@ -52,26 +52,26 @@
 /******/ 	function promiseResolve() { return Promise.resolve(); }
 /******/
 /******/ 	var wasmImportObjects = {
-/******/ 		"./node_modules/bitaggy/bitaggy_bg.wasm": function() {
+/******/ 		"../pkg/bitaggy_bg.wasm": function() {
 /******/ 			return {
 /******/ 				"./bitaggy_bg.js": {
 /******/ 					"__wbg_new_abda76e883ba8a5f": function() {
-/******/ 						return installedModules["./node_modules/bitaggy/bitaggy_bg.js"].exports["__wbg_new_abda76e883ba8a5f"]();
+/******/ 						return installedModules["../pkg/bitaggy_bg.js"].exports["__wbg_new_abda76e883ba8a5f"]();
 /******/ 					},
 /******/ 					"__wbg_stack_658279fe44541cf6": function(p0i32,p1i32) {
-/******/ 						return installedModules["./node_modules/bitaggy/bitaggy_bg.js"].exports["__wbg_stack_658279fe44541cf6"](p0i32,p1i32);
+/******/ 						return installedModules["../pkg/bitaggy_bg.js"].exports["__wbg_stack_658279fe44541cf6"](p0i32,p1i32);
 /******/ 					},
 /******/ 					"__wbg_error_f851667af71bcfc6": function(p0i32,p1i32) {
-/******/ 						return installedModules["./node_modules/bitaggy/bitaggy_bg.js"].exports["__wbg_error_f851667af71bcfc6"](p0i32,p1i32);
+/******/ 						return installedModules["../pkg/bitaggy_bg.js"].exports["__wbg_error_f851667af71bcfc6"](p0i32,p1i32);
 /******/ 					},
 /******/ 					"__wbindgen_object_drop_ref": function(p0i32) {
-/******/ 						return installedModules["./node_modules/bitaggy/bitaggy_bg.js"].exports["__wbindgen_object_drop_ref"](p0i32);
+/******/ 						return installedModules["../pkg/bitaggy_bg.js"].exports["__wbindgen_object_drop_ref"](p0i32);
 /******/ 					},
 /******/ 					"__wbg_random_656f2ae924b2540e": function() {
-/******/ 						return installedModules["./node_modules/bitaggy/bitaggy_bg.js"].exports["__wbg_random_656f2ae924b2540e"]();
+/******/ 						return installedModules["../pkg/bitaggy_bg.js"].exports["__wbg_random_656f2ae924b2540e"]();
 /******/ 					},
 /******/ 					"__wbindgen_throw": function(p0i32,p1i32) {
-/******/ 						return installedModules["./node_modules/bitaggy/bitaggy_bg.js"].exports["__wbindgen_throw"](p0i32,p1i32);
+/******/ 						return installedModules["../pkg/bitaggy_bg.js"].exports["__wbindgen_throw"](p0i32,p1i32);
 /******/ 					}
 /******/ 				}
 /******/ 			};
@@ -164,7 +164,7 @@
 /******/
 /******/ 		// Fetch + compile chunk loading for webassembly
 /******/
-/******/ 		var wasmModules = {"0":["./node_modules/bitaggy/bitaggy_bg.wasm"]}[chunkId] || [];
+/******/ 		var wasmModules = {"0":["../pkg/bitaggy_bg.wasm"]}[chunkId] || [];
 /******/
 /******/ 		wasmModules.forEach(function(wasmModuleId) {
 /******/ 			var installedWasmModuleData = installedWasmModules[wasmModuleId];
@@ -174,7 +174,7 @@
 /******/ 				promises.push(installedWasmModuleData);
 /******/ 			else {
 /******/ 				var importObject = wasmImportObjects[wasmModuleId]();
-/******/ 				var req = fetch(__webpack_require__.p + "" + {"./node_modules/bitaggy/bitaggy_bg.wasm":"9640b7449a81adffea38"}[wasmModuleId] + ".module.wasm");
+/******/ 				var req = fetch(__webpack_require__.p + "" + {"../pkg/bitaggy_bg.wasm":"891d18e3c5942c05e99e"}[wasmModuleId] + ".module.wasm");
 /******/ 				var promise;
 /******/ 				if(importObject instanceof Promise && typeof WebAssembly.compileStreaming === 'function') {
 /******/ 					promise = Promise.all([WebAssembly.compileStreaming(req), importObject]).then(function(items) {
@@ -275,7 +275,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("// A dependency graph that contains any wasm must all be imported\n// asynchronously. This `bootstrap.js` file does the single async import, so\n// that no one else needs to worry about it again.\nPromise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(1)]).then(__webpack_require__.bind(null, /*! ./index.js */ \"./index.js\"))\n  .catch(e => console.error(\"Error importing `index.js`:\", e));\n\n\n//# sourceURL=webpack:///./bootstrap.js?");
+eval("// A dependency graph that contains any wasm must all be imported\n// asynchronously. This `bootstrap.js` file does the single async import, so\n// that no one else needs to worry about it again.\n__webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./index.js */ \"./index.js\"))\n  .catch(e => console.error(\"Error importing `index.js`:\", e));\n\n\n//# sourceURL=webpack:///./bootstrap.js?");
 
 /***/ })
 
