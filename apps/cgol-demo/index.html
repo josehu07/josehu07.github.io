@@ -7,36 +7,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     
     <style>
-      body {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height:100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .btn-mono-fixed {
-        font-family: monospace;
-        width: 110px !important;
-      }
-      .div-button-row {
-        padding-top: 20px;
-        padding-bottom: 32px;
-      }
-      #play-pause-btn {
-        margin-right: 20px;
-      }
-      #reset-btn {
-        margin-right: 20px;
-      }
-
-      th, td {
-        padding: 5px;
-      }
       .td-icon-col {
         font-family: monospace;
         text-align: center;
@@ -45,8 +15,12 @@
         text-align: left;
       }
 
-      #small-cap-text {
-        padding-top: 20px;
+      .buttons-row {
+        max-width: 500px;
+      }
+      .btn-mono-fixed {
+        font-family: monospace;
+        width: 110px !important;
       }
     </style>
 
@@ -54,42 +28,45 @@
 
   <body>
     <noscript>This page contains webassembly and javascript content, please enable javascript in your browser.</noscript>
+    
+    <div class="container-fluid text-center pt-5 px-0">
+      <h1>Conway's Game of Life Demo</h1>
+      
+      <p class="pt-2">
+        Written in Rust → WebAssembly 💖 &nbsp;
+        <a href="https://rustwasm.github.io/docs/book/introduction.html">Tutorial</a> &nbsp;
+        <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Wikipedia</a>
+      </p>
+      
+      <table class="table table-borderless mx-auto w-auto" style="width: 400px;">
+        <tr>
+          <td class="td-icon-col p-2">▶️/⏸</td>
+          <td class="td-text-col p-2">Start/Pause the flow of time</td>
+        </tr>
+        <tr>
+          <td class="td-icon-col p-2">🔄</td>
+          <td class="td-text-col p-2">Reset to empty initial state</td>
+        </tr>
+        <tr>
+          <td class="td-icon-col p-2">🔀</td>
+          <td class="td-text-col p-2">Generate random initial state</td>
+        </tr>
+        <tr>
+          <td class="td-icon-col p-2">🖱️👆</td>
+          <td class="td-text-col p-2">Draw by yourself when paused</td>
+        </tr>
+      </table>
+      
+      <div class="row mx-auto buttons-row align-middle pt-2 pb-4">
+        <span class="col px-1"><button id="play-pause-btn" class="btn btn-outline-dark btn-mono-fixed"></button></span>
+        <span class="col px-1"><button id="reset-btn" class="btn btn-outline-dark btn-mono-fixed"></button></span>
+        <span class="col px-1"><button id="random-btn" class="btn btn-outline-dark btn-mono-fixed"></button></span>
+      </div>
+      
+      <canvas id="game-of-life-canvas"></canvas>
+    </div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     <script src="./bootstrap.js"></script>
-
-    <h1>Conway's Game of Life Demo</h1>
-
-    <p id="small-cap-text">
-      Written in Rust → WebAssembly 💖 &nbsp; &nbsp;
-      <a href="https://rustwasm.github.io/docs/book/introduction.html">Tutorial</a> &nbsp;
-      <a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Wikipedia</a>
-    </p>
-
-    <p><table>
-      <tr>
-        <td class="td-icon-col">▶️/⏸</td>
-        <td class="td-text-col">Start/Pause the flow of time</td>
-      </tr>
-      <tr>
-        <td class="td-icon-col">🔄</td>
-        <td class="td-text-col">Reset to empty initial state</td>
-      </tr>
-      <tr>
-        <td class="td-icon-col">🔀</td>
-        <td class="td-text-col">Generate random initial state</td>
-      </tr>
-      <tr>
-        <td class="td-icon-col">🖱️👆</td>
-        <td class="td-text-col">Draw by yourself when paused</td>
-      </tr>
-    </table></p>
-    
-    <div class="div-button-row">
-      <button id="play-pause-btn" class="btn btn-outline-dark btn-mono-fixed"></button>
-      <button id="reset-btn" class="btn btn-outline-dark btn-mono-fixed"></button>
-      <button id="random-btn" class="btn btn-outline-dark btn-mono-fixed"></button>
-    </div>
-    
-    <canvas id="game-of-life-canvas"></canvas>
   </body>
 </html>
