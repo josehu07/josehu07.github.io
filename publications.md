@@ -4,8 +4,6 @@ title: "Publications"
 permalink: /publications.html
 ---
 
-# Publications
-
 <p class="navigation-bar">
   <a href="/index.html">About Me</a>&nbsp;&nbsp;|&nbsp;&nbsp;
   <b>Publications</b>&nbsp;&nbsp;|&nbsp;&nbsp;
@@ -13,7 +11,9 @@ permalink: /publications.html
   <a href="/notes.html">Notes</a>
 </p>
 
-I am working with [Prof. Andrea Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Prof. Remzi Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/) on operating system kernel and storage systems. I am currently focusing on two aspects: 1) storage stack technologies with modern ultra-fast NVM devices, and 2) measurement and re-designing of kernel syscall interfaces.
+# Publications
+
+I am working with [Prof. Andrea Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Prof. Remzi Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/) on operating system kernel, file systems, and distributed systems. I am currently exploring .
 
 I worked with [Prof. Harry Xu](http://web.cs.ucla.edu/~harryxu/) as a summer intern on scaling and accelerating graph neural networks computation using serverless computing.
 

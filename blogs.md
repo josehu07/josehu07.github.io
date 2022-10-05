@@ -4,14 +4,14 @@ title: "Blogs"
 permalink: /blogs.html
 ---
 
-# Blogs
-
 <p class="navigation-bar">
   <a href="/index.html">About Me</a>&nbsp;&nbsp;|&nbsp;&nbsp;
   <a href="/publications.html">Publications</a>&nbsp;&nbsp;|&nbsp;&nbsp;
   <b>Blogs</b>&nbsp;&nbsp;|&nbsp;&nbsp;
   <a href="/notes.html">Notes</a>
 </p>
+
+# Blogs
 
 Sometimes, I write down what I learned, what I thought, what suprised me, and what I wanted to remember.
 

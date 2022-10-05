@@ -3,8 +3,8 @@ theme: jekyll-theme-minimal
 plugins:
   - jekyll-feed
 
-title: Guanzhou (Jose) Hu
-description: Guanzhou's personal storage for lecture notes, blog posts, & good mood.
+title: Guanzhou Hu
+description: Feeling comfortably numb 🗲
 
 logo: /assets/img/Shark-sq.svg
 
@@ -12,5 +12,5 @@ resume_link: /assets/file/Resume_HGZ.pdf
 linkedin_link: https://www.linkedin.com/in/josehu/
 google_scholar_link: https://scholar.google.com/citations?hl=en&user=CXWO_egAAAAJ
 
-email_one: guanzhou (dot) hu (at) wisc (dot) edu
-email_two: josehu (at) cs (dot) wisc (dot) edu
+email_one: guanzhou.hu (at) wisc.edu
+email_two: josehu (at) cs.wisc.edu

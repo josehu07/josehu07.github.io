@@ -23,42 +23,48 @@
   <body>
     <div class="wrapper">
       <header>
-        <h1><a id="site-title" href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
+        <div id="header-upper">
+          <h1 id="site-title-box"><a id="site-title" href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
+          
+          {% if site.logo %}
+          <span id="site-logo-box">
+            <img id="site-logo" src="{{site.logo | relative_url}}" alt="Logo" />
+          </span>
+          {% endif %}
+
+          <p id="site-description">
+            {{ site.description | default: site.github.project_tagline }}
+          </p>
+        </div>
+
+        <div id="header-lower">
+          <p class="view">
+            <a href="{{ site.github.owner_url }}">
+              Find me on GitHub<br>
+              <small>{{ site.github.owner_url }}</small>
+            </a>
+          </p>
+
+          <p class="view">
+            <a href="{{ site.resume_link }}">CV</a>&nbsp;|&nbsp;<a href="{{ site.linkedin_link }}">LinkedIn</a>&nbsp;|&nbsp;<a href="{{ site.google_scholar_link }}">Google Scholar</a><br>
+          </p>
+
+          <p class="view">
+            <table class="emailtable">
+              <tr class="emailtable">
+                <td class="emailtable emailtable-icon" rowspan="2">✉</td>
+                <td class="emailtable"><i>{{ site.email_one }}</i></td>
+              </tr>
+              <tr class="emailtable">
+                <td class="emailtable"><i>{{ site.email_two }}</i></td>
+              </tr>
+            </table>
+          </p>
+        </div>
         
-        {% if site.logo %}
-        <img id="site-logo" src="{{site.logo | relative_url}}" alt="Logo" />
-        {% endif %}
-
-        <p id="site-description">
-          {{ site.description | default: site.github.project_tagline }}
-        </p>
-
-        <p class="view">
-          <a href="{{ site.github.owner_url }}">
-            Find me on GitHub<br>
-            <small>{{ site.github.owner_url }}</small>
-          </a>
-        </p>
-
-        <p class="view">
-          <a href="{{ site.resume_link }}">Resume</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="{{ site.linkedin_link }}">LinkedIn</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="{{ site.google_scholar_link }}">Google Scholar</a><br>
-        </p>
-
-        <p class="view">
-          <table class="emailtable">
-            <tr class="emailtable">
-              <td class="emailtable" rowspan="2" style="padding-right:6px;">Email</td>
-              <td class="emailtable"><i>{{ site.email_one }}</i></td>
-            </tr>
-            <tr class="emailtable">
-              <td class="emailtable"><i>{{ site.email_two }}</i></td>
-            </tr>
-          </table>
-        </p>
-
-        <p>
+        <p id="header-bottom">
           <small>To all my loved ones and my friends ♥</small><br>
-          <small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small>
+          <small>GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small>
         </p>
       </header>
       <section>

@@ -4,8 +4,6 @@ title: "Guanzhou (Jose) Hu"
 permalink: /
 ---
 
-# About Me
-
 <p class="navigation-bar">
   <b>About Me</b>&nbsp;&nbsp;|&nbsp;&nbsp;
   <a href="/publications.html">Publications</a>&nbsp;&nbsp;|&nbsp;&nbsp;
@@ -13,7 +11,9 @@ permalink: /
   <a href="/notes.html">Notes</a>
 </p>
 
-I am a computer science Ph.D. student in the [ADSL lab](https://research.cs.wisc.edu/adsl/) at the [University of Wisconsin-Madison](https://www.wisc.edu/), advised by [Professor Andrea Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Professor Remzi Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/). My research interest lies in **computer systems**, especially in operating system kernel and storage systems. Currently, I am focusing on two aspects: 1) storage stack technologies with modern ultra-fast NVM devices, and 2) measurement and re-designing of kernel syscall interfaces.
+# About Me
+
+I am a computer science Ph.D. student in the [ADSL lab](https://research.cs.wisc.edu/adsl/) at the [University of Wisconsin-Madison](https://www.wisc.edu/), advised by [Professor Andrea Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Professor Remzi Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/). My research interest lies in **computer systems**, especially in operating system kernel, file systems, and distributed storage systems.
 
 ```rust
 /// Keep calm & do good research!
@@ -21,12 +21,12 @@ impl<CS> Researcher<CS> for Me {
     // TODO: This method is far from complete.
     fn week(
         &mut self,
-        paper: CS,
-        project: CS,
+        paper: &Paper<CS>,
+        project: &mut Project<CS>,
     ) -> Result<(), Box<dyn Error>> {
-        let report = paper.read()?.mark()?;
+        let report = paper.read()?.note()?;
         let progress = project.exec()?;
-        self.group_meeting(report, progress)?;
+        self.meeting(report, progress)?;
         Ok(())
     }
 }
@@ -40,7 +40,7 @@ Say hello to [the Hux OS kernel](https://github.com/josehu07/hux-kernel)! It is 
   <tbody>
     <tr>
       <td style="text-align: center">2020.08 - 20??.??</td>
-      <td style="text-align: left">Ph.D. student in CS</td>
+      <td style="text-align: left">Ph.D. student in Computer Science</td>
       <td style="text-align: left">UW-Madison</td>
     </tr>
     <tr>
