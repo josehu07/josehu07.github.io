@@ -15,6 +15,8 @@ permalink: /
 
 I am a computer science Ph.D. student in the [ADSL lab](https://research.cs.wisc.edu/adsl/) at the [University of Wisconsin-Madison](https://www.wisc.edu/), advised by [Professor Andrea Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Professor Remzi Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/). My research interest lies in **computer systems**, especially in operating system kernel, file systems, and distributed storage systems.
 
+Currently, I am focusing on distributed replication protocols, database transaction processing, and their implications on storage.
+
 ```rust
 /// Keep calm & do good research!
 impl<CS> Researcher<CS> for Me {
@@ -70,7 +72,6 @@ I "waste" a lot of time sorting out and structuring my acquired knowledge and sk
 
 I know very little about these fields and am always willing to learn, explore, and contribute more.
 -->
-
 
 <p><strong>Please comment below anything you wanna say! 😉</strong></p>
 

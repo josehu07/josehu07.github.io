@@ -13,7 +13,7 @@ permalink: /publications.html
 
 # Publications
 
-I am working with [Prof. Andrea Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Prof. Remzi Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/) on operating system kernel, file systems, and distributed systems.
+I am working with [Prof. Andrea Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Prof. Remzi Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/) on operating system kernel, file systems, and distributed storage systems.
 
 I worked with [Prof. Harry Xu](http://web.cs.ucla.edu/~harryxu/) as a summer intern on scaling and accelerating graph neural networks computation using serverless computing.
 

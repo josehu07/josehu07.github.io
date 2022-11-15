@@ -13,7 +13,7 @@ permalink: /blogs.html
 
 # Blogs
 
-Sometimes, I write down what I learned, what I thought, what suprised me, and what I wanted to remember.
+Sometimes, I write down what I learned, what I thought, what surprised me, and what I wanted to remember.
 
 <div style="text-align: center; padding-bottom: 10px;">
   <style>
