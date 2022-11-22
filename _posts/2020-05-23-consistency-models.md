@@ -7,6 +7,8 @@ categories: Technical
 enable_math: "enable"
 ---
 
+NOTE: this post is outdated and contains some of my early misunderstandings, so please read skeptically. A new post series on understandable categorization and in-depth analysis of consistency models is coming out soon, which will serve as the theoretical foundation of my ongoing research. 
+
 *Replicated state machine* is a common design of a distributed system to achieve fault-tolerance against *fail-stops*. *Consistency* among distributed replicas thus arise as a crucial problem. People have defined different levels of consistency models throughout distributed systems research. Some of them are strong and easier to reason about and program with, while others weaken the constraints to pursue higher performance.
 
 ## Replicated State Machines
