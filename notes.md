@@ -19,8 +19,8 @@ Here lies all of my lecture notes. I am used to taking structured notes on thing
 
 - <img class="note-icon" src="/assets/note-icon/pmem-topics-show.png" /> [Topics in Persistent Memory (*Wisc-CS839*)](/assets/file/pmem-topics.pdf)
 - <img class="note-icon" src="/assets/note-icon/mlsys-topics-show.png" /> [Topics in Machine Learning Systems (*WISC-CS839*)](/assets/file/mlsys-topics.pdf)
-- <img class="note-icon" src="/assets/note-icon/big-data-systems-show.png" /> Big Data Systems (*WISC-CS744*, WIP)
-- <img class="note-icon" src="/assets/note-icon/advanced-database-systems-show.png" /> Advanced Database Systems (*WISC-CS764*, WIP)
+- <img class="note-icon" src="/assets/note-icon/advanced-database-systems-show.png" /> [Advanced Database Systems (*WISC-CS764*)](/assets/file/advanced-database-systems.pdf) ✭
+- <img class="note-icon" src="/assets/note-icon/big-data-systems-show.png" /> [Big Data Systems (*WISC-CS744*)](/assets/file/big-data-systems.pdf) ✭
 - <img class="note-icon" src="/assets/note-icon/distributed-engineering-show.png" /> [Advanced Distributed Systems (*WISC-CS739*)](/assets/file/distributed-systems-wisc.pdf) ✭
 - <img class="note-icon" src="/assets/note-icon/advanced-operating-systems-show.png" /> [Advanced Operating Systems (*Wisc-CS736*)](/assets/file/advanced-operating-systems.pdf) ✭
 - <img class="note-icon" src="/assets/note-icon/computer-networks-show.png" /> [Advanced Computer Networks (*WISC-CS740*)](/assets/file/advanced-networks.pdf)
