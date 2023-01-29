@@ -13,7 +13,7 @@ permalink: /publications.html
 
 # Publications
 
-I am working with [Prof. Andrea Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Prof. Remzi Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/) on operating system kernel, file systems, and distributed storage systems.
+I am working with [Prof. Andrea Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Prof. Remzi Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/) on distributed storage systems and operating systems.
 
 I worked with [Prof. Harry Xu](http://web.cs.ucla.edu/~harryxu/) as a summer intern on scaling and accelerating graph neural networks computation using serverless computing.
 
@@ -74,9 +74,9 @@ I learned a lot from [Prof. Shu Yin](http://sist.shanghaitech.edu.cn/2018/0502/c
 
 ### Conferences
 
-- <b>MEFS: Per-File Virtualization for Userspace Persistent Memory Filesystems</b>. Shawn Zhong, Chenhao Ye, Guanzhou Hu, Suyan Qu, Andrea Arpaci-Dusseau, Remzi Arpaci-Dusseau, Michael Swift. (To appear in FAST '23.) <br/>
-    <a class="btn-usenix" href="https://www.usenix.org/conference/fast23" target="_blank"><img class="paper-button" src="/assets/img/usenix-button.svg" /> USENIX</a>
-    <!-- <a class="btn-github" href="https://github.com/ShawnZhong/uLayFS" target="_blank"><img class="paper-button-small" src="/assets/img/github-button.svg" /> Code</a> -->
+- <b>MEFS: Per-File Virtualization for Userspace Persistent Memory Filesystems</b>. Shawn Zhong, Chenhao Ye, Guanzhou Hu, Suyan Qu, Andrea Arpaci-Dusseau, Remzi Arpaci-Dusseau, Michael Swift. 2023. In Proceedings of the 21th USENIX Conference on File and Storage Technologies (FAST '23). USENIX Association. <br/>
+    <a class="btn-usenix" href="https://www.usenix.org/conference/fast23/presentation/zhong" target="_blank"><img class="paper-button" src="/assets/img/usenix-button.svg" /> USENIX</a>
+    <a class="btn-github" href="https://github.com/WiscADSL/MadFS" target="_blank"><img class="paper-button-small" src="/assets/img/github-button.svg" /> Code</a>
 - <b>Dorylus: Affordable, Scalable, and Accurate GNN Training over Billion-Edge Graphs</b>. John Thorpe, Yifan Qiao, Jonathan Eyolfson, Shen Teng, Guanzhou Hu, Zhihao Jia, Jinliang Wei, Keval Vora, Ravi Netravali, Miryung Kim, and Guoqing Harry Xu. 2021. In Proceedings of the 15th USENIX Symposium on Operating Systems Design and Implementation (OSDI '21). USENIX Association. <br/>
     <a class="btn-usenix" href="https://www.usenix.org/conference/osdi21/presentation/thorpe" target="_blank"><img class="paper-button" src="/assets/img/usenix-button.svg" /> USENIX</a>
     <a class="btn-github" href="https://github.com/uclasystem/dorylus" target="_blank"><img class="paper-button-small" src="/assets/img/github-button.svg" /> Code</a>
