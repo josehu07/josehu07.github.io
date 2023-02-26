@@ -1,6 +1,6 @@
 ---
 layout: main
-title: "Guanzhou (Jose) Hu"
+title: "About Me"
 permalink: /
 ---
 
