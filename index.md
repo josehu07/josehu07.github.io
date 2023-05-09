@@ -42,7 +42,7 @@ Say hello to [the Hux OS kernel](https://github.com/josehu07/hux-kernel)! It is 
   <tbody>
     <tr>
       <td style="text-align: center">2020.08 - 20??.??</td>
-      <td style="text-align: left">Ph.D. student in Computer Science</td>
+      <td style="text-align: left">Ph.D. candidate in Computer Science</td>
       <td style="text-align: left">UW-Madison</td>
     </tr>
     <tr>
