@@ -44,6 +44,7 @@ Here lies all of my lecture notes. I am used to taking structured notes on thing
 
 ### Others
 
+- <img class="note-icon" src="/assets/note-icon/math-foundations-for-ml-show.png" /> [Math Foundations for Machine Learning (*Wisc-ECE761*)](/assets/file/math-foundations-for-ml.pdf)
 - <img class="note-icon" src="/assets/note-icon/optimization-show.png" /> [Introduction to Optimization (*Wisc-CS524*)](/assets/file/optimization.pdf) ✭
 - <img class="note-icon" src="/assets/note-icon/probability-show.png" /> [Probability & Statistics (*ST-SI140*)](/assets/file/probability.pdf)
 - <img class="note-icon" src="/assets/note-icon/signals-systems-show.png" /> [Signals & Systems (*ST-EE150*)](/assets/file/signals-systems.pdf) ✭

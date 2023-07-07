@@ -1,6 +1,6 @@
 ---
 layout: main
-title: "Guanzhou (Jose) Hu"
+title: "About Me"
 permalink: /
 ---
 
@@ -13,9 +13,9 @@ permalink: /
 
 # About Me
 
-I am a computer science Ph.D. student in the [ADSL lab](https://research.cs.wisc.edu/adsl/) at the [University of Wisconsin-Madison](https://www.wisc.edu/), advised by [Professor Andrea Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Professor Remzi Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/). My research interest lies in **computer systems**, especially distributed storage systems and operating systems.
+I am a computer science Ph.D. student in the [ADSL lab](https://research.cs.wisc.edu/adsl/) at the [University of Wisconsin-Madison](https://www.wisc.edu/), advised by [Professor Andrea Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Professor Remzi Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/). My research interest lies in **computer systems**, especially distributed storage systems, cloud systems, and operating systems.
 
-Currently, I am focusing on distributed replication protocols, database transaction processing, and their implications on storage.
+My current focus is on distributed replication protocols, database transaction processing, and their implications on modern storage systems. Previously, I have studied file systems and storage stack technologies for emerging hardware such as persistent memory.
 
 ```rust
 /// Keep calm & do good research!
@@ -42,7 +42,7 @@ Say hello to [the Hux OS kernel](https://github.com/josehu07/hux-kernel)! It is 
   <tbody>
     <tr>
       <td style="text-align: center">2020.08 - 20??.??</td>
-      <td style="text-align: left">Ph.D. student in Computer Science</td>
+      <td style="text-align: left">Ph.D. candidate in Computer Science</td>
       <td style="text-align: left">UW-Madison</td>
     </tr>
     <tr>
