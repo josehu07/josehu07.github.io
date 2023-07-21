@@ -1,6 +1,6 @@
 # Username & hostname.
 [username]
-style_user= "bold dimmed yellow"
+style_user= "bold yellow"
 format = "[$user]($style) @ "
 
 [hostname]
