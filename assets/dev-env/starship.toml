@@ -1,5 +1,6 @@
-# Username.
+# Username & hostname.
 [username]
+style_user= "bold dimmed yellow"
 format = "[$user]($style) @ "
 
 [hostname]
@@ -9,13 +10,16 @@ ssh_symbol = " "
 [git_status]
 style = "bold blue"
 
-[git_branch]
-symbol = "שׂ "
-
 [git_commit]
 tag_symbol = " 笠 "
 
+[git_branch]
+symbol = "שׂ "
+
 [hg_branch]
+symbol = "שׂ "
+
+[fossil_branch]
 symbol = "שׂ "
 
 # Return status.
@@ -25,194 +29,193 @@ error_symbol = "[✗](bold red)"
 
 # Timing.
 [cmd_duration]
-format = "... ⏳ [$duration]($style)"
+format = "... [󰄉 $duration]($style)"
 
 # Battery.
+[battery]
+full_symbol = "󰁹 "
+charging_symbol = "󰂄 "
+discharging_symbol = "󰂌 "
+unknown_symbol = "󰂃 "
+empty_symbol = "󰂎 "
+
 [[battery.display]]
 threshold = 20
 
-# Nerd Font symbols.
+# Custom icons.
 [aws]
-symbol = "ﲳ "
+symbol = " "
 style = "bold black"
 
 [azure]
-symbol = "ﴃ "
-style = "bold black"
-
-[buf]
-symbol = " "
-style = "bold black"
-
-[c]
-symbol = "C "
-style = "bold black"
-
-[cmake]
-symbol = "△ "
+symbol = " "
 style = "bold black"
 
 [conda]
-symbol = " "
+symbol = "🅒 "
 style = "bold black"
 
-[crystal]
-symbol = " "
-style = "bold black"
-
-[dart]
-symbol = " "
-style = "bold black"
-
-[deno]
-symbol = " "
-style = "bold black"
-
-[docker_context]
-symbol = " "
-style = "bold black"
-
-[dotnet]
-symbol = ".NET "
-style = "bold black"
-
-[elixir]
-symbol = " "
-style = "bold black"
-
-[elm]
-symbol = " "
-style = "bold black"
-
-[erlang]
-symbol = " "
-style = "bold black"
-
-[gcloud]
-symbol = "ﲳ "
-style = "bold black"
-
-[golang]
-symbol = " "
-style = "bold black"
-
-[haskell]
-symbol = "λ "
-style = "bold black"
-
-[helm]
-symbol = "⎈ "
-style = "bold black"
-
-[java]
-symbol = " "
-style = "bold black"
-
-[julia]
-symbol = " "
-style = "bold black"
-
-[kotlin]
-symbol = "擄 "
-style = "bold black"
-
-[kubernetes]
-symbol = "ﴱ "
-style = "bold black"
-
-[lua]
-symbol = " "
-style = "bold black"
-
-[nim]
-symbol = " "
-style = "bold black"
-
-[nix_shell]
-symbol = " "
-style = "bold black"
-
-[nodejs]
-symbol = " "
-style = "bold black"
-
-[ocaml]
-symbol = " "
-style = "bold black"
-
-[openstack]
-symbol = "ﲳ "
-style = "bold black"
-
-[package]
-symbol = " "
-style = "bold black"
-
-[perl]
-symbol = " "
-style = "bold black"
-
-[php]
-symbol = " "
-style = "bold black"
-
-[pulumi]
+[container]
 symbol = " "
 style = "bold black"
 
-[purescript]
-symbol = "<=> "
+[docker_context]
+symbol = "󰡨 "
 style = "bold black"
+
+[gcloud]
+symbol = " "
+style = "bold black"
+
+[guix_shell]
+symbol = " "
+style = "bold black"
+
+[kubernetes]
+symbol = "󱃾 "
+style = "bold black"
+
+[nix_shell]
+symbol = "󰜗 "
+style = "bold black"
+
+[pijul_channel]
+symbol = " "
+style = "bold black"
+
+# Useless version info.
+[buf]
+disabled = true
+
+[bun]
+disabled = true
+
+[c]
+disabled = true
+
+[cmake]
+disabled = true
+
+[cobol]
+disabled = true
+
+[crystal]
+disabled = true
+
+[daml]
+disabled = true
+
+[dart]
+disabled = true
+
+[deno]
+disabled = true
+
+[dotnet]
+disabled = true
+
+[elixir]
+disabled = true
+
+[elm]
+disabled = true
+
+[erlang]
+disabled = true
+
+[fennel]
+disabled = true
+
+[golang]
+disabled = true
+
+[gradle]
+disabled = true
+
+[haskell]
+disabled = true
+
+[haxe]
+disabled = true
+
+[helm]
+disabled = true
+
+[java]
+disabled = true
+
+[julia]
+disabled = true
+
+[kotlin]
+disabled = true
+
+[lua]
+disabled = true
+
+[nim]
+disabled = true
+
+[nodejs]
+disabled = true
+
+[ocaml]
+disabled = true
+
+[opa]
+disabled = true
+
+[package]
+disabled = true
+
+[perl]
+disabled = true
+
+[php]
+disabled = true
+
+[pulumi]
+disabled = true
+
+[purescript]
+disabled = true
 
 [python]
-symbol = " "
-style = "bold black"
+disabled = true
 
 [rlang]
-symbol = " "
-style = "bold black"
+disabled = true
+
+[raku]
+disabled = true
 
 [red]
-symbol = "卑 "
-style = "bold black"
+disabled = true
 
 [ruby]
-symbol = " "
-style = "bold black"
+disabled = true
 
 [rust]
-symbol = " "
-style = "bold black"
+disabled = true
 
 [scala]
-symbol = " "
-style = "bold black"
+disabled = true
 
-[singularity]
-symbol = "🆂 "
-style = "bold black"
-
-[spack]
-symbol = "🅢 "
-style = "bold black"
+[solidity]
+disabled = true
 
 [swift]
-symbol = " "
-style = "bold black"
+disabled = true
 
 [terraform]
-symbol = "行 "
-style = "bold black"
+disabled = true
 
 [vagrant]
-symbol = "⍱ "
-style = "bold black"
+disabled = true
 
 [vlang]
-symbol = "V "
-style = "bold black"
+disabled = true
 
 [zig]
-symbol = "↯ "
-style = "bold black"
+disabled = true
 
