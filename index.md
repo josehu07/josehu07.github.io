@@ -13,9 +13,9 @@ permalink: /
 
 # About Me
 
-I am a computer science Ph.D. student in the [ADSL lab](https://research.cs.wisc.edu/adsl/) at the [University of Wisconsin-Madison](https://www.wisc.edu/), advised by [Professor Andrea Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Professor Remzi Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/). My research interest lies in **computer systems**, especially distributed storage systems, cloud systems, and operating systems.
+I am a computer science Ph.D. student in the [ADSL lab](https://research.cs.wisc.edu/adsl/) at the [University of Wisconsin-Madison](https://www.wisc.edu/), advised by [Professor Andrea Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Professor Remzi Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/). My research interest lies in **computer systems**, especially distributed storage systems and operating systems.
 
-My current focus is on distributed replication protocols, database transaction processing, and their implications on modern storage systems. Previously, I have studied file systems and storage stack technologies for emerging hardware such as persistent memory.
+My current focus is on distributed replication protocols, database transaction processing, and their implications on modern storage systems. Previously, I have studied file systems and kernel storage stack technologies for emerging hardware such as persistent memory.
 
 ```rust
 /// Keep calm & do good research!
@@ -34,7 +34,10 @@ impl<CS> Researcher<CS> for Me {
 }
 ```
 
-Say hello to [the Hux OS kernel](https://github.com/josehu07/hux-kernel)! It is a weekend operating system kernel project built to be minimal and understandable. I documented my development of Hux into a complete set of [GitHub Wiki pages](https://github.com/josehu07/hux-kernel/wiki) - please do check them out!
+If you don't mind wasting a few seconds of your life, please take a look at these rather cool open-source projects I did!
+
+- [The Hux OS kernel](https://github.com/josehu07/hux-kernel): a weekend operating system kernel project built to be minimal and understandable. I documented my development of Hux into a complete set of [GitHub Wiki pages](https://github.com/josehu07/hux-kernel/wiki).
+- [The Summerset KV-store](https://github.com/josehu07/summerset): a distributed replicated KV-store framework, written in async Rust, mainly for state machine replication (SMR) research purposes. Summerset is generic to protocols; more protocols are actively being added.
 
 ### Education
 

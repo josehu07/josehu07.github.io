@@ -13,7 +13,7 @@ permalink: /publications.html
 
 # Publications
 
-I am working with [Prof. Andrea Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Prof. Remzi Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/) on distributed storage systems, cloud systems, and operating systems. My current focus is on distributed replication protocols, database transaction processing, and their implications on modern storage systems. Previously, I have studied file systems and storage stack technologies for emerging hardware such as persistent memory.
+I am working with [Prof. Andrea Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Prof. Remzi Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/) on distributed storage systems, cloud systems, and operating systems. My current focus is on distributed replication protocols, database transaction processing, and their implications on modern storage systems. Previously, I have studied file systems and kernel storage stack technologies for emerging hardware such as persistent memory.
 
 I worked with [Prof. Harry Xu](http://web.cs.ucla.edu/~harryxu/) as a summer intern on scaling and accelerating graph neural networks computation using serverless computing.
 
