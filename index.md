@@ -15,7 +15,7 @@ permalink: /
 
 I am a computer science Ph.D. student in the [ADSL lab](https://research.cs.wisc.edu/adsl/) at the [University of Wisconsin-Madison](https://www.wisc.edu/), advised by [Professor Andrea Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Professor Remzi Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/). My research interest lies in **computer systems**, especially distributed storage systems and operating systems.
 
-My current focus is on distributed replication protocols, database transaction processing, and their implications on modern storage systems. Previously, I have studied file systems and kernel storage stack technologies for emerging hardware such as persistent memory.
+My current focus is on modernizing distributed replication protocols under data-heavy workloads. Previously, I have studied file systems and kernel storage stack technologies for emerging hardware such as persistent memory.
 
 ```rust
 /// Keep calm & do good research!
@@ -36,8 +36,8 @@ impl<CS> Researcher<CS> for Me {
 
 If you don't mind wasting a few seconds of your life, please take a look at these rather cool open-source projects I did!
 
+- [The Summerset KV-store](https://github.com/josehu07/summerset): a distributed, replicated KV-store framework written in async Rust, mainly for state machine replication (SMR) research purposes. Summerset is generic to protocols; more protocols are actively being added.
 - [The Hux OS kernel](https://github.com/josehu07/hux-kernel): a weekend operating system kernel project built to be minimal and understandable. I documented my development of Hux into a complete set of [GitHub Wiki pages](https://github.com/josehu07/hux-kernel/wiki).
-- [The Summerset KV-store](https://github.com/josehu07/summerset): a distributed replicated KV-store framework, written in async Rust, mainly for state machine replication (SMR) research purposes. Summerset is generic to protocols; more protocols are actively being added.
 
 ### Education
 
@@ -45,18 +45,18 @@ If you don't mind wasting a few seconds of your life, please take a look at thes
   <tbody>
     <tr>
       <td style="text-align: center">2020.08 - 20??.??</td>
-      <td style="text-align: left">Ph.D. candidate in Computer Science</td>
+      <td style="text-align: left">Ph.D. candidate in Computer Science <a href="https://research.cs.wisc.edu/adsl/">↩︎</a></td>
       <td style="text-align: left">UW-Madison</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">2019.09 - 2020.07</td>
+      <td style="text-align: left">Special student program</td>
+      <td style="text-align: left">MIT</td>
     </tr>
     <tr>
       <td style="text-align: center">2016.09 - 2020.07</td>
       <td style="text-align: left">BEng. in Computer Science</td>
       <td style="text-align: left">ShanghaiTech</td>
-    </tr>
-    <tr>
-      <td style="text-align: center">2019.09 - 2020.06</td>
-      <td style="text-align: left">Special student program</td>
-      <td style="text-align: left">MIT</td>
     </tr>
     <tr>
       <td style="text-align: center">2019.07 - 2019.09</td>
