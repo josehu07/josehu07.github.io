@@ -9,6 +9,8 @@ enable_math: "enable"
 
 Recently, I need to benchmark a lightweight distributed system codebase on a single host for my current research project. I want to have control over the network performance parameters (including delay, jitter distribution, rate, loss, etc.) and test a wide range of parameter values; meanwhile, I want to avoid pure software-based simulation. Thus, I opt in for using kernel-supported network emulation. In this post, I document what I tried and what finally worked.
 
+This post assumes latest Linux kernel version and is tested on v6.5.7.
+
 ## Problem Setting
 
 I have a distributed system codebase consisting of the following processes, each of which should conceptually run on a separate physical machine:
@@ -161,7 +163,38 @@ PING 10.0.0.2 (10.0.0.2) 56(84) bytes of data.
 
 All good!
 
-There are also obvious ways to extend this topology to allow even more flexibility; for example, each server's could own multiple devices in its namespace that have different connectivity and different performance parameters, etc.
+There are also obvious ways to extend this topology to allow even more flexibility; for example, each server's could own multiple devices in its namespace that have different connectivity and different performance parameters, etc. Let me describe one example extension below.
+
+## Extension: Symmetric Ingress Emulation w/ `ifb`s
+
+It is important to note that most of `netem`'s emulation functionality applies only to the *egress* side of the interface. This means all the injected delay happen on the sender side for every packet. In some cases, you might want to put custom performance emulation on the ingress side of the servers' interfaces as well. To do so, we could utilize the special IFB devices [^7].
+
+First, load the kernel module that implements IFB devices:
+
+```
+~$ sudo modprobe ifb
+```
+
+By default, two devices `ifb0` and `ifb1` are added automatically. You can add more by doing:
+
+```
+~$ sudo ip link add ifb2 type ifb
+```
+
+We then bring one IFB device to each server's namespace and redirect all the incoming traffic to the `veth` interface to go through the `ifb` device's egress queue first. This is done by adding a special `ingress` qdisc to the `veth` (which can exist simultaneously with an egress `netem` qdisc we added earlier) and placing a filter rule to simply "move" all ingress packets to the `ifb` interface's egress queue. The `ifb` device will automatically move the packet back after it has gone through the `ifb`'s egress queue.
+
+```
+~$ sudo ip link set ifb0 netns ns0
+~$ sudo ip netns exec ns0 tc qdisc add dev veths0 ingress
+~$ sudo ip netns exec ns0 tc filter add dev veths0 parent ffff: protocol all u32 match u32 0 0 flowid 1:1 action mirred egress redirect dev ifb0
+~$ sudo ip netns exec ns0 ip link set ifb0 up
+```
+
+We can then put a `netem` qdisc on the `ifb` interface, which effectively emulates specified performance on the ingress of the `veth`. For example:
+
+```
+~$ sudo ip netns exec ns0 tc qdisc add dev ifb0 root netem delay 5ms rate 1gibit
+```
 
 ## Summary
 
@@ -201,6 +234,16 @@ done
 
 
 echo
+echo "Loading ifb module & creating ifb devices..."
+sudo rmmod ifb
+sudo modprobe ifb  # by default, add ifb0 & ifb1 automatically
+for (( s = 2; s < $NUM_SERVERS; s++ ))
+do
+    sudo ip link add ifb$s type ifb
+done
+
+
+echo
 echo "Creating bridge device for manager..."
 sudo ip link add brgm type bridge
 sudo ip addr add "10.0.1.0/16" dev brgm
@@ -217,6 +260,17 @@ do
     sudo ip link set veths$s netns ns$s
     sudo ip netns exec ns$s ip addr add "10.0.0.$s/16" dev veths$s
     sudo ip netns exec ns$s ip link set veths$s up
+done
+
+
+echo
+echo "Redirecting veth ingress to ifb..."
+for (( s = 0; s < $NUM_SERVERS; s++ ))
+do
+    sudo ip link set ifb$s netns ns$s
+    sudo ip netns exec ns$s tc qdisc add dev veths$s ingress
+    sudo ip netns exec ns$s tc filter add dev veths$s parent ffff: protocol all u32 match u32 0 0 flowid 1:1 action mirred egress redirect dev ifb$s
+    sudo ip netns exec ns$s ip link set ifb$s up
 done
 
 
@@ -246,3 +300,4 @@ done
 [^4]: [https://tldp.org/LDP/nag/node72.html](https://tldp.org/LDP/nag/node72.html)
 [^5]: [https://man7.org/linux/man-pages/man8/ip-link.8.html](https://man7.org/linux/man-pages/man8/ip-link.8.html)
 [^6]: [https://man7.org/linux/man-pages/man8/ip-netns.8.html](https://man7.org/linux/man-pages/man8/ip-netns.8.html)
+[^7]: [http://linux-ip.net/gl/tc-filters/tc-filters-node3.html](http://linux-ip.net/gl/tc-filters/tc-filters-node3.html)

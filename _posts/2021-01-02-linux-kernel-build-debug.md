@@ -3,7 +3,7 @@ layout: post
 title: "Building a Custom Linux Kernel & Debugging via QEMU + GDB"
 date: 2021-01-02 09:10:59
 author: Guanzhou Hu
-categories: Memo
+categories: Technical
 enable_math: "enable"
 ---
 
@@ -50,6 +50,7 @@ If you are later going to run & debug with QEMU, these options must be selected 
 - Device drivers $$\rightarrow$$ Block devices $$\rightarrow$$ Virtio block driver `<*>`
 
 > A kernel module's menu option may have three states:
+>
 > 1. `< >`: not selected - will not be built
 > 2. `<*>`: selected as built-in - will be built within the monolithic kernel
 > 3. `<M>`: selected as a kernel module - will be built as a loadable kernel module instead of bulit-in; this is useful when you don't want the feature, e.g. a device driver, to bloat the kernel, but want it to be loadable after booting up whenever needed
@@ -78,7 +79,7 @@ This will take quite a while to build (~ 20-60 minutes). After successful compil
 > If you are not attempting to build a deb package for installation on bare-metal machine, but just want a `bzImage` of the kernel (to boot in QEMU, etc.), then set the trusted key option to empty through menuconfig:
 >
 > - Cryptographic API $$\rightarrow$$ Certificates for signature checking $$\rightarrow$$ Provide system-wide ring of trusted keys, change the additional key string in the line below to EMPTY
-> 
+>
 > then, doing `make -j$(nproc) bzImage` is sufficient.
 
 ### Installing the Kernel Image
