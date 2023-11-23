@@ -17,6 +17,7 @@ Here lies all of my lecture notes. I am used to taking structured notes on thing
 
 ### Computer Science
 
+- <img class="note-icon" src="/assets/note-icon/sys-verification-show.png" /> [Protocols & Systems Verification (*Wisc-CS839*)](/assets/file/sys-verification.pdf)
 - <img class="note-icon" src="/assets/note-icon/pmem-topics-show.png" /> [Topics in Persistent Memory (*Wisc-CS839*)](/assets/file/pmem-topics.pdf)
 - <img class="note-icon" src="/assets/note-icon/mlsys-topics-show.png" /> [Topics in Machine Learning Systems (*WISC-CS839*)](/assets/file/mlsys-topics.pdf)
 - <img class="note-icon" src="/assets/note-icon/advanced-database-systems-show.png" /> [Advanced Database Systems (*WISC-CS764*)](/assets/file/advanced-database-systems.pdf) ✭
