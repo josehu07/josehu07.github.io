@@ -95,11 +95,11 @@ Let's walk through this step-by-step for a 3-servers setting.
 
     ```
     ~$ sudo ip netns add ns0
-    ~$ sudo ip netns add ns0 0
+    ~$ sudo ip netns set ns0 0
     ~$ sudo ip netns add ns1
-    ~$ sudo ip netns add ns1 1
+    ~$ sudo ip netns set ns1 1
     ~$ sudo ip netns add ns2
-    ~$ sudo ip netns add ns2 2
+    ~$ sudo ip netns set ns2 2
     ```
 
 2. Create a bridge device `brgm` and assign address `10.0.1.0` to it:
