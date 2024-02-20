@@ -15,7 +15,7 @@ Below are the three files composing the checkable model (organized in VSCode ext
 
 - [MultiPaxos.tla](/assets/file/tla-specs/MultiPaxos.tla) (main protocol spec written in PlusCal and with translation attached)
 - [MultiPaxos_MC.tla](/assets/file/tla-specs/MultiPaxos_MC.tla) (entrance of running model checking; contains the checked constraints)
-- [MultiPaxos_MS.cfg](/assets/file/tla-specs/MultiPaxos_MC.cfg) (model checking inputs and configurations)
+- [MultiPaxos_MC.cfg](/assets/file/tla-specs/MultiPaxos_MC.cfg) (model checking inputs and configurations)
 
 ## What's Good About This Spec
 
