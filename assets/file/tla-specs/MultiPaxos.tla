@@ -149,11 +149,10 @@ PrepareReplyMsg(r, b, iv) ==
 PeakVotedCmd(prs, s) ==
     IF \A pr \in prs: pr.votes[s].bal = 0
         THEN "nil"
-        ELSE LET bc == CHOOSE bc \in (Ballots \X Commands):
-                            /\ \E pr \in prs: /\ pr.votes[s].bal = bc[1]
-                                              /\ pr.votes[s].cmd = bc[2]
-                            /\ \A pr \in prs: pr.votes[s].bal =< bc[1]
-             IN  bc[2]
+        ELSE LET ppr ==
+                    CHOOSE ppr \in prs:
+                        \A pr \in prs: pr.votes[s].bal =< ppr.votes[s].bal
+             IN  ppr.votes[s].cmd
 
 AcceptMsgs == [type: {"Accept"}, src: Replicas,
                                  bal: Ballots,
