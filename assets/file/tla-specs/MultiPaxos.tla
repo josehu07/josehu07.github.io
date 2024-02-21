@@ -302,8 +302,11 @@ macro HandlePrepareReplies(r) begin
                                         THEN "Accepting"
                                         ELSE @,
                            !.cmd = PeakVotedCmd(prs, s)]];
-        \* send Accept messages for in-progress instances
-        Send({AcceptMsg(r, node[r].balPrepared, s, node[r].insts[s].cmd):
+        \* send Accept messages for in-progress instances and reply to
+        \* myself instantly
+        Send(UNION
+             {{AcceptMsg(r, node[r].balPrepared, s, node[r].insts[s].cmd),
+               AcceptReplyMsg(r, node[r].balPrepared, s)}:
               s \in {s \in Slots: node[r].insts[s].status = "Accepting"}});
     end with;
 end macro;
@@ -454,7 +457,7 @@ end algorithm; *)
 
 ----------
 
-\* BEGIN TRANSLATION (chksum(pcal) = "a0c22841" /\ chksum(tla) = "301c508b")
+\* BEGIN TRANSLATION (chksum(pcal) = "9431ae0c" /\ chksum(tla) = "7c75424")
 VARIABLES msgs, node, pending, observed, crashed, pc
 
 (* define statement *)
@@ -532,7 +535,9 @@ rloop(self) == /\ pc[self] = "rloop"
                                                                                                          THEN "Accepting"
                                                                                                          ELSE @,
                                                                                             !.cmd = PeakVotedCmd(prs, s)]]]
-                                     /\ msgs' = (msgs \cup ({AcceptMsg(self, node'[self].balPrepared, s, node'[self].insts[s].cmd):
+                                     /\ msgs' = (msgs \cup (UNION
+                                                            {{AcceptMsg(self, node'[self].balPrepared, s, node'[self].insts[s].cmd),
+                                                              AcceptReplyMsg(self, node'[self].balPrepared, s)}:
                                                              s \in {s \in Slots: node'[self].insts[s].status = "Accepting"}}))
                                 /\ UNCHANGED <<pending, observed, crashed>>
                              \/ /\ /\ node[self].leader = self

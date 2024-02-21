@@ -15,7 +15,7 @@ Below are the three files composing the checkable model (organized in VSCode ext
 
 - [MultiPaxos.tla](/assets/file/tla-specs/MultiPaxos.tla) (main protocol spec written in PlusCal and with translation attached)
 - [MultiPaxos_MC.tla](/assets/file/tla-specs/MultiPaxos_MC.tla) (entrance of running model checking; contains the checked constraints)
-- [MultiPaxos_MC.cfg](/assets/file/tla-specs/MultiPaxos_MC.cfg) (recommended model checking inputs and configurations)
+- [MultiPaxos_MC.cfg](/assets/file/tla-specs/MultiPaxos_MC.cfg) (recommended model inputs and configurations, which should give 100% coverage of all interesting cases)
 - [MultiPaxos_MC_small.cfg](/assets/file/tla-specs/MultiPaxos_MC_small.cfg) (smaller input with one fewer write and no `CommitNotice` messages)
 
 ## What's Good About This Spec
@@ -30,8 +30,8 @@ This spec is different from traditional, general descriptions of Paxos/MultiPaxo
   - Replica node failure is injected to assure the protocol's fault-tolerance level
   - See the detailed comments in the source files...
 - Careful optimizations are applied to the spec to reduce the state space W.L.O.G.
-  - Model checking with recommended inputs completes in < 8 min on a 40-core server machine
-  - Commenting out the `HandleCommitNotice` action (which is the least significant) reduces check time down to < 2 min
+  - Model checking with recommended inputs completes in < 22 min on a 40-core server machine
+  - Commenting out the `HandleCommitNotice` action (which is the least significant) and having one fewer request reduces check time down to < 10 secs
 - It is easy to extend this spec and add even more practical features
   - Leader lease and local read
   - Asymmetric write/read quorum sizes
