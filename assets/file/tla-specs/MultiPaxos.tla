@@ -15,7 +15,7 @@
 (* Liveness is checked by not having deadlocks till observation of all requests.  *)
 (*                                                                                *)
 (* Possible further extensions include node failure injection, leader lease and   *)
-(* local read mechanism, etc.                                                     *)
+(* local read mechanism, asymmetric write/read quorum sizes, etc.                 *)
 (**********************************************************************************)
 
 ---- MODULE MultiPaxos ----
@@ -24,10 +24,12 @@ EXTENDS FiniteSets, Sequences, Integers, TLC
 (*******************************)
 (* Model inputs & assumptions. *)
 (*******************************)
-CONSTANT Replicas,  \* symmetric set of server nodes
-         Writes,    \* symmetric set of write commands (each w/ unique value)
-         Reads,     \* symmetric set of read commands
-         MaxBallot  \* maximum ballot pickable for leader preemption
+CONSTANT Replicas,   \* symmetric set of server nodes
+         Writes,     \* symmetric set of write commands (each w/ unique value)
+         Reads,      \* symmetric set of read commands
+         MaxBallot,  \* maximum ballot pickable for leader preemption
+         CommitNoticeOn,  \* if true, turn on CommitNotice messages
+         NodeFailuresOn   \* if true, turn on node failures injection
 
 ReplicasAssumption == /\ IsFiniteSet(Replicas)
                       /\ Cardinality(Replicas) >= 1
@@ -45,10 +47,16 @@ ReadsAssumption == /\ IsFiniteSet(Reads)
 MaxBallotAssumption == /\ MaxBallot \in Nat
                        /\ MaxBallot >= 2
 
+CommitNoticeOnAssumption == CommitNoticeOn \in BOOLEAN
+
+NodeFailuresOnAssumption == NodeFailuresOn \in BOOLEAN
+
 ASSUME /\ ReplicasAssumption
        /\ WritesAssumption
        /\ ReadsAssumption
        /\ MaxBallotAssumption
+       /\ CommitNoticeOnAssumption
+       /\ NodeFailuresOnAssumption
 
 ----------
 
@@ -185,7 +193,8 @@ Messages ==      PrepareMsgs
 variable msgs = {},                             \* messages in the network
          node = [r \in Replicas |-> NullNode],  \* replica node state
          pending = InitPending,                 \* sequence of pending reqs
-         observed = <<>>;                       \* client observed events
+         observed = <<>>,                       \* client observed events
+         crashed = [r \in Replicas |-> FALSE];  \* replica crashed flag
 
 define
     UnseenPending(insts) ==
@@ -203,6 +212,8 @@ define
     terminated == /\ Len(pending) = 0
                   /\ Cardinality(reqsMade) = NumCommands
                   /\ Cardinality(acksRecv) = NumCommands
+    
+    numCrashed == Cardinality({r \in Replicas: crashed[r]})
 end define;
 
 \* Send a set of messages helper.
@@ -398,10 +409,23 @@ macro HandleCommitNotice(r) begin
     end with;
 end macro;
 
+\* Replica node crashes itself under promised conditions.
+macro ReplicaCrashes(r) begin
+    \* if less than (N - majority) number of replicas have failed
+    await /\ MajorityNum + numCrashed < Cardinality(Replicas)
+          /\ ~crashed[r]
+          /\ node[r].balMaxKnown < MaxBallot;
+                \* this clause is needed only because we have an upper
+                \* bound ballot number for modeling checking; in practice
+                \* someone else could always come up with a higher ballot
+    \* mark myself as crashed
+    crashed[r] := TRUE;
+end macro;
+
 \* Replica server node main loop.
 process Replica \in Replicas
 begin
-    rloop: while ~terminated do
+    rloop: while (~terminated) /\ (~crashed[self]) do
         either
             BecomeLeader(self);
         or
@@ -415,7 +439,13 @@ begin
         or
             HandleAcceptReplies(self);
         or
-            HandleCommitNotice(self);
+            if CommitNoticeOn then
+                HandleCommitNotice(self);
+            end if;
+        or
+            if NodeFailuresOn then
+                ReplicaCrashes(self);
+            end if;
         end either;
     end while;
 end process;
@@ -424,8 +454,8 @@ end algorithm; *)
 
 ----------
 
-\* BEGIN TRANSLATION (chksum(pcal) = "d7327cb9" /\ chksum(tla) = "bfbfd945")
-VARIABLES msgs, node, pending, observed, pc
+\* BEGIN TRANSLATION (chksum(pcal) = "a0c22841" /\ chksum(tla) = "301c508b")
+VARIABLES msgs, node, pending, observed, crashed, pc
 
 (* define statement *)
 UnseenPending(insts) ==
@@ -444,8 +474,10 @@ terminated == /\ Len(pending) = 0
               /\ Cardinality(reqsMade) = NumCommands
               /\ Cardinality(acksRecv) = NumCommands
 
+numCrashed == Cardinality({r \in Replicas: crashed[r]})
 
-vars == << msgs, node, pending, observed, pc >>
+
+vars == << msgs, node, pending, observed, crashed, pc >>
 
 ProcSet == (Replicas)
 
@@ -454,10 +486,11 @@ Init == (* Global variables *)
         /\ node = [r \in Replicas |-> NullNode]
         /\ pending = InitPending
         /\ observed = <<>>
+        /\ crashed = [r \in Replicas |-> FALSE]
         /\ pc = [self \in ProcSet |-> "rloop"]
 
 rloop(self) == /\ pc[self] = "rloop"
-               /\ IF ~terminated
+               /\ IF (~terminated) /\ (~crashed[self])
                      THEN /\ \/ /\ node[self].leader # self
                                 /\ \E b \in Ballots:
                                      /\ /\ b > node[self].balMaxKnown
@@ -472,7 +505,7 @@ rloop(self) == /\ pc[self] = "rloop"
                                                                                                          ELSE @]]]
                                      /\ msgs' = (msgs \cup ({PrepareMsg(self, b),
                                                              PrepareReplyMsg(self, b, VotesByNode(node'[self]))}))
-                                /\ UNCHANGED <<pending, observed>>
+                                /\ UNCHANGED <<pending, observed, crashed>>
                              \/ /\ \E m \in msgs:
                                      /\ /\ m.type = "Prepare"
                                         /\ m.bal > node[self].balMaxKnown
@@ -484,7 +517,7 @@ rloop(self) == /\ pc[self] = "rloop"
                                                                                                          THEN "Preparing"
                                                                                                          ELSE @]]]
                                      /\ msgs' = (msgs \cup ({PrepareReplyMsg(self, m.bal, VotesByNode(node'[self]))}))
-                                /\ UNCHANGED <<pending, observed>>
+                                /\ UNCHANGED <<pending, observed, crashed>>
                              \/ /\ /\ node[self].leader = self
                                    /\ node[self].balPrepared = 0
                                 /\ LET prs == {m \in msgs: /\ m.type = "PrepareReply"
@@ -501,7 +534,7 @@ rloop(self) == /\ pc[self] = "rloop"
                                                                                             !.cmd = PeakVotedCmd(prs, s)]]]
                                      /\ msgs' = (msgs \cup ({AcceptMsg(self, node'[self].balPrepared, s, node'[self].insts[s].cmd):
                                                              s \in {s \in Slots: node'[self].insts[s].status = "Accepting"}}))
-                                /\ UNCHANGED <<pending, observed>>
+                                /\ UNCHANGED <<pending, observed, crashed>>
                              \/ /\ /\ node[self].leader = self
                                    /\ node[self].balPrepared = node[self].balMaxKnown
                                    /\ \E s \in Slots: node[self].insts[s].status = "Empty"
@@ -518,7 +551,7 @@ rloop(self) == /\ pc[self] = "rloop"
                                              THEN /\ observed' = Append(observed, (ReqEvent(c)))
                                              ELSE /\ TRUE
                                                   /\ UNCHANGED observed
-                                /\ UNCHANGED pending
+                                /\ UNCHANGED <<pending, crashed>>
                              \/ /\ \E m \in msgs:
                                      /\ /\ m.type = "Accept"
                                         /\ m.bal >= node[self].balMaxKnown
@@ -530,7 +563,7 @@ rloop(self) == /\ pc[self] = "rloop"
                                                              ![self].insts[m.slot].voted.bal = m.bal,
                                                              ![self].insts[m.slot].voted.cmd = m.cmd]
                                      /\ msgs' = (msgs \cup ({AcceptReplyMsg(self, m.bal, m.slot)}))
-                                /\ UNCHANGED <<pending, observed>>
+                                /\ UNCHANGED <<pending, observed, crashed>>
                              \/ /\ /\ node[self].leader = self
                                    /\ node[self].balPrepared = node[self].balMaxKnown
                                    /\ node[self].commitUpTo < NumCommands
@@ -551,21 +584,34 @@ rloop(self) == /\ pc[self] = "rloop"
                                                       /\ UNCHANGED observed
                                            /\ pending' = RemovePending(c)
                                            /\ msgs' = (msgs \cup ({CommitNoticeMsg(s)}))
-                             \/ /\ /\ node[self].leader # self
-                                   /\ node[self].commitUpTo < NumCommands
-                                   /\ node[self].insts[node[self].commitUpTo+1].status = "Accepting"
-                                /\ LET s == node[self].commitUpTo + 1 IN
-                                     LET c == node[self].insts[s].cmd IN
-                                       \E m \in msgs:
-                                         /\ /\ m.type = "CommitNotice"
-                                            /\ m.upto = s
-                                         /\ node' = [node EXCEPT ![self].insts[s].status = "Committed",
-                                                                 ![self].commitUpTo = s,
-                                                                 ![self].kvalue = IF c \in Writes THEN c ELSE @]
-                                /\ UNCHANGED <<msgs, pending, observed>>
+                                /\ UNCHANGED crashed
+                             \/ /\ IF CommitNoticeOn
+                                      THEN /\ /\ node[self].leader # self
+                                              /\ node[self].commitUpTo < NumCommands
+                                              /\ node[self].insts[node[self].commitUpTo+1].status = "Accepting"
+                                           /\ LET s == node[self].commitUpTo + 1 IN
+                                                LET c == node[self].insts[s].cmd IN
+                                                  \E m \in msgs:
+                                                    /\ /\ m.type = "CommitNotice"
+                                                       /\ m.upto = s
+                                                    /\ node' = [node EXCEPT ![self].insts[s].status = "Committed",
+                                                                            ![self].commitUpTo = s,
+                                                                            ![self].kvalue = IF c \in Writes THEN c ELSE @]
+                                      ELSE /\ TRUE
+                                           /\ node' = node
+                                /\ UNCHANGED <<msgs, pending, observed, crashed>>
+                             \/ /\ IF NodeFailuresOn
+                                      THEN /\ /\ MajorityNum + numCrashed < Cardinality(Replicas)
+                                              /\ ~crashed[self]
+                                              /\ node[self].balMaxKnown < MaxBallot
+                                           /\ crashed' = [crashed EXCEPT ![self] = TRUE]
+                                      ELSE /\ TRUE
+                                           /\ UNCHANGED crashed
+                                /\ UNCHANGED <<msgs, node, pending, observed>>
                           /\ pc' = [pc EXCEPT ![self] = "rloop"]
                      ELSE /\ pc' = [pc EXCEPT ![self] = "Done"]
-                          /\ UNCHANGED << msgs, node, pending, observed >>
+                          /\ UNCHANGED << msgs, node, pending, observed, 
+                                          crashed >>
 
 Replica(self) == rloop(self)
 
