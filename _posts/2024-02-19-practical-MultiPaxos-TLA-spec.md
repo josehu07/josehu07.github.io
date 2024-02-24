@@ -11,12 +11,12 @@ The attached files present a practical TLA+ specification of MultiPaxos that ver
 
 ## Files of This TLA+ Spec
 
-Below are the three files composing the checkable model (organized in VSCode extension style):
+Below are the files composing the checkable model (organized in VSCode extension style):
 
-- [MultiPaxos.tla](/assets/file/tla-specs/MultiPaxos.tla) (main protocol spec written in PlusCal and with translation attached)
-- [MultiPaxos_MC.tla](/assets/file/tla-specs/MultiPaxos_MC.tla) (entrance of running model checking; contains the checked constraints)
-- [MultiPaxos_MC.cfg](/assets/file/tla-specs/MultiPaxos_MC.cfg) (recommended model inputs and configurations, which should give 100% coverage of all interesting cases)
-- [MultiPaxos_MC_small.cfg](/assets/file/tla-specs/MultiPaxos_MC_small.cfg) (smaller input with one fewer write and no `CommitNotice` messages)
+- [MultiPaxos.tla](/assets/file/tla-specs/multipaxos_smr_style/MultiPaxos.tla) (main protocol spec written in PlusCal and with translation attached)
+- [MultiPaxos_MC.tla](/assets/file/tla-specs/multipaxos_smr_style/MultiPaxos_MC.tla) (entrance of running model checking; contains the checked constraints)
+- [MultiPaxos_MC.cfg](/assets/file/tla-specs/multipaxos_smr_style/MultiPaxos_MC.cfg) (recommended model inputs and configurations, which should give 100% coverage of all interesting cases)
+- [MultiPaxos_MC_small.cfg](/assets/file/tla-specs/multipaxos_smr_style/MultiPaxos_MC_small.cfg) (smaller input with one fewer write and no `CommitNotice` messages)
 
 ## What's Good About This Spec
 
@@ -40,6 +40,25 @@ This spec is different from traditional, general descriptions of Paxos/MultiPaxo
 This spec has been accepted into the official [TLA+ Examples repo](https://github.com/tlaplus/Examples)! [^1]
 
 Here are some links I found particularly useful when developing this spec by myself: [^2] [^3] [^4] [^5]
+
+## Update: Extended Spec with Extra Features
+
+Below are the files composing an extended version of the spec along with model inputs:
+
+- [MultiPaxos.tla](/assets/file/tla-specs/multipaxos_smr_addon/MultiPaxos.tla) (extended main protocol spec written in PlusCal and with translation attached)
+- [MultiPaxos_MC.tla](/assets/file/tla-specs/multipaxos_smr_addon/MultiPaxos_MC.tla) (entrance of running model checking; contains the checked constraints)
+- [MultiPaxos_MC.cfg](/assets/file/tla-specs/multipaxos_smr_addon/MultiPaxos_MC.cfg) (recommended model inputs and configurations, which should give 100% coverage of all interesting cases with default features)
+- [MultiPaxos_MC_small.cfg](/assets/file/tla-specs/multipaxos_smr_addon/MultiPaxos_MC_small.cfg) (smallest input for sanity check)
+- [MultiPaxos_MC_rwqrm.cfg](/assets/file/tla-specs/multipaxos_smr_addon/MultiPaxos_MC_rwqrm.cfg) (input demonstrating asymmetric write/read quorum sizes)
+- [MultiPaxos_MC_lease.cfg](/assets/file/tla-specs/multipaxos_smr_addon/MultiPaxos_MC_lease.cfg) (input demonstrating stable leader leases and local read)
+
+## What's New in the Extend Spec
+
+The extended spec includes the following extra features/variants of MultiPaxos that are very essential and useful in practice:
+
+- Only keep writes in the log (while reads squeeze in between writes)
+- Asymmetric write/read quorum sizes
+- Stable leader lease and local read at leader
 
 ## References
 
