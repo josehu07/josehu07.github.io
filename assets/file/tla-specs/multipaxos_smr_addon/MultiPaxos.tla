@@ -118,9 +118,6 @@ NodeStates == [leader: {"none"} \cup Replicas,
                balMaxKnown: {0} \cup Ballots,
                insts: [Slots -> InstStates],
                reads: [Slots \cup {NumWrites+1} -> SUBSET Reads]]
-                    \* reads is the set of read commands "anchored" at
-                    \* each instance, i.e., reads that squeeze in between
-                    \* an instance and its predecessor
 
 NullNode == [leader |-> "none",
              commitUpTo |-> 0,
@@ -132,7 +129,12 @@ NullNode == [leader |-> "none",
                 \* commitPrev is the last slot which might have been
                 \* committed by an old leader; a newly prepared leader
                 \* can safely serve reads locally only after its log has
-                \* been committed up to this slot
+                \* been committed up to this slot. The time before this
+                \* condition becomes satisfied may be considered the
+                \* "recovery" time
+                \* reads is the set of read commands "anchored" at
+                \* each instance, i.e., reads that squeeze in between
+                \* an instance and its predecessor
 
 FirstEmptySlot(insts) ==
     IF \A s \in Slots: insts[s].status # "Empty"
