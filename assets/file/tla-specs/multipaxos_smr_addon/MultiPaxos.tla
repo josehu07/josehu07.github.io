@@ -376,7 +376,7 @@ macro HandlePrepareReplies(r) begin
     with prs = {m \in msgs: /\ m.type = "PrepareReply"
                             /\ m.bal = node[r].balMaxKnown}
     do
-        await Cardinality(prs) >= WriteQuorumSize;
+        await Cardinality(prs) >= MajorityNum;
         \* marks this ballot as prepared and saves highest voted command
         \* in each slot if any
         node[r].balPrepared := node[r].balMaxKnown ||
@@ -655,7 +655,7 @@ end algorithm; *)
 
 ----------
 
-\* BEGIN TRANSLATION (chksum(pcal) = "e9dba54b" /\ chksum(tla) = "a2c6791")
+\* BEGIN TRANSLATION (chksum(pcal) = "e06ecd04" /\ chksum(tla) = "e0a329d0")
 VARIABLES msgs, grants, node, pending, observed, crashed, pc
 
 (* define statement *)
@@ -746,7 +746,7 @@ rloop(self) == /\ pc[self] = "rloop"
                                    /\ node[self].balPrepared = 0
                                 /\ LET prs == {m \in msgs: /\ m.type = "PrepareReply"
                                                            /\ m.bal = node[self].balMaxKnown} IN
-                                     /\ Cardinality(prs) >= WriteQuorumSize
+                                     /\ Cardinality(prs) >= MajorityNum
                                      /\ node' = [node EXCEPT ![self].balPrepared = node[self].balMaxKnown,
                                                              ![self].insts = [s \in Slots |->
                                                                                  [node[self].insts[s]
