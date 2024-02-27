@@ -481,6 +481,27 @@ macro HandleAcceptReplies(r) begin
     end with;
 end macro;
 
+\* Replica receives new commit notification.
+macro HandleCommitNotice(r) begin
+    \* if I'm a follower waiting on CommitNotice
+    await /\ node[r].leader # r
+          /\ node[r].commitUpTo < NumWrites
+          /\ node[r].insts[node[r].commitUpTo+1].status = "Accepting";
+                \* W.L.O.G., only enabling the next slot after commitUpTo
+                \* here to make the body of this macro simpler
+    \* for this slot, when there's a CommitNotice message
+    with s = node[r].commitUpTo+1,
+         c = node[r].insts[s].write,
+         m \in msgs
+    do
+        await /\ m.type = "CommitNotice"
+              /\ m.upto = s;
+        \* marks this slot as committed and apply command
+        node[r].insts[s].status := "Committed" ||
+        node[r].commitUpTo := s;
+    end with;
+end macro;
+
 \* A prepared leader takes a new read request and anchor it to the next
 \* empty slot.
 macro TakeNewReadRequest(r) begin
@@ -579,27 +600,6 @@ macro HandleDoReadReplies(r) begin
     end with;
 end macro;
 
-\* Replica receives new commit notification.
-macro HandleCommitNotice(r) begin
-    \* if I'm a follower waiting on CommitNotice
-    await /\ node[r].leader # r
-          /\ node[r].commitUpTo < NumWrites
-          /\ node[r].insts[node[r].commitUpTo+1].status = "Accepting";
-                \* W.L.O.G., only enabling the next slot after commitUpTo
-                \* here to make the body of this macro simpler
-    \* for this slot, when there's a CommitNotice message
-    with s = node[r].commitUpTo+1,
-         c = node[r].insts[s].write,
-         m \in msgs
-    do
-        await /\ m.type = "CommitNotice"
-              /\ m.upto = s;
-        \* marks this slot as committed and apply command
-        node[r].insts[s].status := "Committed" ||
-        node[r].commitUpTo := s;
-    end with;
-end macro;
-
 \* Replica node crashes itself under promised conditions.
 macro ReplicaCrashes(r) begin
     \* if less than (N - majority) number of replicas have failed
@@ -630,6 +630,10 @@ begin
         or
             HandleAcceptReplies(self);
         or
+            if CommitNoticeOn then
+                HandleCommitNotice(self);
+            end if;
+        or
             if ~StableLeaderOn then
                 TakeNewReadRequest(self);
             else
@@ -639,10 +643,6 @@ begin
             HandleDoRead(self);
         or
             HandleDoReadReplies(self);
-        or
-            if CommitNoticeOn then
-                HandleCommitNotice(self);
-            end if;
         or
             if NodeFailuresOn then
                 ReplicaCrashes(self);
@@ -655,7 +655,7 @@ end algorithm; *)
 
 ----------
 
-\* BEGIN TRANSLATION (chksum(pcal) = "ad26ce06" /\ chksum(tla) = "9600697f")
+\* BEGIN TRANSLATION (chksum(pcal) = "981f2206" /\ chksum(tla) = "dcc8e198")
 VARIABLES msgs, grants, node, pending, observed, crashed, pc
 
 (* define statement *)
@@ -808,6 +808,20 @@ rloop(self) == /\ pc[self] = "rloop"
                                                    ELSE /\ TRUE
                                                         /\ msgs' = msgs
                                 /\ UNCHANGED <<grants, crashed>>
+                             \/ /\ IF CommitNoticeOn
+                                      THEN /\ /\ node[self].leader # self
+                                              /\ node[self].commitUpTo < NumWrites
+                                              /\ node[self].insts[node[self].commitUpTo+1].status = "Accepting"
+                                           /\ LET s == node[self].commitUpTo+1 IN
+                                                LET c == node[self].insts[s].write IN
+                                                  \E m \in msgs:
+                                                    /\ /\ m.type = "CommitNotice"
+                                                       /\ m.upto = s
+                                                    /\ node' = [node EXCEPT ![self].insts[s].status = "Committed",
+                                                                            ![self].commitUpTo = s]
+                                      ELSE /\ TRUE
+                                           /\ node' = node
+                                /\ UNCHANGED <<msgs, grants, pending, observed, crashed>>
                              \/ /\ IF ~StableLeaderOn
                                       THEN /\ /\ ThinkAmLeader(self)
                                               /\ Len(UnseenPending(self)) > 0
@@ -853,20 +867,6 @@ rloop(self) == /\ pc[self] = "rloop"
                                              /\ pending' = RemovePending(c)
                                              /\ node' = [node EXCEPT ![self].reads[s] = @ \ {c}]
                                 /\ UNCHANGED <<msgs, grants, crashed>>
-                             \/ /\ IF CommitNoticeOn
-                                      THEN /\ /\ node[self].leader # self
-                                              /\ node[self].commitUpTo < NumWrites
-                                              /\ node[self].insts[node[self].commitUpTo+1].status = "Accepting"
-                                           /\ LET s == node[self].commitUpTo+1 IN
-                                                LET c == node[self].insts[s].write IN
-                                                  \E m \in msgs:
-                                                    /\ /\ m.type = "CommitNotice"
-                                                       /\ m.upto = s
-                                                    /\ node' = [node EXCEPT ![self].insts[s].status = "Committed",
-                                                                            ![self].commitUpTo = s]
-                                      ELSE /\ TRUE
-                                           /\ node' = node
-                                /\ UNCHANGED <<msgs, grants, pending, observed, crashed>>
                              \/ /\ IF NodeFailuresOn
                                       THEN /\ /\ WriteQuorumSize + numCrashed < Cardinality(Replicas)
                                               /\ ~crashed[self]
