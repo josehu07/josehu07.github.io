@@ -602,7 +602,7 @@ end macro;
 
 \* Replica node crashes itself under promised conditions.
 macro ReplicaCrashes(r) begin
-    \* if less than (N - majority) number of replicas have failed
+    \* if less than (N - WriteQuourmSize) number of replicas have failed
     await /\ WriteQuorumSize + numCrashed < Cardinality(Replicas)
           /\ ~crashed[r]
           /\ node[r].balMaxKnown < MaxBallot;
