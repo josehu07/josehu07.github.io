@@ -449,7 +449,7 @@ end macro;
 \* Leader gathers AcceptReply messages for a slot until condition met, then
 \* marks the slot as committed and acknowledges the client.
 macro HandleAcceptReplies(r) begin
-    \* if I think I'm a current leader
+    \* if I'm a prepared leader
     await /\ ThinkAmLeader(r)
           /\ node[r].commitUpTo < NumWrites
           /\ node[r].insts[node[r].commitUpTo+1].status = "Accepting";
@@ -512,8 +512,8 @@ end macro;
 \* client requests be taken only when the leader is stable, therefore DoRead
 \* messages will never be sent.
 macro TakeNewReadRequestLocally(r) begin
-    \* if I'm a prepared leader that has committed all slots of old ballots
-    \* and there's pending read request
+    \* if I'm a prepared and recovered leader that has committed all slots
+    \* of old ballots, and there's pending read request
     await /\ ThinkAmLeader(r)
           /\ node[r].commitUpTo >= node[r].commitPrev
           /\ Len(UnseenPending(r)) > 0
@@ -551,7 +551,7 @@ end macro;
 \* Leader gathers DoReadReply messages for a read request until read quorum
 \* formed, then acknowledges the client.
 macro HandleDoReadReplies(r) begin
-    \* if I think I'm a current leader
+    \* if I'm a prepared leader
     await ThinkAmLeader(r);
     \* for an on-the-fly read, when there are enough DoReadReplies and that
     \* the predecessor write has been committed
