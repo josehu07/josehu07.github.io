@@ -52,7 +52,7 @@ Below are the files composing an extended version of the spec along with model i
 - [MultiPaxos_MC_rwqrm.cfg](/assets/file/tla-specs/multipaxos_smr_addon/MultiPaxos_MC_rwqrm.cfg) (input demonstrating asymmetric write/read quorum sizes)
 - [MultiPaxos_MC_lease.cfg](/assets/file/tla-specs/multipaxos_smr_addon/MultiPaxos_MC_lease.cfg) (input demonstrating stable leader leases and local read)
 
-## What's New in the Extend Spec
+## What's New in the Extended Spec
 
 The extended spec includes the following extra features/variants of MultiPaxos that are very essential and useful in practice:
 
