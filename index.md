@@ -64,7 +64,7 @@ For my teaching, research, and work experience, the awards and honors I received
   <tbody>
     <tr>
       <td class="exp-time">2024.05 - 2024.08</td>
-      <td class="exp-title">Applied Scientist Intern (Storage Systems & ARG) <a href="https://aws.amazon.com/s3/">↩︎</a></td>
+      <td class="exp-title">Applied Scientist Intern <a href="https://aws.amazon.com/s3/">↩︎</a></td>
       <td class="exp-place">Amazon S3, Seattle</td>
     </tr>
   </tbody>

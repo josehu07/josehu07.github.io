@@ -40,6 +40,16 @@ I learned a lot from [Prof. Shu Yin](http://sist.shanghaitech.edu.cn/2018/0502/c
     opacity: 1;
   }
 
+  a.btn-arxiv {
+    color: #aa1e2f;
+    opacity: 0.8;
+    display: inline-block;
+    padding-right: 5px;
+  }
+  a.btn-arxiv:hover, a.btn-arxiv:focus {
+    opacity: 1;
+  }
+
   a.btn-github {
     color: #34495E;
     opacity: 0.8;
@@ -86,6 +96,13 @@ I learned a lot from [Prof. Shu Yin](http://sist.shanghaitech.edu.cn/2018/0502/c
     <a class="btn-github" href="https://github.com/josehu07/nhc-demo" target="_blank"><img class="paper-button-small" src="/assets/img/github-button.svg" /> Code</a>
 - <b>BORA: A Bag Optimizer for Robotic Analysis</b>. Jian Zhang, Tao Xie, Yuzhuo Jing, Yanjie Song, <u>Guanzhou Hu</u>, Si Chen, and Shu Yin. 2020. In Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis (<b><i>SC '20</i></b>). IEEE Press, Article 12, 1–15. <br/>
     <a class="btn-acmdoi" href="https://dl.acm.org/doi/abs/10.5555/3433701.3433716" target="_blank"><img class="paper-button" src="/assets/img/acmdoi-button.svg" /> ACM-DOI</a>
+
+### Preprints
+
+- <b>A Unified, Practical, and Understandable Summary of Non-transactional Consistency Levels in Distributed Replication</b>. <u>Guanzhou Hu</u>, Andrea Arpaci-Dusseau, Remzi Arpaci-Dusseau. 2024. <br/>
+    <a class="btn-arxiv" href="https://arxiv.org/abs/2409.01576" target="_blank"><img class="paper-button" src="/assets/img/arxiv-button.svg" /> arXiv</a>
+- <b>Foreactor: Exploiting Storage I/O Parallelism with Explicit Speculation</b>. <u>Guanzhou Hu</u>, Andrea Arpaci-Dusseau, Remzi Arpaci-Dusseau. 2024. <br/>
+    <a class="btn-arxiv" href="https://arxiv.org/abs/2409.01580" target="_blank"><img class="paper-button" src="/assets/img/arxiv-button.svg" /> arXiv</a>
 
 ### Patents
 
