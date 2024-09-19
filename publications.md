@@ -103,6 +103,7 @@ I learned a lot from [Prof. Shu Yin](https://sist.shanghaitech.edu.cn/yinshu_en/
     <a class="btn-arxiv" href="https://arxiv.org/abs/2409.01576" target="_blank"><img class="paper-button" src="/assets/img/arxiv-button.svg" /> arXiv</a>
 - <b>Foreactor: Exploiting Storage I/O Parallelism with Explicit Speculation</b>. <u>Guanzhou Hu</u>, Andrea Arpaci-Dusseau, Remzi Arpaci-Dusseau. 2024. <br/>
     <a class="btn-arxiv" href="https://arxiv.org/abs/2409.01580" target="_blank"><img class="paper-button" src="/assets/img/arxiv-button.svg" /> arXiv</a>
+    <a class="btn-github" href="https://github.com/josehu07/foreactor" target="_blank"><img class="paper-button-small" src="/assets/img/github-button.svg" /> Code</a>
 
 ### Patents
 
