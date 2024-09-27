@@ -17,7 +17,7 @@ I am working with [Prof. Andrea Arpaci-Dusseau](http://pages.cs.wisc.edu/~dussea
 
 I worked with [Prof. Harry Xu](http://web.cs.ucla.edu/~harryxu/) as a summer intern on scaling and accelerating graph neural networks computation using serverless computing.
 
-I learned a lot from [Prof. Shu Yin](http://sist.shanghaitech.edu.cn/2018/0502/c2739a24245/page.htm) during my undergraduate study on optimizing file system organization for inherently-structured workload.
+I learned a lot from [Prof. Shu Yin](https://sist.shanghaitech.edu.cn/yinshu_en/main.htm) during my undergraduate study on optimizing file system organization for inherently-structured workloads.
 
 <style>
   a.btn-acmdoi {
