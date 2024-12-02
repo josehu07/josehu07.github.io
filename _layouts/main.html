@@ -53,20 +53,37 @@
           </p>
 
           <p class="view">
-            <table class="emailtable">
-              <tr class="emailtable">
-                <td class="emailtable emailtable-icon" rowspan="2">
+            <table class="sidebar-table">
+              <tr class="sidebar-table">
+                <td class="sidebar-table sidebar-table-icon" rowspan="2">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
                     <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
                   </svg>
                 </td>
-                <td class="emailtable"><i>{{ site.email_one }}</i></td>
+                <td class="sidebar-table">{{ site.email_one }}</td>
               </tr>
-              <tr class="emailtable">
-                <td class="emailtable"><i>{{ site.email_two }}</i></td>
+              <tr class="sidebar-table">
+                <td class="sidebar-table">{{ site.email_two }}</td>
               </tr>
             </table>
           </p>
+
+          <!-- <p class="view">
+            <table class="sidebar-table">
+              <tr class="sidebar-table">
+                <td class="sidebar-table sidebar-table-icon" rowspan="2">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-link" viewBox="0 0 16 16">
+                    <path d="M6.354 5.5H4a3 3 0 0 0 0 6h3a3 3 0 0 0 2.83-4H9q-.13 0-.25.031A2 2 0 0 1 7 10.5H4a2 2 0 1 1 0-4h1.535c.218-.376.495-.714.82-1z"/>
+                    <path d="M9 5.5a3 3 0 0 0-2.83 4h1.098A2 2 0 0 1 9 6.5h3a2 2 0 1 1 0 4h-1.535a4 4 0 0 1-.82 1H12a3 3 0 1 0 0-6z"/>
+                  </svg>
+                </td>
+                <td class="sidebar-table"><a href="{{ site.domain_one }}">{{ site.domain_one }}</a></td>
+              </tr>
+              <tr class="sidebar-table">
+                <td class="sidebar-table"><a href="{{ site.domain_two }}">{{ site.domain_two }}</a></td>
+              </tr>
+            </table>
+          </p> -->
         </div>
         
         <p id="header-bottom">
