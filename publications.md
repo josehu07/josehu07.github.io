@@ -15,7 +15,9 @@ permalink: /publications.html
 
 I am working with [Prof. Andrea Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Prof. Remzi Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/) (great advisors!) on distributed storage systems and operating systems. My current focus is on modernizing distributed replication protocols for emerging workloads, such as data-heavy replication and wide-area replication. Previously, I have studied file systems and kernel storage stack technologies for new hardware such as persistent memory.
 
-I worked with [Prof. Harry Xu](http://web.cs.ucla.edu/~harryxu/) as a summer intern on scaling and accelerating graph neural networks computation using serverless computing.
+I had a great internship experience at Amazon Web Services supervised by [James Bornholt](https://jamesbornholt.com/) and [Andy Warfield](https://www.cs.ubc.ca/~andy/) doing some cool cloud storage stuff.
+
+I worked in the awesome group led by [Prof. Harry Xu](http://web.cs.ucla.edu/~harryxu/) as a summer research intern on scaling and accelerating graph neural networks computation using serverless computing.
 
 I learned a lot from [Prof. Shu Yin](https://sist.shanghaitech.edu.cn/yinshu_en/main.htm) during my undergraduate study on optimizing file system organization for inherently-structured workloads.
 

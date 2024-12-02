@@ -39,8 +39,6 @@ If you don't mind wasting a few seconds of your life, please take a look at thes
 - [The Summerset KV-store](https://github.com/josehu07/summerset): a distributed, replicated KV-store framework written in async Rust, mainly for state machine replication (SMR) research purposes. Summerset is generic to protocols; more protocols are actively being added.
 - [The Hux OS kernel](https://github.com/josehu07/hux-kernel): a weekend operating system kernel project built to be minimal and understandable. I documented my development of Hux into a complete set of [GitHub Wiki pages](https://github.com/josehu07/hux-kernel/wiki).
 
-For my teaching, research, and work experience, the awards and honors I received, and my services for the research community, please check out [my CV](/assets/file/Guanzhou_Hu_CV.pdf).
-
 <style>
   td.exp-time {
     text-align: center;
@@ -96,6 +94,8 @@ For my teaching, research, and work experience, the awards and honors I received
     </tr>
   </tbody>
 </table>
+
+For my teaching experience, the awards and honors I received, and my services for the research community, please check out [my CV](/assets/file/Guanzhou_Hu_CV.pdf).
 
 <!--
 ### Potpourri
