@@ -127,3 +127,17 @@ section_header "gruvbox"
 rm -f .vimrc
 wget https://josehu.com/assets/dev-env/vimrc-backup.txt -O .vimrc
 vim -es -u .vimrc -i NONE -c "PlugInstall" -c "qa"
+
+# bottom monitor
+sudo apt -y install bottom
+mkdir -p .config/bottom/
+rm -f .config/bottom/bottom.toml
+wget https://josehu.com/assets/dev-env/bottom.toml -P .config/bottom/
+
+# fzf search
+sudo apt -y install fzf
+append_to_file .zshrc ""
+append_to_file .zshrc "# fzf search"
+append_to_file .zshrc "source <(fzf --zsh)"
+append_to_file .zshrc "export FZF_DEFAULT_OPTS='--height 40% --layout reverse --border'"
+reload_zshrc
