@@ -162,9 +162,13 @@ code, pre { font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Termi
 
 pre { padding: 8px 15px; background: #f8f8f8; border-radius: 5px; border: 1px solid #e5e5e5; overflow-x: auto; }
 
-table:not(.emailtable) { width: 100%; border-collapse: collapse; }
+table.sidebar-table { margin-left: auto; margin-right: auto; }
 
-th, td:not(.emailtable) { text-align: left; padding: 5px 10px; border-bottom: 1px solid #e5e5e5; }
+.sidebar-table tr { line-height: 16px; }
+
+table:not(.sidebar-table) { width: 100%; border-collapse: collapse; }
+
+th, td:not(.sidebar-table) { text-align: left; padding: 5px 10px; border-bottom: 1px solid #e5e5e5; }
 
 dt { color: #444; font-weight: 700; }
 
@@ -208,8 +212,6 @@ footer { text-align: left; width: 210px; float: left; position: fixed; bottom: 5
 
 #header-lower p.view { text-align: center; }
 
-table.emailtable { margin-left: auto; margin-right: auto; }
-
 #header-bottom { max-width: 210px; margin-left: auto; margin-right: auto; text-align: center; }
 
 #site-title-box { text-align: center; }
@@ -226,7 +228,7 @@ table.emailtable { margin-left: auto; margin-right: auto; }
 
 #site-description { text-align: center; margin-bottom: 24px; }
 
-.emailtable-icon { padding-right: 6px; font-size: large; }
+.sidebar-table-icon { padding-right: 6px; font-size: large; }
 
 .navigation-bar { text-align: right; font-size: 16px; }
 

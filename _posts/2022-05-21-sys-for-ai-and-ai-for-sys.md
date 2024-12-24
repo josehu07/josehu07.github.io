@@ -35,7 +35,7 @@ The interaction between AI and systems can also go the other way around: deployi
 
 One of such opportunities, in my opinion, is to use AI algorithms to help improve or replace **heuristics**. Systems builders have long been putting heuristics here and there in different kinds of systems.
 
-For example, cache eviction algorithms in data store systems rely heavily on heuristics about the incoming workload to decide which entry to evict when the cache is full. Many production systems still choose a simple heuristic such as LRU (least-recently used) that might not fit the actual workload well and is not resistant to large scans. If you are interested, here is [a post](http://josehu.com/technical/2020/08/07/cache-eviction-algorithms.html) [^6] I wrote earlier about cache modes and eviction algorithms.
+For example, cache eviction algorithms in data store systems rely heavily on heuristics about the incoming workload to decide which entry to evict when the cache is full. Many production systems still choose a simple heuristic such as LRU (least-recently used) that might not fit the actual workload well and is not resistant to large scans. If you are interested, here is [a post](https://josehu.com/technical/2020/08/07/cache-eviction-algorithms.html) [^6] I wrote earlier about cache modes and eviction algorithms.
 
 Another example of heuristics would be magic configuration numbers. A hash function implementation needs to decide how many buckets to create initially and how many more to grow at resizing. A database system needs to decide how much memory space to allocate as the block cache, etc. Magic numbers are everywhere and they are typically just chosen by an experienced system designer with very little assumption on the actual workload the system is going to serve.
 
@@ -55,13 +55,13 @@ By integrating ML algorithms into systems, our ultimate goal is to let it come u
 
 Coarsely, we can categorize "ML for Sys" techniques into two classes:
 
-- **Online**: gather workload data at run-time, train on gather data constantly to update the policy, and use the most up-to-date policy to make decisions.
-    - $$\uparrow$$ This strategy is rather robust against workload shifts.
-    - $$\downarrow$$ Gathering data and training most of the useful ML models at run-time are very expensive and time-consuming.
-- **Offline**: train on offline data (which are probably profiled from previous runs ahead-of-time) to get a determined policy and then deploy that policy.
-    - $$\uparrow$$ This strategy removes the cost of training from the critical path.
-    - $$\downarrow$$ It cannot react to dynamic changes in workload pattern.
-    - $$\downarrow$$ Evaluating a policy may still involve inference costs, which might not be cheap depending on the type of the model.
+* **Online**: gather workload data at run-time, train on gather data constantly to update the policy, and use the most up-to-date policy to make decisions.
+  * $$\uparrow$$ This strategy is rather robust against workload shifts.
+  * $$\downarrow$$ Gathering data and training most of the useful ML models at run-time are very expensive and time-consuming.
+* **Offline**: train on offline data (which are probably profiled from previous runs ahead-of-time) to get a determined policy and then deploy that policy.
+  * $$\uparrow$$ This strategy removes the cost of training from the critical path.
+  * $$\downarrow$$ It cannot react to dynamic changes in workload pattern.
+  * $$\downarrow$$ Evaluating a policy may still involve inference costs, which might not be cheap depending on the type of the model.
 
 Nonetheless, the performance benefit of deploying a ML model in a computer system must be greater than its cost of deployment for it to be actually useful. This is why most of the research work around this topic so far are still limited to light-weight ML models. Bourbon, for example, only incorporates a simple segmented linear regression model and not any form of neural networks (NN). Some offline configuration tuning tools that produce static magic numbers may use larger NN models.
 
@@ -74,7 +74,7 @@ I hope that other ways of integrating AI techniques into computer systems can be
 [^3]: [https://www.usenix.org/conference/nsdi12/technical-sessions/presentation/zaharia](https://www.usenix.org/conference/nsdi12/technical-sessions/presentation/zaharia)
 [^4]: [https://www.usenix.org/conference/osdi22/technical-sessions](https://www.usenix.org/conference/osdi22/technical-sessions)
 [^5]: [https://mlsys.org/](https://mlsys.org/)
-[^6]: [http://josehu.com/technical/2020/08/07/cache-eviction-algorithms.html](http://josehu.com/technical/2020/08/07/cache-eviction-algorithms.html)
+[^6]: [https://josehu.com/technical/2020/08/07/cache-eviction-algorithms.html](https://josehu.com/technical/2020/08/07/cache-eviction-algorithms.html)
 [^7]: [https://www.usenix.org/conference/osdi20/presentation/dai](https://www.usenix.org/conference/osdi20/presentation/dai)
 [^8]: [https://dl.acm.org/doi/10.14778/3436905.3436919](https://dl.acm.org/doi/10.14778/3436905.3436919)
 [^9]: [https://bhentsch.github.io/doc/EntropyLearnedHashing.pdf](https://bhentsch.github.io/doc/EntropyLearnedHashing.pdf)

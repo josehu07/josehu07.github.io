@@ -9,8 +9,11 @@ description: Feeling comfortably numb
 logo: /assets/img/Gravatar_Sedona-sq.jpg
 
 resume_link: /assets/file/Guanzhou_Hu_CV.pdf
-linkedin_link: https://www.linkedin.com/in/josehu/
+linkedin_link: https://www.linkedin.com/in/josehu
 google_scholar_link: https://scholar.google.com/citations?hl=en&user=CXWO_egAAAAJ
+
+domain_one: https://josehu.com
+domain_two: https://guanzhou.hu
 
 email_one: guanzhou.hu (at) wisc.edu
 email_two: josehu (at) cs.wisc.edu
