@@ -13,7 +13,7 @@ permalink: /
 
 # About Me
 
-I am a computer science Ph.D. student in the [ADSL lab](https://research.cs.wisc.edu/adsl/) at the [University of Wisconsin-Madison](https://www.wisc.edu/), advised by [Professor Andrea Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Professor Remzi Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/). My research interest lies in **computer systems**, especially distributed storage systems and operating systems.
+I am a computer science Ph.D. student in the [ADSL lab](https://research.cs.wisc.edu/adsl/) at the [University of Wisconsin-Madison](https://www.wisc.edu/), advised by [Professor Andrea C. Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Professor Remzi H. Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/). My research interest lies in **computer systems**, especially distributed systems, operating systems, and cloud storage.
 
 My current research focus is on modernizing distributed replication protocols for emerging workloads, such as data-heavy replication and wide-area replication. Previously, I have studied file systems and kernel storage stack technologies for new hardware such as persistent memory.
 
@@ -62,8 +62,8 @@ If you don't mind wasting a few seconds of your life, please take a look at thes
   <tbody>
     <tr>
       <td class="exp-time">2024.05 - 2024.08</td>
-      <td class="exp-title">Applied Scientist Intern <a href="https://aws.amazon.com/s3/">↩︎</a></td>
-      <td class="exp-place">Amazon S3, Seattle</td>
+      <td class="exp-title">Applied Scientist Intern at Amazon S3 <a href="https://aws.amazon.com/s3/">↩︎</a></td>
+      <td class="exp-place">Amazon, Seattle</td>
     </tr>
   </tbody>
 </table>
@@ -95,7 +95,7 @@ If you don't mind wasting a few seconds of your life, please take a look at thes
   </tbody>
 </table>
 
-For my teaching experience, the awards and honors I received, and my services for the research community, please check out [my CV](/assets/file/Guanzhou_Hu_CV.pdf).
+For my teaching experience and my services for the research community, please check out [my CV](/assets/file/Guanzhou_Hu_CV.pdf).
 
 <!--
 ### Potpourri
