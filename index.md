@@ -17,18 +17,22 @@ I am a computer science Ph.D. student in the [ADSL lab](https://research.cs.wisc
 
 My current research focus is on modernizing distributed replication protocols for emerging workloads, such as data-heavy replication and wide-area replication. Previously, I have studied file systems and kernel storage stack technologies for new hardware such as persistent memory.
 
+I am working towards graduation this summer, and will join the [S3 team](https://www.amazon.science/tag/amazon-s3) at [Amazon Web Services](https://aws.amazon.com/) as a full-time Applied Scientist starting August 2025. Looking forward to the new journey ahead!
+
 ```rust
 /// Keep calm & do good research!
 impl<CS> Researcher<CS> for Me {
     // TODO: This method is far from complete.
     fn week(
         &mut self,
-        paper: &Paper<CS>,
-        project: &mut Project<CS>,
+        pubs: Vec<&Paper<CS>>,
+        proj: &mut Project<CS>,
+        comm: Discussion<CS>, 
     ) -> Result<(), Box<dyn Error>> {
-        let report = paper.read()?.note()?;
-        let progress = project.exec()?;
-        self.meeting(report, progress)?;
+        let learning = pubs.collect()?.study()?;
+        let progress = proj.hard_work()?;
+        let insights = comm.make()?.summarize()?;
+        self.meeting(learning, progress, insights)?;
         Ok(())
     }
 }
@@ -61,6 +65,11 @@ If you don't mind wasting a few seconds of your life, please take a look at thes
 <table>
   <tbody>
     <tr>
+      <td class="exp-time">2025.08 - 20??.??</td>
+      <td class="exp-title">Applied Scientist at Amazon S3 <a href="https://www.amazon.science/tag/amazon-s3">↩︎</a></td>
+      <td class="exp-place">Amazon, Seattle</td>
+    </tr>
+    <tr>
       <td class="exp-time">2024.05 - 2024.08</td>
       <td class="exp-title">Applied Scientist Intern at Amazon S3 <a href="https://aws.amazon.com/s3/">↩︎</a></td>
       <td class="exp-place">Amazon, Seattle</td>
@@ -73,7 +82,7 @@ If you don't mind wasting a few seconds of your life, please take a look at thes
 <table>
   <tbody>
     <tr>
-      <td class="exp-time">2020.08 - 20??.??</td>
+      <td class="exp-time">2020.08 - 2025.0?</td>
       <td class="exp-title">Ph.D. Candidate in Computer Science <a href="https://research.cs.wisc.edu/adsl/">↩︎</a></td>
       <td class="exp-place">UW-Madison</td>
     </tr>
