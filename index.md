@@ -38,10 +38,14 @@ impl<CS> Researcher<CS> for Me {
 }
 ```
 
-If you don't mind wasting a few seconds of your life, please take a look at these rather cool open-source projects I did!
+If you don't mind wasting a few seconds of your life, please take a look at these projects:
 
-- [The Summerset KV-store](https://github.com/josehu07/summerset): a distributed, replicated KV-store framework written in async Rust, mainly for state machine replication (SMR) research purposes. Summerset is generic to protocols; more protocols are actively being added.
-- [The Hux OS kernel](https://github.com/josehu07/hux-kernel): a weekend operating system kernel project built to be minimal and understandable. I documented my development of Hux into a complete set of [GitHub Wiki pages](https://github.com/josehu07/hux-kernel/wiki).
+- [Summerset](https://github.com/josehu07/summerset): a distributed, replicated, protocol-generic KV-store framework written in async Rust for unified state machine replication (SMR) research purposes. Summerset is generic to protocols; more are actively being added and evaluated.
+- [MadKV](https://github.com/josehu07/madkv): template of a well-designed KV-store project series for the distributed systems course at my school. Use and extensions for teaching purposes elsewhere are very welcome.
+- [Hux OS kernel](https://github.com/josehu07/hux-kernel): a weekend operating system kernel project built to be minimal and understandable. I documented my development of Hux into a complete set of [GitHub Wiki pages](https://github.com/josehu07/hux-kernel/wiki).
+- [Garner](https://github.com/josehu07/garner): demonstrating hierarchical validation for optimistic concurrency control (OCC) on a B+-tree database index.
+
+... and more on my [GitHub profile](https://github.com/josehu07) page!
 
 <style>
   td.exp-time {
