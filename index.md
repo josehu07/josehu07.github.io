@@ -44,6 +44,7 @@ If you don't mind wasting a few seconds of your life, please take a look at thes
 - [MadKV](https://github.com/josehu07/madkv): template of a well-designed KV-store project series for the distributed systems course at my school. Use and extensions for teaching purposes elsewhere are very welcome.
 - [Hux OS kernel](https://github.com/josehu07/hux-kernel): a weekend operating system kernel project built to be minimal and understandable. I documented my development of Hux into a complete set of [GitHub Wiki pages](https://github.com/josehu07/hux-kernel/wiki).
 - [Garner](https://github.com/josehu07/garner): demonstrating hierarchical validation for optimistic concurrency control (OCC) on a B+-tree database index.
+- [Codetective](https://josehu.com/apps/codetective): a purely client-side WASM app enabling code AI authorship detection and analysis in five clicks.
 
 ... and more on my [GitHub profile](https://github.com/josehu07) page!
 
