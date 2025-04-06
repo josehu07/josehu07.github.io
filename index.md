@@ -54,12 +54,12 @@ If you don't mind wasting a few seconds of your life, take a look at these proje
   <tbody>
     <tr>
       <td class="exp-time">2025.08 - 20−−.−−</td>
-      <td class="exp-title">Applied Scientist at Amazon S3 <a href="https://www.amazon.science/tag/amazon-s3">↩︎</a></td>
+      <td class="exp-title">Applied Scientist at Amazon S3 <a href="https://www.amazon.science/tag/amazon-s3" target="_blank">↩︎</a></td>
       <td class="exp-place">Amazon, Seattle</td>
     </tr>
     <tr>
       <td class="exp-time">2024.05 - 2024.08</td>
-      <td class="exp-title">Applied Scientist Intern at Amazon S3 <a href="https://aws.amazon.com/s3/">↩︎</a></td>
+      <td class="exp-title">Applied Scientist Intern at Amazon S3 <a href="https://aws.amazon.com/s3/" target="_blank">↩︎</a></td>
       <td class="exp-place">Amazon, Seattle</td>
     </tr>
   </tbody>
@@ -71,22 +71,22 @@ If you don't mind wasting a few seconds of your life, take a look at these proje
   <tbody>
     <tr>
       <td class="exp-time">2020.08 - 2025.0?</td>
-      <td class="exp-title">Ph.D. Candidate in Computer Science <a href="https://research.cs.wisc.edu/adsl/">↩︎</a></td>
+      <td class="exp-title">Ph.D. Candidate in Computer Science <a href="https://research.cs.wisc.edu/adsl/" target="_blank">↩︎</a></td>
       <td class="exp-place">UW-Madison</td>
     </tr>
     <tr>
       <td class="exp-time">2019.09 - 2020.07</td>
-      <td class="exp-title">Special Student Program <a href="https://registrar.mit.edu/registration-academics/registration-information/special-student-registration">↩︎</a></td>
+      <td class="exp-title">Special Student Program <a href="https://registrar.mit.edu/registration-academics/registration-information/special-student-registration" target="_blank">↩︎</a></td>
       <td class="exp-place">MIT</td>
     </tr>
     <tr>
       <td class="exp-time">2019.07 - 2019.09</td>
-      <td class="exp-title">Summer Research Intern <a href="http://systems.cs.ucla.edu">↩︎</a></td>
+      <td class="exp-title">Summer Research Intern <a href="http://systems.cs.ucla.edu" target="_blank">↩︎</a></td>
       <td class="exp-place">UCLA</td>
     </tr>
     <tr>
       <td class="exp-time">2016.09 - 2020.07</td>
-      <td class="exp-title">B.Eng. in Computer Science</td>
+      <td class="exp-title">B.Eng. in Computer Science <a href="https://ssc.sist.shanghaitech.edu.cn/" target="_blank">↩︎</a></td>
       <td class="exp-place">ShanghaiTech</td>
     </tr>
   </tbody>

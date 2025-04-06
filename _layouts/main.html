@@ -19,7 +19,6 @@
   {% if page.enable_math == "enable" %}
   <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML"></script>
   {% endif %}
-
 </head>
 
 <body>
@@ -46,14 +45,14 @@
 
       <div id="header-lower">
         <p class="view" id="github-link">
-          <a href="{{ site.github.owner_url }}">
+          <a href="{{ site.github.owner_url }}" target="_blank">
             Find me on GitHub<br>
             <small>{{ site.github.owner_url }}</small>
           </a>
         </p>
 
         <p class="view">
-          <a href="{{ site.resume_link }}">CV</a>&nbsp;|&nbsp;<a href="{{ site.linkedin_link }}">LinkedIn</a>&nbsp;|&nbsp;<a href="{{ site.google_scholar_link }}">G Scholar</a><br>
+          <a href="{{ site.resume_link }}" target="_blank">CV</a>&nbsp;|&nbsp;<a href="{{ site.linkedin_link }}" target="_blank">LinkedIn</a>&nbsp;|&nbsp;<a href="{{ site.google_scholar_link }}" target="_blank">G Scholar</a><br>
         </p>
 
         <p class="view">
@@ -75,7 +74,7 @@
 
       <p id="header-bottom">
         <small>To all my loved ones, cheers ♥</small><br>
-        <small>Theme adapted from <a href="https://github.com/orderedlist">orderedlist</a></small>
+        <small>Theme adapted from <a href="https://github.com/orderedlist" target="_blank">orderedlist</a></small>
       </p>
     </header>
 
