@@ -5,9 +5,9 @@ permalink: /notes.html
 ---
 
 <p class="navigation-bar">
-  <a href="/index.html">About Me</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="/publications.html">Publications</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="/blogs.html">Blogs</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+  <a href="/index.html">About</a>&nbsp;|&nbsp;
+  <a href="/publications.html">Publications</a>&nbsp;|&nbsp;
+  <a href="/blogs.html">Blogs</a>&nbsp;|&nbsp;
   <b>Notes</b>
 </p>
 

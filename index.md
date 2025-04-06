@@ -5,9 +5,9 @@ permalink: /
 ---
 
 <p class="navigation-bar">
-  <b>About Me</b>&nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="/publications.html">Publications</a>&nbsp;&nbsp;|&nbsp;&nbsp;
-  <a href="/blogs.html">Blogs</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+  <b>About</b>&nbsp;|&nbsp;
+  <a href="/publications.html">Publications</a>&nbsp;|&nbsp;
+  <a href="/blogs.html">Blogs</a>&nbsp;|&nbsp;
   <a href="/notes.html">Notes</a>
 </p>
 
