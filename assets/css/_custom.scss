@@ -27,9 +27,11 @@
 
 .note-icon { vertical-align: middle; height: 16px; width: 16px; margin-right: 4px; }
 
-td.exp-time { text-align: center; width: 27%; white-space: nowrap; }
+td.exp-time { text-align: center; width: 27%; white-space: pre-line; }
 td.exp-title { text-align: left; width: 50%; }
 td.exp-place { text-align: left; width: 23%; }
+
+span.exp-no-break { display: inline-block; white-space: nowrap; word-break: keep-all; }
 
 .comments-welcome { margin-top: 25px; }
 

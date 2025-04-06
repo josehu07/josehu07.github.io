@@ -53,7 +53,7 @@ If you don't mind wasting a few seconds of your life, take a look at these proje
 <table>
   <tbody>
     <tr>
-      <td class="exp-time">2025.08 - 20−−.−−</td>
+      <td class="exp-time">2025.08 - <span class="exp-no-break">20−−.−−</span></td>
       <td class="exp-title">Applied Scientist at Amazon S3 <a href="https://www.amazon.science/tag/amazon-s3" target="_blank">↩︎</a></td>
       <td class="exp-place">Amazon, Seattle</td>
     </tr>
@@ -70,7 +70,7 @@ If you don't mind wasting a few seconds of your life, take a look at these proje
 <table>
   <tbody>
     <tr>
-      <td class="exp-time">2020.08 - 2025.0?</td>
+      <td class="exp-time">2020.08 - 2025.07</td>
       <td class="exp-title">Ph.D. Candidate in Computer Science <a href="https://research.cs.wisc.edu/adsl/" target="_blank">↩︎</a></td>
       <td class="exp-place">UW-Madison</td>
     </tr>
