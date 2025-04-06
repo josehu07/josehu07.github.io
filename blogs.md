@@ -13,24 +13,9 @@ permalink: /blogs.html
 
 # Blogs
 
-Occasionally, I write down what I learned, what I thought, what surprised me, and what I wanted to remember. I've been pretty sloppy on these blogs, but still trying my best to keep up!
+Occasionally, I write down what I learned, what I thought, what surprised me, and what I wanted to remember. I've been sloppy on these blogs, but still trying my best to keep up!
 
-<div style="text-align: center; padding-bottom: 10px;">
-  <style>
-    a.btn-rss {
-      color: #EC7063;
-      opacity: 0.8;
-      display: inline-block;
-    }
-    a.btn-rss:hover, a.btn-rss:focus {
-      opacity: 1;
-    }
-    img.subscribe-rss {
-      height: 24px;
-      vertical-align: middle;
-      padding-left: 3px;
-    }
-  </style>
+<div id="subscribe-to-rss">
   <a class="btn-rss" href="/feed.xml" target="_blank">
     <b>Subscribe to my RSS feed <img class="subscribe-rss" src="/assets/img/RSS-icon.svg" /></b>
   </a>

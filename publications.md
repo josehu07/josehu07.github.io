@@ -13,82 +13,22 @@ permalink: /publications.html
 
 # Publications
 
-I am working with [Prof. Andrea Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Prof. Remzi Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/) (great advisors!) on distributed systems, operating systems, and cloud storage infrastructure. My current focus is on modernizing distributed replication protocols for emerging workloads, such as data-heavy replication and wide-area replication. Previously, I have studied file systems and kernel storage stack technologies for new hardware such as persistent memory.
+I am working with [Prof. Andrea Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Prof. Remzi Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/) (great advisors!) on distributed systems/algorithms, operating systems, and cloud storage infra. My current focus is on modernizing distributed replication protocols for emerging workloads, such as data-heavy replication and wide-area replication. Previously, I studied file systems and kernel storage stack technologies for new hardware such as persistent memory.
 
-I had a great internship experience at Amazon Web Services supervised by [James Bornholt](https://jamesbornholt.com/) and [Andy Warfield](https://www.cs.ubc.ca/~andy/) doing some cool cloud storage stuff for AI.
+I had a great internship experience at Amazon Web Services supervised by [James Bornholt](https://jamesbornholt.com/) and [Andy Warfield](https://www.cs.ubc.ca/~andy/) doing some cool cloud storage stuff for AI workloads.
 
 I worked in the awesome group led by [Prof. Harry Xu](http://web.cs.ucla.edu/~harryxu/) as a summer research intern on scaling and accelerating graph neural networks computation using serverless computing.
 
-I learned a lot from [Prof. Shu Yin](https://sist.shanghaitech.edu.cn/yinshu_en/main.htm) during my undergraduate study on optimizing file system organization for inherently-structured workloads.
-
-<style>
-  a.btn-acmdoi {
-    color: #5499C7;
-    opacity: 0.8;
-    display: inline-block;
-    padding-right: 5px;
-  }
-  a.btn-acmdoi:hover, a.btn-acmdoi:focus {
-    opacity: 1;
-  }
-
-  a.btn-usenix {
-    color: #ff6600;
-    opacity: 0.8;
-    display: inline-block;
-    padding-right: 5px;
-  }
-  a.btn-usenix:hover, a.btn-usenix:focus {
-    opacity: 1;
-  }
-
-  a.btn-arxiv {
-    color: #aa1e2f;
-    opacity: 0.8;
-    display: inline-block;
-    padding-right: 5px;
-  }
-  a.btn-arxiv:hover, a.btn-arxiv:focus {
-    opacity: 1;
-  }
-
-  a.btn-github {
-    color: #34495E;
-    opacity: 0.8;
-    display: inline-block;
-    padding-right: 5px;
-  }
-  a.btn-github:hover, a.btn-github:focus {
-    opacity: 1;
-  }
-
-  a.btn-pdf {
-    color: #EC7063;
-    opacity: 0.8;
-    display: inline-block;
-    padding-right: 5px;
-  }
-  a.btn-pdf:hover, a.btn-pdf:focus {
-    opacity: 1;
-  }
-
-  img.paper-button {
-    height: 24px;
-    vertical-align: middle;
-    padding-left: 3px;
-  }
-  img.paper-button-small {
-    height: 21px;
-    vertical-align: middle;
-    padding-left: 3px;
-  }
-</style>
+I learned a lot from [Prof. Shu Yin](https://sist.shanghaitech.edu.cn/yinshu_en/main.htm) during my undergraduate study on optimizing file system data organization for inherently-structured workloads.
 
 ### Conferences
 
 - <b>(In submission, title fuzzed) Effective coordination for cloud databases</b>. First Author and <u>Guanzhou Hu</u> et al. <br/>
+    <a class="btn-github"><img class="paper-button-small" src="/assets/img/github-button.svg" /> Code</a>
 - <b>(In submission, title fuzzed) A consensus protocol achieving remarkably strong read semantics</b>. <u>Guanzhou Hu</u> et al. <br/>
+    <a class="btn-github"><img class="paper-button-small" src="/assets/img/github-button.svg" /> Code</a>
 - <b>(In submission, title fuzzed) A replication protocol for an unaddressed type of workloads</b>. <u>Guanzhou Hu</u> et al. <br/>
+    <a class="btn-github"><img class="paper-button-small" src="/assets/img/github-button.svg" /> Code</a>
 - <b>MadFS: Per-File Virtualization for Userspace Persistent Memory Filesystems</b>. Shawn Zhong, Chenhao Ye, <u>Guanzhou Hu</u>, Suyan Qu, Andrea Arpaci-Dusseau, Remzi Arpaci-Dusseau, Michael Swift. 2023. In Proceedings of the 21th USENIX Conference on File and Storage Technologies (<b><i>FAST '23</i></b>). USENIX Association. <br/>
     <a class="btn-usenix" href="https://www.usenix.org/conference/fast23/presentation/zhong" target="_blank"><img class="paper-button" src="/assets/img/usenix-button.svg" /> USENIX</a>
     <a class="btn-github" href="https://github.com/WiscADSL/MadFS" target="_blank"><img class="paper-button-small" src="/assets/img/github-button.svg" /> Code</a>

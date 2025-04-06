@@ -6,5 +6,6 @@ git_source(:github) {|repo_name| "https://github.com/#{repo_name}" }
 gem "commonmarker"
 gem "webrick"
 gem "jekyll"
+gem "jekyll-sass-converter"
 gem "github-pages", group: :jekyll_plugins
 gem "kramdown-parser-gfm"

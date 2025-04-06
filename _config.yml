@@ -1,4 +1,6 @@
 theme: jekyll-theme-minimal
+sass:
+  sass_dir: /assets/css
 
 plugins:
   - jekyll-feed

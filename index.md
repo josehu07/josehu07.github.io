@@ -13,11 +13,11 @@ permalink: /
 
 # About Me
 
-I am a computer science Ph.D. student in the [ADSL lab](https://research.cs.wisc.edu/adsl/) at the [University of Wisconsin-Madison](https://www.wisc.edu/), advised by [Professor Andrea C. Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Professor Remzi H. Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/). My research interest lies in **computer systems**, especially distributed systems, operating systems, and cloud storage infrastructure.
+I am a computer science Ph.D. student in the [ADSL lab](https://research.cs.wisc.edu/adsl/) at the [University of Wisconsin-Madison](https://www.wisc.edu/), advised by [Professor Andrea C. Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Professor Remzi H. Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/). My research interest lies in **computer systems**, especially in distributed systems and algorithms, operating systems, and cloud storage infrastructure.
 
-My current research focus is on modernizing distributed replication protocols for emerging workloads, such as data-heavy replication and wide-area replication. Previously, I have studied file systems and kernel storage stack technologies for new hardware such as persistent memory.
+My current research focuses on modernizing distributed replication protocols for emerging workloads, such as data-heavy replication and wide-area replication. Previously, I studied file systems and kernel storage stack technologies for new hardware such as persistent memory.
 
-I am working towards graduation this summer, and will join the [S3 team](https://www.amazon.science/tag/amazon-s3) at [Amazon Web Services](https://aws.amazon.com/) as a full-time Applied Scientist starting August 2025. Looking forward to the new journey ahead!
+I am working towards graduation this summer, and will join the [S3 team](https://www.amazon.science/tag/amazon-s3) at [Amazon Web Services](https://aws.amazon.com/) as an Applied Scientist starting August 2025. Looking forward to the journey ahead!
 
 ```rust
 /// Keep calm & do good research!
@@ -25,9 +25,9 @@ impl<CS> Researcher<CS> for Me {
     // TODO: This method is far from complete.
     fn week(
         &mut self,
-        pubs: Vec<&Paper<CS>>,
+        pubs: &Vec<Literature<CS>>,
         proj: &mut Project<CS>,
-        comm: Discussion<CS>, 
+        comm: &mut Discussion<CS>, 
     ) -> Result<(), Box<dyn Error>> {
         let learning = pubs.collect()?.study()?;
         let progress = proj.hard_work()?;
@@ -38,39 +38,22 @@ impl<CS> Researcher<CS> for Me {
 }
 ```
 
-If you don't mind wasting a few seconds of your life, please take a look at these projects:
+If you don't mind wasting a few seconds of your life, take a look at these projects:
 
-- [Summerset](https://github.com/josehu07/summerset): a distributed, replicated, protocol-generic KV-store framework written in async Rust for unified state machine replication (SMR) research purposes. Summerset is generic to protocols; more are actively being added and evaluated.
-- [MadKV](https://github.com/josehu07/madkv): template of a well-designed KV-store project series for the distributed systems course at my school. Use and extensions for teaching purposes elsewhere are very welcome.
-- [Hux OS kernel](https://github.com/josehu07/hux-kernel): a weekend operating system kernel project built to be minimal and understandable. I documented my development of Hux into a complete set of [GitHub Wiki pages](https://github.com/josehu07/hux-kernel/wiki).
+- [Summerset](https://github.com/josehu07/summerset): a distributed, replicated, protocol-generic KV-store framework written in async Rust for unified state machine replication (SMR) research purposes.
+- [MadKV](https://github.com/josehu07/madkv): template of a well-designed KV-store project series for the distributed systems course at my school. Uses for teaching purposes elsewhere are very welcome.
+- [Hux OS kernel](https://github.com/josehu07/hux-kernel): a weekend operating system kernel project built to be minimal and understandable. I documented my development of Hux into a complete set of wiki pages.
 - [Garner](https://github.com/josehu07/garner): demonstrating hierarchical validation for optimistic concurrency control (OCC) on a B+-tree database index.
-- [Codetective](https://josehu.com/apps/codetective): a purely client-side WASM app enabling code AI authorship detection and analysis in five clicks.
+- [Codetective](https://josehu.com/apps/codetective): a client-side WASM app enabling code AI authorship analysis in five clicks.
 
 ... and more on my [GitHub profile](https://github.com/josehu07) page!
-
-<style>
-  td.exp-time {
-    text-align: center;
-    width: 23%;
-  }
-
-  td.exp-title {
-    text-align: left;
-    width: 54%;
-  }
-
-  td.exp-place {
-    text-align: left;
-    width: 23%;
-  }
-</style>
 
 ### Work Experience
 
 <table>
   <tbody>
     <tr>
-      <td class="exp-time">2025.08 - 20??.??</td>
+      <td class="exp-time">2025.08 - 20−−.−−</td>
       <td class="exp-title">Applied Scientist at Amazon S3 <a href="https://www.amazon.science/tag/amazon-s3">↩︎</a></td>
       <td class="exp-place">Amazon, Seattle</td>
     </tr>
@@ -109,26 +92,6 @@ If you don't mind wasting a few seconds of your life, please take a look at thes
   </tbody>
 </table>
 
-For my teaching experience and my services for the research community, please check out [my CV](/assets/file/Guanzhou_Hu_CV.pdf).
+For my teaching experience and services for the research community, please check out [my CV](/assets/file/Guanzhou_Hu_CV.pdf).
 
-<!--
-### Potpourri
-
-I "waste" a lot of time sorting out and structuring my acquired knowledge and skills. This helps me identify the importance of what I am currently doing. You probably have different views on these fields and they may diverge from my understanding - *I totally agree.*
-
-![Fields](/assets/img/knowledge-graph.png)
-
-I know very little about these fields and am always willing to learn, explore, and contribute more.
--->
-
-<p><strong>Please comment below anything you wanna say! 😉</strong></p>
-
-<!-- For Utterance comments -->
-<script src="https://utteranc.es/client.js"
-        repo="josehu07/josehu07.github.io"
-        issue-term="pathname"
-        label="Utterances🔮"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
+<p class="comments-welcome"><strong>Comments welcome! 😉</strong></p>

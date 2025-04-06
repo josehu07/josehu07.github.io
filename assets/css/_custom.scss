@@ -1,0 +1,58 @@
+#header-upper { max-width: 200px; margin-left: auto; margin-right: auto; }
+
+#header-lower { max-width: 200px; margin-left: auto; margin-right: auto; text-align: center; }
+#header-lower p.view { text-align: center; }
+
+#header-bottom { max-width: 200px; margin-left: auto; margin-right: auto; text-align: center; }
+
+#site-title-box { text-align: center; margin-bottom: 15px; }
+
+#site-title:link { color: #303030; background-color: transparent; text-decoration: none; }
+#site-title:visited { color: #303030; background-color: transparent; text-decoration: none; }
+#site-title:hover { color: #000000; background-color: transparent; text-decoration: none; }
+#site-title:active { color: #000000; background-color: transparent; text-decoration: none; }
+
+#site-logo { max-width: 200px; display: block; border-radius: 50%; margin-top: 5px; margin-bottom: 10px; margin-left: auto; margin-right: auto; }
+
+#site-description { text-align: center; font-size: 14px; margin-top: 5px; margin-bottom: 24px; }
+
+#github-link:hover small { color: #393939; }
+
+.sidebar-table-icon { padding-right: 6px; font-size: large; }
+.sidebar-table { font-size: 13px; }
+
+.navigation-bar { text-align: right; font-size: 18px; }
+.navigation-bar-blog-back { text-align: right; font-size: 18px; margin-top: 10px; margin-bottom: 10px; }
+
+.note-icon { vertical-align: middle; height: 16px; width: 16px; margin-right: 4px; }
+
+td.exp-time { text-align: center; width: 27%; white-space: nowrap; }
+td.exp-title { text-align: left; width: 50%; }
+td.exp-place { text-align: left; width: 23%; }
+
+.comments-welcome { margin-top: 25px; }
+
+a.btn-acmdoi { color: #5499C7; opacity: 0.8; display: inline-block; padding-right: 5px; }
+a.btn-acmdoi:hover, a.btn-acmdoi:focus { opacity: 1; }
+
+a.btn-usenix { color: #ff6600; opacity: 0.8; display: inline-block; padding-right: 5px; }
+a.btn-usenix:hover, a.btn-usenix:focus { opacity: 1; }
+
+a.btn-arxiv { color: #aa1e2f; opacity: 0.8; display: inline-block; padding-right: 5px; }
+a.btn-arxiv:hover, a.btn-arxiv:focus { opacity: 1; }
+
+a.btn-github { color: #34495E; opacity: 0.8; display: inline-block; padding-right: 5px; }
+a.btn-github:hover, a.btn-github:focus { opacity: 1; }
+
+a.btn-pdf { color: #EC7063; opacity: 0.8; display: inline-block; padding-right: 5px; }
+a.btn-pdf:hover, a.btn-pdf:focus { opacity: 1; }
+
+img.paper-button { height: 24px; vertical-align: middle; padding-left: 3px; }
+img.paper-button-small { height: 21px; vertical-align: middle; padding-left: 3px; }
+
+#subscribe-to-rss { text-align: center; }
+
+a.btn-rss { color: #EC7063; opacity: 0.8; display: inline-block; }
+a.btn-rss:hover, a.btn-rss:focus { opacity: 1; }
+
+img.subscribe-rss { height: 23px; vertical-align: middle; padding-left: 3px; }

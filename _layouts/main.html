@@ -1,99 +1,97 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="{{ site.lang | default: 'en-US' }}">
 
-{% seo %}
-    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
-    <!--[if lt IE 9]>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  {% seo %}
+  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+  <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
-    <![endif]-->
+  <![endif]-->
 
-    <!-- Favicon -->
-    <link rel="icon" href="/assets/img/favicon.png" type="image/png">
+  <!-- Favicon -->
+  <link rel="icon" href="/assets/img/favicon.png" type="image/png">
 
-    <!-- For MathJax -->
-    {% if page.enable_math == "enable" %}
-      <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML"></script>
-    {% endif %}
+  <!-- For MathJax -->
+  {% if page.enable_math == "enable" %}
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-MML-AM_CHTML"></script>
+  {% endif %}
 
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <div id="header-upper">
-          <h1 id="site-title-box"><a id="site-title" href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
-          
-          {% if site.logo %}
-          <span id="site-logo-box">
-            <img id="site-logo" src="{{site.logo | relative_url}}" alt="Logo" />
-          </span>
-          {% endif %}
+</head>
 
-          <p id="site-description">
-            {{ site.description | default: site.github.project_tagline }}
-            <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-lightning-charge" viewBox="0 0 16 16">
-              <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09zM4.157 8.5H7a.5.5 0 0 1 .478.647L6.11 13.59l5.732-6.09H9a.5.5 0 0 1-.478-.647L9.89 2.41 4.157 8.5z"/>
-            </svg>
-          </p>
-        </div>
+<body>
+  <div class="wrapper">
+    <header>
+      <div id="header-upper">
+        <h1 id="site-title-box">
+          <a id="site-title" href="{{ '/' | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a>
+        </h1>
 
-        <div id="header-lower">
-          <p class="view">
-            <a href="{{ site.github.owner_url }}">
-              Find me on GitHub<br>
-              <small>{{ site.github.owner_url }}</small>
-            </a>
-          </p>
+        {% if site.logo %}
+        <span id="site-logo-box">
+          <img id="site-logo" src="{{site.logo | relative_url}}" alt="Logo" />
+        </span>
+        {% endif %}
 
-          <p class="view">
-            <a href="{{ site.resume_link }}">CV</a>&nbsp;|&nbsp;<a href="{{ site.linkedin_link }}">LinkedIn</a>&nbsp;|&nbsp;<a href="{{ site.google_scholar_link }}">Google Scholar</a><br>
-          </p>
-
-          <p class="view">
-            <table class="sidebar-table">
-              <tr class="sidebar-table">
-                <td class="sidebar-table sidebar-table-icon" rowspan="2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
-                    <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
-                  </svg>
-                </td>
-                <td class="sidebar-table">{{ site.email_one }}</td>
-              </tr>
-              <tr class="sidebar-table">
-                <td class="sidebar-table">{{ site.email_two }}</td>
-              </tr>
-            </table>
-          </p>
-
-          <!-- <p class="view">
-            <table class="sidebar-table">
-              <tr class="sidebar-table">
-                <td class="sidebar-table sidebar-table-icon" rowspan="2">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-link" viewBox="0 0 16 16">
-                    <path d="M6.354 5.5H4a3 3 0 0 0 0 6h3a3 3 0 0 0 2.83-4H9q-.13 0-.25.031A2 2 0 0 1 7 10.5H4a2 2 0 1 1 0-4h1.535c.218-.376.495-.714.82-1z"/>
-                    <path d="M9 5.5a3 3 0 0 0-2.83 4h1.098A2 2 0 0 1 9 6.5h3a2 2 0 1 1 0 4h-1.535a4 4 0 0 1-.82 1H12a3 3 0 1 0 0-6z"/>
-                  </svg>
-                </td>
-                <td class="sidebar-table"><a href="{{ site.domain_one }}">{{ site.domain_one }}</a></td>
-              </tr>
-              <tr class="sidebar-table">
-                <td class="sidebar-table"><a href="{{ site.domain_two }}">{{ site.domain_two }}</a></td>
-              </tr>
-            </table>
-          </p> -->
-        </div>
-        
-        <p id="header-bottom">
-          <small>To all my loved ones and my friends ♥</small><br>
-          <small>GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small>
+        <p id="site-description">
+          {{ site.description | default: site.github.project_tagline }}
+          <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" class="bi bi-lightning-charge" viewBox="0 0 16 16">
+            <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09zM4.157 8.5H7a.5.5 0 0 1 .478.647L6.11 13.59l5.732-6.09H9a.5.5 0 0 1-.478-.647L9.89 2.41 4.157 8.5z" />
+          </svg>
         </p>
-      </header>
-      <section>
+      </div>
+
+      <div id="header-lower">
+        <p class="view" id="github-link">
+          <a href="{{ site.github.owner_url }}">
+            Find me on GitHub<br>
+            <small>{{ site.github.owner_url }}</small>
+          </a>
+        </p>
+
+        <p class="view">
+          <a href="{{ site.resume_link }}">CV</a>&nbsp;|&nbsp;<a href="{{ site.linkedin_link }}">LinkedIn</a>&nbsp;|&nbsp;<a href="{{ site.google_scholar_link }}">G Scholar</a><br>
+        </p>
+
+        <p class="view">
+        <table class="sidebar-table">
+          <tr class="sidebar-table">
+            <td class="sidebar-table sidebar-table-icon" rowspan="2">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
+              </svg>
+            </td>
+            <td class="sidebar-table">{{ site.email_one }}</td>
+          </tr>
+          <tr class="sidebar-table">
+            <td class="sidebar-table">{{ site.email_two }}</td>
+          </tr>
+        </table>
+        </p>
+      </div>
+
+      <p id="header-bottom">
+        <small>To all my loved ones, cheers ♥</small><br>
+        <small>Theme adapted from <a href="https://github.com/orderedlist">orderedlist</a></small>
+      </p>
+    </header>
+
+    <section>
 
       {{ content }}
+
+      <!-- For Utterance comments -->
+      <script src="https://utteranc.es/client.js"
+              repo="josehu07/josehu07.github.io"
+              issue-term="pathname"
+              label="Utterances🔮"
+              theme="github-light"
+              crossorigin="anonymous"
+              async>
+      </script>
 
       <p class="navigation-bar">
         <script type="text/javascript">
@@ -105,18 +103,22 @@
         <a href="javascript:topFunction();">Back to Top</a>
       </p>
 
-      </section>
-    </div>
-    <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
-    {% if site.google_analytics %}
-    <script>
-      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-      ga('create', '{{ site.google_analytics }}', 'auto');
-      ga('send', 'pageview');
-    </script>
-    {% endif %}
-  </body>
+    </section>
+  </div>
+
+  <script src="{{ '/assets/js/scale.fix.js' | relative_url }}"></script>
+  {% if site.google_analytics %}
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', '{{ site.google_analytics }}', 'auto');
+    ga('send', 'pageview');
+  </script>
+  {% endif %}
+</body>
+
 </html>

@@ -13,7 +13,7 @@ permalink: /notes.html
 
 # Notes
 
-Here lies all of my lecture notes. I used to take structured notes on things I stidied about. Alas, the good and peaceful school days are over now.
+Here lies all of my lecture notes. I used to take structured notes on things I studied about. Alas, the good and peaceful school days have now passed.
 
 ### Computer Science
 
