@@ -2,14 +2,27 @@ FROM ubuntu:latest
 ARG MYUSER=jose
 
 # Create a non-root user with sudo privileges, empty password
-RUN apt update && apt install -y sudo
-RUN useradd -s /bin/bash -m ${MYUSER} && \
+RUN apt update && \
+    apt install -y sudo && \
+    useradd -s /bin/bash -m ${MYUSER} && \
     passwd -d ${MYUSER} && \
     echo "${MYUSER} ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/${MYUSER} && \
     chmod 0440 /etc/sudoers.d/${MYUSER}
 
 # Update apt packages
-RUN apt update && apt upgrade -y
+RUN apt update && apt upgrade -y && apt install -y \
+    build-essential \
+    git \
+    curl \
+    vim \
+    zsh \
+    cmake \
+    openssh-server \
+    iproute2 \
+    iputils-ping \
+    telnet \
+    net-tools \
+    dnsutils
 
 # Configure SSH server
 RUN mkdir -p /var/run/sshd && \
@@ -47,12 +60,16 @@ EXPOSE 22
 
 # Set up zsh as default shell for ${MYUSER} user, and switch to it
 RUN chsh -s /usr/bin/zsh ${MYUSER}
+SHELL ["/usr/bin/zsh", "-c"]
 USER ${MYUSER}
 WORKDIR /home/${MYUSER}
 
 # Run complete dev environment setup script
-ADD https://josehu.com/assets/dev-env/auto-setup.sh /home/${MYUSER}/.auto-setup.sh
-RUN ./.auto-setup.sh -y
+ADD auto-setup.sh .auto-setup.sh
+# ADD https://josehu.com/assets/dev-env/auto-setup.sh .auto-setup.sh
+RUN sudo chown ${MYUSER}:${MYUSER} ./.auto-setup.sh && \
+    chmod +x ./.auto-setup.sh && \
+    ./.auto-setup.sh -y
 
 # Set entrypoint
 ENTRYPOINT ["/etc/ssh/zen-entry.sh"]

@@ -1,4 +1,6 @@
 #!/usr/bin/env zsh
+#set -e  # not doing -e as some 'source' could return non-zero
+
 
 # Usage:
 #
@@ -56,20 +58,17 @@ function add_zsh_plugin {
 # ensure in user home directory
 cd $HOME
 
-
 # check if running in non-interactive mode
 for arg in "$@"; do
     if [[ $arg == "-y" ]]; then
         echo "Running non-interactively, breakpoints will be skipped."
-        echo
         non_interactive=true
     fi
 done
 
-
 # check that we are now in zsh
-if [[ "$(basename $SHELL)" != "zsh" ]]; then
-    echo "ERROR: currently not in zsh!"
+if [[ -n $SHELL ]] && [[ "$(basename $SHELL)" != "zsh" ]]; then
+    echo "ERROR: SHELL variable not set or not using zsh!"
     echo
     echo "Please do:"
     echo "  chsh -s \$(which zsh)"
@@ -78,6 +77,7 @@ if [[ "$(basename $SHELL)" != "zsh" ]]; then
     echo
     exit 1
 fi
+
 
 # apt installs
 section_header "apt-installs"
@@ -93,12 +93,12 @@ sudo apt -y autoclean
 # oh-my-zsh
 section_header "oh-my-zsh"
 rm -rf ./.oh-my-zsh/
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh) --unattended"
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 reload_zshrc
 
 # starship theme
 section_header "starship"
-sh -c "$(curl -fsSL https://starship.rs/install.sh) -y"
+sh -c "$(curl -fsSL https://starship.rs/install.sh)" "" -y
 eval "$(starship init zsh)"
 mkdir -p .config/
 rm -f .config/starship.toml
@@ -164,10 +164,11 @@ wget https://josehu.com/assets/dev-env/bottom.toml -P .config/bottom/
 
 # fzf search
 section_header "fzf-search"
-sudo apt -y install fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git .fzf
+.fzf/install --key-bindings --completion --no-update-rc
 append_to_file .zshrc ""
 append_to_file .zshrc "# fzf search"
-append_to_file .zshrc "source /usr/share/doc/fzf/examples/completion.zsh"
+append_to_file .zshrc "[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh"
 append_to_file .zshrc "export FZF_DEFAULT_OPTS='--height 40% --layout reverse --border'"
 reload_zshrc
 
@@ -179,3 +180,7 @@ git config --global interactive.diffFilter 'delta --color-only'
 git config --global delta.navigate true
 git config --global delta.side-by-side true
 git config --global merge.conflictStyle zdiff3
+
+# python uv
+section_header "python-uv"
+curl -LsSf https://astral.sh/uv/install.sh | sh
