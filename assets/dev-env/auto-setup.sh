@@ -162,6 +162,13 @@ mkdir -p .config/bottom/
 rm -f .config/bottom/bottom.toml
 wget https://josehu.com/assets/dev-env/bottom.toml -P .config/bottom/
 
+# btop monitor
+section_header "btop"
+sudo apt -y install btop
+mkdir -p .config/btop/
+rm -f .config/btop/btop.conf
+wget https://josehu.com/assets/dev-env/btop.conf -P .config/btop/
+
 # fzf search
 section_header "fzf-search"
 git clone --depth 1 https://github.com/junegunn/fzf.git .fzf
