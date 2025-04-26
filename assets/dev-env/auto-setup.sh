@@ -30,9 +30,9 @@ function section_header {
     local section="$1"
     echo
     if [[ $non_interactive == true ]]; then
-        echo "=> Starting section '$section'..."
+        echo "\033[1;35m=> Starting section\033[0m '$section'..."
     else
-        echo -n "=> Start section '$section'? [Enter] "
+        echo -n "\033[1;35m=> Start section\033[0m '$section'? [Enter] "
         read response
     fi
 }
@@ -98,7 +98,7 @@ reload_zshrc
 
 # starship theme
 section_header "starship"
-sh -c "$(curl -fsSL https://starship.rs/install.sh)"
+sh -c "$(curl -fsSL https://starship.rs/install.sh) -y"
 eval "$(starship init zsh)"
 mkdir -p .config/
 rm -f .config/starship.toml
@@ -153,6 +153,7 @@ append_to_file .zshrc ""
 append_to_file .zshrc "# rust cargo"
 append_to_file .zshrc ". \"\$HOME/.cargo/env\""
 reload_zshrc
+rustup update
 
 # bottom monitor
 section_header "bottom"
@@ -166,7 +167,7 @@ section_header "fzf-search"
 sudo apt -y install fzf
 append_to_file .zshrc ""
 append_to_file .zshrc "# fzf search"
-append_to_file .zshrc "source <(fzf --zsh)"
+append_to_file .zshrc "source /usr/share/doc/fzf/examples/completion.zsh"
 append_to_file .zshrc "export FZF_DEFAULT_OPTS='--height 40% --layout reverse --border'"
 reload_zshrc
 
