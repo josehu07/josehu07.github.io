@@ -65,8 +65,7 @@ USER ${MYUSER}
 WORKDIR /home/${MYUSER}
 
 # Run complete dev environment setup script
-ADD auto-setup.sh .auto-setup.sh
-# ADD https://josehu.com/assets/dev-env/auto-setup.sh .auto-setup.sh
+ADD https://josehu.com/assets/dev-env/auto-setup.sh .auto-setup.sh
 RUN sudo chown ${MYUSER}:${MYUSER} ./.auto-setup.sh && \
     chmod +x ./.auto-setup.sh && \
     ./.auto-setup.sh -y
