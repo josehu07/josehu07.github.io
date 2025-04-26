@@ -13,9 +13,9 @@
 #   # select 0 if menu appears
 #   echo $SHELL
 # 
-# Then, fetch this script and run it.
+# Then, fetch this script and run it ('-y' for non-interactive mode).
 # 
-#   ./auto-setup.sh
+#   ./auto-setup.sh [-y]
 #   
 # Hit enter to continue whenever entering a new section, or Ctrl-C to kill if
 # anything goes wrong.
@@ -23,11 +23,18 @@
 # After all done, log out and log back in. Should be all set!
 
 
+# helper functions
+non_interactive=false
+
 function section_header {
     local section="$1"
     echo
-    echo -n "=> Start section $section? [Enter] "
-    read response
+    if [[ $non_interactive == true ]]; then
+        echo "=> Starting section '$section'..."
+    else
+        echo -n "=> Start section '$section'? [Enter] "
+        read response
+    fi
 }
 
 function reload_zshrc {
@@ -46,7 +53,18 @@ function add_zsh_plugin {
 }
 
 
+# ensure in user home directory
 cd $HOME
+
+
+# check if running in non-interactive mode
+for arg in "$@"; do
+    if [[ $arg == "-y" ]]; then
+        echo "Running non-interactively, breakpoints will be skipped."
+        echo
+        non_interactive=true
+    fi
+done
 
 
 # check that we are now in zsh
@@ -61,21 +79,21 @@ if [[ "$(basename $SHELL)" != "zsh" ]]; then
     exit 1
 fi
 
-# apt updates
-section_header "apt-updates"
+# apt installs
+section_header "apt-installs"
 sudo apt -y update
 sudo apt -y upgrade
+sudo apt -y install build-essential \
+                    git \
+                    curl \
+                    vim
 sudo apt -y autoremove
 sudo apt -y autoclean
 
 # oh-my-zsh
 section_header "oh-my-zsh"
-echo "README: oh-my-zsh automatically enters a new zsh session after"
-echo "        its installation script finishes; when that happens,"
-echo "        immediately use 'exit' command to exit out of that session,"
-echo "        then this setup script should continue seamlessly... "
 rm -rf ./.oh-my-zsh/
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh) --unattended"
 reload_zshrc
 
 # starship theme
@@ -128,9 +146,17 @@ rm -f .vimrc
 wget https://josehu.com/assets/dev-env/vimrc-backup.txt -O .vimrc
 vim -es -u .vimrc -i NONE -c "PlugInstall" -c "qa"
 
+# rust toolchain
+section_header "rust-toolchain"
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
+append_to_file .zshrc ""
+append_to_file .zshrc "# rust cargo"
+append_to_file .zshrc ". \"\$HOME/.cargo/env\""
+reload_zshrc
+
 # bottom monitor
 section_header "bottom"
-sudo apt -y install bottom
+cargo install bottom --locked
 mkdir -p .config/bottom/
 rm -f .config/bottom/bottom.toml
 wget https://josehu.com/assets/dev-env/bottom.toml -P .config/bottom/
@@ -150,4 +176,5 @@ sudo apt -y install git-delta
 git config --global core.pager delta
 git config --global interactive.diffFilter 'delta --color-only'
 git config --global delta.navigate true
+git config --global delta.side-by-side true
 git config --global merge.conflictStyle zdiff3
