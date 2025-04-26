@@ -4,23 +4,23 @@ style_user = "bold yellow"
 format = "[$user]($style) @ "
 
 [hostname]
-ssh_symbol = " "
+ssh_symbol = " "
 
 # Git & related.
 [git_status]
 style = "bold blue"
 
 [git_commit]
-tag_symbol = " 笠 "
+tag_symbol = " "
 
 [git_branch]
-symbol = "שׂ "
+symbol = " "
 
 [hg_branch]
-symbol = "שׂ "
+symbol = " "
 
 [fossil_branch]
-symbol = "שׂ "
+symbol = " "
 
 # Return status.
 [character]
