@@ -203,3 +203,10 @@ git config --global merge.conflictStyle zdiff3
 # python uv
 section_header "python-uv"
 curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# auto tmux (last step)
+section_header "auto-tmux"
+append_to_file .zshrc ""
+append_to_file .zshrc "# auto tmux (keep at the bottom of .zshrc)"
+append_to_file .zshrc "test -z \"\$TMUX\" && (tmux attach || tmux new-session)"
+reload_zshrc
