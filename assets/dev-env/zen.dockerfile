@@ -1,5 +1,6 @@
 FROM ubuntu:latest
 ARG MYUSER=jose
+ENV MYUSER=${MYUSER}
 
 # Create a non-root user with sudo privileges, empty password
 RUN apt update && \
@@ -70,5 +71,6 @@ RUN sudo chown ${MYUSER}:${MYUSER} ./.auto-setup.sh && \
     chmod +x ./.auto-setup.sh && \
     ./.auto-setup.sh -y
 
-# Set entrypoint
+# Switch back to root and run entrypoint script
+USER root
 ENTRYPOINT ["/etc/ssh/zen-entry.sh"]
