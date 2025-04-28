@@ -144,15 +144,19 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 add_zsh_plugin "zsh-autosuggestions"
 reload_zshrc
 
-# vim-plug
-section_header "vim-plug"
+# vim setup
+section_header "vim"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-
-# gruvbox theme
-section_header "gruvbox"
 rm -f .vimrc
 wget https://josehu.com/assets/dev-env/vimrc-backup.txt -O .vimrc
 vim -es -u .vimrc -i NONE -c "PlugInstall" -c "qa"
+
+# tmux setup
+section_header "tmux"
+rm -f .tmux.conf
+wget https://josehu.com/assets/dev-env/tmux.conf -O .tmux.conf
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+git clone -b v2.1.3 https://github.com/catppuccin/tmux ~/.tmux/plugins/catppuccin/tmux
 
 # rust toolchain
 section_header "rust-toolchain"
@@ -199,10 +203,3 @@ git config --global merge.conflictStyle zdiff3
 # python uv
 section_header "python-uv"
 curl -LsSf https://astral.sh/uv/install.sh | sh
-
-# tmux setup
-section_header "tmux"
-rm -f .tmux.conf
-wget https://josehu.com/assets/dev-env/tmux.conf -O .tmux.conf
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-git clone -b v2.1.3 https://github.com/catppuccin/tmux ~/.tmux/plugins/catppuccin/tmux
