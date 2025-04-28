@@ -6,6 +6,8 @@ author: Guanzhou Hu
 categories: Memo
 ---
 
+WARNING: this post is seriously outdated, and my dev setup has been evolving a lot with time. For a partial glance, you may check out my [assets/dev-env/auto-setup.sh](https://josehu.com/assets/dev-env/auto-setup.sh).
+
 This post summarizes my personal development environment configuration on macOS X >= 10.14 and includes a brief memo of setting up WSL 2 on Windows >= 10. 记录一下我在 macOS X >= 10.14 上的个人开发环境 & 工具配置，以及在 Windows >= 10 上搭建基于 WSL 2 的开发环境的简要过程，以便将来需要时 refer。
 
 ## Summary Table
@@ -64,17 +66,16 @@ Hit enter to continue whenever entering a new section, or Ctrl-C to kill if anyt
 
 After all sections are done, log out and log back in. Should be all set!
 
-
 ## Z Shell
 
 - Extension: `oh-my-zsh`
 - Theme: Starship.rs (w/ customizations)
 - Plugins:
-    - autojump
-    - zsh-syntax-highlighting
-    - git
-    - zsh-autosuggestions
-    - sublime
+  - autojump
+  - zsh-syntax-highlighting
+  - git
+  - zsh-autosuggestions
+  - sublime
 
 `zsh` config (`~/.zshrc`):
 
@@ -358,37 +359,37 @@ Since VS Code syncs settings through the signed-in account, there's pretty much 
 - Theme: Monokai Pro (Filter Spectrum)
 - Font: Fira Code (w/ Antaliasing & Ligatures)
 - Packages (functional):
-    - Package Control
-    - Package Resource Viewer
-    - Advanced New File
-    - All Autocomplete
-    - Bracket Highlighter
-    - DocBlockr
-    - SideBar Enhancements
-    - Sublimerge 4
-    - Word Count
-    - View in Browser
+  - Package Control
+  - Package Resource Viewer
+  - Advanced New File
+  - All Autocomplete
+  - Bracket Highlighter
+  - DocBlockr
+  - SideBar Enhancements
+  - Sublimerge 4
+  - Word Count
+  - View in Browser
 - Packages (language support):
-    - Anaconda
-    - CMake Editor
-    - CUDA C++
-    - Dockerfile
-    - Easy Clang Complete
-    - Golang Build
-    - Javascript Snippets
-    - Jinja2
-    - JsFormat
-    - Julia
-    - Linker Script
-    - Makefile Improved
-    - Markdown Preview
-    - Power Shell
-    - Rust Enhanced
-    - LSP w/ Rust Analyzer
-    - TOML
-    - Typescript
-    - Verilog
-    - x86 and x86_64 Assembly
+  - Anaconda
+  - CMake Editor
+  - CUDA C++
+  - Dockerfile
+  - Easy Clang Complete
+  - Golang Build
+  - Javascript Snippets
+  - Jinja2
+  - JsFormat
+  - Julia
+  - Linker Script
+  - Makefile Improved
+  - Markdown Preview
+  - Power Shell
+  - Rust Enhanced
+  - LSP w/ Rust Analyzer
+  - TOML
+  - Typescript
+  - Verilog
+  - x86 and x86_64 Assembly
 
 Sublimt Text 4 user preferences settings:
 
