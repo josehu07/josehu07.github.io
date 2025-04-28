@@ -86,7 +86,8 @@ sudo apt -y upgrade
 sudo apt -y install build-essential \
                     git \
                     curl \
-                    vim
+                    vim \
+                    tmux
 sudo apt -y autoremove
 sudo apt -y autoclean
 
@@ -94,6 +95,13 @@ sudo apt -y autoclean
 section_header "oh-my-zsh"
 rm -rf ./.oh-my-zsh/
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+reload_zshrc
+
+# turn off flow control
+section_header "flow-control"
+append_to_file .zshrc ""
+append_to_file .zshrc "# turn off flow control"
+append_to_file .zshrc "stty -ixon"
 reload_zshrc
 
 # starship theme
@@ -191,3 +199,10 @@ git config --global merge.conflictStyle zdiff3
 # python uv
 section_header "python-uv"
 curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# tmux setup
+section_header "tmux"
+rm -f .tmux.conf
+wget https://josehu.com/assets/dev-env/tmux.conf -O .tmux.conf
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+git clone -b v2.1.3 https://github.com/catppuccin/tmux.git ~/.tmux/plugins/catppuccin/tmux

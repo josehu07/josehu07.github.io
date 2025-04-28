@@ -53,7 +53,7 @@ RUN mkdir -p /home/${MYUSER}/.ssh && \
 #     chown -R ${MYUSER}:${MYUSER} /home/${MYUSER}/.ssh
 
 # Copy entrypoint script
-COPY zen-entry.sh /etc/ssh/zen-entry.sh
+ADD https://josehu.com/assets/dev-env/zen-entry.sh /etc/ssh/zen-entry.sh
 RUN chmod +x /etc/ssh/zen-entry.sh
 
 # Expose SSH port 22
