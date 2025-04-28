@@ -99,6 +99,7 @@ reload_zshrc
 
 # turn off flow control
 section_header "flow-control"
+echo "Adding 'stty -ixon' to turn off flow control..."
 append_to_file .zshrc ""
 append_to_file .zshrc "# turn off flow control"
 append_to_file .zshrc "stty -ixon"
@@ -206,7 +207,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # auto tmux (last step)
 section_header "auto-tmux"
+echo "Last step: auto start tmux on login in '.zshrc'..."
 append_to_file .zshrc ""
 append_to_file .zshrc "# auto tmux (keep at the bottom of .zshrc)"
 append_to_file .zshrc "test -z \"\$TMUX\" && (tmux attach || tmux new-session)"
-reload_zshrc
