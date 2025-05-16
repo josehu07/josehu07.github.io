@@ -1,0 +1,96 @@
+⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️
+Graph Title: Throughput vs Network Size @ 100B-messages
+num_nodes values:      4.000e+00  7.000e+00  1.000e+01  1.900e+01
+-----------------------------------------------------------------
+SCROOGE (throughput):  8.314e+06  7.824e+06  8.049e+06  3.680e+06
+ATA (throughput):      3.069e+06  1.703e+06  1.278e+06  4.009e+05
+OST (throughput):      1.751e+07  2.022e+07  2.252e+07  2.520e+07
+OTU (throughput):      3.797e+06  1.836e+06  1.233e+06  5.636e+05
+LL (throughput):       3.720e+06  1.552e+06  1.139e+06  7.496e+05
+⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️
+Graph Title: Throughput vs Network Size @ 1MB-messages
+num_nodes values:      4.000e+00  7.000e+00  1.000e+01  1.900e+01
+-----------------------------------------------------------------
+SCROOGE (throughput):  1.512e+03  9.379e+02  8.122e+02  4.365e+02
+ATA (throughput):      4.439e+02  2.433e+02  1.538e+02  4.282e+01
+OST (throughput):      4.172e+03  6.939e+03  1.019e+04  1.528e+04
+OTU (throughput):      3.868e+02  2.131e+02  1.349e+02  6.433e+01
+LL (throughput):       4.778e+02  2.571e+02  2.031e+02  6.440e+01
+⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️
+Graph Title: Throughput vs Message Size @ 4-node-network
+num_bytes values:      1.000e+02  1.000e+03  1.000e+04  1.000e+06
+-----------------------------------------------------------------
+SCROOGE (throughput):  8.314e+06  1.529e+06  1.589e+05  1.512e+03
+ATA (throughput):      3.069e+06  4.485e+05  4.575e+04  4.439e+02
+OST (throughput):      1.751e+07  4.344e+06  5.002e+05  4.172e+03
+OTU (throughput):      3.797e+06  3.599e+05  3.866e+04  3.868e+02
+LL (throughput):       3.720e+06  4.789e+05  5.039e+04  4.778e+02
+⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️
+Graph Title: Throughput vs Message Size @ 19-node-network
+num_bytes values:      1.000e+02  1.000e+03  1.000e+04  1.000e+06
+-----------------------------------------------------------------
+SCROOGE (throughput):  3.680e+06  5.678e+05  6.197e+04  4.365e+02
+ATA (throughput):      4.009e+05  3.859e+04  3.992e+03  4.282e+01
+OST (throughput):      2.520e+07  1.531e+07  1.532e+06  1.528e+04
+OTU (throughput):      5.636e+05  6.336e+04  6.260e+03  6.433e+01
+LL (throughput):       7.496e+05  7.309e+04  7.296e+03  6.440e+01
+⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️
+Graph Title: Throughput vs Num Nodes with Varying Stake Split
+num_nodes values:                         4.000e+00  7.000e+00  1.000e+01  1.900e+01
+------------------------------------------------------------------------------------
+SCROOGE_SPLIT_1 THROTTLED (throughput):   9.980e+05  9.981e+05  9.979e+05  9.971e+05
+SCROOGE_SPLIT_2 THROTTLED (throughput):   9.978e+05  9.983e+05  9.976e+05  9.984e+05
+SCROOGE_SPLIT_4 THROTTLED (throughput):   9.991e+05  9.981e+05  9.980e+05  9.958e+05
+SCROOGE_SPLIT_8 THROTTLED (throughput):   9.991e+05  9.969e+05  9.973e+05  9.956e+05
+SCROOGE_SPLIT_16 THROTTLED (throughput):  9.985e+05  9.985e+05  9.980e+05  9.969e+05
+SCROOGE_SPLIT_32 THROTTLED (throughput):  9.970e+05  9.984e+05  9.978e+05  9.956e+05
+SCROOGE_SPLIT_1 (throughput):             8.314e+06  7.824e+06  8.049e+06  3.680e+06
+SCROOGE_SPLIT_2 (throughput):             7.991e+06  7.502e+06  7.589e+06  3.846e+06
+SCROOGE_SPLIT_4 (throughput):             6.810e+06  6.538e+06  6.093e+06  4.128e+06
+SCROOGE_SPLIT_8 (throughput):             6.317e+06  4.760e+06  4.029e+06  2.441e+06
+SCROOGE_SPLIT_16 (throughput):            5.436e+06  3.726e+06  2.953e+06  1.634e+06
+SCROOGE_SPLIT_32 (throughput):            4.923e+06  3.197e+06  2.431e+06  1.144e+06
+SCROOGE_SPLIT_64 (throughput):            4.770e+06  2.961e+06  2.159e+06  1.156e+06
+⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️
+Graph Title: Crash Failures: Throughput vs Network Size
+num_nodes values:      4.000e+00  7.000e+00  1.000e+01  1.900e+01
+-----------------------------------------------------------------
+SCROOGE (throughput):  1.154e+03  9.978e+02  6.331e+02  3.865e+02
+ATA (throughput):      5.189e+02  2.513e+02  1.906e+02  5.288e+01
+OTU (throughput):      4.164e+02  1.970e+02  1.331e+02  6.715e+01
+LL (throughput):       5.203e+02  2.823e+02  2.116e+02  7.105e+01
+⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️
+Graph Title: Crash Failures -- Phi Scaling: Throughput vs Network Size
+num_nodes values:              4.000e+00  7.000e+00  1.000e+01  1.900e+01
+-------------------------------------------------------------------------
+Scrooge phi=0 (throughput):    1.011e+03  8.140e+02  4.612e+02  1.367e+02
+Scrooge phi=64 (throughput):   1.053e+03  8.200e+02  4.526e+02  1.504e+02
+Scrooge phi=128 (throughput):  1.111e+03  9.151e+02  6.936e+02  3.083e+02
+Scrooge phi=192 (throughput):  1.132e+03  9.306e+02  6.359e+02  3.820e+02
+Scrooge phi=256 (throughput):  1.154e+03  9.978e+02  6.331e+02  3.865e+02
+⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️
+Graph Title: Byzantine Failures: Throughput vs Network Size
+num_nodes values:                           4.000e+00  7.000e+00  1.000e+01  1.900e+01
+--------------------------------------------------------------------------------------
+Scrooge Byzantine_MODE=INF (throughput):    1.124e+03  9.273e+02  6.266e+02  3.963e+02
+Scrooge Byzantine_MODE=ZERO (throughput):   1.114e+03  9.384e+02  6.537e+02  6.814e+02
+Scrooge Byzantine_MODE=DELAY (throughput):  1.111e+03  8.734e+02  7.205e+02  4.100e+02
+ATA (throughput):                           5.189e+02  2.513e+02  1.906e+02  5.288e+01
+⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️
+Graph Title: Disaster Recovery: Throughput vs Message Size
+num_bytes values:  2.450e+02  4.980e+02  1.980e+03  1.430e+04
+-------------------------------------------------------------
+SCROOGE (MBps):    2.061e+07  3.731e+07  6.856e+07  6.659e+07
+ATA (MBps):        1.793e+07  2.200e+07  4.327e+07  5.150e+07
+OST (MBps):        2.239e+07  4.037e+07  6.838e+07  6.685e+07
+OTU (MBps):        2.174e+07  3.753e+07  5.186e+07  5.044e+07
+LL (MBps):         2.050e+07  3.636e+07  5.280e+07  5.363e+07
+⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️⭐️
+Graph Title: Data Reconciliation: Throughput vs Message Size
+num_bytes values:  2.450e+02  4.980e+02  1.980e+03  1.430e+04
+-------------------------------------------------------------
+SCROOGE (MBps):    2.518e+06  2.746e+06  1.119e+07  6.337e+07
+ATA (MBps):        7.459e+06  2.827e+06  5.238e+07
+OST (MBps):        1.364e+07  2.104e+07  3.685e+07  6.686e+07
+OTU (MBps):        2.984e+06  3.701e+06  1.480e+07  5.274e+07
+LL (MBps):         2.723e+06  2.482e+06  1.304e+07  5.305e+07
