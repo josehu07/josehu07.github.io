@@ -23,13 +23,13 @@ I learned a lot from [Prof. Shu Yin](https://sist.shanghaitech.edu.cn/yinshu_en/
 
 ### Conferences
 
-- <b>(In submission, title fuzzed) Effective coordination for cloud databases</b>. First Author and <u>Guanzhou Hu</u> et al. <br/>
-    <a class="btn-github"><img class="paper-button-small" src="/assets/img/github-button.svg" /> Code</a>
 - <b>(In submission, title fuzzed) A consensus protocol achieving remarkably strong read semantics</b>. <u>Guanzhou Hu</u> et al. <br/>
     <a class="btn-github"><img class="paper-button-small" src="/assets/img/github-button.svg" /> Code</a>
 - <b>(In submission, title fuzzed) A replication protocol for an unaddressed type of workloads</b>. <u>Guanzhou Hu</u> et al. <br/>
     <a class="btn-github"><img class="paper-button-small" src="/assets/img/github-button.svg" /> Code</a>
-- <b>MadFS: Per-File Virtualization for Userspace Persistent Memory Filesystems</b>. Shawn Zhong, Chenhao Ye, <u>Guanzhou Hu</u>, Suyan Qu, Andrea Arpaci-Dusseau, Remzi Arpaci-Dusseau, Michael Swift. 2023. In Proceedings of the 21th USENIX Conference on File and Storage Technologies (<b><i>FAST '23</i></b>). USENIX Association. <br/>
+- <b>Efficient Coordination for Autoscaling Cloud DBMS</b>. Wenjie Hu, <u>Guanzhou Hu</u>, Mahesh Balakrishnan, Xiangyao Yu. (To apper on <b><i>SIGMOD '26</i></b>). <br/>
+    <a class="btn-github"><img class="paper-button-small" src="/assets/img/github-button.svg" /> Code</a>
+- <b>MadFS: Per-File Virtualization for Userspace Persistent Memory Filesystems</b>. Shawn Zhong, Chenhao Ye, <u>Guanzhou Hu</u>, Suyan Qu, Andrea Arpaci-Dusseau, Remzi Arpaci-Dusseau, and Michael Swift. 2023. In Proceedings of the 21th USENIX Conference on File and Storage Technologies (<b><i>FAST '23</i></b>). USENIX Association. <br/>
     <a class="btn-usenix" href="https://www.usenix.org/conference/fast23/presentation/zhong" target="_blank"><img class="paper-button" src="/assets/img/usenix-button.svg" /> USENIX</a>
     <a class="btn-github" href="https://github.com/WiscADSL/MadFS" target="_blank"><img class="paper-button-small" src="/assets/img/github-button.svg" /> Code</a>
 - <b>Dorylus: Affordable, Scalable, and Accurate GNN Training with Distributed CPU Servers and Serverless Threads</b>. John Thorpe, Yifan Qiao, Jonathan Eyolfson, Shen Teng, <u>Guanzhou Hu</u>, Zhihao Jia, Jinliang Wei, Keval Vora, Ravi Netravali, Miryung Kim, and Guoqing Harry Xu. 2021. In Proceedings of the 15th USENIX Symposium on Operating Systems Design and Implementation (<b><i>OSDI '21</i></b>). USENIX Association. <br/>
@@ -43,8 +43,9 @@ I learned a lot from [Prof. Shu Yin](https://sist.shanghaitech.edu.cn/yinshu_en/
 
 ### Preprints
 
-- <b>A Unified, Practical, and Understandable Summary of Non-transactional Consistency Levels in Distributed Replication</b>. <u>Guanzhou Hu</u>, Andrea Arpaci-Dusseau, Remzi Arpaci-Dusseau. 2024. <br/>
+- <b>A Unified, Practical, and Understandable Model of Non-transactional Consistency Levels in Distributed Replication</b>. <u>Guanzhou Hu</u>, Andrea Arpaci-Dusseau, Remzi Arpaci-Dusseau. 2024. <br/>
     <a class="btn-arxiv" href="https://arxiv.org/abs/2409.01576" target="_blank"><img class="paper-button" src="/assets/img/arxiv-button.svg" /> arXiv</a>
+    <a class="btn-github" href="https://github.com/josehu07/jepsen.demo" target="_blank"><img class="paper-button-small" src="/assets/img/github-button.svg" /> Code</a>
 - <b>Foreactor: Exploiting Storage I/O Parallelism with Explicit Speculation</b>. <u>Guanzhou Hu</u>, Andrea Arpaci-Dusseau, Remzi Arpaci-Dusseau. 2024. <br/>
     <a class="btn-arxiv" href="https://arxiv.org/abs/2409.01580" target="_blank"><img class="paper-button" src="/assets/img/arxiv-button.svg" /> arXiv</a>
     <a class="btn-github" href="https://github.com/josehu07/foreactor" target="_blank"><img class="paper-button-small" src="/assets/img/github-button.svg" /> Code</a>
