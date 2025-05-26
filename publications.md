@@ -24,10 +24,13 @@ I learned a lot from [Prof. Shu Yin](https://sist.shanghaitech.edu.cn/yinshu_en/
 ### Conferences
 
 - <b>(In submission, title fuzzed) A consensus protocol achieving remarkably strong read semantics</b>. <u>Guanzhou Hu</u> et al. <br/>
+    <a class="btn-acmdoi"><img class="paper-button" src="/assets/img/acmdoi-button.svg" /> ACM-DOI</a>
     <a class="btn-github"><img class="paper-button-small" src="/assets/img/github-button.svg" /> Code</a>
 - <b>(In submission, title fuzzed) A replication protocol for an unaddressed type of workloads</b>. <u>Guanzhou Hu</u> et al. <br/>
+    <a class="btn-usenix"><img class="paper-button" src="/assets/img/usenix-button.svg" /> USENIX</a>
     <a class="btn-github"><img class="paper-button-small" src="/assets/img/github-button.svg" /> Code</a>
-- <b>Efficient Coordination for Autoscaling Cloud DBMS</b>. Wenjie Hu, <u>Guanzhou Hu</u>, Mahesh Balakrishnan, Xiangyao Yu. (To apper on <b><i>SIGMOD '26</i></b>). <br/>
+- <b>Efficient Coordination for Autoscaling Cloud DBMS</b>. Wenjie Hu, <u>Guanzhou Hu</u>, Mahesh Balakrishnan, Xiangyao Yu. (To appear on <b><i>SIGMOD '26</i></b>). <br/>
+    <a class="btn-acmdoi"><img class="paper-button" src="/assets/img/acmdoi-button.svg" /> ACM-DOI</a>
     <a class="btn-github"><img class="paper-button-small" src="/assets/img/github-button.svg" /> Code</a>
 - <b>MadFS: Per-File Virtualization for Userspace Persistent Memory Filesystems</b>. Shawn Zhong, Chenhao Ye, <u>Guanzhou Hu</u>, Suyan Qu, Andrea Arpaci-Dusseau, Remzi Arpaci-Dusseau, and Michael Swift. 2023. In Proceedings of the 21th USENIX Conference on File and Storage Technologies (<b><i>FAST '23</i></b>). USENIX Association. <br/>
     <a class="btn-usenix" href="https://www.usenix.org/conference/fast23/presentation/zhong" target="_blank"><img class="paper-button" src="/assets/img/usenix-button.svg" /> USENIX</a>
