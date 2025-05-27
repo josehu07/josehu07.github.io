@@ -1,0 +1,49 @@
+[user]
+    email = me@josehu.com
+    name = Guanzhou Hu
+[init]
+    defaultbranch = main
+[pull]
+    rebase = false
+[core]
+    editor = vim
+    pager = delta
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true
+    side-by-side = true
+[merge]
+    conflictStyle = zdiff3
+[alias]
+    s = status -s
+    st = status
+    cfg = config --global --editor
+    a = add
+    aa = add -A
+    b = branch
+    bm = branch -M
+    bdel = branch -D
+    c = commit
+    cam = commit -am
+    camd = commit -a --amend
+    m = merge
+    co = checkout
+    cob = checkout -b
+    p = push
+    pa = push --all
+    puo = push -u origin
+    pfwl = push --force-with-lease
+    l = pull
+    lrb = pull --rebase
+    f = fetch
+    fa = fetch --all
+    r = remote
+    rpo = remote prune origin
+    df = diff
+    in = init
+    cl = clone
+    rmc = rm --cached
+    sh = stash
+    shp = stash pop
+    shdr = stash drop

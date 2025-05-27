@@ -195,11 +195,11 @@ reload_zshrc
 # delta diff pager
 section_header "delta-diff"
 sudo apt -y install git-delta
-git config --global core.pager delta
-git config --global interactive.diffFilter 'delta --color-only'
-git config --global delta.navigate true
-git config --global delta.side-by-side true
-git config --global merge.conflictStyle zdiff3
+
+# global gitconfig
+section_header "gitconfig"
+rm -f .gitconfig
+wget https://josehu.com/assets/dev-env/gitconfig.txt -O .gitconfig
 
 # python uv
 section_header "python-uv"
