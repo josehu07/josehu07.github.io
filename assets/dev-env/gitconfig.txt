@@ -16,6 +16,7 @@
 [merge]
     conflictStyle = zdiff3
 [alias]
+    alias = "!git config --get-regexp ^alias\\. | awk '/^alias\\./ { gsub(/^alias\\./, \"\"); printf \"%6s = %s\\n\", $1, substr($0, length($1)+2) }'"
     s = status -s
     st = status
     cfg = config --global --editor
