@@ -28,6 +28,9 @@
     cam = commit -am
     camd = commit -a --amend
     m = merge
+    ma = merge --abort
+    rb = rebase
+    rba = rebase --abort
     co = checkout
     cob = checkout -b
     p = push
