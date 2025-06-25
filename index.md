@@ -71,7 +71,7 @@ If you don't mind wasting a few seconds of your life, take a look at these proje
   <tbody>
     <tr>
       <td class="exp-time">2020.08 - 2025.07</td>
-      <td class="exp-title">Ph.D. Candidate in Computer Science <a href="https://research.cs.wisc.edu/adsl/" target="_blank">↩︎</a></td>
+      <td class="exp-title">Ph.D. in Computer Sciences <a href="https://research.cs.wisc.edu/adsl/" target="_blank">↩︎</a></td>
       <td class="exp-place">UW-Madison</td>
     </tr>
     <tr>

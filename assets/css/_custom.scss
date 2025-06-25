@@ -35,6 +35,12 @@ span.exp-no-break { display: inline-block; white-space: nowrap; word-break: keep
 
 .comments-welcome { margin-top: 25px; }
 
+table.pub-list { border: none; }
+table.pub-list tr { border: none; }
+table.pub-list td { border: none; line-height: 1.5; }
+
+td.conf-year { color: #303030; text-align: right; vertical-align: top; white-space: nowrap; width: 90px; }
+
 a.btn-acmdoi { color: #5499C7; opacity: 0.8; display: inline-block; padding-right: 5px; }
 a.btn-acmdoi:hover, a.btn-acmdoi:focus { opacity: 1; }
 
@@ -50,8 +56,8 @@ a.btn-github:hover, a.btn-github:focus { opacity: 1; }
 a.btn-pdf { color: #EC7063; opacity: 0.8; display: inline-block; padding-right: 5px; }
 a.btn-pdf:hover, a.btn-pdf:focus { opacity: 1; }
 
-img.paper-button { height: 24px; vertical-align: middle; padding-left: 3px; }
-img.paper-button-small { height: 21px; vertical-align: middle; padding-left: 3px; }
+img.pub-btn { height: 24px; vertical-align: middle; padding-left: 3px; }
+img.pub-btn-small { height: 21px; vertical-align: middle; padding-left: 3px; }
 
 #subscribe-to-rss { text-align: center; }
 

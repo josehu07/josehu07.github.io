@@ -23,36 +23,103 @@ I learned a lot from [Prof. Shu Yin](https://sist.shanghaitech.edu.cn/yinshu_en/
 
 ### Conferences
 
-- <b>(In submission, title fuzzed) A consensus protocol achieving remarkably strong read semantics</b>. <u>Guanzhou Hu</u> et al. <br/>
-    <a class="btn-acmdoi"><img class="paper-button" src="/assets/img/acmdoi-button.svg" /> ACM-DOI</a>
-    <a class="btn-github"><img class="paper-button-small" src="/assets/img/github-button.svg" /> Code</a>
-- <b>(In submission, title fuzzed) A replication protocol for an unaddressed type of workloads</b>. <u>Guanzhou Hu</u> et al. <br/>
-    <a class="btn-usenix"><img class="paper-button" src="/assets/img/usenix-button.svg" /> USENIX</a>
-    <a class="btn-github"><img class="paper-button-small" src="/assets/img/github-button.svg" /> Code</a>
-- <b>Efficient Coordination for Autoscaling Cloud DBMS</b>. Wenjie Hu, <u>Guanzhou Hu</u>, Mahesh Balakrishnan, Xiangyao Yu. (To appear on <b><i>SIGMOD '26</i></b>). <br/>
-    <a class="btn-acmdoi"><img class="paper-button" src="/assets/img/acmdoi-button.svg" /> ACM-DOI</a>
-    <a class="btn-github"><img class="paper-button-small" src="/assets/img/github-button.svg" /> Code</a>
-- <b>MadFS: Per-File Virtualization for Userspace Persistent Memory Filesystems</b>. Shawn Zhong, Chenhao Ye, <u>Guanzhou Hu</u>, Suyan Qu, Andrea Arpaci-Dusseau, Remzi Arpaci-Dusseau, and Michael Swift. 2023. In Proceedings of the 21th USENIX Conference on File and Storage Technologies (<b><i>FAST '23</i></b>). USENIX Association. <br/>
-    <a class="btn-usenix" href="https://www.usenix.org/conference/fast23/presentation/zhong" target="_blank"><img class="paper-button" src="/assets/img/usenix-button.svg" /> USENIX</a>
-    <a class="btn-github" href="https://github.com/WiscADSL/MadFS" target="_blank"><img class="paper-button-small" src="/assets/img/github-button.svg" /> Code</a>
-- <b>Dorylus: Affordable, Scalable, and Accurate GNN Training with Distributed CPU Servers and Serverless Threads</b>. John Thorpe, Yifan Qiao, Jonathan Eyolfson, Shen Teng, <u>Guanzhou Hu</u>, Zhihao Jia, Jinliang Wei, Keval Vora, Ravi Netravali, Miryung Kim, and Guoqing Harry Xu. 2021. In Proceedings of the 15th USENIX Symposium on Operating Systems Design and Implementation (<b><i>OSDI '21</i></b>). USENIX Association. <br/>
-    <a class="btn-usenix" href="https://www.usenix.org/conference/osdi21/presentation/thorpe" target="_blank"><img class="paper-button" src="/assets/img/usenix-button.svg" /> USENIX</a>
-    <a class="btn-github" href="https://github.com/uclasystem/dorylus" target="_blank"><img class="paper-button-small" src="/assets/img/github-button.svg" /> Code</a>
-- <b>The Storage Hierarchy is Not a Hierarchy: Optimizing Caching on Modern Storage Devices with Orthus</b>. Kan Wu, Zhihan Guo, <u>Guanzhou Hu</u>, Kaiwei Tu, Ramnatthan Alagappan, Rathijit Sen, Kwanghyun Park, Andrea C. Arpaci-Dusseau, and Remzi H. Arpaci-Dusseau. 2021. In Proceedings of the 19th USENIX Conference on File and Storage Technologies (<b><i>FAST '21</i></b>). USENIX Association. <br/>
-    <a class="btn-usenix" href="https://www.usenix.org/conference/fast21/presentation/wu-kan" target="_blank"><img class="paper-button" src="/assets/img/usenix-button.svg" /> USENIX</a>
-    <a class="btn-github" href="https://github.com/josehu07/nhc-demo" target="_blank"><img class="paper-button-small" src="/assets/img/github-button.svg" /> Code</a>
-- <b>BORA: A Bag Optimizer for Robotic Analysis</b>. Jian Zhang, Tao Xie, Yuzhuo Jing, Yanjie Song, <u>Guanzhou Hu</u>, Si Chen, and Shu Yin. 2020. In Proceedings of the International Conference for High Performance Computing, Networking, Storage and Analysis (<b><i>SC '20</i></b>). IEEE Press, Article 12, 1–15. <br/>
-    <a class="btn-acmdoi" href="https://dl.acm.org/doi/abs/10.5555/3433701.3433716" target="_blank"><img class="paper-button" src="/assets/img/acmdoi-button.svg" /> ACM-DOI</a>
+<table class="pub-list">
+  <tr>
+    <td class="conf-year">Submission</td>
+    <td>
+        <b>(title fuzzed) Consensus Protocol with Remarkably Strong Read Support</b><br/>
+        <u>Guanzhou Hu</u> et al.<br/>
+        <a class="btn-acmdoi"><img class="pub-btn" src="/assets/img/acmdoi-button.svg" /> ACM-DOI</a>
+        <a class="btn-github"><img class="pub-btn-small" src="/assets/img/github-button.svg" /> Code</a>
+    </td>
+  </tr>
+  <tr>
+    <td class="conf-year">Submission</td>
+    <td>
+        <b>(title fuzzed) Replication Protocol For an Unaddressed Type of Workloads</b><br/>
+        <u>Guanzhou Hu</u> et al.<br/>
+        <a class="btn-usenix"><img class="pub-btn" src="/assets/img/usenix-button.svg" /> USENIX</a>
+        <a class="btn-github"><img class="pub-btn-small" src="/assets/img/github-button.svg" /> Code</a>
+    </td>
+  </tr>
+  <tr>
+    <td class="conf-year">SIGMOD '26</td>
+    <td>
+        <b>(To appear) Efficient Coordination for Autoscaling Cloud DBMS</b><br/>
+        Wenjie Hu, <u>Guanzhou Hu</u>, Mahesh Balakrishnan, Xiangyao Yu<br/>
+        <a class="btn-acmdoi"><img class="pub-btn" src="/assets/img/acmdoi-button.svg" /> ACM-DOI</a>
+        <a class="btn-github"><img class="pub-btn-small" src="/assets/img/github-button.svg" /> Code</a>
+    </td>
+  </tr>
+  <tr>
+    <td class="conf-year">FAST '23</td>
+    <td>
+        <b>MadFS: Per-File Virtualization for Userspace Persistent Memory Filesystems</b><br/>
+        Shawn Zhong, Chenhao Ye, <u>Guanzhou Hu</u>, Suyan Qu, Andrea Arpaci-Dusseau, Remzi Arpaci-Dusseau, Michael Swift<br/>
+        <a class="btn-usenix" href="https://www.usenix.org/conference/fast23/presentation/zhong" target="_blank"><img class="pub-btn" src="/assets/img/usenix-button.svg" /> USENIX</a>
+        <a class="btn-github" href="https://github.com/WiscADSL/MadFS" target="_blank"><img class="pub-btn-small" src="/assets/img/github-button.svg" /> Code</a>
+    </td>
+  </tr>
+  <tr>
+    <td class="conf-year">OSDI '21</td>
+    <td>
+        <b>Dorylus: Affordable, Scalable, and Accurate GNN Training with Distributed CPU Servers and Serverless Threads</b><br/>
+        John Thorpe, Yifan Qiao, Jonathan Eyolfson, Shen Teng, <u>Guanzhou Hu</u>, Zhihao Jia, Jinliang Wei, Keval Vora, Ravi Netravali, Miryung Kim, Guoqing Harry Xu<br/>
+        <a class="btn-usenix" href="https://www.usenix.org/conference/osdi21/presentation/thorpe" target="_blank"><img class="pub-btn" src="/assets/img/usenix-button.svg" /> USENIX</a>
+        <a class="btn-github" href="https://github.com/uclasystem/dorylus" target="_blank"><img class="pub-btn-small" src="/assets/img/github-button.svg" /> Code</a>
+    </td>
+  </tr>
+  <tr>
+    <td class="conf-year">FAST '21</td>
+    <td>
+        <b>The Storage Hierarchy is Not a Hierarchy: Optimizing Caching on Modern Storage Devices with Orthus</b><br/>
+        Kan Wu, Zhihan Guo, <u>Guanzhou Hu</u>, Kaiwei Tu, Ramnatthan Alagappan, Rathijit Sen, Kwanghyun Park, Andrea C. Arpaci-Dusseau, Remzi H. Arpaci-Dusseau<br/>
+        <a class="btn-usenix" href="https://www.usenix.org/conference/fast21/presentation/wu-kan" target="_blank"><img class="pub-btn" src="/assets/img/usenix-button.svg" /> USENIX</a>
+        <a class="btn-github" href="https://github.com/josehu07/nhc-demo" target="_blank"><img class="pub-btn-small" src="/assets/img/github-button.svg" /> Code</a>
+    </td>
+  </tr>
+  <tr>
+    <td class="conf-year">SC '20</td>
+    <td>
+        <b>BORA: A Bag Optimizer for Robotic Analysis</b><br/>
+        Jian Zhang, Tao Xie, Yuzhuo Jing, Yanjie Song, <u>Guanzhou Hu</u>, Si Chen, Shu Yin<br/>
+        <a class="btn-acmdoi" href="https://dl.acm.org/doi/abs/10.5555/3433701.3433716" target="_blank"><img class="pub-btn" src="/assets/img/acmdoi-button.svg" /> ACM-DOI</a>
+    </td>
+  </tr>
+</table>
 
 ### Preprints
 
-- <b>A Unified, Practical, and Understandable Model of Non-transactional Consistency Levels in Distributed Replication</b>. <u>Guanzhou Hu</u>, Andrea Arpaci-Dusseau, Remzi Arpaci-Dusseau. 2024. <br/>
-    <a class="btn-arxiv" href="https://arxiv.org/abs/2409.01576" target="_blank"><img class="paper-button" src="/assets/img/arxiv-button.svg" /> arXiv</a>
-    <a class="btn-github" href="https://github.com/josehu07/jepsen.demo" target="_blank"><img class="paper-button-small" src="/assets/img/github-button.svg" /> Code</a>
-- <b>Foreactor: Exploiting Storage I/O Parallelism with Explicit Speculation</b>. <u>Guanzhou Hu</u>, Andrea Arpaci-Dusseau, Remzi Arpaci-Dusseau. 2024. <br/>
-    <a class="btn-arxiv" href="https://arxiv.org/abs/2409.01580" target="_blank"><img class="paper-button" src="/assets/img/arxiv-button.svg" /> arXiv</a>
-    <a class="btn-github" href="https://github.com/josehu07/foreactor" target="_blank"><img class="paper-button-small" src="/assets/img/github-button.svg" /> Code</a>
+<table class="pub-list">
+  <tr>
+    <td class="conf-year">arXiv '24</td>
+    <td>
+        <b>A Unified, Practical, and Understandable Model of Non-transactional Consistency Levels in Distributed Replication</b><br/>
+        <u>Guanzhou Hu</u>, Andrea Arpaci-Dusseau, Remzi Arpaci-Dusseau<br/>
+        <a class="btn-arxiv" href="https://arxiv.org/abs/2409.01576" target="_blank"><img class="pub-btn" src="/assets/img/arxiv-button.svg" /> arXiv</a>
+        <a class="btn-github" href="https://github.com/josehu07/jepsen.demo" target="_blank"><img class="pub-btn-small" src="/assets/img/github-button.svg" /> Code</a>
+    </td>
+  </tr>
+  <tr>
+    <td class="conf-year">arXiv '24</td>
+    <td>
+        <b>Foreactor: Exploiting Storage I/O Parallelism with Explicit Speculation</b><br/>
+        <u>Guanzhou Hu</u>, Andrea Arpaci-Dusseau, Remzi Arpaci-Dusseau<br/>
+        <a class="btn-arxiv" href="https://arxiv.org/abs/2409.01580" target="_blank"><img class="pub-btn" src="/assets/img/arxiv-button.svg" /> arXiv</a>
+        <a class="btn-github" href="https://github.com/josehu07/foreactor" target="_blank"><img class="pub-btn-small" src="/assets/img/github-button.svg" /> Code</a>
+    </td>
+  </tr>
+</table>
 
 ### Patents
 
-- <b>A Storage System Management Policy Based on Data Content Locality.</b> CN. Yin, S. and Hu, G., filed in June 2019. Patent application 201910499391.9.
+<table class="pub-list">
+  <tr>
+    <td class="conf-year">CN Patent</td>
+    <td>
+        <b>A Storage System Management Policy Based on Data Content Locality</b><br/>
+        Shu Yin, <u>Guanzhou Hu</u><br/>
+        Filed in June 2019. Patent number 201910499391.9
+    </td>
+  </tr>
+</table>
