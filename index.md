@@ -13,11 +13,9 @@ permalink: /
 
 # About Me
 
-I am a computer science Ph.D. student in the [ADSL lab](https://research.cs.wisc.edu/adsl/) at the [University of Wisconsin-Madison](https://www.wisc.edu/), advised by [Professor Andrea C. Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Professor Remzi H. Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/). My research interest lies in **computer systems**, especially in distributed systems and algorithms, operating systems, and cloud storage infrastructure.
+I am an incoming Applied Scientist in the [S3 team](https://www.amazon.science/tag/amazon-s3) at [Amazon Web Services, Seattle](https://aws.amazon.com/), starting August 2025.
 
-My current research focuses on modernizing distributed replication protocols for emerging workloads, such as data-heavy replication and wide-area replication. Previously, I studied file systems and kernel storage stack technologies for new hardware such as persistent memory.
-
-I am working towards graduation this summer, and will join the [S3 team](https://www.amazon.science/tag/amazon-s3) at [Amazon Web Services](https://aws.amazon.com/) as an Applied Scientist starting August 2025. Looking forward to the journey ahead!
+I obstained my Ph.D. in Computer Sciences from the [ADSL lab](https://research.cs.wisc.edu/adsl/) at the [University of Wisconsin-Madison](https://www.wisc.edu/), where I was fortunate to be advised by [Professor Andrea C. Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Professor Remzi H. Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/). My research focused on **computer systems**, especially distributed systems and algorithms, operating systems, and cloud storage infrastructure. My dissertation modernizes the design and implementation of consensus protocols for replicated, fault-tolerant cloud services. I also studied file systems and kernel storage stack technologies for new hardware such as persistent memory.
 
 ```rust
 /// Keep calm & do good research!

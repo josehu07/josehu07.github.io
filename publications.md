@@ -13,13 +13,27 @@ permalink: /publications.html
 
 # Publications
 
-I am working with [Prof. Andrea Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Prof. Remzi Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/) (great advisors!) on distributed systems/algorithms, operating systems, and cloud storage infra. My current focus is on modernizing distributed replication protocols for emerging workloads, such as data-heavy replication and wide-area replication. Previously, I studied file systems and kernel storage stack technologies for new hardware such as persistent memory.
+I was fortunate to be advised by [Prof. Andrea Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Prof. Remzi Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/) (great advisors!) during my Ph.D., working on distributed systems and algorithms, operating systems, and cloud storage infrastructure. My dissertation modernizes consensus protocols for replicated, fault-tolerant cloud services. I also studied file systems and kernel storage stack technologies for new hardware such as persistent memory.
 
-I had a great internship experience at Amazon Web Services supervised by [James Bornholt](https://jamesbornholt.com/) and [Andy Warfield](https://www.cs.ubc.ca/~andy/) doing some cool cloud storage stuff for AI workloads.
+I had a great internship experience at Amazon Web Services supervised by [James Bornholt](https://jamesbornholt.com/) and [Andy Warfield](https://www.cs.ubc.ca/~andy/), doing a cool cloud storage project for AI workloads.
 
 I worked in the awesome group led by [Prof. Harry Xu](http://web.cs.ucla.edu/~harryxu/) as a summer research intern on scaling and accelerating graph neural networks computation using serverless computing.
 
 I learned a lot from [Prof. Shu Yin](https://sist.shanghaitech.edu.cn/yinshu_en/main.htm) during my undergraduate study on optimizing file system data organization for inherently-structured workloads.
+
+### Dissertation
+
+<table class="pub-list">
+  <tr>
+    <td class="conf-year">Wisc 2025</td>
+    <td>
+        <b>Cloud Consensus Protocols with Optimistic Connectivity</b><br/>
+        <u>Guanzhou Hu</u>, Computer Sciences at UW-Madison<br/>
+        <a class="btn-pdf"><img class="pub-btn" src="/assets/img/pdf-button.svg" /> PDF</a>
+        <a class="btn-slides" href="/assets/file/Dissertation-slides.pdf" target="_blank"><img class="pub-btn-small" src="/assets/img/slides-button.svg" /> Slides</a>
+    </td>
+  </tr>
+</table>
 
 ### Conferences
 
