@@ -29,7 +29,7 @@ I learned a lot from [Prof. Shu Yin](https://sist.shanghaitech.edu.cn/yinshu_en/
     <td>
         <b>Cloud Consensus Protocols with Optimistic Connectivity</b><br/>
         <u>Guanzhou Hu</u>, Computer Sciences at UW-Madison<br/>
-        <a class="btn-pdf"><img class="pub-btn" src="/assets/img/pdf-button.svg" /> PDF</a>
+        <a class="btn-pdf" href="/assets/file/Dissertation.pdf" target="_blank"><img class="pub-btn" src="/assets/img/pdf-button.svg" /> PDF</a>
         <a class="btn-slides" href="/assets/file/Dissertation-slides.pdf" target="_blank"><img class="pub-btn-small" src="/assets/img/slides-button.svg" /> Slides</a>
     </td>
   </tr>
