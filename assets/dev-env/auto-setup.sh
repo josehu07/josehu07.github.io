@@ -118,20 +118,6 @@ append_to_file .zshrc "# starship theme"
 append_to_file .zshrc "eval \"\$(starship init zsh)\""
 reload_zshrc
 
-# autojump
-# section_header "autojump"
-# rm -rf autojump/
-# git clone https://github.com/wting/autojump.git
-# cd autojump
-# ./install.py
-# cd ..
-# append_to_file .zshrc ""
-# append_to_file .zshrc "# autojump"
-# append_to_file .zshrc "[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && . ~/.autojump/etc/profile.d/autojump.sh"
-# append_to_file .zshrc "autoload -U compinit && compinit -u"
-# rm -rf autojump/
-# reload_zshrc
-
 # zoxide jump
 section_header "zoxide"
 curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
@@ -178,13 +164,6 @@ append_to_file .zshrc ". \"\$HOME/.cargo/env\""
 reload_zshrc
 rustup update
 
-# bottom monitor
-# section_header "bottom"
-# cargo install bottom --locked
-# mkdir -p .config/bottom/
-# rm -f .config/bottom/bottom.toml
-# wget https://josehu.com/assets/dev-env/bottom.toml -P .config/bottom/
-
 # btop monitor
 section_header "btop"
 sudo apt -y install btop
@@ -205,6 +184,13 @@ reload_zshrc
 # delta diff pager
 section_header "delta-diff"
 sudo apt -y install git-delta
+
+# lstr tree
+section_header "lstr"
+git clone https://github.com/bgreenwell/lstr.git .lstr
+cd .lstr
+cargo install --path .
+cd ..
 
 # global gitconfig
 section_header "gitconfig"
