@@ -13,9 +13,9 @@ permalink: /
 
 # About Me
 
-I am an incoming Applied Scientist in the [S3 team](https://www.amazon.science/tag/amazon-s3) at [Amazon Web Services, Seattle](https://aws.amazon.com/), starting August 2025.
+I am an Applied Scientist in the [Amazon S3 team](https://www.amazon.science/tag/amazon-s3) at [Amazon Web Services](https://aws.amazon.com/), based in Seattle. I **research+engineer** distributed and cloud-native storage systems, vector storage and indexing, formal modeling and verification, and possibly other related topics.
 
-I obstained my Ph.D. in Computer Sciences from the [ADSL lab](https://research.cs.wisc.edu/adsl/) at the [University of Wisconsin-Madison](https://www.wisc.edu/), where I was fortunate to be advised by [Professor Andrea C. Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Professor Remzi H. Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/). My research focused on **computer systems**, especially distributed systems and algorithms, operating systems, and cloud storage infrastructure. My dissertation modernizes the design and implementation of consensus protocols for replicated, fault-tolerant cloud services. I also studied file systems and kernel storage stack technologies for new hardware such as persistent memory.
+I obtained my Ph.D. in Computer Sciences from the [ADSL lab](https://research.cs.wisc.edu/adsl/) at the [University of Wisconsin-Madison](https://www.wisc.edu/), where I was fortunate to be advised by [Professor Andrea C. Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Professor Remzi H. Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/). My research focused on **computer systems**, especially distributed systems and algorithms, operating systems, and cloud storage infrastructure. My dissertation modernizes the design and implementation of consensus protocols for replicated, fault-tolerant cloud services. I also studied file systems and kernel storage stack technologies for new hardware such as persistent memory.
 
 ```rust
 /// Keep calm & do good research!
