@@ -87,6 +87,7 @@ sudo yum -y install gcc \
                     curl \
                     vim \
                     htop \
+                    tree \
                     tmux
 sudo yum -y autoremove
 

@@ -26,6 +26,7 @@
     bm = branch -M
     bdel = branch -D
     c = commit
+    cm = commit -m
     cam = commit -am
     camd = commit -a --amend
     m = merge
