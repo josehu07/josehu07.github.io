@@ -188,6 +188,11 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 add_zsh_plugin "zsh-autosuggestions"
 reload_zshrc
 
+# colored-man-pages
+section_header "colored-man-pages"
+add_zsh_plugin "colored-man-pages"
+reload_zshrc
+
 # vim setup
 section_header "vim"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
