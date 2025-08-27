@@ -52,3 +52,9 @@
     sh = stash
     shp = stash pop
     shdr = stash drop
+    bis = bisect
+    crp = cherry-pick
+    lg = log --oneline --decorate --graph
+    lga = log --oneline --decorate --graph --all
+    lgs = log --graph --pretty='%n%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --stat
+    wt = worktree
