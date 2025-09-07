@@ -1,4 +1,11 @@
 {
+    "settingsSync.ignoredExtensions": [
+        "amazonwebservices.amazon-q-vscode"
+    ],
+    "settingsSync.ignoredSettings": [
+        "editor.fontSize",
+        "window.zoomLevel",
+    ],
     "window.zoomLevel": 1.2,
     "workbench.settings.enableNaturalLanguageSearch": false,
     "workbench.commandPalette.experimental.enableNaturalLanguageSearch": false,
@@ -15,12 +22,17 @@
     "editor.aiStats.enabled": true,
     "editor.bracketPairColorization.enabled": false,
     "editor.formatOnSave": true,
-    "files.autoSave": "onFocusChange",
+    "editor.inlayHints.enabled": "offUnlessPressed",
+    "editor.inlayHints.padding": true,
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.cursorStyleInactive": "line",
     "gitlens.currentLine.enabled": false,
     "gitlens.currentLine.pullRequests.enabled": false,
     "telemetry.enableCrashReporter": false,
     "telemetry.enableTelemetry": false,
     "telemetry.telemetryLevel": "off",
+    "files.autoSave": "onFocusChange",
     "files.watcherExclude": {
         "**/build/**": true,
         "**/.git/objects/**": true,
@@ -53,11 +65,8 @@
     "[brazilPackageConfig]": {
         "workbench.editor.languageDetection": false
     },
-    "settingsSync.ignoredExtensions": [
-        "amazonwebservices.amazon-q-vscode"
-    ],
-    "viceroy.config.lastVersion": "0.53.202236",
-    "viceroy.config.internal.lastUpdateTime": "2025-08-21T07:51:21.839Z",
+    "viceroy.config.lastVersion": "0.53.202260",
+    "viceroy.config.internal.lastUpdateTime": "2025-08-29T20:25:58.236Z",
     "viceroy.doc.welcome.showAtStartup": false,
     "viceroy.workspaceSyncStrategy": "automatic",
     "viceroy.marketplace.extensionUpdateChannels": {
@@ -76,5 +85,71 @@
         "amazonQChatDisclaimer": true
     },
     "amazonQ.workspaceIndex": true,
-    "amazonQ.workspaceIndexUseGPU": true
+    "amazonQ.workspaceIndexUseGPU": true,
+    "gitlens.codeLens.enabled": false,
+    "C_Cpp.inlayHints.parameterNames.enabled": true,
+    "C_Cpp.inlayHints.autoDeclarationTypes.enabled": true,
+    "C_Cpp.inlayHints.autoDeclarationTypes.showOnLeft": true,
+    "C_Cpp.inlayHints.referenceOperator.enabled": true,
+    "go.inlayHints.assignVariableTypes": true,
+    "go.inlayHints.compositeLiteralFields": true,
+    "go.inlayHints.compositeLiteralTypes": true,
+    "go.inlayHints.constantValues": true,
+    "go.inlayHints.functionTypeParameters": true,
+    "go.inlayHints.parameterNames": true,
+    "go.inlayHints.rangeVariableTypes": true,
+    "go.enableCodeLens": {
+        "runtest": false
+    },
+    "rust-analyzer.inlayHints.bindingModeHints.enable": true,
+    "rust-analyzer.inlayHints.closureCaptureHints.enable": true,
+    "rust-analyzer.rustfmt.extraArgs": [
+        "+nightly"
+    ],
+    "rust-analyzer.inlayHints.genericParameterHints.lifetime.enable": true,
+    "rust-analyzer.inlayHints.genericParameterHints.type.enable": true,
+    "rust-analyzer.inlayHints.implicitDrops.enable": true,
+    "rust-analyzer.inlayHints.implicitSizedBoundHints.enable": true,
+    "rust-analyzer.inlayHints.lifetimeElisionHints.enable": "skip_trivial",
+    "rust-analyzer.inlayHints.closureReturnTypeHints.enable": "with_block",
+    "rust-analyzer.inlayHints.discriminantHints.enable": "fieldless",
+    "rust-analyzer.inlayHints.expressionAdjustmentHints.enable": "reborrow",
+    "rust-analyzer.inlayHints.rangeExclusiveHints.enable": true,
+    "rust-analyzer.lens.enable": false,
+    "rust-analyzer.hover.actions.references.enable": true,
+    "rust-analyzer.imports.granularity.enforce": true,
+    "rust-analyzer.imports.granularity.group": "module",
+    "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+    "javascript.inlayHints.parameterNames.enabled": "literals",
+    "javascript.inlayHints.parameterTypes.enabled": true,
+    "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+    "javascript.inlayHints.variableTypes.enabled": true,
+    "typescript.inlayHints.enumMemberValues.enabled": true,
+    "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+    "typescript.inlayHints.parameterTypes.enabled": true,
+    "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+    "typescript.inlayHints.variableTypes.enabled": true,
+    "python.analysis.inlayHints.callArgumentNames": "partial",
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.inlayHints.pytestParameters": true,
+    "python.analysis.inlayHints.variableTypes": true,
+    "jupyter.interactiveWindow.codeLens.enable": false,
+    "notebook.defaultFormatter": "charliermarsh.ruff",
+    "notebook.formatOnSave.enabled": true,
+    "notebook.formatOnCellExecution": true,
+    "cSpell.enabledFileTypes": {
+        "rust": false,
+        "python": false,
+        "shellscript": false,
+        "typescript": false
+    },
+    "cSpell.userWords": [
+        "amazonian",
+        "amazonians",
+        "codegen",
+        "josehgz",
+        "sandboxed",
+        "serde",
+        "versionset"
+    ],
 }

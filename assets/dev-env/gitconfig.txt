@@ -32,6 +32,7 @@
     m = merge
     ma = merge --abort
     rb = rebase
+    rbi = rebase --interactive
     rba = rebase --abort
     co = checkout
     cob = checkout -b
@@ -58,3 +59,5 @@
     lga = log --oneline --decorate --graph --all
     lgs = log --graph --pretty='%n%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --stat
     wt = worktree
+    res = reset
+    resh = reset --hard

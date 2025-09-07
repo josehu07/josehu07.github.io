@@ -128,17 +128,19 @@ append_to_file .zshrc ""
 append_to_file .zshrc "# brazil aliases"
 cat >> .zshrc << EOF
 alias bb=brazil-build
-alias bba='brazil-build apollo-pkg'
+alias bbap='brazil-build apollo-pkg'
 alias bre='brazil-runtime-exec'
 alias brc='brazil-recursive-cmd'
+alias brca='brc --allPackages'
 alias bws='brazil ws'
-alias bs='brazil ws sync'
-alias bsm='brazil ws --sync -md'
-alias bwsuse='bws use --gitMode -p'
-alias bwscreate='bws create -n'
+alias bwsync='brazil ws sync'
+alias bwsymd='brazil ws sync -md'
+alias bwsuse='bws use -p'
+alias bwsuvs='bws use -vs'
+alias bwscre='bws create -n'
+alias bvs='brazil vs'
 alias bbr='brc brazil-build'
-alias bball='brc --allPackages'
-alias bbb='brc --allPackages brazil-build'
+alias bbra='brc --allPackages brazil-build'
 EOF
 
 # aws cli / ada
@@ -268,6 +270,12 @@ change_git_email "$gitemail"
 # python uv
 section_header "python-uv"
 curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# mcurl
+section_header "mcurl"
+mkdir -p $HOME/.local/bin/
+curl https://s3.amazonaws.com/com.amazon.aws.midway.software/linux/mcurl.sh > $HOME/.local/bin/mcurl
+chmod +x $HOME/.local/bin/mcurl
 
 # auto tmux not done
 # section_header "auto-tmux"
