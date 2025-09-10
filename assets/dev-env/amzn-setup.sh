@@ -85,10 +85,10 @@ sudo yum -y install gcc \
                     git \
                     make \
                     curl \
+                    wget \
                     vim \
                     htop \
-                    tree \
-                    tmux
+                    openssl11
 sudo yum -y autoremove
 
 # oh-my-zsh (do this first)
@@ -103,6 +103,17 @@ echo "Adding 'stty -ixon' to turn off flow control..."
 append_to_file .zshrc ""
 append_to_file .zshrc "# turn off flow control"
 append_to_file .zshrc "stty -ixon"
+reload_zshrc
+
+# mcurl
+section_header "mcurl"
+append_to_file .zshrc ""
+append_to_file .zshrc "# mcurl"
+cat >> .zshrc << EOF
+function mcurl() {
+    /usr/bin/curl "$@" -L --cookie ~/.midway/cookie --cookie-jar ~/.midway/cookie
+}
+EOF
 reload_zshrc
 
 # builders toolbox
@@ -155,6 +166,16 @@ region = $region
 credential_process=ada credentials print --account $account --role Admin --provider isengard
 EOF
 
+# om
+section_header "om"
+mwinit -s -o && mcurl -Lo /tmp/c2j-model.json 'https://code.amazon.com/packages/AWSOMServiceModel/releases/1.0/latest_artifact?version_set=AWSOMService/development&path=smithyprojections/AWSOMServiceModel/aws-sdk-external/c2j/om-2018-05-10.json&download=true'
+aws configure add-model --service-model file:///tmp/c2j-model.json --service-name om
+
+# isengard cli
+section_header "isengard-cli"
+toolbox registry add s3://buildertoolbox-registry-isengard-cli-us-west-2/tools.json
+toolbox install isengard-cli
+
 # starship theme
 section_header "starship"
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" "" -y
@@ -188,11 +209,6 @@ section_header "zsh-autosuggestions"
 rm -rf ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions/
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 add_zsh_plugin "zsh-autosuggestions"
-reload_zshrc
-
-# colored-man-pages
-section_header "colored-man-pages"
-add_zsh_plugin "colored-man-pages"
 reload_zshrc
 
 # vim setup
@@ -271,11 +287,15 @@ change_git_email "$gitemail"
 section_header "python-uv"
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
-# mcurl
-section_header "mcurl"
-mkdir -p $HOME/.local/bin/
-curl https://s3.amazonaws.com/com.amazon.aws.midway.software/linux/mcurl.sh > $HOME/.local/bin/mcurl
-chmod +x $HOME/.local/bin/mcurl
+# protobuf
+section_header "protobuf"
+curl -LO https://github.com/protocolbuffers/protobuf/releases/download/v30.2/protoc-30.2-linux-x86_64.zip
+sudo unzip protoc-30.2-linux-x86_64.zip -d /usr/local
+rm protoc-30.2-linux-x86_64.zip
+sudo rm -f /usr/local/readme.txt
+append_to_file .zshrc ""
+append_to_file .zshrc "# protobuf"
+append_to_file .zshrc "export PROTOC=/usr/local/bin/protoc"
 
 # auto tmux not done
 # section_header "auto-tmux"

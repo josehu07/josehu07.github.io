@@ -61,3 +61,5 @@
     wt = worktree
     res = reset
     resh = reset --hard
+    smod = submodule
+    smodur = submodule update --init --recursive
