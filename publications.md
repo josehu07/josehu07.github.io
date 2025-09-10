@@ -111,7 +111,7 @@ I learned a lot from [Prof. Shu Yin](https://sist.shanghaitech.edu.cn/yinshu_en/
     <td>
         <b>Bodega: Serving Linearizable Reads Locally from Anywhere at Anytime via Roster Leases </b><br/>
         <u>Guanzhou Hu</u>, Andrea Arpaci-Dusseau, Remzi Arpaci-Dusseau<br/>
-        <a class="btn-arxiv" href="https://arxiv.org/abs/xxxxx" target="_blank"><img class="pub-btn" src="/assets/img/arxiv-button.svg" /> arXiv</a>
+        <a class="btn-arxiv" href="https://arxiv.org/abs/2509.07158" target="_blank"><img class="pub-btn" src="/assets/img/arxiv-button.svg" /> arXiv</a>
         <a class="btn-github" href="https://github.com/josehu07/summerset" target="_blank"><img class="pub-btn-small" src="/assets/img/github-button.svg" /> Code</a>
     </td>
   </tr>
@@ -120,7 +120,7 @@ I learned a lot from [Prof. Shu Yin](https://sist.shanghaitech.edu.cn/yinshu_en/
     <td>
         <b>Crossword: Adaptive Consensus for Dynamic Data-Heavy Workloads</b><br/>
         <u>Guanzhou Hu</u>, Yiwei Chen, Andrea Arpaci-Dusseau, Remzi Arpaci-Dusseau<br/>
-        <a class="btn-arxiv" href="https://arxiv.org/abs/xxxxx" target="_blank"><img class="pub-btn" src="/assets/img/arxiv-button.svg" /> arXiv</a>
+        <a class="btn-arxiv" href="https://arxiv.org/abs/2509.07157" target="_blank"><img class="pub-btn" src="/assets/img/arxiv-button.svg" /> arXiv</a>
         <a class="btn-github" href="https://github.com/josehu07/summerset" target="_blank"><img class="pub-btn-small" src="/assets/img/github-button.svg" /> Code</a>
     </td>
   </tr>
