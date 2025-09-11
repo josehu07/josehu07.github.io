@@ -275,6 +275,13 @@ cd .lstr
 cargo install --path .
 cd $HOME
 
+# bat file viewer
+section_header "bat"
+cargo install --locked bat
+mkdir -p .config/bat/
+rm -f .config/bat/config
+wget https://josehu.com/assets/dev-env/bat-config -O .config/bat/config
+
 # global gitconfig (with corporate name and email)
 section_header "gitconfig"
 rm -f .gitconfig
