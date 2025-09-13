@@ -23,6 +23,7 @@
     a = add
     aa = add -A
     b = branch
+    ba = branch -a
     bm = branch -M
     bdel = branch -D
     c = commit
