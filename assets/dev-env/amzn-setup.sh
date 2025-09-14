@@ -88,7 +88,10 @@ sudo yum -y install gcc \
                     wget \
                     vim \
                     htop \
-                    openssl11
+                    openssl11 \
+                    screen \
+                    libevent \
+                    ncurses
 sudo yum -y autoremove
 
 # oh-my-zsh (do this first)
@@ -220,10 +223,22 @@ vim -es -u .vimrc -i NONE -c "PlugInstall" -c "qa"
 
 # tmux setup
 section_header "tmux"
+wget https://github.com/tmux/tmux/releases/download/3.5a/tmux-3.5a.tar.gz
+tar -xzf tmux-3.5a.tar.gz
+cd tmux-3.5a
+./configure
+make -j30
+sudo make install
+cd $HOME
 rm -f .tmux.conf
 wget https://josehu.com/assets/dev-env/tmux.conf -O .tmux.conf
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 git clone -b v2.1.3 https://github.com/catppuccin/tmux ~/.tmux/plugins/catppuccin/tmux
+
+# screen setup
+section_header "screen"
+rm -f .screenrc
+wget https://josehu.com/assets/dev-env/screenrc.txt -O .screenrc
 
 # rust toolchain
 section_header "rust-toolchain"
@@ -280,7 +295,7 @@ section_header "bat"
 cargo install --locked bat
 mkdir -p .config/bat/
 rm -f .config/bat/config
-wget https://josehu.com/assets/dev-env/bat-config -O .config/bat/config
+wget https://josehu.com/assets/dev-env/bat-config.txt -O .config/bat/config
 
 # global gitconfig (with corporate name and email)
 section_header "gitconfig"

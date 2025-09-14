@@ -1,6 +1,7 @@
 {
     "settingsSync.ignoredExtensions": [
-        "amazonwebservices.amazon-q-vscode"
+        "amazonwebservices.amazon-q-vscode",
+        "planguage.peasy-extension"
     ],
     "settingsSync.ignoredSettings": [
         "editor.fontSize",
@@ -14,12 +15,12 @@
     "workbench.colorCustomizations": {
         "editorGhostText.background": "#181818",
     },
+    "workbench.tree.indent": 12,
     "editor.fontFamily": "'MapleMonoNormalNL-NF-CN-Light', monospace",
     "editor.inlineSuggest.fontFamily": "'MapleMonoNormalNL-NF-CN-Light-Italic', monospace",
     "editor.fontVariations": true,
     "editor.allowVariableFontsInAccessibilityMode": true,
     "editor.fontSize": 13,
-    "editor.aiStats.enabled": true,
     "editor.bracketPairColorization.enabled": false,
     "editor.formatOnSave": true,
     "editor.inlayHints.enabled": "offUnlessPressed",
@@ -65,8 +66,8 @@
     "[brazilPackageConfig]": {
         "workbench.editor.languageDetection": false
     },
-    "viceroy.config.lastVersion": "0.53.202260",
-    "viceroy.config.internal.lastUpdateTime": "2025-08-29T20:25:58.236Z",
+    "viceroy.config.lastVersion": "0.53.202296",
+    "viceroy.config.internal.lastUpdateTime": "2025-09-13T23:10:02.695Z",
     "viceroy.doc.welcome.showAtStartup": false,
     "viceroy.workspaceSyncStrategy": "automatic",
     "viceroy.marketplace.extensionUpdateChannels": {
@@ -101,6 +102,7 @@
     "go.enableCodeLens": {
         "runtest": false
     },
+    "go.toolsManagement.autoUpdate": true,
     "rust-analyzer.inlayHints.bindingModeHints.enable": true,
     "rust-analyzer.inlayHints.closureCaptureHints.enable": true,
     "rust-analyzer.rustfmt.extraArgs": [
@@ -133,6 +135,7 @@
     "python.analysis.inlayHints.functionReturnTypes": true,
     "python.analysis.inlayHints.pytestParameters": true,
     "python.analysis.inlayHints.variableTypes": true,
+    "python.analysis.typeCheckingMode": "off",
     "jupyter.interactiveWindow.codeLens.enable": false,
     "notebook.defaultFormatter": "charliermarsh.ruff",
     "notebook.formatOnSave.enabled": true,
@@ -141,15 +144,22 @@
         "rust": false,
         "python": false,
         "shellscript": false,
-        "typescript": false
+        "typescript": false,
+        "p": false,
+        "csharp": false
     },
     "cSpell.userWords": [
         "amazonian",
         "amazonians",
+        "chrono",
         "codegen",
+        "headstart",
         "josehgz",
+        "milvus",
         "sandboxed",
         "serde",
+        "Summerset",
         "versionset"
     ],
+    "prettier.enable": false,
 }

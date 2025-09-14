@@ -88,7 +88,8 @@ sudo apt -y install build-essential \
                     curl \
                     vim \
                     htop \
-                    tmux
+                    tmux \
+                    screen
 sudo apt -y autoremove
 sudo apt -y autoclean
 
@@ -160,6 +161,11 @@ wget https://josehu.com/assets/dev-env/tmux.conf -O .tmux.conf
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 git clone -b v2.1.3 https://github.com/catppuccin/tmux ~/.tmux/plugins/catppuccin/tmux
 
+# screen setup
+section_header "screen"
+rm -f .screenrc
+wget https://josehu.com/assets/dev-env/screenrc.txt -O .screenrc
+
 # rust toolchain
 section_header "rust-toolchain"
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
@@ -202,7 +208,7 @@ section_header "bat"
 sudo apt -y install bat
 mkdir -p .config/bat/
 rm -f .config/bat/config
-wget https://josehu.com/assets/dev-env/bat-config -O .config/bat/config
+wget https://josehu.com/assets/dev-env/bat-config.txt -O .config/bat/config
 
 # global gitconfig
 section_header "gitconfig"
