@@ -5,15 +5,16 @@
     ],
     "settingsSync.ignoredSettings": [
         "editor.fontSize",
-        "window.zoomLevel",
+        "window.zoomLevel"
     ],
+    "security.workspace.trust.untrustedFiles": "open",
     "window.zoomLevel": 1.2,
     "workbench.settings.enableNaturalLanguageSearch": false,
     "workbench.commandPalette.experimental.enableNaturalLanguageSearch": false,
     "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
     "workbench.iconTheme": "vira-icons-teal",
     "workbench.colorCustomizations": {
-        "editorGhostText.background": "#181818",
+        "editorGhostText.background": "#181818"
     },
     "workbench.tree.indent": 12,
     "editor.fontFamily": "'MapleMonoNormalNL-NF-CN-Light', monospace",
@@ -161,5 +162,5 @@
         "Summerset",
         "versionset"
     ],
-    "prettier.enable": false,
+    "prettier.enable": false
 }

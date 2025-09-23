@@ -214,6 +214,11 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 add_zsh_plugin "zsh-autosuggestions"
 reload_zshrc
 
+# colored-man-pages
+section_header "colored-man-pages"
+add_zsh_plugin "colored-man-pages"
+reload_zshrc
+
 # vim setup
 section_header "vim"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -251,7 +256,7 @@ rustup update
 
 # btop monitor
 section_header "btop"
-wget https://github.com/aristocratos/btop/releases/download/v1.4.4/btop-x86_64-linux-musl.tbz
+wget https://github.com/aristocratos/btop/releases/download/v1.4.5/btop-x86_64-linux-musl.tbz
 mkdir -p .config/btop/
 tar -xjf btop-x86_64-linux-musl.tbz -C .config/btop/
 rm btop-x86_64-linux-musl.tbz
@@ -311,13 +316,18 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # protobuf
 section_header "protobuf"
-curl -LO https://github.com/protocolbuffers/protobuf/releases/download/v30.2/protoc-30.2-linux-x86_64.zip
-sudo unzip protoc-30.2-linux-x86_64.zip -d /usr/local
-rm protoc-30.2-linux-x86_64.zip
+curl -LO https://github.com/protocolbuffers/protobuf/releases/download/v32.1/protoc-32.1-linux-x86_64.zip
+sudo unzip protoc-32.1-linux-x86_64.zip -d /usr/local
+rm protoc-32.1-linux-x86_64.zip
 sudo rm -f /usr/local/readme.txt
 append_to_file .zshrc ""
 append_to_file .zshrc "# protobuf"
 append_to_file .zshrc "export PROTOC=/usr/local/bin/protoc"
+reload_zshrc
+
+# aps personal-stacks
+section_header "aps-personal-stacks"
+toolbox install personal-stacks
 
 # auto tmux not done
 # section_header "auto-tmux"
