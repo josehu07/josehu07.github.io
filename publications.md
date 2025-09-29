@@ -60,10 +60,10 @@ I learned a lot from [Prof. Shu Yin](https://sist.shanghaitech.edu.cn/yinshu_en/
   <tr>
     <td class="conf-year">SIGMOD '26</td>
     <td>
-        <b>(To appear) Efficient Coordination for Autoscaling Cloud DBMS</b><br/>
+        <b>Marlin: Efficient Coordination for Autoscaling Cloud DBMS</b><br/>
         Wenjie Hu, <u>Guanzhou Hu</u>, Mahesh Balakrishnan, Xiangyao Yu<br/>
-        <a class="btn-acmdoi"><img class="pub-btn" src="/assets/img/acmdoi-button.svg" /> ACM-DOI</a>
-        <a class="btn-github"><img class="pub-btn-small" src="/assets/img/github-button.svg" /> Code</a>
+        <a class="btn-acmdoi" href="https://dl.acm.org/doi/10.1145/3749173" target="_blank"><img class="pub-btn" src="/assets/img/acmdoi-button.svg" /> ACM-DOI</a>
+        <a class="btn-github" href="https://github.com/CloudOLTP-UWM/Marlin/tree/sigmod26" target="_blank"><img class="pub-btn-small" src="/assets/img/github-button.svg" /> Code</a>
     </td>
   </tr>
   <tr>
