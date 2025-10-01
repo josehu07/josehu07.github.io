@@ -91,7 +91,8 @@ sudo yum -y install gcc \
                     openssl11 \
                     screen \
                     libevent \
-                    ncurses
+                    ncurses \
+                    mailx
 sudo yum -y autoremove
 
 # oh-my-zsh (do this first)
