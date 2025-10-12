@@ -31,9 +31,11 @@
     cam = commit -am
     camd = commit -a --amend
     m = merge
+    mc = merge --continue
     ma = merge --abort
     rb = rebase
     rbi = rebase --interactive
+    rbc = rebase --continue
     rba = rebase --abort
     co = checkout
     cob = checkout -b
