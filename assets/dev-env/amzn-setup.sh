@@ -84,6 +84,7 @@ sudo yum -y upgrade
 sudo yum -y install gcc \
                     git \
                     make \
+                    cmake \
                     curl \
                     wget \
                     vim \
@@ -329,6 +330,12 @@ reload_zshrc
 # aps personal-stacks
 section_header "aps-personal-stacks"
 toolbox install personal-stacks
+
+# claude code
+section_header "claude-code"
+curl -fsSL https://claude.ai/install.sh | bash
+claude install
+wget https://josehu.com/assets/dev-env/claude-code.json -O ~/.claude/settings.json
 
 # auto tmux not done
 # section_header "auto-tmux"

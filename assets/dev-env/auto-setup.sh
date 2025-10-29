@@ -85,6 +85,7 @@ sudo apt -y update
 sudo apt -y upgrade
 sudo apt -y install build-essential \
                     git \
+                    cmake \
                     curl \
                     vim \
                     htop \
@@ -218,6 +219,12 @@ wget https://josehu.com/assets/dev-env/gitconfig.txt -O .gitconfig
 # python uv
 section_header "python-uv"
 curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# claude code
+section_header "claude-code"
+curl -fsSL https://claude.ai/install.sh | bash
+claude install
+wget https://josehu.com/assets/dev-env/claude-code.json -O ~/.claude/settings.json
 
 # auto tmux (last step)
 section_header "auto-tmux"
