@@ -335,7 +335,12 @@ toolbox install personal-stacks
 section_header "claude-code"
 curl -fsSL https://claude.ai/install.sh | bash
 claude install
-wget -r -np --cut-dirs=3 https://josehu.com/assets/dev-env/claude-code/ -P ~/.claude/
+mkdir -p ~/.claude/commands
+mkdir -p ~/.claude/agents
+wget https://josehu.com/assets/dev-env/claude-code/settings.json -O ~/.claude/settings.json
+wget https://josehu.com/assets/dev-env/claude-code/commands/catchup.md -P ~/.claude/commands/
+wget https://josehu.com/assets/dev-env/claude-code/commands/prepare.md -P ~/.claude/commands/
+wget https://josehu.com/assets/dev-env/claude-code/subagents/commit-reviewer.md -P ~/.claude/agents/
 
 # auto tmux not done
 # section_header "auto-tmux"

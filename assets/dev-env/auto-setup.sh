@@ -223,8 +223,12 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 # claude code
 section_header "claude-code"
 curl -fsSL https://claude.ai/install.sh | bash
-claude install
-wget -r -np --cut-dirs=3 https://josehu.com/assets/dev-env/claude-code/ -P ~/.claude/
+claude installmkdir -p ~/.claude/commands
+mkdir -p ~/.claude/agents
+wget https://josehu.com/assets/dev-env/claude-code/settings.json -O ~/.claude/settings.json
+wget https://josehu.com/assets/dev-env/claude-code/commands/catchup.md -P ~/.claude/commands/
+wget https://josehu.com/assets/dev-env/claude-code/commands/prepare.md -P ~/.claude/commands/
+wget https://josehu.com/assets/dev-env/claude-code/subagents/commit-reviewer.md -P ~/.claude/agents/
 
 # auto tmux (last step)
 section_header "auto-tmux"
