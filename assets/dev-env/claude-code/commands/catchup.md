@@ -1,1 +1,1 @@
-Read and digest all the changed files and unstaged files in the current git branch
+Read the full git diff, and digest all the changed files and unstaged files into the current session.
