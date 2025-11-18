@@ -8,7 +8,7 @@
         "window.zoomLevel"
     ],
     "security.workspace.trust.untrustedFiles": "open",
-    "window.zoomLevel": 1.2,
+    "window.zoomLevel": 1,
     "workbench.settings.enableNaturalLanguageSearch": false,
     "workbench.commandPalette.experimental.enableNaturalLanguageSearch": false,
     "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
@@ -29,6 +29,7 @@
     "terminal.integrated.cursorStyle": "line",
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.cursorStyleInactive": "line",
+    "git.blame.editorDecoration.enabled": false,
     "gitlens.currentLine.enabled": false,
     "gitlens.currentLine.pullRequests.enabled": false,
     "telemetry.enableCrashReporter": false,
@@ -67,8 +68,8 @@
     "[brazilPackageConfig]": {
         "workbench.editor.languageDetection": false
     },
-    "viceroy.config.lastVersion": "0.53.202296",
-    "viceroy.config.internal.lastUpdateTime": "2025-09-13T23:10:02.695Z",
+    "viceroy.config.lastVersion": "0.53.202388",
+    "viceroy.config.internal.lastUpdateTime": "2025-11-18T16:31:10.076Z",
     "viceroy.doc.welcome.showAtStartup": false,
     "viceroy.workspaceSyncStrategy": "automatic",
     "viceroy.marketplace.extensionUpdateChannels": {
@@ -82,12 +83,52 @@
         "mchpatr.datapath-vscode": "stable",
         "marklel.vscode-brazil": "stable"
     },
+    "viceroy.config.setup.amazonQ": false,
     "amazonQ.suppressPrompts": {
         "amazonQChatPairProgramming": true,
-        "amazonQChatDisclaimer": true
+        "amazonQChatDisclaimer": true,
+        "amazonQSessionConfigurationMessage": true
     },
     "amazonQ.workspaceIndex": true,
     "amazonQ.workspaceIndexUseGPU": true,
+    "claudeCode.environmentVariables": [
+        {
+            "name": "CLAUDE_CODE_ENABLE_TELEMETRY",
+            "value": "0"
+        },
+        {
+            "name": "AWS_PROFILE",
+            "value": "bedrock"
+        },
+        {
+            "name": "AWS_REGION",
+            "value": "us-west-2"
+        },
+        {
+            "name": "CLAUDE_CODE_USE_BEDROCK",
+            "value": "1"
+        },
+        {
+            "name": "ANTHROPIC_MODEL",
+            "value": "us.anthropic.claude-sonnet-4-5-20250929-v1:0"
+        },
+        {
+            "name": "BASH_MAX_TIMEOUT_MS",
+            "value": "500000"
+        },
+        {
+            "name": "MCP_TOOL_TIMEOUT",
+            "value": "500000"
+        },
+        {
+            "name": "CLAUDE_CODE_MAX_OUTPUT_TOKENS",
+            "value": "32000"
+        },
+        {
+            "name": "MAX_THINKING_TOKENS",
+            "value": "31999"
+        }
+    ],
     "gitlens.codeLens.enabled": false,
     "C_Cpp.inlayHints.parameterNames.enabled": true,
     "C_Cpp.inlayHints.autoDeclarationTypes.enabled": true,
@@ -104,11 +145,12 @@
         "runtest": false
     },
     "go.toolsManagement.autoUpdate": true,
-    "rust-analyzer.inlayHints.bindingModeHints.enable": true,
-    "rust-analyzer.inlayHints.closureCaptureHints.enable": true,
     "rust-analyzer.rustfmt.extraArgs": [
         "+nightly"
     ],
+    "rust-analyzer.check.command": "clippy",
+    "rust-analyzer.inlayHints.bindingModeHints.enable": true,
+    "rust-analyzer.inlayHints.closureCaptureHints.enable": true,
     "rust-analyzer.inlayHints.genericParameterHints.lifetime.enable": true,
     "rust-analyzer.inlayHints.genericParameterHints.type.enable": true,
     "rust-analyzer.inlayHints.implicitDrops.enable": true,
@@ -137,6 +179,9 @@
     "python.analysis.inlayHints.pytestParameters": true,
     "python.analysis.inlayHints.variableTypes": true,
     "python.analysis.typeCheckingMode": "off",
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff"
+    },
     "jupyter.interactiveWindow.codeLens.enable": false,
     "notebook.defaultFormatter": "charliermarsh.ruff",
     "notebook.formatOnSave.enabled": true,
@@ -162,5 +207,6 @@
         "Summerset",
         "versionset"
     ],
-    "prettier.enable": false
+    "prettier.enable": false,
+    "chat.disableAIFeatures": true
 }
