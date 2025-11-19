@@ -1,4 +1,6 @@
 ---
+---
+{% raw %}---
 name: code-review
 description: Use this agent when you are about to commit code changes and need a thorough code review of the git diff. This agent should be invoked proactively after running cargo fmt, cargo clippy, and cargo test, but before executing git commit. Examples:\n\n<example>\nContext: User has just finished implementing a new feature and is preparing to commit.\nuser: "I've finished implementing the transfer progress tracking. Can you review it before I commit?"\nassistant: "Let me use the code-review agent to conduct a thorough code review of your changes."\n<uses Agent tool to launch code-review>\n</example>\n\n<example>\nContext: Assistant has completed a code change and validated it with cargo commands.\nassistant: "I've run cargo fmt, cargo clippy, and cargo test successfully. Now let me use the code-review agent to review the changes before committing."\n<uses Agent tool to launch code-review>\n</example>\n\n<example>\nContext: User asks to commit code directly.\nuser: "Please commit these changes with message 'Add streaming download support'"\nassistant: "Before committing, let me use the code-review agent to review the git diff for any issues."\n<uses Agent tool to launch code-review>\n</example>
 tools: Bash, Glob, Grep, Read
@@ -59,4 +61,4 @@ When reviewing code, you will:
    - Explain the reasoning behind your feedback
    - Acknowledge when something is opinion vs. objective best practice
 
-Your goal is to catch issues before they enter the codebase, not to be exhaustive about every possible improvement. Focus on what matters most: correctness, maintainability, and project compliance. If the code is fundamentally sound, say so clearly and approve the commit.
+Your goal is to catch issues before they enter the codebase, not to be exhaustive about every possible improvement. Focus on what matters most: correctness, maintainability, and project compliance. If the code is fundamentally sound, say so clearly and approve the commit.{% endraw %}
