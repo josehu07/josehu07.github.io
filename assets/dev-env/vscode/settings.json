@@ -133,6 +133,8 @@
         }
     ],
     "chatgpt.commentCodeLensEnabled": false,
+    "geminicodeassist.enableTelemetry": false,
+    "geminicodeassist.displayInlineContextHint": false,
     "C_Cpp.inlayHints.parameterNames.enabled": true,
     "C_Cpp.inlayHints.autoDeclarationTypes.enabled": true,
     "C_Cpp.inlayHints.autoDeclarationTypes.showOnLeft": true,
