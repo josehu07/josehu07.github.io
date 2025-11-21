@@ -1,0 +1,13 @@
+{
+    "general": {
+        "previewFeatures": true
+    },
+    "ide": {
+        "enabled": true
+    },
+    "security": {
+        "auth": {
+            "selectedType": "oauth-personal"
+        }
+    }
+}

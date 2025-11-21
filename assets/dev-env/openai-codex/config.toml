@@ -1,0 +1,6 @@
+model = "gpt-5.1-codex-max"
+model_reasoning_effort = "high"
+
+[features]
+streamable_shell = true
+web_search_request = true

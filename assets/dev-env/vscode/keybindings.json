@@ -11,9 +11,8 @@
         "when": "editorTextFocus"
     },
     {
-        "key": "shift+cmd+i",
-        "command": "aws.amazonq.sendToPrompt",
-        "when": "aws.codewhisperer.connected"
+        "key": "alt+cmd+q",
+        "command": "chatgpt.sidebarView.focus"
     },
     {
         "key": "alt+cmd+q",
@@ -87,5 +86,9 @@
         "key": "ctrl+shift+g",
         "command": "-workbench.view.scm",
         "when": "workbench.scm.active && !gitlens:disabled && config.gitlens.keymap == 'chorded'"
+    },
+    {
+        "key": "shift+cmd+8",
+        "command": "gitlens.toggleFileBlame"
     }
 ]

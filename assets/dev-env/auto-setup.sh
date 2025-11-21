@@ -90,7 +90,10 @@ sudo apt -y install build-essential \
                     vim \
                     htop \
                     tmux \
-                    screen
+                    screen \
+                    nodejs \
+                    npm \
+                    mailx
 sudo apt -y autoremove
 sudo apt -y autoclean
 
@@ -231,9 +234,27 @@ wget https://josehu.com/assets/dev-env/claude-code/commands/catchup.txt -O ~/.cl
 wget https://josehu.com/assets/dev-env/claude-code/commands/prepare.txt -O ~/.claude/commands/prepare.md
 wget https://josehu.com/assets/dev-env/claude-code/subagents/code-review.txt -O ~/.claude/agents/code-review.md
 
+# openai codex
+section_header "openai-codex"
+npm i -g @openai/codex
+mkdir -p ~/.codex/prompts
+wget https://josehu.com/assets/dev-env/openai-codex/config.toml -O ~/.codex/config.toml
+wget https://josehu.com/assets/dev-env/openai-codex/prompts/catchup.txt -O ~/.codex/prompts/catchup.md
+wget https://josehu.com/assets/dev-env/openai-codex/prompts/prepare.txt -O ~/.codex/prompts/prepare.md
+wget https://josehu.com/assets/dev-env/openai-codex/prompts/code-review.txt -O ~/.codex/prompts/code-review.md
+
+# gemini cli
+section_header "gemini-cli"
+npm install -g @google/gemini-cli
+mkdir -p ~/.gemini/commands
+wget https://josehu.com/assets/dev-env/gemini-cli/settings.json -O ~/.gemini/settings.json
+wget https://josehu.com/assets/dev-env/gemini-cli/commands/catchup.toml -O ~/.gemini/commands/catchup.toml
+wget https://josehu.com/assets/dev-env/gemini-cli/commands/prepare.toml -O ~/.gemini/commands/prepare.toml
+wget https://josehu.com/assets/dev-env/gemini-cli/commands/code-review.toml -O ~/.gemini/commands/code-review.toml
+
 # auto tmux (last step)
-section_header "auto-tmux"
-echo "Last step: auto start tmux on login in '.zshrc'..."
-append_to_file .zshrc ""
-append_to_file .zshrc "# auto tmux (keep at the bottom of .zshrc)"
-append_to_file .zshrc "test -z \"\$TMUX\" && (tmux attach || tmux new-session)"
+# section_header "auto-tmux"
+# echo "Last step: auto start tmux on login in '.zshrc'..."
+# append_to_file .zshrc ""
+# append_to_file .zshrc "# auto tmux (keep at the bottom of .zshrc)"
+# append_to_file .zshrc "test -z \"\$TMUX\" && (tmux attach || tmux new-session)"
