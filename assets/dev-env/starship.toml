@@ -1,3 +1,14 @@
+# Header connector.
+format = "[╭](bold black) $all"
+
+# Time.
+[time]
+disabled = false
+use_12hr = false
+format = "[╰](bold black) [$time]($style) "
+style = "bright-black"
+time_format = "%H:%M"
+
 # Username & hostname.
 [username]
 style_user = "bold yellow"
