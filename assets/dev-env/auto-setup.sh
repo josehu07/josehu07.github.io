@@ -113,7 +113,8 @@ reload_zshrc
 
 # starship theme
 section_header "starship"
-sh -c "$(curl -fsSL https://starship.rs/install.sh)" "" -y
+mkdir -p .local/bin
+sh -c "$(curl -fsSL https://starship.rs/install.sh)" "" -y -b $HOME/.local/bin
 eval "$(starship init zsh)"
 mkdir -p .config/
 rm -f .config/starship.toml

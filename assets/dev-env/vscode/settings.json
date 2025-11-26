@@ -113,7 +113,7 @@
         },
         {
             "name": "ANTHROPIC_MODEL",
-            "value": "us.anthropic.claude-sonnet-4-5-20250929-v1:0"
+            "value": "global.anthropic.claude-opus-4-5-20251101-v1:0"
         },
         {
             "name": "BASH_MAX_TIMEOUT_MS",

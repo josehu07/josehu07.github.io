@@ -100,7 +100,7 @@ sudo yum -y autoremove
 section_header "oh-my-zsh"
 rm -rf ./.oh-my-zsh/
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
-reload_zshrc
+reload_zshrc 
 
 # turn off flow control
 section_header "flow-control"
@@ -183,7 +183,7 @@ toolbox install isengard-cli
 
 # starship theme
 section_header "starship"
-sh -c "$(curl -fsSL https://starship.rs/install.sh)" "" -y
+sh -c "$(curl -fsSL https://starship.rs/install.sh)" "" -y -b $HOME/.local/bin
 eval "$(starship init zsh)"
 mkdir -p .config/
 rm -f .config/starship.toml
@@ -237,6 +237,8 @@ cd tmux-3.5a
 make -j30
 sudo make install
 cd $HOME
+rm tmux-3.5a.tar.gz
+rm -rf tmux-3.5a
 rm -f .tmux.conf
 wget https://josehu.com/assets/dev-env/tmux.conf -O .tmux.conf
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -359,6 +361,11 @@ wget https://josehu.com/assets/dev-env/gemini-cli/settings.json -O ~/.gemini/set
 wget https://josehu.com/assets/dev-env/gemini-cli/commands/catchup.toml -O ~/.gemini/commands/catchup.toml
 wget https://josehu.com/assets/dev-env/gemini-cli/commands/prepare.toml -O ~/.gemini/commands/prepare.toml
 wget https://josehu.com/assets/dev-env/gemini-cli/commands/code-review.toml -O ~/.gemini/commands/code-review.toml
+
+# emailme
+section_header "emailme"
+wget https://josehu.com/assets/dev-env/emailme.zsh -O ~/.local/bin/emailme
+chmod a+x ~/.local/bin/emailme
 
 # auto tmux not done
 # section_header "auto-tmux"
