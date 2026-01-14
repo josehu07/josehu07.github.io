@@ -71,7 +71,7 @@
         "workbench.editor.languageDetection": false
     },
     "viceroy.config.lastVersion": "0.53.202388",
-    "viceroy.config.internal.lastUpdateTime": "2025-11-20T21:33:40.155Z",
+    "viceroy.config.internal.lastUpdateTime": "2026-01-13T23:49:41.339Z",
     "viceroy.doc.welcome.showAtStartup": false,
     "viceroy.workspaceSyncStrategy": "automatic",
     "viceroy.marketplace.extensionUpdateChannels": {
@@ -132,9 +132,12 @@
             "value": "31999"
         }
     ],
+    "claudeCode.preferredLocation": "panel",
+    "claudeCode.useCtrlEnterToSend": true,
     "chatgpt.commentCodeLensEnabled": false,
     "geminicodeassist.enableTelemetry": false,
     "geminicodeassist.displayInlineContextHint": false,
+    "chat.disableAIFeatures": true,
     "C_Cpp.inlayHints.parameterNames.enabled": true,
     "C_Cpp.inlayHints.autoDeclarationTypes.enabled": true,
     "C_Cpp.inlayHints.autoDeclarationTypes.showOnLeft": true,
@@ -191,6 +194,9 @@
     "notebook.defaultFormatter": "charliermarsh.ruff",
     "notebook.formatOnSave.enabled": true,
     "notebook.formatOnCellExecution": true,
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
     "cSpell.enabledFileTypes": {
         "rust": false,
         "python": false,
@@ -212,6 +218,4 @@
         "Summerset",
         "versionset"
     ],
-    "prettier.enable": false,
-    "chat.disableAIFeatures": true
 }
