@@ -157,6 +157,7 @@
         "+nightly"
     ],
     "rust-analyzer.check.command": "clippy",
+    "rust-analyzer.cargo.features": "all",
     "rust-analyzer.inlayHints.bindingModeHints.enable": true,
     "rust-analyzer.inlayHints.closureCaptureHints.enable": true,
     "rust-analyzer.inlayHints.genericParameterHints.lifetime.enable": true,
