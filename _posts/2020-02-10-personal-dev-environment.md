@@ -6,7 +6,7 @@ author: Guanzhou Hu
 categories: Memo
 ---
 
-WARNING: this post is seriously outdated, and my dev setup has been evolving a lot with time. For a partial glance, you may check out my [assets/dev-env/auto-setup.sh](https://josehu.com/assets/dev-env/auto-setup.sh).
+WARNING: this post is seriously outdated, and my dev setup has been evolving a lot with time. For a partial glance, you may check out my [assets/dev-env/auto-setup.zsh](https://josehu.com/assets/dev-env/auto-setup.zsh).
 
 This post summarizes my personal development environment configuration on macOS X >= 10.14 and includes a brief memo of setting up WSL 2 on Windows >= 10. 记录一下我在 macOS X >= 10.14 上的个人开发环境 & 工具配置，以及在 Windows >= 10 上搭建基于 WSL 2 的开发环境的简要过程，以便将来需要时 refer。
 

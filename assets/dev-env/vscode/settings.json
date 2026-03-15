@@ -29,6 +29,7 @@
     "terminal.integrated.cursorStyle": "line",
     "terminal.integrated.cursorBlinking": true,
     "terminal.integrated.cursorStyleInactive": "line",
+    "terminal.integrated.initialHint": false,
     "git.blame.editorDecoration.enabled": false,
     "git.blame.statusBarItem.enabled": true,
     "gitlens.codeLens.enabled": false,
@@ -112,8 +113,20 @@
             "value": "1"
         },
         {
-            "name": "ANTHROPIC_MODEL",
-            "value": "global.anthropic.claude-opus-4-5-20251101-v1:0"
+            "name": "ANTHROPIC_DEFAULT_OPUS_MODEL",
+            "value": "arn:aws:bedrock:us-west-2:271033481963:inference-profile/global.anthropic.claude-opus-4-6-v1"
+        },
+        {
+            "name": "ANTHROPIC_DEFAULT_SONNET_MODEL",
+            "value": "arn:aws:bedrock:us-west-2:271033481963:inference-profile/global.anthropic.claude-sonnet-4-6"
+        },
+        {
+            "name": "ANTHROPIC_DEFAULT_HAIKU_MODEL",
+            "value": "arn:aws:bedrock:us-west-2:271033481963:inference-profile/global.anthropic.claude-haiku-4-5-20251001-v1:0"
+        },
+        {
+            "name": "CLAUDE_CODE_SUBAGENT_MODEL",
+            "value": "arn:aws:bedrock:us-west-2:271033481963:inference-profile/global.anthropic.claude-opus-4-6-v1"
         },
         {
             "name": "BASH_MAX_TIMEOUT_MS",
@@ -132,6 +145,7 @@
             "value": "31999"
         }
     ],
+    "claudeCode.selectedModel": "opus",
     "claudeCode.preferredLocation": "panel",
     "claudeCode.useCtrlEnterToSend": true,
     "chatgpt.commentCodeLensEnabled": false,
@@ -218,5 +232,5 @@
         "serde",
         "Summerset",
         "versionset"
-    ],
+    ]
 }
