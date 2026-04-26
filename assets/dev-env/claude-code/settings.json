@@ -24,6 +24,7 @@
       "Bash(cargo expand:*)",
       "Bash(cargo tree:*)",
       "Bash(cargo search:*)",
+      "Bash(cargo info:*)",
       "Bash(cargo fmt:*)",
       "Bash(cargo +nightly fmt:*)",
       "Bash(uv run ruff format:*)",
