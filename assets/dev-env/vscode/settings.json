@@ -1,236 +1,254 @@
 {
-    "settingsSync.ignoredExtensions": [
-        "amazonwebservices.amazon-q-vscode",
-        "planguage.peasy-extension"
-    ],
-    "settingsSync.ignoredSettings": [
-        "editor.fontSize",
-        "window.zoomLevel"
-    ],
-    "security.workspace.trust.untrustedFiles": "open",
-    "window.zoomLevel": 1,
-    "workbench.settings.enableNaturalLanguageSearch": false,
-    "workbench.commandPalette.experimental.enableNaturalLanguageSearch": false,
-    "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
-    "workbench.iconTheme": "vira-icons-teal",
-    "workbench.colorCustomizations": {
-        "editorGhostText.background": "#181818"
+  "settingsSync.ignoredExtensions": [
+    "amazonwebservices.amazon-q-vscode",
+    "planguage.peasy-extension",
+  ],
+  "settingsSync.ignoredSettings": ["editor.fontSize", "window.zoomLevel"],
+  "security.workspace.trust.untrustedFiles": "open",
+  "window.zoomLevel": 1,
+  "workbench.settings.enableNaturalLanguageSearch": false,
+  "workbench.commandPalette.experimental.enableNaturalLanguageSearch": false,
+  "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
+  "workbench.iconTheme": "vira-icons-teal",
+  "workbench.colorCustomizations": {
+    "editorGhostText.background": "#181818",
+  },
+  "workbench.tree.indent": 12,
+  "workbench.activityBar.location": "top",
+  "editor.fontFamily": "'MapleMonoNormalNL-NF-CN-Light', monospace",
+  "editor.inlineSuggest.fontFamily": "'MapleMonoNormalNL-NF-CN-Light-Italic', monospace",
+  "editor.fontVariations": true,
+  "editor.allowVariableFontsInAccessibilityMode": true,
+  "editor.fontSize": 13,
+  "editor.bracketPairColorization.enabled": false,
+  "editor.formatOnSave": true,
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "editor.inlayHints.padding": true,
+  "editor.accessibilitySupport": "off",
+  "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.cursorStyleInactive": "line",
+  "terminal.integrated.initialHint": false,
+  "git.blame.editorDecoration.enabled": false,
+  "git.blame.statusBarItem.enabled": true,
+  "gitlens.codeLens.enabled": false,
+  "gitlens.currentLine.enabled": false,
+  "gitlens.currentLine.pullRequests.enabled": false,
+  "gitlens.rebaseEditor.openOnPausedRebase": false,
+  "telemetry.enableCrashReporter": false,
+  "telemetry.enableTelemetry": false,
+  "telemetry.telemetryLevel": "off",
+  "files.autoSave": "onFocusChange",
+  "files.watcherExclude": {
+    "**/build/**": true,
+    ".git/objects/**": true,
+    ".git/subtree-cache/**": true,
+    ".hg/store/**": true,
+    "*/.git/objects/**": true,
+    "*/.git/subtree-cache/**": true,
+    "*/.hg/store/**": true,
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/.hg/store/**": true
+  },
+  "files.exclude": {
+    ".viceroy": true,
+    "apollo-overrides": true,
+    "release-info": true,
+    "src/*/build": false,
+    "build": false,
+    "env": false,
+    "packageInfo*": true,
+    ".bemol": true,
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true
+  },
+  "search.exclude": {
+    "env": false,
+    "src/*/build": true,
+    "build": true,
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true
+  },
+  "[brazilPackageConfig]": {
+    "workbench.editor.languageDetection": false
+  },
+  "viceroy.config.lastVersion": "0.53.202388",
+  "viceroy.config.internal.lastUpdateTime": "2026-05-11T06:17:09.484Z",
+  "viceroy.doc.welcome.showAtStartup": false,
+  "viceroy.workspaceSyncStrategy": "automatic",
+  "viceroy.marketplace.extensionUpdateChannels": {
+    "asbx.amzn-cline": "stable",
+    "mchpatr.datapath-language-server": "stable",
+    "kaze.vscode-plugin-contribution-model": "stable",
+    "amzn.vscode-isengard-tooltip": "stable",
+    "amazon.controls-dsl": "stable",
+    "amzn.AWSGuruQLinter": "stable",
+    "amzn.amzn-pippin": "stable",
+    "mchpatr.datapath-vscode": "stable",
+    "marklel.vscode-brazil": "stable",
+  },
+  "viceroy.config.setup.amazonQ": false,
+  "amazonQ.suppressPrompts": {
+    "amazonQChatPairProgramming": true,
+    "amazonQChatDisclaimer": true,
+    "amazonQSessionConfigurationMessage": true,
+  },
+  "amazonQ.workspaceIndex": true,
+  "amazonQ.workspaceIndexUseGPU": true,
+  "claudeCode.initialPermissionMode": "acceptEdits",
+  "claudeCode.environmentVariables": [
+    {
+      "name": "CLAUDE_CODE_ENABLE_TELEMETRY",
+      "value": "0",
     },
-    "workbench.tree.indent": 12,
-    "editor.fontFamily": "'MapleMonoNormalNL-NF-CN-Light', monospace",
-    "editor.inlineSuggest.fontFamily": "'MapleMonoNormalNL-NF-CN-Light-Italic', monospace",
-    "editor.fontVariations": true,
-    "editor.allowVariableFontsInAccessibilityMode": true,
-    "editor.fontSize": 13,
-    "editor.bracketPairColorization.enabled": false,
-    "editor.formatOnSave": true,
-    "editor.inlayHints.enabled": "offUnlessPressed",
-    "editor.inlayHints.padding": true,
-    "terminal.integrated.cursorStyle": "line",
-    "terminal.integrated.cursorBlinking": true,
-    "terminal.integrated.cursorStyleInactive": "line",
-    "terminal.integrated.initialHint": false,
-    "git.blame.editorDecoration.enabled": false,
-    "git.blame.statusBarItem.enabled": true,
-    "gitlens.codeLens.enabled": false,
-    "gitlens.currentLine.enabled": false,
-    "gitlens.currentLine.pullRequests.enabled": false,
-    "telemetry.enableCrashReporter": false,
-    "telemetry.enableTelemetry": false,
-    "telemetry.telemetryLevel": "off",
-    "files.autoSave": "onFocusChange",
-    "files.watcherExclude": {
-        "**/build/**": true,
-        "**/.git/objects/**": true,
-        "**/.git/subtree-cache/**": true,
-        "**/.hg/store/**": true
+    {
+      "name": "AWS_PROFILE",
+      "value": "bedrock",
     },
-    "files.exclude": {
-        ".viceroy": true,
-        "apollo-overrides": true,
-        "release-info": true,
-        "src/*/build": false,
-        "build": false,
-        "env": true,
-        "packageInfo*": true,
-        ".bemol": true,
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
-        "**/.DS_Store": true,
-        "**/Thumbs.db": true
+    {
+      "name": "AWS_REGION",
+      "value": "us-west-2",
     },
-    "search.exclude": {
-        "env": true,
-        "src/*/build": true,
-        "build": true,
-        "**/node_modules": true,
-        "**/bower_components": true,
-        "**/*.code-search": true
+    {
+      "name": "CLAUDE_CODE_USE_BEDROCK",
+      "value": "1",
     },
-    "[brazilPackageConfig]": {
-        "workbench.editor.languageDetection": false
+    {
+      "name": "ANTHROPIC_DEFAULT_OPUS_MODEL",
+      "value": "arn:aws:bedrock:us-west-2:271033481963:inference-profile/global.anthropic.claude-opus-4-7",
     },
-    "viceroy.config.lastVersion": "0.53.202388",
-    "viceroy.config.internal.lastUpdateTime": "2026-01-13T23:49:41.339Z",
-    "viceroy.doc.welcome.showAtStartup": false,
-    "viceroy.workspaceSyncStrategy": "automatic",
-    "viceroy.marketplace.extensionUpdateChannels": {
-        "asbx.amzn-cline": "stable",
-        "mchpatr.datapath-language-server": "stable",
-        "kaze.vscode-plugin-contribution-model": "stable",
-        "amzn.vscode-isengard-tooltip": "stable",
-        "amazon.controls-dsl": "stable",
-        "amzn.AWSGuruQLinter": "stable",
-        "amzn.amzn-pippin": "stable",
-        "mchpatr.datapath-vscode": "stable",
-        "marklel.vscode-brazil": "stable"
+    {
+      "name": "ANTHROPIC_DEFAULT_SONNET_MODEL",
+      "value": "arn:aws:bedrock:us-west-2:271033481963:inference-profile/global.anthropic.claude-sonnet-4-6",
     },
-    "viceroy.config.setup.amazonQ": false,
-    "amazonQ.suppressPrompts": {
-        "amazonQChatPairProgramming": true,
-        "amazonQChatDisclaimer": true,
-        "amazonQSessionConfigurationMessage": true
+    {
+      "name": "ANTHROPIC_DEFAULT_HAIKU_MODEL",
+      "value": "arn:aws:bedrock:us-west-2:271033481963:inference-profile/global.anthropic.claude-haiku-4-5-20251001-v1:0",
     },
-    "amazonQ.workspaceIndex": true,
-    "amazonQ.workspaceIndexUseGPU": true,
-    "claudeCode.initialPermissionMode": "acceptEdits",
-    "claudeCode.environmentVariables": [
-        {
-            "name": "CLAUDE_CODE_ENABLE_TELEMETRY",
-            "value": "0"
-        },
-        {
-            "name": "AWS_PROFILE",
-            "value": "bedrock"
-        },
-        {
-            "name": "AWS_REGION",
-            "value": "us-west-2"
-        },
-        {
-            "name": "CLAUDE_CODE_USE_BEDROCK",
-            "value": "1"
-        },
-        {
-            "name": "ANTHROPIC_DEFAULT_OPUS_MODEL",
-            "value": "arn:aws:bedrock:us-west-2:271033481963:inference-profile/global.anthropic.claude-opus-4-6-v1"
-        },
-        {
-            "name": "ANTHROPIC_DEFAULT_SONNET_MODEL",
-            "value": "arn:aws:bedrock:us-west-2:271033481963:inference-profile/global.anthropic.claude-sonnet-4-6"
-        },
-        {
-            "name": "ANTHROPIC_DEFAULT_HAIKU_MODEL",
-            "value": "arn:aws:bedrock:us-west-2:271033481963:inference-profile/global.anthropic.claude-haiku-4-5-20251001-v1:0"
-        },
-        {
-            "name": "CLAUDE_CODE_SUBAGENT_MODEL",
-            "value": "arn:aws:bedrock:us-west-2:271033481963:inference-profile/global.anthropic.claude-opus-4-6-v1"
-        },
-        {
-            "name": "BASH_MAX_TIMEOUT_MS",
-            "value": "500000"
-        },
-        {
-            "name": "MCP_TOOL_TIMEOUT",
-            "value": "500000"
-        },
-        {
-            "name": "CLAUDE_CODE_MAX_OUTPUT_TOKENS",
-            "value": "32000"
-        },
-        {
-            "name": "MAX_THINKING_TOKENS",
-            "value": "31999"
-        }
-    ],
-    "claudeCode.selectedModel": "opus",
-    "claudeCode.preferredLocation": "panel",
-    "claudeCode.useCtrlEnterToSend": true,
-    "chatgpt.commentCodeLensEnabled": false,
-    "geminicodeassist.enableTelemetry": false,
-    "geminicodeassist.displayInlineContextHint": false,
-    "chat.disableAIFeatures": true,
-    "C_Cpp.inlayHints.parameterNames.enabled": true,
-    "C_Cpp.inlayHints.autoDeclarationTypes.enabled": true,
-    "C_Cpp.inlayHints.autoDeclarationTypes.showOnLeft": true,
-    "C_Cpp.inlayHints.referenceOperator.enabled": true,
-    "go.inlayHints.assignVariableTypes": true,
-    "go.inlayHints.compositeLiteralFields": true,
-    "go.inlayHints.compositeLiteralTypes": true,
-    "go.inlayHints.constantValues": true,
-    "go.inlayHints.functionTypeParameters": true,
-    "go.inlayHints.parameterNames": true,
-    "go.inlayHints.rangeVariableTypes": true,
-    "go.enableCodeLens": {
-        "runtest": false
+    {
+      "name": "CLAUDE_CODE_SUBAGENT_MODEL",
+      "value": "arn:aws:bedrock:us-west-2:271033481963:inference-profile/global.anthropic.claude-opus-4-7",
     },
-    "go.toolsManagement.autoUpdate": true,
-    "rust-analyzer.rustfmt.extraArgs": [
-        "+nightly"
-    ],
-    "rust-analyzer.check.command": "clippy",
-    "rust-analyzer.cargo.features": "all",
-    "rust-analyzer.inlayHints.bindingModeHints.enable": true,
-    "rust-analyzer.inlayHints.closureCaptureHints.enable": true,
-    "rust-analyzer.inlayHints.genericParameterHints.lifetime.enable": true,
-    "rust-analyzer.inlayHints.genericParameterHints.type.enable": true,
-    "rust-analyzer.inlayHints.implicitDrops.enable": true,
-    "rust-analyzer.inlayHints.implicitSizedBoundHints.enable": true,
-    "rust-analyzer.inlayHints.lifetimeElisionHints.enable": "skip_trivial",
-    "rust-analyzer.inlayHints.closureReturnTypeHints.enable": "with_block",
-    "rust-analyzer.inlayHints.discriminantHints.enable": "fieldless",
-    "rust-analyzer.inlayHints.expressionAdjustmentHints.enable": "reborrow",
-    "rust-analyzer.inlayHints.rangeExclusiveHints.enable": true,
-    "rust-analyzer.lens.enable": false,
-    "rust-analyzer.hover.actions.references.enable": true,
-    "rust-analyzer.imports.granularity.enforce": true,
-    "rust-analyzer.imports.granularity.group": "module",
-    "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
-    "javascript.inlayHints.parameterNames.enabled": "literals",
-    "javascript.inlayHints.parameterTypes.enabled": true,
-    "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
-    "javascript.inlayHints.variableTypes.enabled": true,
-    "typescript.inlayHints.enumMemberValues.enabled": true,
-    "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
-    "typescript.inlayHints.parameterTypes.enabled": true,
-    "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
-    "typescript.inlayHints.variableTypes.enabled": true,
-    "python.analysis.inlayHints.callArgumentNames": "partial",
-    "python.analysis.inlayHints.functionReturnTypes": true,
-    "python.analysis.inlayHints.pytestParameters": true,
-    "python.analysis.inlayHints.variableTypes": true,
-    "python.analysis.typeCheckingMode": "off",
-    "[python]": {
-        "editor.defaultFormatter": "charliermarsh.ruff"
+    {
+      "name": "BASH_MAX_TIMEOUT_MS",
+      "value": "500000",
     },
-    "jupyter.interactiveWindow.codeLens.enable": false,
-    "notebook.defaultFormatter": "charliermarsh.ruff",
-    "notebook.formatOnSave.enabled": true,
-    "notebook.formatOnCellExecution": true,
-    "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    {
+      "name": "MCP_TOOL_TIMEOUT",
+      "value": "500000",
     },
-    "cSpell.enabledFileTypes": {
-        "rust": false,
-        "python": false,
-        "shellscript": false,
-        "typescript": false,
-        "p": false,
-        "csharp": false
+    {
+      "name": "CLAUDE_CODE_MAX_OUTPUT_TOKENS",
+      "value": "32000",
     },
-    "cSpell.userWords": [
-        "amazonian",
-        "amazonians",
-        "chrono",
-        "codegen",
-        "headstart",
-        "josehgz",
-        "milvus",
-        "sandboxed",
-        "serde",
-        "Summerset",
-        "versionset"
-    ]
+    {
+      "name": "MAX_THINKING_TOKENS",
+      "value": "31999",
+    },
+  ],
+  "claudeCode.selectedModel": "best",
+  "claudeCode.preferredLocation": "sidebar",
+  "claudeCode.useCtrlEnterToSend": true,
+  "claudeCode.disableLoginPrompt": true,
+  "claudeCode.allowDangerouslySkipPermissions": true,
+  "claudeCode.enableNewConversationShortcut": true,
+  "chatgpt.commentCodeLensEnabled": false,
+  "geminicodeassist.enableTelemetry": false,
+  "geminicodeassist.displayInlineContextHint": false,
+  "chat.disableAIFeatures": true,
+  "C_Cpp.inlayHints.parameterNames.enabled": true,
+  "C_Cpp.inlayHints.autoDeclarationTypes.enabled": true,
+  "C_Cpp.inlayHints.autoDeclarationTypes.showOnLeft": true,
+  "C_Cpp.inlayHints.referenceOperator.enabled": true,
+  "go.inlayHints.assignVariableTypes": true,
+  "go.inlayHints.compositeLiteralFields": true,
+  "go.inlayHints.compositeLiteralTypes": true,
+  "go.inlayHints.constantValues": true,
+  "go.inlayHints.functionTypeParameters": true,
+  "go.inlayHints.parameterNames": true,
+  "go.inlayHints.rangeVariableTypes": true,
+  "go.enableCodeLens": {
+    "runtest": false,
+  },
+  "go.toolsManagement.autoUpdate": true,
+  "rust-analyzer.rustfmt.extraArgs": ["+nightly"],
+  "rust-analyzer.check.command": "clippy",
+  "rust-analyzer.cargo.features": "all",
+  "rust-analyzer.inlayHints.bindingModeHints.enable": true,
+  "rust-analyzer.inlayHints.closureCaptureHints.enable": true,
+  "rust-analyzer.inlayHints.genericParameterHints.lifetime.enable": true,
+  "rust-analyzer.inlayHints.genericParameterHints.type.enable": true,
+  "rust-analyzer.inlayHints.implicitDrops.enable": true,
+  "rust-analyzer.inlayHints.implicitSizedBoundHints.enable": true,
+  "rust-analyzer.inlayHints.lifetimeElisionHints.enable": "skip_trivial",
+  "rust-analyzer.inlayHints.closureReturnTypeHints.enable": "with_block",
+  "rust-analyzer.inlayHints.discriminantHints.enable": "fieldless",
+  "rust-analyzer.inlayHints.expressionAdjustmentHints.enable": "reborrow",
+  "rust-analyzer.inlayHints.rangeExclusiveHints.enable": true,
+  "rust-analyzer.lens.enable": false,
+  "rust-analyzer.hover.actions.references.enable": true,
+  "rust-analyzer.imports.granularity.enforce": true,
+  "rust-analyzer.imports.granularity.group": "module",
+  "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "javascript.inlayHints.parameterNames.enabled": "literals",
+  "javascript.inlayHints.parameterTypes.enabled": true,
+  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "javascript.inlayHints.variableTypes.enabled": true,
+  "typescript.inlayHints.enumMemberValues.enabled": true,
+  "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "typescript.inlayHints.parameterTypes.enabled": true,
+  "typescript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "typescript.inlayHints.variableTypes.enabled": true,
+  "python.analysis.inlayHints.callArgumentNames": "partial",
+  "python.analysis.inlayHints.functionReturnTypes": true,
+  "python.analysis.inlayHints.pytestParameters": true,
+  "python.analysis.inlayHints.variableTypes": true,
+  "python.analysis.typeCheckingMode": "off",
+  "[python]": {
+    "editor.defaultFormatter": "charliermarsh.ruff",
+  },
+  "jupyter.interactiveWindow.codeLens.enable": false,
+  "notebook.defaultFormatter": "charliermarsh.ruff",
+  "notebook.formatOnSave.enabled": true,
+  "notebook.formatOnCellExecution": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+  },
+  "[tlaplus]": {
+    "editor.formatOnType": false,
+    "editor.formatOnSave": false
+  },
+  "[latex]": {
+    "editor.wordWrap": "on"
+  },
+  "cSpell.enabledFileTypes": {
+    "rust": false,
+    "python": false,
+    "shellscript": false,
+    "typescript": false,
+    "p": false,
+    "csharp": false,
+  },
+  "cSpell.userWords": [
+    "amazonian",
+    "amazonians",
+    "chrono",
+    "codegen",
+    "headstart",
+    "josehgz",
+    "Linearizability",
+    "milvus",
+    "sandboxed",
+    "serde",
+    "Summerset",
+    "versionset"
+  ]
 }

@@ -17,6 +17,7 @@
     "MAX_THINKING_TOKENS": "31999"
   },
   "permissions": {
+    "defaultMode": "acceptEdits",
     "allow": [
       "Bash(cargo build:*)",
       "Bash(cargo asm:*)",
