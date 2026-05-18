@@ -42,19 +42,19 @@ I learned a lot from [Prof. Shu Yin](https://sist.shanghaitech.edu.cn/yinshu_en/
   <tr>
     <td class="conf-year">Submission</td>
     <td>
-        <b>(title fuzzed) Consensus Protocol with Remarkably Strong Read Support</b><br/>
-        <u>Guanzhou Hu</u> et al.<br/>
-        <a class="btn-acmdoi"><img class="pub-btn" src="/assets/img/acmdoi-button.svg" /> ACM-DOI</a>
-        <a class="btn-github"><img class="pub-btn-small" src="/assets/img/github-button.svg" /> Code</a>
-    </td>
-  </tr>
-  <tr>
-    <td class="conf-year">Submission</td>
-    <td>
         <b>(title fuzzed) Replication Protocol For an Unaddressed Type of Workloads</b><br/>
         <u>Guanzhou Hu</u> et al.<br/>
         <a class="btn-usenix"><img class="pub-btn" src="/assets/img/usenix-button.svg" /> USENIX</a>
         <a class="btn-github"><img class="pub-btn-small" src="/assets/img/github-button.svg" /> Code</a>
+    </td>
+  </tr>
+  <tr>
+    <td class="conf-year">OSDI '26</td>
+    <td>
+        <b>Bodega: Localized Linearizable Reads at Anywhere and Anytime via Roster Leases</b><br/>
+        <u>Guanzhou Hu</u>, Andrea Arpaci-Dusseau, Remzi Arpaci-Dusseau<br/>
+        <a class="btn-usenix" href="https://www.usenix.org/conference/osdi26" target="_blank"><img class="pub-btn" src="/assets/img/usenix-button.svg" /> USENIX</a>
+        <a class="btn-github" href="https://github.com/josehu07/summerset/tree/bodega-artifact" target="_blank"><img class="pub-btn-small" src="/assets/img/github-button.svg" /> Code</a>
     </td>
   </tr>
   <tr>
