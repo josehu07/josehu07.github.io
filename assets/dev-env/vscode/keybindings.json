@@ -12,10 +12,6 @@
     },
     {
         "key": "alt+cmd+q",
-        "command": "chatgpt.sidebarView.focus"
-    },
-    {
-        "key": "alt+cmd+q",
         "command": "-aws.amazonq.sendToPrompt",
         "when": "aws.codewhisperer.connected"
     },
@@ -87,8 +83,53 @@
         "command": "-workbench.view.scm",
         "when": "workbench.scm.active && !gitlens:disabled && config.gitlens.keymap == 'chorded'"
     },
+        {
+        "key": "alt+cmd+b",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "cmd+b",
+        "command": "-workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "cmd+b",
+        "command": "workbench.action.toggleAuxiliaryBar"
+    },
+    {
+        "key": "alt+cmd+b",
+        "command": "-workbench.action.toggleAuxiliaryBar"
+    },
     {
         "key": "shift+cmd+8",
         "command": "gitlens.toggleFileBlame"
+    },
+    {
+        "key": "cmd+escape",
+        "command": "claude-vscode.editor.open"
+    },
+    {
+        "key": "shift+cmd+escape",
+        "command": "claude-vscode.sidebar.open"
+    },
+    {
+        "key": "shift+cmd+escape",
+        "command": "-claude-vscode.editor.open",
+        "when": "!config.claudeCode.useTerminal"
+    },
+    {
+        "key": "shift+cmd+1",
+        "command": "chatgpt.openSidebar"
+    },
+    {
+        "key": "ctrl+l ctrl+b",
+        "command": "latex-workshop.surround",
+        "args": "textbf",
+        "when": "editorTextFocus && editorLangId == 'latex'"
+    },
+    {
+        "key": "ctrl+l ctrl+i",
+        "command": "latex-workshop.surround",
+        "args": "textit",
+        "when": "editorTextFocus && editorLangId == 'latex'"
     }
 ]

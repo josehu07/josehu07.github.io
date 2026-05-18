@@ -383,6 +383,10 @@ toolbox install mcp-registry
 mcp-registry install builder-mcp
 echo "Follow the rest of this to log in to Kiro: https://docs.hub.amazon.dev/kiro/user-guide/getting-started-cli/"
 
+# claude code builder mcp
+section_header "builder-mcp"
+aim mcp install builder-mcp
+
 # mechanic patching
 section_header "mechanic"
 toolbox install mechanic

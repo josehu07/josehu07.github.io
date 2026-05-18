@@ -227,8 +227,10 @@
     "editor.formatOnSave": false
   },
   "[latex]": {
-    "editor.wordWrap": "on"
+    "editor.wordWrap": "on",
+    "editor.tabSize": 2
   },
+  "latex-workshop.formatting.latex": "tex-fmt",
   "cSpell.enabledFileTypes": {
     "rust": false,
     "python": false,

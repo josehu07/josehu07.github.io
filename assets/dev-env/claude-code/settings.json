@@ -1,6 +1,6 @@
 {
   "model": "best",
-  "effortLevel": "high",
+  "effortLevel": "xhigh",
   "fastMode": true,
   "env": {
     "CLAUDE_CODE_ENABLE_TELEMETRY": "0",
@@ -54,6 +54,7 @@
       "Bash(objdump:*)",
       "Bash(hexdump:*)",
       "Bash(nm:*)",
+      "Bash(mcurl:*)",
       "Glob",
       "Grep",
       "Search",
@@ -102,8 +103,22 @@
     "pyright-lsp@claude-plugins-official": true,
     "gopls-lsp@claude-plugins-official": true,
     "code-simplifier@claude-plugins-official": true,
+    "code-review@claude-plugins-official": true,
     "superpowers@claude-plugins-official": false,
-    "frontend-design@claude-plugins-official": true
+    "frontend-design@claude-plugins-official": true,
+    "aws-guide@btw-plugins": true,
+    "brazil-worktrees@btw-plugins": true,
+    "crux-pull-requests@btw-plugins": true,
+    "project-work@btw-plugins": true
+  },
+  "extraKnownMarketplaces": {
+    "btw-plugins": {
+      "source": {
+        "source": "git",
+        "url": "ssh://git.amazon.com/pkg/BtwPluginMarketplace"
+      },
+      "autoUpdate": true
+    }
   },
   "alwaysThinkingEnabled": true,
   "skipDangerousModePermissionPrompt": true

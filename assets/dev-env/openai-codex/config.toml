@@ -1,6 +1,24 @@
-model = "gpt-5.3-codex"
+model = "gpt-5.5"
 model_reasoning_effort = "high"
+personality = "pragmatic"
 web_search = "live"
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"
+
+[sandbox_workspace_write]
+network_access = true
 
 [features]
 streamable_shell = true
+
+[plugins."github@openai-curated"]
+enabled = true
+
+# [mcp_servers.builder-mcp]
+# command = 'builder-mcp'
+
+# [mcp_servers.builder-mcp.env]
+# TOOL_PERSONALIZATION_ROLLOUT_PERCENTAGE = '100'
+# TOOL_PERSONALIZATION_ENABLED = 'true'
+# TOOL_PERSONALIZATION_MIN_EXECUTIONS = '0'
+# TOOL_PERSONALIZATION_TRAINING_DAYS = '0'
