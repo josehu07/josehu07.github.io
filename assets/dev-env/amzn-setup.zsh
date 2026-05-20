@@ -28,7 +28,7 @@
 
 ##
 # Personal next steps:
-#   - remove compinit line in .zshrc
+#   - remove compinit autoload line in .zshrc
 #   - uninstall toolbox rust-analyzer and install rustup component
 #   - point VSCode rust-analyzer.server.path to cargo bin ver
 #   - fill .aws/config with useful profile sections, copy existing
@@ -37,9 +37,9 @@
 #   - add `export AWS_EC2_METADATA_DISABLED=true` to disable IMDS
 #   - kiro-cli: https://docs.hub.amazon.dev/kiro/user-guide/getting-started-cli/
 #   - envImprovement: https://w.amazon.com/index.php/EnvImprovementNinjaBasics
-#   - emailme: https://w.amazon.com/bin/view/AmazES/RoutingLayer/TheMystiqueReloaded/dev-dekstop-emails/
 #   - auto S3 backup: https://w.amazon.com/index.php/DevDesktopS3Backup
-#   - edit welcome message via `/etc/motd` to add host name
+#   - emailme: https://w.amazon.com/bin/view/AmazES/RoutingLayer/TheMystiqueReloaded/dev-dekstop-emails/
+#   - touch a `~/.hushlogin` file to silence login message
 #   - import `.zsh_history` from older dev desktop so we can reuse command history
 ##
 
@@ -72,6 +72,9 @@ function change_git_email {
     sed -i "s/^    email = \(.*\)$/    email = $email/g" .gitconfig
 }
 
+function mcurl() {
+    /usr/bin/curl "$@" -L --cookie ~/.midway/cookie --cookie-jar ~/.midway/cookie
+}
 
 # ensure in user home directory
 cd $HOME
@@ -364,7 +367,7 @@ mv kubectl ~/.local/bin/
 chmod a+x ~/.local/bin/kubectl
 append_to_file .zshrc ""
 append_to_file .zshrc "# kubectl"
-append_to_file .zshrc "export <(kubectl completion zsh)"
+append_to_file .zshrc "source <(kubectl completion zsh)"
 reload_zshrc
 
 # protobuf
