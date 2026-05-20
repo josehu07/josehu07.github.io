@@ -2,6 +2,7 @@
 #set -e  # not doing -e as some 'source' could return non-zero
 
 
+##
 # Usage:
 #
 # First, ensure that zsh and vim are there. Switch default shell to zsh.
@@ -23,6 +24,7 @@
 # anything goes wrong.
 # 
 # After all done, log out and log back in. Should be all set!
+##
 
 
 # helper functions
@@ -164,7 +166,7 @@ section_header "tmux"
 rm -f .tmux.conf
 wget https://josehu.com/assets/dev-env/tmux.conf -O .tmux.conf
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-git clone -b v2.1.3 https://github.com/catppuccin/tmux ~/.tmux/plugins/catppuccin/tmux
+git clone -b v2.3.0 https://github.com/catppuccin/tmux ~/.tmux/plugins/catppuccin/tmux
 
 # screen setup
 section_header "screen"
@@ -179,6 +181,7 @@ append_to_file .zshrc "# rust cargo"
 append_to_file .zshrc ". \"\$HOME/.cargo/env\""
 reload_zshrc
 rustup update
+rustup toolchain install nightly
 
 # btop monitor
 section_header "btop"

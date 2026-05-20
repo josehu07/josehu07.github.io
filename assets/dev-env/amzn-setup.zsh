@@ -2,7 +2,8 @@
 #set -e  # not doing -e as some 'source' could return non-zero
 
 
-# Usage:
+##
+# Usage: assumes AL2023 dev desktop!
 #
 # First, ensure that zsh and vim are there. Switch default shell to zsh.
 # 
@@ -23,6 +24,24 @@
 # anything goes wrong.
 # 
 # After all done, log out and log back in. Should be all set!
+##
+
+##
+# Personal next steps:
+#   - remove compinit line in .zshrc
+#   - uninstall toolbox rust-analyzer and install rustup component
+#   - point VSCode rust-analyzer.server.path to cargo bin ver
+#   - fill .aws/config with useful profile sections, copy existing
+#   - add `zmodload zsh/zprof` / `zprof` pair and `ZSH_DISABLE_COMPFIX=true`
+#   - change remote hostname display in starship config
+#   - add `export AWS_EC2_METADATA_DISABLED=true` to disable IMDS
+#   - kiro-cli: https://docs.hub.amazon.dev/kiro/user-guide/getting-started-cli/
+#   - envImprovement: https://w.amazon.com/index.php/EnvImprovementNinjaBasics
+#   - emailme: https://w.amazon.com/bin/view/AmazES/RoutingLayer/TheMystiqueReloaded/dev-dekstop-emails/
+#   - auto S3 backup: https://w.amazon.com/index.php/DevDesktopS3Backup
+#   - edit welcome message via `/etc/motd` to add host name
+#   - import `.zsh_history` from older dev desktop so we can reuse command history
+##
 
 
 # helper functions
@@ -74,11 +93,10 @@ echo "Refreshing MidWay credentials..."
 mwinit -s -o
 
 
-# yum installs
-section_header "yum-installs"
-sudo yum -y update
-sudo yum -y upgrade
-sudo yum -y install gcc \
+# dnf installs
+section_header "dnf-installs"
+sudo dnf -y upgrade
+sudo dnf -y install gcc \
                     git \
                     make \
                     cmake \
@@ -86,12 +104,14 @@ sudo yum -y install gcc \
                     wget \
                     vim \
                     htop \
-                    openssl11 \
+                    openssl-devel \
                     screen \
                     libevent \
+                    libevent-devel \
                     ncurses \
-                    mailx
-sudo yum -y autoremove
+                    mailx \
+                    postfix \
+                    screen
 
 # oh-my-zsh (do this first)
 section_header "oh-my-zsh"
@@ -126,6 +146,18 @@ toolbox install axe
 reload_zshrc
 axe init builder-tools
 reload_zshrc
+toolbox update
+
+# SAM CLI
+section_header "sam-cli"
+wget -O aws-sam-cli.zip https://github.com/aws/aws-sam-cli/releases/latest/download/aws-sam-cli-linux-x86_64.zip  # or arm64
+unzip aws-sam-cli.zip -d sam-cli
+sudo ./sam-cli/install
+rm -f aws-sam-cli.zip
+
+# LPT CLI
+section_header "lpt-cli"
+toolbox install --force-os=alinux lpt
 
 # brazil
 section_header "brazil"
@@ -154,6 +186,7 @@ alias bwsuvs='bws use -vs'
 alias bwscre='bws create -n'
 alias bwshow='bws show'
 alias bwsrmp='bws remove -p'
+alias bwscln='bws clean'
 alias bvs='brazil vs'
 alias bbr='brc brazil-build'
 alias bbra='brc --allPackages brazil-build'
@@ -168,13 +201,14 @@ mkdir -p ".aws"
 cat > ".aws/config" << EOF
 [default]
 region = $region
-credential_process=ada credentials print --account $account --role Admin --provider isengard
+credential_process = ada credentials print --account $account --role Admin --provider isengard
 EOF
 
 # om
 section_header "om"
-mwinit -s -o && mcurl -Lo /tmp/c2j-model.json 'https://code.amazon.com/packages/AWSOMServiceModel/releases/1.0/latest_artifact?version_set=AWSOMService/development&path=smithyprojections/AWSOMServiceModel/aws-sdk-external/c2j/om-2018-05-10.json&download=true'
-aws configure add-model --service-model file:///tmp/c2j-model.json --service-name om
+mkdir -p cli-models
+mcurl -Lo cli-models/c2j-model.json 'https://code.amazon.com/packages/AWSOMServiceModel/releases/1.0/latest_artifact?version_set=AWSOMService/development&path=smithyprojections/AWSOMServiceModel/aws-sdk-external/c2j/om-2018-05-10.json&download=true'
+aws configure add-model --service-model file:///home/${USER}/cli-models/c2j-model.json --service-name om
 
 # isengard cli
 section_header "isengard-cli"
@@ -227,22 +261,27 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 rm -f .vimrc
 wget https://josehu.com/assets/dev-env/vimrc-backup.txt -O .vimrc
 vim -es -u .vimrc -i NONE -c "PlugInstall" -c "qa"
+append_to_file .zshrc ""
+append_to_file .zshrc "# set vim as default editor"
+append_to_file .zshrc "export EDITOR=vim"
+reload_zshrc
 
 # tmux setup
 section_header "tmux"
-wget https://github.com/tmux/tmux/releases/download/3.5a/tmux-3.5a.tar.gz
-tar -xzf tmux-3.5a.tar.gz
-cd tmux-3.5a
+wget https://github.com/tmux/tmux/releases/download/3.6a/tmux-3.6a.tar.gz
+tar -xzf tmux-3.6a.tar.gz
+mv tmux-3.6a tmux-3.6a
+cd tmux-3.6a
 ./configure
 make -j30
 sudo make install
 cd $HOME
-rm tmux-3.5a.tar.gz
-rm -rf tmux-3.5a
+rm tmux-3.6a.tar.gz
+rm -rf tmux-3.6a
 rm -f .tmux.conf
 wget https://josehu.com/assets/dev-env/tmux.conf -O .tmux.conf
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-git clone -b v2.1.3 https://github.com/catppuccin/tmux ~/.tmux/plugins/catppuccin/tmux
+git clone -b v2.3.0 https://github.com/catppuccin/tmux ~/.tmux/plugins/catppuccin/tmux
 
 # screen setup
 section_header "screen"
@@ -257,13 +296,14 @@ append_to_file .zshrc "# rust cargo"
 append_to_file .zshrc ". \"\$HOME/.cargo/env\""
 reload_zshrc
 rustup update
+rustup toolchain install nightly
 
 # btop monitor
 section_header "btop"
-wget https://github.com/aristocratos/btop/releases/download/v1.4.5/btop-x86_64-linux-musl.tbz
+wget -O btop-linux.tar.gz https://github.com/aristocratos/btop/releases/download/v1.4.7/btop-x86_64-unknown-linux-musl.tar.gz  # or aarch64
 mkdir -p .config/btop/
-tar -xjf btop-x86_64-linux-musl.tbz -C .config/btop/
-rm btop-x86_64-linux-musl.tbz
+tar -xzf btop-linux.tar.gz -C .config/btop/
+rm btop-linux.tar.gz
 cd .config/btop/btop/
 sudo make install
 sudo make setcap
@@ -284,11 +324,11 @@ reload_zshrc
 
 # delta diff pager
 section_header "delta-diff"
-wget https://github.com/dandavison/delta/releases/download/0.18.2/delta-0.18.2-x86_64-unknown-linux-musl.tar.gz
+wget https://github.com/dandavison/delta/releases/download/0.19.2/delta-0.19.2-x86_64-unknown-linux-musl.tar.gz  # or aarch64 gnu
 mkdir -p .config/delta/
-tar -xzf delta-0.18.2-x86_64-unknown-linux-musl.tar.gz -C .config/delta/
-rm delta-0.18.2-x86_64-unknown-linux-musl.tar.gz
-cd .config/delta/delta-0.18.2-x86_64-unknown-linux-musl
+tar -xzf delta-0.19.2-x86_64-unknown-linux-musl.tar.gz -C .config/delta/
+rm delta-0.19.2-x86_64-unknown-linux-musl.tar.gz
+cd .config/delta/delta-0.19.2-x86_64-unknown-linux-musl
 sudo cp delta $HOME/.local/bin/
 cd $HOME
 
@@ -320,7 +360,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 
 # kubectl
 section_header "kubectl"
-curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"  # or arm64
 mv kubectl ~/.local/bin/
 chmod a+x ~/.local/bin/kubectl
 append_to_file .zshrc ""
@@ -330,9 +370,9 @@ reload_zshrc
 
 # protobuf
 section_header "protobuf"
-curl -LO https://github.com/protocolbuffers/protobuf/releases/download/v32.1/protoc-32.1-linux-x86_64.zip
-sudo unzip protoc-32.1-linux-x86_64.zip -d /usr/local
-rm protoc-32.1-linux-x86_64.zip
+curl -LO https://github.com/protocolbuffers/protobuf/releases/download/v35.0/protoc-35.0-linux-x86_64.zip  # or aarch_64
+sudo unzip protoc-35.0-linux-x86_64.zip -d /usr/local
+rm protoc-35.0-linux-x86_64.zip
 sudo rm -f /usr/local/readme.txt
 append_to_file .zshrc ""
 append_to_file .zshrc "# protobuf"
@@ -349,10 +389,10 @@ curl -fsSL https://claude.ai/install.sh | bash
 claude install
 mkdir -p ~/.claude/commands
 mkdir -p ~/.claude/agents
+mkdir -p ~/.claude/hooks
 wget https://josehu.com/assets/dev-env/claude-code/settings.json -O ~/.claude/settings.json
 wget https://josehu.com/assets/dev-env/claude-code/commands/catchup.txt -O ~/.claude/commands/catchup.md
 wget https://josehu.com/assets/dev-env/claude-code/commands/prepare.txt -O ~/.claude/commands/prepare.md
-wget https://josehu.com/assets/dev-env/claude-code/skills/squash-branch/SKILL.md -O ~/.claude/skills/squash-branch/SKILL.md
 wget https://josehu.com/assets/dev-env/claude-code/subagents/code-review.txt -O ~/.claude/agents/code-review.md
 wget https://josehu.com/assets/dev-env/claude-code/hooks/mw-check.sh -O ~/.claude/hooks/mw-check.sh
 chmod a+x ~/.claude/hooks/mw-check.sh
@@ -366,26 +406,30 @@ wget https://josehu.com/assets/dev-env/openai-codex/prompts/catchup.txt -O ~/.co
 wget https://josehu.com/assets/dev-env/openai-codex/prompts/prepare.txt -O ~/.codex/prompts/prepare.md
 wget https://josehu.com/assets/dev-env/openai-codex/prompts/code-review.txt -O ~/.codex/prompts/code-review.md
 
-# gemini cli
-section_header "gemini-cli"
-npm install -g @google/gemini-cli
-mkdir -p ~/.gemini/commands
-wget https://josehu.com/assets/dev-env/gemini-cli/settings.json -O ~/.gemini/settings.json
-wget https://josehu.com/assets/dev-env/gemini-cli/commands/catchup.toml -O ~/.gemini/commands/catchup.toml
-wget https://josehu.com/assets/dev-env/gemini-cli/commands/prepare.toml -O ~/.gemini/commands/prepare.toml
-wget https://josehu.com/assets/dev-env/gemini-cli/commands/code-review.toml -O ~/.gemini/commands/code-review.toml
+# # gemini cli
+# section_header "gemini-cli"
+# npm install -g @google/gemini-cli
+# mkdir -p ~/.gemini/commands
+# wget https://josehu.com/assets/dev-env/gemini-cli/settings.json -O ~/.gemini/settings.json
+# wget https://josehu.com/assets/dev-env/gemini-cli/commands/catchup.toml -O ~/.gemini/commands/catchup.toml
+# wget https://josehu.com/assets/dev-env/gemini-cli/commands/prepare.toml -O ~/.gemini/commands/prepare.toml
+# wget https://josehu.com/assets/dev-env/gemini-cli/commands/code-review.toml -O ~/.gemini/commands/code-review.toml
 
-# kiro cli & builder mcp
+# builder mcp
+section_header "builder-mcp"
+toolbox install aim
+aim mcp install builder-mcp
+append_to_file .zshrc ""
+append_to_file .zshrc "# AIM CLI"
+append_to_file .zshrc "export PATH=\"/local/home/josehgz/.aim/mcp-servers:\$PATH\""
+reload_zshrc
+
+# kiro cli
 section_header "kiro-cli"
 toolbox uninstall q
 toolbox install kiro-cli
 toolbox install mcp-registry
 mcp-registry install builder-mcp
-echo "Follow the rest of this to log in to Kiro: https://docs.hub.amazon.dev/kiro/user-guide/getting-started-cli/"
-
-# claude code builder mcp
-section_header "builder-mcp"
-aim mcp install builder-mcp
 
 # mechanic patching
 section_header "mechanic"
