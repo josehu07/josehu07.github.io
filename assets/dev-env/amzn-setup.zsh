@@ -100,7 +100,6 @@ sudo dnf -y install gcc \
                     git \
                     make \
                     cmake \
-                    curl \
                     wget \
                     vim \
                     htop \
@@ -133,7 +132,7 @@ append_to_file .zshrc ""
 append_to_file .zshrc "# mcurl"
 cat >> .zshrc << EOF
 function mcurl() {
-    /usr/bin/curl "$@" -L --cookie ~/.midway/cookie --cookie-jar ~/.midway/cookie
+    /usr/bin/curl "\$@" -L --cookie ~/.midway/cookie --cookie-jar ~/.midway/cookie
 }
 EOF
 reload_zshrc
