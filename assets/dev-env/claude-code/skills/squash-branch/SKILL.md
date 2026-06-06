@@ -70,3 +70,4 @@ User: "/squash-branch feature_branch=dev/new-feature base_branch=main"
 - Always verify the patch was created successfully before deleting the branch
 - If the patch application fails, the original branch is already deleted - warn the user about this risk
 - The patch file is stored in /tmp and will be cleaned up by the system
+

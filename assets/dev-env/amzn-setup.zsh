@@ -113,7 +113,8 @@ sudo dnf -y install gcc \
                     ncurses \
                     mailx \
                     postfix \
-                    screen
+                    screen \
+                    bubblewrap
 
 # oh-my-zsh (do this first)
 section_header "oh-my-zsh"
@@ -193,6 +194,10 @@ alias bvs='brazil vs'
 alias bbr='brc brazil-build'
 alias bbra='brc --allPackages brazil-build'
 EOF
+
+# toolbox miscs
+section_header "toolbox-miscs"
+toolbox install brazilcli batscli hydra ada
 
 # aws cli / ada
 section_header "ada"
@@ -401,14 +406,18 @@ chmod a+x ~/.claude/hooks/mw-check.sh
 
 # openai codex
 section_header "openai-codex"
-npm i -g @openai/codex
+curl -fsSL https://chatgpt.com/codex/install.sh | sh
 mkdir -p ~/.codex/prompts
+mkdir -p ~/.codex/hooks
 wget https://josehu.com/assets/dev-env/openai-codex/config.toml -O ~/.codex/config.toml
+wget https://josehu.com/assets/dev-env/openai-codex/.env -O ~/.codex/.env
 wget https://josehu.com/assets/dev-env/openai-codex/prompts/catchup.txt -O ~/.codex/prompts/catchup.md
 wget https://josehu.com/assets/dev-env/openai-codex/prompts/prepare.txt -O ~/.codex/prompts/prepare.md
 wget https://josehu.com/assets/dev-env/openai-codex/prompts/code-review.txt -O ~/.codex/prompts/code-review.md
+wget https://josehu.com/assets/dev-env/openai-codex/hooks/mw-check.sh -O ~/.codex/hooks/mw-check.sh
+chmod a+x ~/.codex/hooks/mw-check.sh
 
-# # gemini cli
+# gemini cli
 # section_header "gemini-cli"
 # npm install -g @google/gemini-cli
 # mkdir -p ~/.gemini/commands
@@ -452,4 +461,4 @@ chmod a+x ~/.local/bin/emailme
 # echo "Last step: auto start tmux on login in '.zshrc'..."
 # append_to_file .zshrc ""
 # append_to_file .zshrc "# auto tmux (keep at the bottom of .zshrc)"
-# append_to_file .zshrc "test -z \"\$TMUX\" && (tmux attach || tmux new-session)"
+# append_to_file .zshrc "test -z \"\$TMUX\" && (tmux attach || tmux new-session -c \"\$HOME\")"

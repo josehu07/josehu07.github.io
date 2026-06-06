@@ -11,6 +11,11 @@
         "when": "editorTextFocus"
     },
     {
+        "key": "shift+cmd+2",
+        "command": "-autoDocstring.generateDocstring",
+        "when": "editorTextFocus"
+    },
+    {
         "key": "alt+cmd+q",
         "command": "-aws.amazonq.sendToPrompt",
         "when": "aws.codewhisperer.connected"
@@ -104,21 +109,25 @@
         "command": "gitlens.toggleFileBlame"
     },
     {
-        "key": "cmd+escape",
-        "command": "claude-vscode.editor.open"
-    },
-    {
-        "key": "shift+cmd+escape",
-        "command": "claude-vscode.sidebar.open"
-    },
-    {
         "key": "shift+cmd+escape",
         "command": "-claude-vscode.editor.open",
         "when": "!config.claudeCode.useTerminal"
     },
     {
+        "key": "cmd+escape",
+        "command": "claude-vscode.sidebar.open"
+    },
+    {
+        "key": "shift+cmd+escape",
+        "command": "claude-vscode.editor.open"
+    },
+    {
         "key": "shift+cmd+1",
         "command": "chatgpt.openSidebar"
+    },
+    {
+        "key": "shift+cmd+2",
+        "command": "chatgpt.newCodexPanel"
     },
     {
         "key": "ctrl+l ctrl+b",

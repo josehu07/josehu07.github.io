@@ -1,7 +1,7 @@
 {
   "settingsSync.ignoredExtensions": [
     "amazonwebservices.amazon-q-vscode",
-    "planguage.peasy-extension",
+    "planguage.peasy-extension"
   ],
   "settingsSync.ignoredSettings": ["editor.fontSize", "window.zoomLevel"],
   "security.workspace.trust.untrustedFiles": "open",
@@ -10,11 +10,13 @@
   "workbench.commandPalette.experimental.enableNaturalLanguageSearch": false,
   "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
   "workbench.iconTheme": "vira-icons-teal",
+  "workbench.productIconTheme": "viraUIIcons",
   "workbench.colorCustomizations": {
-    "editorGhostText.background": "#181818",
+    "editorGhostText.background": "#181818"
   },
   "workbench.tree.indent": 12,
   "workbench.activityBar.location": "top",
+  "workbench.editor.editorActionsLocation": "titleBar",
   "editor.fontFamily": "'MapleMonoNormalNL-NF-CN-Light', monospace",
   "editor.inlineSuggest.fontFamily": "'MapleMonoNormalNL-NF-CN-Light-Italic', monospace",
   "editor.fontVariations": true,
@@ -78,7 +80,7 @@
     "workbench.editor.languageDetection": false
   },
   "viceroy.config.lastVersion": "0.53.202388",
-  "viceroy.config.internal.lastUpdateTime": "2026-05-11T06:17:09.484Z",
+  "viceroy.config.internal.lastUpdateTime": "2026-06-03T16:44:22.943Z",
   "viceroy.doc.welcome.showAtStartup": false,
   "viceroy.workspaceSyncStrategy": "automatic",
   "viceroy.marketplace.extensionUpdateChannels": {
@@ -90,13 +92,13 @@
     "amzn.AWSGuruQLinter": "stable",
     "amzn.amzn-pippin": "stable",
     "mchpatr.datapath-vscode": "stable",
-    "marklel.vscode-brazil": "stable",
+    "marklel.vscode-brazil": "stable"
   },
   "viceroy.config.setup.amazonQ": false,
   "amazonQ.suppressPrompts": {
     "amazonQChatPairProgramming": true,
     "amazonQChatDisclaimer": true,
-    "amazonQSessionConfigurationMessage": true,
+    "amazonQSessionConfigurationMessage": true
   },
   "amazonQ.workspaceIndex": true,
   "amazonQ.workspaceIndexUseGPU": true,
@@ -104,52 +106,52 @@
   "claudeCode.environmentVariables": [
     {
       "name": "CLAUDE_CODE_ENABLE_TELEMETRY",
-      "value": "0",
+      "value": "0"
     },
     {
       "name": "AWS_PROFILE",
-      "value": "bedrock",
+      "value": "bedrock"
     },
     {
       "name": "AWS_REGION",
-      "value": "us-west-2",
+      "value": "us-west-2"
     },
     {
       "name": "CLAUDE_CODE_USE_BEDROCK",
-      "value": "1",
+      "value": "1"
     },
     {
       "name": "ANTHROPIC_DEFAULT_OPUS_MODEL",
-      "value": "arn:aws:bedrock:us-west-2:271033481963:inference-profile/global.anthropic.claude-opus-4-7",
+      "value": "arn:aws:bedrock:us-west-2:271033481963:inference-profile/global.anthropic.claude-opus-4-8"
     },
     {
       "name": "ANTHROPIC_DEFAULT_SONNET_MODEL",
-      "value": "arn:aws:bedrock:us-west-2:271033481963:inference-profile/global.anthropic.claude-sonnet-4-6",
+      "value": "arn:aws:bedrock:us-west-2:271033481963:inference-profile/global.anthropic.claude-sonnet-4-6"
     },
     {
       "name": "ANTHROPIC_DEFAULT_HAIKU_MODEL",
-      "value": "arn:aws:bedrock:us-west-2:271033481963:inference-profile/global.anthropic.claude-haiku-4-5-20251001-v1:0",
+      "value": "arn:aws:bedrock:us-west-2:271033481963:inference-profile/global.anthropic.claude-haiku-4-5-20251001-v1:0"
     },
     {
       "name": "CLAUDE_CODE_SUBAGENT_MODEL",
-      "value": "arn:aws:bedrock:us-west-2:271033481963:inference-profile/global.anthropic.claude-opus-4-7",
+      "value": "arn:aws:bedrock:us-west-2:271033481963:inference-profile/global.anthropic.claude-opus-4-8"
     },
     {
       "name": "BASH_MAX_TIMEOUT_MS",
-      "value": "500000",
+      "value": "500000"
     },
     {
       "name": "MCP_TOOL_TIMEOUT",
-      "value": "500000",
+      "value": "500000"
     },
     {
       "name": "CLAUDE_CODE_MAX_OUTPUT_TOKENS",
-      "value": "32000",
+      "value": "32000"
     },
     {
       "name": "MAX_THINKING_TOKENS",
-      "value": "31999",
-    },
+      "value": "31999"
+    }
   ],
   "claudeCode.selectedModel": "best",
   "claudeCode.preferredLocation": "sidebar",
@@ -158,6 +160,7 @@
   "claudeCode.allowDangerouslySkipPermissions": true,
   "claudeCode.enableNewConversationShortcut": true,
   "chatgpt.commentCodeLensEnabled": false,
+  "chatgpt.composerEnterBehavior": "cmdIfMultiline",
   "geminicodeassist.enableTelemetry": false,
   "geminicodeassist.displayInlineContextHint": false,
   "chat.disableAIFeatures": true,
@@ -173,7 +176,7 @@
   "go.inlayHints.parameterNames": true,
   "go.inlayHints.rangeVariableTypes": true,
   "go.enableCodeLens": {
-    "runtest": false,
+    "runtest": false
   },
   "go.toolsManagement.autoUpdate": true,
   "rust-analyzer.rustfmt.extraArgs": ["+nightly"],
@@ -210,17 +213,20 @@
   "python.analysis.inlayHints.variableTypes": true,
   "python.analysis.typeCheckingMode": "off",
   "[python]": {
-    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.defaultFormatter": "charliermarsh.ruff"
   },
   "jupyter.interactiveWindow.codeLens.enable": false,
   "notebook.defaultFormatter": "charliermarsh.ruff",
   "notebook.formatOnSave.enabled": true,
   "notebook.formatOnCellExecution": true,
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[tlaplus]": {
     "editor.formatOnType": false,
@@ -237,7 +243,7 @@
     "shellscript": false,
     "typescript": false,
     "p": false,
-    "csharp": false,
+    "csharp": false
   },
   "cSpell.userWords": [
     "amazonian",

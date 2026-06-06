@@ -243,12 +243,16 @@ chmod a+x ~/.claude/hooks/mw-check.sh
 
 # openai codex
 section_header "openai-codex"
-npm i -g @openai/codex
+curl -fsSL https://chatgpt.com/codex/install.sh | sh
 mkdir -p ~/.codex/prompts
+mkdir -p ~/.codex/hooks
 wget https://josehu.com/assets/dev-env/openai-codex/config.toml -O ~/.codex/config.toml
+wget https://josehu.com/assets/dev-env/openai-codex/.env -O ~/.codex/.env
 wget https://josehu.com/assets/dev-env/openai-codex/prompts/catchup.txt -O ~/.codex/prompts/catchup.md
 wget https://josehu.com/assets/dev-env/openai-codex/prompts/prepare.txt -O ~/.codex/prompts/prepare.md
 wget https://josehu.com/assets/dev-env/openai-codex/prompts/code-review.txt -O ~/.codex/prompts/code-review.md
+wget https://josehu.com/assets/dev-env/openai-codex/hooks/mw-check.sh -O ~/.codex/hooks/mw-check.sh
+chmod a+x ~/.codex/hooks/mw-check.sh
 
 # gemini cli
 section_header "gemini-cli"
@@ -269,4 +273,4 @@ rtk init --global --auto-patch
 # echo "Last step: auto start tmux on login in '.zshrc'..."
 # append_to_file .zshrc ""
 # append_to_file .zshrc "# auto tmux (keep at the bottom of .zshrc)"
-# append_to_file .zshrc "test -z \"\$TMUX\" && (tmux attach || tmux new-session)"
+# append_to_file .zshrc "test -z \"\$TMUX\" && (tmux attach || tmux new-session -c \"\$HOME\")"

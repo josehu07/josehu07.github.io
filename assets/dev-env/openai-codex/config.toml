@@ -1,24 +1,53 @@
-model = "gpt-5.5"
+model = "openai.gpt-5.5"
+model_provider = "amazon-bedrock"
+web_search = "disabled"
+forced_login_method = "api"
+
 model_reasoning_effort = "high"
 personality = "pragmatic"
-web_search = "live"
 approval_policy = "on-request"
 sandbox_mode = "workspace-write"
+default_permissions = "write-workspace-read-everywhere"
+
+[model_providers.amazon-bedrock.aws]
+profile = "bedrock"
+region = "us-east-2"
+
+[analytics]
+enabled = false
+
+[otel]
+exporter = "none"
 
 [sandbox_workspace_write]
 network_access = true
 
-[features]
-streamable_shell = true
+[permissions.write-workspace-read-everywhere]
+description = "Workspace editing, plus broad read access everywhere"
+extends = ":workspace"
+
+[permissions.write-workspace-read-everywhere.filesystem]
+"/" = "read"
+
+[[hooks.UserPromptSubmit]]
+
+[[hooks.UserPromptSubmit.hooks]]
+type = "command"
+command = '"${CODEX_HOME:-$HOME/.codex}/hooks/mw-check.sh"'
+timeout = 30
+statusMessage = "Checking Midway credentials"
 
 [plugins."github@openai-curated"]
 enabled = true
 
-# [mcp_servers.builder-mcp]
-# command = 'builder-mcp'
+[plugins."openai-developers@openai-curated"]
+enabled = true
 
-# [mcp_servers.builder-mcp.env]
-# TOOL_PERSONALIZATION_ROLLOUT_PERCENTAGE = '100'
-# TOOL_PERSONALIZATION_ENABLED = 'true'
-# TOOL_PERSONALIZATION_MIN_EXECUTIONS = '0'
-# TOOL_PERSONALIZATION_TRAINING_DAYS = '0'
+[mcp_servers.builder-mcp]
+command = 'builder-mcp'
+
+[mcp_servers.builder-mcp.env]
+TOOL_PERSONALIZATION_ROLLOUT_PERCENTAGE = '100'
+TOOL_PERSONALIZATION_ENABLED = 'true'
+TOOL_PERSONALIZATION_MIN_EXECUTIONS = '0'
+TOOL_PERSONALIZATION_TRAINING_DAYS = '0'

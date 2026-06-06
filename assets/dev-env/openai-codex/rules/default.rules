@@ -1,0 +1,179 @@
+prefix_rule(
+    pattern = ["cargo", "build"],
+    decision = "allow",
+)
+
+prefix_rule(
+    pattern = ["cargo", "asm"],
+    decision = "allow",
+)
+
+prefix_rule(
+    pattern = ["cargo", "check"],
+    decision = "allow",
+)
+
+prefix_rule(
+    pattern = ["cargo", "expand"],
+    decision = "allow",
+)
+
+prefix_rule(
+    pattern = ["cargo", "tree"],
+    decision = "allow",
+)
+
+prefix_rule(
+    pattern = ["cargo", "search"],
+    decision = "allow",
+)
+
+prefix_rule(
+    pattern = ["cargo", "info"],
+    decision = "allow",
+)
+
+prefix_rule(
+    pattern = ["cargo", "fmt"],
+    decision = "allow",
+)
+
+prefix_rule(
+    pattern = ["cargo", "+nightly", "fmt"],
+    decision = "allow",
+)
+
+prefix_rule(
+    pattern = ["uv", "run", "ruff", "format"],
+    decision = "allow",
+)
+
+prefix_rule(
+    pattern = ["git", "diff"],
+    decision = "allow",
+)
+
+prefix_rule(
+    pattern = ["git", "log"],
+    decision = "allow",
+)
+
+prefix_rule(
+    pattern = ["git", "show"],
+    decision = "allow",
+)
+
+prefix_rule(
+    pattern = ["git", "range-diff"],
+    decision = "allow",
+)
+
+prefix_rule(
+    pattern = ["fd"],
+    decision = "allow",
+)
+
+prefix_rule(
+    pattern = ["find"],
+    decision = "allow",
+)
+
+prefix_rule(
+    pattern = ["grep"],
+    decision = "allow",
+)
+
+prefix_rule(
+    pattern = ["head"],
+    decision = "allow",
+)
+
+prefix_rule(
+    pattern = ["jaq"],
+    decision = "allow",
+)
+
+prefix_rule(
+    pattern = ["jq"],
+    decision = "allow",
+)
+
+prefix_rule(
+    pattern = ["rg"],
+    decision = "allow",
+)
+
+prefix_rule(
+    pattern = ["stat"],
+    decision = "allow",
+)
+
+prefix_rule(
+    pattern = ["tail"],
+    decision = "allow",
+)
+
+prefix_rule(
+    pattern = ["tree"],
+    decision = "allow",
+)
+
+prefix_rule(
+    pattern = ["wc"],
+    decision = "allow",
+)
+
+prefix_rule(
+    pattern = ["ls"],
+    decision = "allow",
+)
+
+prefix_rule(
+    pattern = ["cat"],
+    decision = "allow",
+)
+
+prefix_rule(
+    pattern = ["printf"],
+    decision = "allow",
+)
+
+prefix_rule(
+    pattern = ["awk"],
+    decision = "allow",
+)
+
+prefix_rule(
+    pattern = ["sed", "-n"],
+    decision = "allow",
+)
+
+prefix_rule(
+    pattern = ["pqrs"],
+    decision = "allow",
+)
+
+prefix_rule(
+    pattern = ["lscpu"],
+    decision = "allow",
+)
+
+prefix_rule(
+    pattern = ["objdump"],
+    decision = "allow",
+)
+
+prefix_rule(
+    pattern = ["hexdump"],
+    decision = "allow",
+)
+
+prefix_rule(
+    pattern = ["nm"],
+    decision = "allow",
+)
+
+prefix_rule(
+    pattern = ["mcurl"],
+    decision = "allow",
+)
