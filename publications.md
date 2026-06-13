@@ -15,7 +15,7 @@ permalink: /publications.html
 
 I was fortunate to be advised by [Prof. Andrea Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Prof. Remzi Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/) (great advisors!) during my Ph.D., working on distributed systems and algorithms, operating systems, and cloud storage infrastructure. My dissertation modernizes consensus protocols for replicated, fault-tolerant cloud services. I also studied file systems and kernel storage stack technologies for new hardware such as persistent memory.
 
-I had a great internship experience at Amazon Web Services supervised by [James Bornholt](https://jamesbornholt.com/) and [Andy Warfield](https://www.cs.ubc.ca/~andy/), doing a cool cloud storage project for AI workloads.
+I had a great internship experience at Amazon Web Services supervised by [James Bornholt](https://jamesbornholt.com/) and [Andy Warfield](https://www.cs.ubc.ca/~andy/), doing a cool cloud storage project for AI workloads. I now work as a full-time Applied Scientist at Amazon S3 with a focus on vector storage and semantic search services.
 
 I worked in the awesome group led by [Prof. Harry Xu](http://web.cs.ucla.edu/~harryxu/) as a summer research intern on scaling and accelerating graph neural networks computation using serverless computing.
 

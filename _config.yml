@@ -5,6 +5,8 @@ sass:
 plugins:
   - jekyll-feed
 
+repository: josehu07/josehu07.github.io
+
 title: Guanzhou Hu
 description: Feeling comfortably numb
 

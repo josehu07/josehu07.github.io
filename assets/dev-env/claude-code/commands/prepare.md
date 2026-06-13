@@ -1,1 +1,0 @@
-Clean up the changed/added code, removing pure debugging garbage. Summarize the full git diff into a short PR summary paragraph, with changes listed as concise bullet points.
