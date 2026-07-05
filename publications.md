@@ -53,8 +53,9 @@ I learned a lot from [Prof. Shu Yin](https://sist.shanghaitech.edu.cn/yinshu_en/
     <td>
         <b>Bodega: Localized Linearizable Reads at Anywhere and Anytime via Roster Leases</b><br/>
         <u>Guanzhou Hu</u>, Andrea Arpaci-Dusseau, Remzi Arpaci-Dusseau<br/>
-        <a class="btn-usenix" href="https://www.usenix.org/conference/osdi26" target="_blank"><img class="pub-btn" src="/assets/img/usenix-button.svg" /> USENIX</a>
+        <a class="btn-usenix" href="https://www.usenix.org/conference/osdi26/presentation/hu-guanzhou" target="_blank"><img class="pub-btn" src="/assets/img/usenix-button.svg" /> USENIX</a>
         <a class="btn-github" href="https://github.com/josehu07/summerset/tree/bodega-artifact" target="_blank"><img class="pub-btn-small" src="/assets/img/github-button.svg" /> Code</a>
+        <a class="btn-website" href="https://bodega-consensus.com" target="_blank"><img class="pub-btn" src="/assets/img/website-button.svg" /> Website</a>
     </td>
   </tr>
   <tr>
