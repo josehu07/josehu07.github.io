@@ -13,9 +13,9 @@ permalink: /
 
 # About Me
 
-I am an Applied Scientist in the [Amazon S3 team](https://www.amazon.science/tag/amazon-s3) at [Amazon Web Services](https://aws.amazon.com/), based in Seattle. I **research+engineer** distributed and cloud-native storage systems, vector storage and semantic search services, formal modeling and verification, and other related topics.
+I am an Applied Scientist in the [Amazon S3 team](https://www.amazon.science/tag/amazon-s3) at [Amazon Web Services](https://aws.amazon.com/), based in Seattle. I **research+engineer** distributed cloud-native storage systems, vector stores, semantic search services, formal modeling and verification methods, and other related topics.
 
-I obtained my Ph.D. in Computer Science from the [ADSL lab](https://research.cs.wisc.edu/adsl/) at the [University of Wisconsin-Madison](https://www.wisc.edu/), where I was fortunate to be advised by [Professor Andrea C. Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Professor Remzi H. Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/). My research focused on **computer systems**, especially distributed systems and algorithms, operating systems, and cloud storage infrastructure. My dissertation modernizes the design and implementation of consensus protocols for replicated, fault-tolerant services. I also studied file systems and kernel storage stack technologies for new hardware such as persistent memory.
+I obtained my Ph.D. in Computer Science from the [ADSL lab](https://research.cs.wisc.edu/adsl/) at the [University of Wisconsin-Madison](https://www.wisc.edu/), where I was fortunate to be advised by [Professor Andrea C. Arpaci-Dusseau](http://pages.cs.wisc.edu/~dusseau/) and [Professor Remzi H. Arpaci-Dusseau](http://pages.cs.wisc.edu/~remzi/). My research focused on **computer systems**, specifically, distributed systems, operating systems, and cloud storage infrastructure. My dissertation modernizes the design and implementation of consensus protocols for replicated, fault-tolerant services. I also studied file systems and kernel storage stack technologies for new hardware such as persistent memory.
 
 ```rust
 /// Keep calm & do good research!
@@ -38,9 +38,10 @@ impl<CS> Researcher<CS> for Me {
 
 If you don't mind wasting a few seconds of your life, take a look at these projects:
 
-- [Summerset](https://github.com/josehu07/summerset): a distributed, replicated, protocol-generic KV-store framework written in async Rust for unified state machine replication (SMR) research purposes.
+- [Summerset](https://github.com/josehu07/summerset): a distributed, replicated, protocol-generic key-value store framework written in async Rust for unified state machine replication (SMR) research purposes.
 - [MadKV](https://github.com/josehu07/madkv): template of a well-designed KV-store project series for the distributed systems course at my school. Uses for teaching purposes elsewhere are very welcome.
-- [Hux OS kernel](https://github.com/josehu07/hux-kernel): a weekend operating system kernel project built to be minimal and understandable. I documented my development of Hux into a complete set of wiki pages.
+- [Lease 101 (Bodega)](https://bodega-consensus.com): how leases work, and what is the state-of-the-art way to apply them to consensus reads, with actual simulations!
+- [Hux kernel](https://github.com/josehu07/hux-kernel): a weekend operating system kernel project built to be minimal, petite, and understandable. I documented my development of Hux into a complete set of wiki pages.
 - [Garner](https://github.com/josehu07/garner): demonstrating hierarchical validation for optimistic concurrency control (OCC) on a B+-tree database index.
 - [Codetective](https://josehu.com/apps/codetective): a client-side WASM app enabling code AI authorship analysis in five clicks.
 - [Roaring Visual](https://josehu.com/apps/roaring-visual): visualization of roaring bitmaps and their size and performance profiles.
