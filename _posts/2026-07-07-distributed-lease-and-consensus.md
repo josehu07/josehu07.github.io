@@ -22,7 +22,7 @@ Let's walk through how leases work, and how to apply leases to optimize wide-are
 5. **Roster Leases** -- everyone exchanges leases on the roster: a free side-channel agreement.
 6. **Bodega protocol** -- co-designs roster leases with consensus: read anywhere, anytime.
 
-Prefer hands-on exploration? Try our [distributed lease simulator playground](https://bodega-consensus.com/sim).
+For a better version of this walkthrough, visit [https://bodega-consensus.com](https://bodega-consensus.com). Prefer hands-on exploration? Try our [distributed lease simulator playground](https://bodega-consensus.com/sim).
 
 ## 01. Standard One-to-One Leasing (one-to-one)
 
