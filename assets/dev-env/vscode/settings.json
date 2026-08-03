@@ -122,7 +122,7 @@
     },
     {
       "name": "ANTHROPIC_DEFAULT_OPUS_MODEL",
-      "value": "arn:aws:bedrock:us-west-2:271033481963:inference-profile/global.anthropic.claude-opus-4-8"
+      "value": "arn:aws:bedrock:us-west-2:271033481963:inference-profile/global.anthropic.claude-opus-5"
     },
     {
       "name": "ANTHROPIC_DEFAULT_SONNET_MODEL",
@@ -134,7 +134,7 @@
     },
     {
       "name": "CLAUDE_CODE_SUBAGENT_MODEL",
-      "value": "arn:aws:bedrock:us-west-2:271033481963:inference-profile/global.anthropic.claude-opus-4-8"
+      "value": "arn:aws:bedrock:us-west-2:271033481963:inference-profile/global.anthropic.claude-opus-5"
     },
     {
       "name": "BASH_MAX_TIMEOUT_MS",
