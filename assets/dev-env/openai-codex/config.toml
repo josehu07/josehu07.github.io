@@ -3,15 +3,14 @@ model_provider = "amazon-bedrock"
 web_search = "disabled"
 forced_login_method = "api"
 
-model_reasoning_effort = "high"
+model_reasoning_effort = "xhigh"
 personality = "pragmatic"
-approval_policy = "on-request"
+approval_policy = "never"
 sandbox_mode = "workspace-write"
-default_permissions = "write-workspace-read-everywhere"
 
 [model_providers.amazon-bedrock.aws]
 profile = "bedrock"
-region = "us-east-2"
+region = "us-east-1"
 
 [analytics]
 enabled = false
@@ -45,6 +44,7 @@ enabled = true
 
 [mcp_servers.builder-mcp]
 command = 'builder-mcp'
+enabled = false
 
 [mcp_servers.builder-mcp.env]
 TOOL_PERSONALIZATION_ROLLOUT_PERCENTAGE = '100'
