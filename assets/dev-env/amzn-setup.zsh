@@ -442,6 +442,11 @@ toolbox install kiro-cli
 toolbox install mcp-registry
 mcp-registry install builder-mcp
 
+# cr-guide
+section_header "cr-guide"
+toolbox registry add s3://code-review-guide-toolbox-registry/tools.json
+toolbox install cr-guide
+
 # mechanic patching
 section_header "mechanic"
 toolbox install mechanic
