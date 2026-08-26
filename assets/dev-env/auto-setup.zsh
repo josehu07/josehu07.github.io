@@ -113,6 +113,11 @@ append_to_file .zshrc "# turn off flow control"
 append_to_file .zshrc "stty -ixon"
 reload_zshrc
 
+# hush login
+section_header "hushlogin"
+echo "Touching '~/.hushlogin'..."
+touch .hushlogin
+
 # starship theme
 section_header "starship"
 mkdir -p .local/bin

@@ -130,6 +130,11 @@ append_to_file .zshrc "# turn off flow control"
 append_to_file .zshrc "stty -ixon"
 reload_zshrc
 
+# hush login
+section_header "hushlogin"
+echo "Touching '~/.hushlogin'..."
+touch .hushlogin
+
 # mcurl
 section_header "mcurl"
 append_to_file .zshrc ""
