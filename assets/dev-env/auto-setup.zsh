@@ -170,6 +170,8 @@ vim -es -u .vimrc -i NONE -c "PlugInstall" -c "qa"
 section_header "tmux"
 rm -f .tmux.conf
 wget https://josehu.com/assets/dev-env/tmux.conf -O .tmux.conf
+wget https://josehu.com/assets/dev-env/tmuxpopup -O .local/bin/tmuxpopup
+chmod a+x ~/.local/bin/tmuxpopup
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 git clone -b v2.3.0 https://github.com/catppuccin/tmux ~/.tmux/plugins/catppuccin/tmux
 

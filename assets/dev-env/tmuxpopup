@@ -1,0 +1,1 @@
+tmux popup -E -S "tmux attach -t popup || tmux new -s popup"
