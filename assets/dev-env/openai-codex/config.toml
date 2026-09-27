@@ -1,6 +1,5 @@
-model = "openai.gpt-5.6-sol"
+model = "openai.gpt-6-astra"
 model_provider = "amazon-bedrock"
-web_search = "disabled"
 forced_login_method = "api"
 
 model_reasoning_effort = "xhigh"
@@ -10,7 +9,7 @@ sandbox_mode = "workspace-write"
 
 [model_providers.amazon-bedrock.aws]
 profile = "bedrock"
-region = "us-east-1"
+region = "us-west-2"
 
 [analytics]
 enabled = false
