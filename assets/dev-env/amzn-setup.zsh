@@ -205,6 +205,8 @@ section_header "toolbox-miscs"
 toolbox install brazilcli batscli hydra ada
 toolbox registry add s3://code-review-guide-toolbox-registry/tools.json
 toolbox install cr-guide
+toolbox registry add s3://tunnels-toolbox-prod/tools.json
+toolbox install tunnels
 
 # aws cli / ada
 section_header "ada"
@@ -374,6 +376,10 @@ change_git_email "$gitemail"
 section_header "python-uv"
 curl -LsSf https://astral.sh/uv/install.sh | sh
 
+# alcove cli
+section_header "alcove-cli"
+uv tool install git+ssh://git.amazon.com/pkg/AlcoveCLI
+
 # kubectl
 section_header "kubectl"
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"  # or arm64
@@ -399,6 +405,12 @@ reload_zshrc
 section_header "aps-personal-stacks"
 toolbox install personal-stacks
 
+# brazil build sccache
+append_to_file .zshrc ""
+append_to_file .zshrc "# brazil sccache"
+append_to_file .zshrc "export SCCACHE_CACHE_SIZE=\"100G\""
+reload_zshrc
+
 # claude code
 section_header "claude-code"
 curl -fsSL https://claude.ai/install.sh | bash
@@ -412,6 +424,8 @@ wget https://josehu.com/assets/dev-env/claude-code/commands/prepare.txt -O ~/.cl
 wget https://josehu.com/assets/dev-env/claude-code/subagents/code-review.txt -O ~/.claude/agents/code-review.md
 wget https://josehu.com/assets/dev-env/claude-code/hooks/mw-check.sh -O ~/.claude/hooks/mw-check.sh
 chmod a+x ~/.claude/hooks/mw-check.sh
+claude plugin marketplace add "josehgz@git.amazon.com:/pkg/CommitSignOff"
+claude plugin install commit-sign-off@commit-sign-off
 
 # openai codex
 section_header "openai-codex"
@@ -425,6 +439,8 @@ wget https://josehu.com/assets/dev-env/openai-codex/prompts/prepare.txt -O ~/.co
 wget https://josehu.com/assets/dev-env/openai-codex/prompts/code-review.txt -O ~/.codex/prompts/code-review.md
 wget https://josehu.com/assets/dev-env/openai-codex/hooks/mw-check.sh -O ~/.codex/hooks/mw-check.sh
 chmod a+x ~/.codex/hooks/mw-check.sh
+codex plugin marketplace add ssh://git.amazon.com/pkg/CommitSignOff --ref mainline
+codex plugin add commit-sign-off@commit-sign-off
 
 # gemini cli
 # section_header "gemini-cli"

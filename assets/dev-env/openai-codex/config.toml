@@ -5,7 +5,7 @@ forced_login_method = "api"
 model_reasoning_effort = "xhigh"
 personality = "pragmatic"
 approval_policy = "never"
-sandbox_mode = "workspace-write"
+sandbox_mode = "danger-full-access"
 
 [model_providers.amazon-bedrock.aws]
 profile = "bedrock"
@@ -19,13 +19,6 @@ exporter = "none"
 
 [sandbox_workspace_write]
 network_access = true
-
-[permissions.write-workspace-read-everywhere]
-description = "Workspace editing, plus broad read access everywhere"
-extends = ":workspace"
-
-[permissions.write-workspace-read-everywhere.filesystem]
-"/" = "read"
 
 [[hooks.UserPromptSubmit]]
 

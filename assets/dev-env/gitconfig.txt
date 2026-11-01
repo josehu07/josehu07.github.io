@@ -66,3 +66,5 @@
     resh = reset --hard
     smod = submodule
     smodur = submodule update --init --recursive
+    sw = switch
+    swd = switch --detach
