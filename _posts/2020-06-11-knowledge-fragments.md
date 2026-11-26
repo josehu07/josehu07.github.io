@@ -5,6 +5,7 @@ date: 2020-06-11 05:12:40
 author: Guanzhou Hu
 categories: Memo
 enable_math: "enable"
+lang: zh-CN
 ---
 
 Memory fragments encountered, mostly not in my major fields. Noting them down just for a memorandum. 这篇用于记录一些学习中遇到的细碎知识。大多不是主要领域的知识，所以并未系统地学习和整理，权当备忘和随笔啦。

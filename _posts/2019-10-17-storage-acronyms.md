@@ -4,6 +4,7 @@ title: "Brief Summary of I/O Interface and Some Related Acronyms"
 date: 2019-10-17 20:07:37
 author: Guanzhou Hu
 categories: Technical
+lang: zh-CN
 ---
 
 学习存储系统的过程中不可避免地会接触到许多硬件层面的术语简称，包括硬件设备、接口、传输和控制协议等。在打超算比赛时想起，应该把这些整理成文以做总结。原写于 3 月，10 月再次修改如下。图片地址仍然在原 CNBlogs 站上没有迁移，等哪天链接崩了再换成更新的图吧。

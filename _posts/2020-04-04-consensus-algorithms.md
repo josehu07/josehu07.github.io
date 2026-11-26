@@ -4,6 +4,7 @@ title: "Notes on Consensus Algorithms - <i>Paxos</i>, <i>Multi-Paxos</i>, and <i
 date: 2020-04-04 16:40:17
 author: Guanzhou Hu
 categories: Technical
+lang: zh-CN
 ---
 
 分布式系统中，基础的共识算法（Consensus Algorithms）希望解决的是在节点可能 crash / restart、节点间网络消息可能乱序、丢失、重复的情况下，让所有节点对 clients 一串提案达成 strong consistency (linearizability)，从而实现 Replicated State Machines，做到有效的 fault-tolerence。

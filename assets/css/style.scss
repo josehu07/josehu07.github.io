@@ -216,7 +216,9 @@ section p, section ul, section ol, section dl {
     -webkit-hyphenate-limit-after: 3;
     -webkit-hyphenate-limit-lines: 2;   /* at most 2 hyphenated lines in a row */
     hyphenate-limit-lines: 2;
-    text-wrap: pretty;                  /* balance line breaks across the paragraph */
+    overflow-wrap: break-word;          /* last resort: split unbreakable strings (long URLs) wider than the column */
+    /* No `text-wrap: pretty` here: Safari's implementation suppresses hyphenation and shortens
+       lines, which justification then stretches into very wide word gaps. */
 }
 
 /* Never hyphenate code or URLs. */
