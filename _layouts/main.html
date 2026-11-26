@@ -92,6 +92,13 @@
 
       {{ content }}
 
+      <!-- Don't hyphenate links whose visible text is a raw URL -->
+      <script>
+        document.querySelectorAll('section a').forEach(function (a) {
+          if (/^\s*(https?:\/\/|www\.)/.test(a.textContent)) a.classList.add('no-hyphens');
+        });
+      </script>
+
       <!-- For Utterance comments -->
       <script src="https://utteranc.es/client.js"
               repo="josehu07/josehu07.github.io"

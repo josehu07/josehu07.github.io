@@ -9,14 +9,80 @@
   "workbench.settings.enableNaturalLanguageSearch": false,
   "workbench.commandPalette.experimental.enableNaturalLanguageSearch": false,
   "workbench.colorTheme": "Monokai Pro (Filter Spectrum)",
-  "workbench.iconTheme": "vira-icons-teal",
-  "workbench.productIconTheme": "viraUIIcons",
+  "workbench.iconTheme": "vira-icons-graphene",
   "workbench.colorCustomizations": {
-    "editorGhostText.background": "#181818"
+    "editorGhostText.background": "#181818",
+    "[Vira*]": {
+      "statusBar.debuggingBackground": "#E9A58133",
+      "statusBar.debuggingForeground": "#E9A581",
+      "toolbar.activeBackground": "#E9A58126",
+      "button.background": "#E9A581",
+      "button.hoverBackground": "#E9A581cc",
+      "extensionButton.separator": "#E9A58133",
+      "extensionButton.background": "#E9A58114",
+      "extensionButton.border": "#E9A58114",
+      "extensionButton.foreground": "#E9A581",
+      "extensionButton.hoverBackground": "#E9A58133",
+      "extensionButton.prominentForeground": "#E9A581",
+      "extensionButton.prominentBackground": "#E9A58114",
+      "extensionButton.prominentHoverBackground": "#E9A58133",
+      "activityBarBadge.background": "#E9A581",
+      "activityBar.activeBorder": "#E9A581",
+      "activityBarTop.activeBorder": "#E9A581",
+      "list.inactiveSelectionIconForeground": "#E9A581",
+      "list.activeSelectionForeground": "#E9A581",
+      "list.inactiveSelectionForeground": "#E9A581",
+      "list.highlightForeground": "#E9A581",
+      "sash.hoverBorder": "#E9A58180",
+      "list.activeSelectionIconForeground": "#E9A581",
+      "scrollbarSlider.activeBackground": "#E9A58180",
+      "editorSuggestWidget.highlightForeground": "#E9A581",
+      "textLink.foreground": "#E9A581",
+      "progressBar.background": "#E9A581",
+      "pickerGroup.foreground": "#E9A581",
+      "tab.activeBorder": "#E9A581",
+      "tab.activeBorderTop": "#E9A58100",
+      "tab.unfocusedActiveBorder": "#E9A581",
+      "tab.unfocusedActiveBorderTop": "#E9A58100",
+      "tab.activeModifiedBorder": "#E9A58100",
+      "notificationLink.foreground": "#E9A581",
+      "editorWidget.resizeBorder": "#E9A581",
+      "editorWidget.border": "#E9A581",
+      "settings.modifiedItemIndicator": "#E9A581",
+      "panelTitle.activeBorder": "#E9A581",
+      "breadcrumb.activeSelectionForeground": "#E9A581",
+      "menu.selectionForeground": "#E9A581",
+      "menubar.selectionForeground": "#E9A581",
+      "editor.findMatchBorder": "#E9A581",
+      "selection.background": "#E9A58140",
+      "statusBarItem.remoteBackground": "#E9A58114",
+      "statusBarItem.remoteHoverBackground": "#E9A581",
+      "statusBarItem.remoteForeground": "#E9A581",
+      "notebook.focusedCellBorder": "#E9A581",
+      "notebook.selectedCellBorder": "#E9A581",
+      "notebook.inactiveFocusedCellBorder": "#E9A58180",
+      "notebook.inactiveSelectedCellBorder": "#E9A58180",
+      "chat.slashCommandForeground": "#E9A581",
+      "chat.avatarForeground": "#E9A581",
+      "activityBarBadge.foreground": "#000000",
+      "button.foreground": "#000000",
+      "statusBarItem.remoteHoverForeground": "#000000",
+      "editorGroupHeader.tabsBackground": "#ffffff0a",
+      "tab.border": "#ffffff01",
+      "tab.inactiveBackground": "#ffffff01",
+      "editor.lineHighlightBackground": "#ffffff0f",
+      "editor.lineHighlightBorder": "#ffffff00"
+    }
   },
+  "viraTheme.useOutlinedIcons": true,
+  "viraTheme.contrastedTabs": true,
+  "viraTheme.solidLineHighlight": true,
+  "viraTheme.accent": "Teal",
   "workbench.tree.indent": 12,
   "workbench.activityBar.location": "top",
   "workbench.editor.editorActionsLocation": "titleBar",
+  "workbench.productIconTheme": "viraOutline",
+  "editor.tokenColorCustomizations": {},
   "editor.fontFamily": "'MapleMonoNormalNL-NF-CN-Light', monospace",
   "editor.inlineSuggest.fontFamily": "'MapleMonoNormalNL-NF-CN-Light-Italic', monospace",
   "editor.fontVariations": true,
@@ -31,6 +97,7 @@
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.cursorStyleInactive": "line",
   "terminal.integrated.initialHint": false,
+  "git.autofetch": true,
   "git.blame.editorDecoration.enabled": false,
   "git.blame.statusBarItem.enabled": true,
   "gitlens.codeLens.enabled": false,
@@ -65,6 +132,7 @@
     "**/.git": true,
     "**/.svn": true,
     "**/.hg": true,
+    "**/.jj": true,
     "**/.DS_Store": true,
     "**/Thumbs.db": true
   },
@@ -80,7 +148,7 @@
     "workbench.editor.languageDetection": false
   },
   "viceroy.config.lastVersion": "0.53.202388",
-  "viceroy.config.internal.lastUpdateTime": "2026-06-03T16:44:22.943Z",
+  "viceroy.config.internal.lastUpdateTime": "2026-11-25T21:21:21.977Z",
   "viceroy.doc.welcome.showAtStartup": false,
   "viceroy.workspaceSyncStrategy": "automatic",
   "viceroy.marketplace.extensionUpdateChannels": {
@@ -102,65 +170,13 @@
   },
   "amazonQ.workspaceIndex": true,
   "amazonQ.workspaceIndexUseGPU": true,
-  "claudeCode.initialPermissionMode": "acceptEdits",
-  "claudeCode.environmentVariables": [
-    {
-      "name": "CLAUDE_CODE_ENABLE_TELEMETRY",
-      "value": "0"
-    },
-    {
-      "name": "AWS_PROFILE",
-      "value": "bedrock"
-    },
-    {
-      "name": "AWS_REGION",
-      "value": "us-west-2"
-    },
-    {
-      "name": "CLAUDE_CODE_USE_BEDROCK",
-      "value": "1"
-    },
-    {
-      "name": "ANTHROPIC_DEFAULT_OPUS_MODEL",
-      "value": "arn:aws:bedrock:us-west-2:271033481963:inference-profile/global.anthropic.claude-opus-5"
-    },
-    {
-      "name": "ANTHROPIC_DEFAULT_SONNET_MODEL",
-      "value": "arn:aws:bedrock:us-west-2:271033481963:inference-profile/global.anthropic.claude-sonnet-4-6"
-    },
-    {
-      "name": "ANTHROPIC_DEFAULT_HAIKU_MODEL",
-      "value": "arn:aws:bedrock:us-west-2:271033481963:inference-profile/global.anthropic.claude-haiku-4-5-20251001-v1:0"
-    },
-    {
-      "name": "CLAUDE_CODE_SUBAGENT_MODEL",
-      "value": "arn:aws:bedrock:us-west-2:271033481963:inference-profile/global.anthropic.claude-opus-5"
-    },
-    {
-      "name": "BASH_MAX_TIMEOUT_MS",
-      "value": "500000"
-    },
-    {
-      "name": "MCP_TOOL_TIMEOUT",
-      "value": "500000"
-    },
-    {
-      "name": "CLAUDE_CODE_MAX_OUTPUT_TOKENS",
-      "value": "32000"
-    },
-    {
-      "name": "MAX_THINKING_TOKENS",
-      "value": "31999"
-    }
-  ],
+  "claudeCode.initialPermissionMode": "bypassPermissions",
   "claudeCode.selectedModel": "best",
-  "claudeCode.preferredLocation": "sidebar",
-  "claudeCode.useCtrlEnterToSend": true,
+  "claudeCode.preferredLocation": "panel",
   "claudeCode.disableLoginPrompt": true,
   "claudeCode.allowDangerouslySkipPermissions": true,
   "claudeCode.enableNewConversationShortcut": true,
   "chatgpt.commentCodeLensEnabled": false,
-  "chatgpt.composerEnterBehavior": "cmdIfMultiline",
   "geminicodeassist.enableTelemetry": false,
   "geminicodeassist.displayInlineContextHint": false,
   "chat.disableAIFeatures": true,
@@ -237,6 +253,10 @@
     "editor.tabSize": 2
   },
   "latex-workshop.formatting.latex": "tex-fmt",
+  "[typst]": {
+    "editor.wordWrap": "on"
+  },
+  "svg.preview.mode": "svg",
   "cSpell.enabledFileTypes": {
     "rust": false,
     "python": false,

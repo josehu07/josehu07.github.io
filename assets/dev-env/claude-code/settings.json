@@ -5,16 +5,12 @@
   "env": {
     "CLAUDE_CODE_ENABLE_TELEMETRY": "0",
     "AWS_PROFILE": "bedrock",
-    "AWS_REGION": "us-east-1",
+    "AWS_REGION": "us-west-2",
     "CLAUDE_CODE_USE_BEDROCK": "1",
-    "ANTHROPIC_DEFAULT_OPUS_MODEL": "arn:aws:bedrock:us-east-1:271033481963:inference-profile/us.anthropic.claude-opus-5-5",
-    "ANTHROPIC_DEFAULT_SONNET_MODEL": "arn:aws:bedrock:us-east-1:271033481963:inference-profile/us.anthropic.claude-sonnet-5",
-    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "arn:aws:bedrock:us-east-1:271033481963:inference-profile/us.anthropic.claude-haiku-4-5-20251001-v1:0",
-    "CLAUDE_CODE_SUBAGENT_MODEL": "arn:aws:bedrock:us-east-1:271033481963:inference-profile/us.anthropic.claude-opus-5-5",
-    "BASH_MAX_TIMEOUT_MS": "500000",
-    "MCP_TOOL_TIMEOUT": "500000",
-    "CLAUDE_CODE_MAX_OUTPUT_TOKENS": "32000",
-    "MAX_THINKING_TOKENS": "31999"
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "arn:aws:bedrock:us-east-1:271033481963:inference-profile/us.anthropic.claude-fable-5-2",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "arn:aws:bedrock:us-east-1:271033481963:inference-profile/us.anthropic.claude-sonnet-5-5",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "arn:aws:bedrock:us-east-1:271033481963:inference-profile/us.anthropic.claude-haiku-5-5",
+    "CLAUDE_CODE_SUBAGENT_MODEL": "arn:aws:bedrock:us-east-1:271033481963:inference-profile/us.anthropic.claude-fable-5-2"
   },
   "permissions": {
     "defaultMode": "bypassPermissions",
@@ -108,13 +104,22 @@
     "aws-guide@btw-plugins": true,
     "brazil-worktrees@btw-plugins": true,
     "crux-pull-requests@btw-plugins": true,
-    "project-work@btw-plugins": true
+    "project-work@btw-plugins": true,
+    "commit-sign-off@commit-sign-off": true
   },
   "extraKnownMarketplaces": {
     "btw-plugins": {
       "source": {
         "source": "git",
         "url": "ssh://git.amazon.com/pkg/BtwPluginMarketplace"
+      },
+      "autoUpdate": true
+    },
+    "commit-sign-off": {
+      "source": {
+        "source": "git",
+        "url": "ssh://git.amazon.com/pkg/CommitSignOff",
+        "ref": "mainline"
       },
       "autoUpdate": true
     }

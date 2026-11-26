@@ -34,6 +34,14 @@ enabled = true
 [plugins."openai-developers@openai-curated"]
 enabled = true
 
+[plugins."commit-sign-off@commit-sign-off"]
+enabled = true
+
+[marketplaces.commit-sign-off]
+source_type = "git"
+source = "ssh://git.amazon.com/pkg/CommitSignOff"
+ref = "mainline"
+
 [mcp_servers.builder-mcp]
 command = 'builder-mcp'
 enabled = false

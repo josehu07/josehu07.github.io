@@ -139,9 +139,9 @@ touch .hushlogin
 section_header "mcurl"
 append_to_file .zshrc ""
 append_to_file .zshrc "# mcurl"
-cat >> .zshrc << EOF
+cat >> .zshrc << 'EOF'
 function mcurl() {
-    /usr/bin/curl "\$@" -L --cookie ~/.midway/cookie --cookie-jar ~/.midway/cookie
+    /usr/bin/curl "$@" -L --cookie ~/.midway/cookie --cookie-jar ~/.midway/cookie
 }
 EOF
 reload_zshrc
@@ -179,7 +179,7 @@ ln -s /workplace/${USER} ~/workplace
 section_header "brazil-aliases"
 append_to_file .zshrc ""
 append_to_file .zshrc "# brazil aliases"
-cat >> .zshrc << EOF
+cat >> .zshrc << 'EOF'
 alias bb=brazil-build
 alias bbb='brazil-build build'
 alias bbap='brazil-build apollo-pkg'
@@ -415,13 +415,8 @@ reload_zshrc
 section_header "claude-code"
 curl -fsSL https://claude.ai/install.sh | bash
 claude install
-mkdir -p ~/.claude/commands
-mkdir -p ~/.claude/agents
 mkdir -p ~/.claude/hooks
 wget https://josehu.com/assets/dev-env/claude-code/settings.json -O ~/.claude/settings.json
-wget https://josehu.com/assets/dev-env/claude-code/commands/catchup.txt -O ~/.claude/commands/catchup.md
-wget https://josehu.com/assets/dev-env/claude-code/commands/prepare.txt -O ~/.claude/commands/prepare.md
-wget https://josehu.com/assets/dev-env/claude-code/subagents/code-review.txt -O ~/.claude/agents/code-review.md
 wget https://josehu.com/assets/dev-env/claude-code/hooks/mw-check.sh -O ~/.claude/hooks/mw-check.sh
 chmod a+x ~/.claude/hooks/mw-check.sh
 claude plugin marketplace add "josehgz@git.amazon.com:/pkg/CommitSignOff"
@@ -430,26 +425,44 @@ claude plugin install commit-sign-off@commit-sign-off
 # openai codex
 section_header "openai-codex"
 curl -fsSL https://chatgpt.com/codex/install.sh | sh
-mkdir -p ~/.codex/prompts
 mkdir -p ~/.codex/hooks
 wget https://josehu.com/assets/dev-env/openai-codex/config.toml -O ~/.codex/config.toml
-wget https://josehu.com/assets/dev-env/openai-codex/.env -O ~/.codex/.env
-wget https://josehu.com/assets/dev-env/openai-codex/prompts/catchup.txt -O ~/.codex/prompts/catchup.md
-wget https://josehu.com/assets/dev-env/openai-codex/prompts/prepare.txt -O ~/.codex/prompts/prepare.md
-wget https://josehu.com/assets/dev-env/openai-codex/prompts/code-review.txt -O ~/.codex/prompts/code-review.md
 wget https://josehu.com/assets/dev-env/openai-codex/hooks/mw-check.sh -O ~/.codex/hooks/mw-check.sh
 chmod a+x ~/.codex/hooks/mw-check.sh
 codex plugin marketplace add ssh://git.amazon.com/pkg/CommitSignOff --ref mainline
 codex plugin add commit-sign-off@commit-sign-off
 
-# gemini cli
-# section_header "gemini-cli"
-# npm install -g @google/gemini-cli
-# mkdir -p ~/.gemini/commands
-# wget https://josehu.com/assets/dev-env/gemini-cli/settings.json -O ~/.gemini/settings.json
-# wget https://josehu.com/assets/dev-env/gemini-cli/commands/catchup.toml -O ~/.gemini/commands/catchup.toml
-# wget https://josehu.com/assets/dev-env/gemini-cli/commands/prepare.toml -O ~/.gemini/commands/prepare.toml
-# wget https://josehu.com/assets/dev-env/gemini-cli/commands/code-review.toml -O ~/.gemini/commands/code-review.toml
+# agent cd helpers
+section_header "agent-cd-helpers"
+append_to_file .zshrc ""
+cat >> .zshrc << 'EOF'
+# agent repo cd alias helper
+#   given: alias fo='maybe_cd_agent "foo arg1"'
+#   then: fo arg2 => cd $AGENT_REPO && foo arg1 arg2
+#         fo nocd arg2 => foo arg1 arg2
+#         fo arg2 nocd => cd $AGENT_REPO && foo arg1 arg2 nocd
+AGENT_REPO="$HOME/workplace/s3-vector-agent/S3VectorAgent"
+maybe_cd_agent() {
+  local -a cmd=(${=1}); shift
+  if [[ $1 == nocd ]]; then
+    shift
+  else
+    cd -- "$AGENT_REPO" || return
+  fi
+  $cmd "$@"
+}
+
+# claude aliases
+alias claudecd='maybe_cd_agent "claude --dangerously-skip-permissions"'
+alias clauders='maybe_cd_agent "claude --dangerously-skip-permissions --resume"'
+alias claudefk='maybe_cd_agent "claude --dangerously-skip-permissions --fork-session --resume"'
+
+# codex aliases
+alias codexcd='maybe_cd_agent "codex --yolo"'
+alias codexrs='maybe_cd_agent "codex --yolo resume"'
+alias codexfk='maybe_cd_agent "codex --yolo fork"'
+EOF
+reload_zshrc
 
 # builder mcp
 section_header "builder-mcp"

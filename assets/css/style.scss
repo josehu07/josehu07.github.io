@@ -206,6 +206,25 @@ footer { text-align: left; width: 200px; float: left; position: fixed; bottom: 5
 
 section { width: 720px; float: right; padding-bottom: 50px; padding-right: 10px; }
 
+/* Smart hyphenation for justified body text: the browser breaks only at dictionary syllable
+   boundaries for the page's `lang` (en-US), so long words stop forcing wide word gaps. */
+section p, section ul, section ol, section dl {
+    -webkit-hyphens: auto;
+    hyphens: auto;
+    hyphenate-limit-chars: 6 3 3;       /* only words >= 6 letters; keep >= 3 letters on each side */
+    -webkit-hyphenate-limit-before: 3;  /* Safari equivalents of the above */
+    -webkit-hyphenate-limit-after: 3;
+    -webkit-hyphenate-limit-lines: 2;   /* at most 2 hyphenated lines in a row */
+    hyphenate-limit-lines: 2;
+    text-wrap: pretty;                  /* balance line breaks across the paragraph */
+}
+
+/* Never hyphenate code or URLs. */
+section code, section pre, section kbd, section samp, section .no-hyphens {
+    -webkit-hyphens: manual;
+    hyphens: manual;
+}
+
 @media print, screen and (max-width: 960px) {
     div.wrapper { width: auto; margin: 0; }
     header, section, footer { float: none; position: static; width: auto; }
