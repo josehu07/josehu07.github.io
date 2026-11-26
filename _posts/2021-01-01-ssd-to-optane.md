@@ -117,7 +117,7 @@ Designing storage systems and building file systems for NVM is currently a very 
 
 ## References
 
-- My reading record of《大话存储》: [HERE](https://www.josehu.com/assets/file/book-dahuacunchu-zhangdong.pdf)
+- My reading record of《大话存储》: [HERE](https://www.josehu.com/assets/file/notes/book-dahuacunchu-zhangdong.pdf)
 - My blog post on I/O interfaces: [HERE](https://www.josehu.com/technical/2019/10/17/storage-acronyms.html)
 
 [^1]: [https://en.wikipedia.org/wiki/Non-volatile_memory](https://en.wikipedia.org/wiki/Non-volatile_memory)

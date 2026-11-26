@@ -45,6 +45,7 @@ I learned a lot from [Prof. Shu Yin](https://sist.shanghaitech.edu.cn/yinshu_en/
         <b>(title fuzzed) Replication Protocol For an Unaddressed Type of Workloads</b><br/>
         <u>Guanzhou Hu</u> et al.<br/>
         <a class="btn-usenix"><img class="pub-btn" src="/assets/img/usenix-button.svg" /> USENIX</a>
+        <a class="btn-pdf"><img class="pub-btn" src="/assets/img/pdf-button.svg" /> PDF</a>
         <a class="btn-github"><img class="pub-btn-small" src="/assets/img/github-button.svg" /> Code</a>
     </td>
   </tr>
@@ -54,6 +55,7 @@ I learned a lot from [Prof. Shu Yin](https://sist.shanghaitech.edu.cn/yinshu_en/
         <b>Bodega: Localized Linearizable Reads at Anywhere and Anytime via Roster Leases</b><br/>
         <u>Guanzhou Hu</u>, Andrea Arpaci-Dusseau, Remzi Arpaci-Dusseau<br/>
         <a class="btn-usenix" href="https://www.usenix.org/conference/osdi26/presentation/hu-guanzhou" target="_blank"><img class="pub-btn" src="/assets/img/usenix-button.svg" /> USENIX</a>
+        <a class="btn-pdf" href="https://www.usenix.org/system/files/osdi26-hu-guanzhou.pdf" target="_blank"><img class="pub-btn" src="/assets/img/pdf-button.svg" /> PDF</a>
         <a class="btn-github" href="https://github.com/josehu07/summerset" target="_blank"><img class="pub-btn-small" src="/assets/img/github-button.svg" /> Code</a>
         <a class="btn-website" href="https://bodega-consensus.com" target="_blank"><img class="pub-btn" src="/assets/img/website-button.svg" /> Website</a>
     </td>
@@ -63,7 +65,8 @@ I learned a lot from [Prof. Shu Yin](https://sist.shanghaitech.edu.cn/yinshu_en/
     <td>
         <b>Marlin: Efficient Coordination for Autoscaling Cloud DBMS</b><br/>
         Wenjie Hu, <u>Guanzhou Hu</u>, Mahesh Balakrishnan, Xiangyao Yu<br/>
-        <a class="btn-acmdoi" href="https://dl.acm.org/doi/10.1145/3749173" target="_blank"><img class="pub-btn" src="/assets/img/acmdoi-button.svg" /> ACM-DOI</a>
+        <a class="btn-acmdoi" href="https://dl.acm.org/doi/10.1145/3749173" target="_blank"><img class="pub-btn" src="/assets/img/acmdoi-button.svg" /> ACMLib</a>
+        <a class="btn-pdf" href="https://dl.acm.org/doi/pdf/10.1145/3749173" target="_blank"><img class="pub-btn" src="/assets/img/pdf-button.svg" /> PDF</a>
         <a class="btn-github" href="https://github.com/CloudOLTP-UWM/Marlin/tree/sigmod26" target="_blank"><img class="pub-btn-small" src="/assets/img/github-button.svg" /> Code</a>
     </td>
   </tr>
@@ -73,6 +76,7 @@ I learned a lot from [Prof. Shu Yin](https://sist.shanghaitech.edu.cn/yinshu_en/
         <b>MadFS: Per-File Virtualization for Userspace Persistent Memory Filesystems</b><br/>
         Shawn Zhong, Chenhao Ye, <u>Guanzhou Hu</u>, Suyan Qu, Andrea Arpaci-Dusseau, Remzi Arpaci-Dusseau, Michael Swift<br/>
         <a class="btn-usenix" href="https://www.usenix.org/conference/fast23/presentation/zhong" target="_blank"><img class="pub-btn" src="/assets/img/usenix-button.svg" /> USENIX</a>
+        <a class="btn-pdf" href="https://www.usenix.org/system/files/fast23-zhong.pdf" target="_blank"><img class="pub-btn" src="/assets/img/pdf-button.svg" /> PDF</a>
         <a class="btn-github" href="https://github.com/WiscADSL/MadFS" target="_blank"><img class="pub-btn-small" src="/assets/img/github-button.svg" /> Code</a>
     </td>
   </tr>
@@ -82,6 +86,7 @@ I learned a lot from [Prof. Shu Yin](https://sist.shanghaitech.edu.cn/yinshu_en/
         <b>Dorylus: Affordable, Scalable, and Accurate GNN Training with Distributed CPU Servers and Serverless Threads</b><br/>
         John Thorpe, Yifan Qiao, Jonathan Eyolfson, Shen Teng, <u>Guanzhou Hu</u>, Zhihao Jia, Jinliang Wei, Keval Vora, Ravi Netravali, Miryung Kim, Guoqing Harry Xu<br/>
         <a class="btn-usenix" href="https://www.usenix.org/conference/osdi21/presentation/thorpe" target="_blank"><img class="pub-btn" src="/assets/img/usenix-button.svg" /> USENIX</a>
+        <a class="btn-pdf" href="https://www.usenix.org/system/files/osdi21-thorpe.pdf" target="_blank"><img class="pub-btn" src="/assets/img/pdf-button.svg" /> PDF</a>
         <a class="btn-github" href="https://github.com/uclasystem/dorylus" target="_blank"><img class="pub-btn-small" src="/assets/img/github-button.svg" /> Code</a>
     </td>
   </tr>
@@ -91,6 +96,7 @@ I learned a lot from [Prof. Shu Yin](https://sist.shanghaitech.edu.cn/yinshu_en/
         <b>The Storage Hierarchy is Not a Hierarchy: Optimizing Caching on Modern Storage Devices with Orthus</b><br/>
         Kan Wu, Zhihan Guo, <u>Guanzhou Hu</u>, Kaiwei Tu, Ramnatthan Alagappan, Rathijit Sen, Kwanghyun Park, Andrea C. Arpaci-Dusseau, Remzi H. Arpaci-Dusseau<br/>
         <a class="btn-usenix" href="https://www.usenix.org/conference/fast21/presentation/wu-kan" target="_blank"><img class="pub-btn" src="/assets/img/usenix-button.svg" /> USENIX</a>
+        <a class="btn-pdf" href="https://files.usenix.org/s3fs-public/cdn/fast21-wu-kan.pdf" target="_blank"><img class="pub-btn" src="/assets/img/pdf-button.svg" /> PDF</a>
         <a class="btn-github" href="https://github.com/josehu07/nhc-demo" target="_blank"><img class="pub-btn-small" src="/assets/img/github-button.svg" /> Code</a>
     </td>
   </tr>
@@ -99,7 +105,7 @@ I learned a lot from [Prof. Shu Yin](https://sist.shanghaitech.edu.cn/yinshu_en/
     <td>
         <b>BORA: A Bag Optimizer for Robotic Analysis</b><br/>
         Jian Zhang, Tao Xie, Yuzhuo Jing, Yanjie Song, <u>Guanzhou Hu</u>, Si Chen, Shu Yin<br/>
-        <a class="btn-acmdoi" href="https://dl.acm.org/doi/abs/10.5555/3433701.3433716" target="_blank"><img class="pub-btn" src="/assets/img/acmdoi-button.svg" /> ACM-DOI</a>
+        <a class="btn-acmdoi" href="https://dl.acm.org/doi/abs/10.5555/3433701.3433716" target="_blank"><img class="pub-btn" src="/assets/img/acmdoi-button.svg" /> ACMLib</a>
     </td>
   </tr>
 </table>
@@ -113,6 +119,7 @@ I learned a lot from [Prof. Shu Yin](https://sist.shanghaitech.edu.cn/yinshu_en/
         <b>Bodega: Serving Linearizable Reads Locally from Anywhere at Anytime via Roster Leases </b><br/>
         <u>Guanzhou Hu</u>, Andrea Arpaci-Dusseau, Remzi Arpaci-Dusseau<br/>
         <a class="btn-arxiv" href="https://arxiv.org/abs/2509.07158" target="_blank"><img class="pub-btn" src="/assets/img/arxiv-button.svg" /> arXiv</a>
+        <a class="btn-pdf" href="https://arxiv.org/pdf/2509.07158" target="_blank"><img class="pub-btn" src="/assets/img/pdf-button.svg" /> PDF</a>
         <a class="btn-github" href="https://github.com/josehu07/summerset" target="_blank"><img class="pub-btn-small" src="/assets/img/github-button.svg" /> Code</a>
     </td>
   </tr>
@@ -122,6 +129,7 @@ I learned a lot from [Prof. Shu Yin](https://sist.shanghaitech.edu.cn/yinshu_en/
         <b>Crossword: Adaptive Consensus for Dynamic Data-Heavy Workloads</b><br/>
         <u>Guanzhou Hu</u>, Yiwei Chen, Andrea Arpaci-Dusseau, Remzi Arpaci-Dusseau<br/>
         <a class="btn-arxiv" href="https://arxiv.org/abs/2509.07157" target="_blank"><img class="pub-btn" src="/assets/img/arxiv-button.svg" /> arXiv</a>
+        <a class="btn-pdf" href="https://arxiv.org/pdf/2509.07157" target="_blank"><img class="pub-btn" src="/assets/img/pdf-button.svg" /> PDF</a>
         <a class="btn-github" href="https://github.com/josehu07/summerset" target="_blank"><img class="pub-btn-small" src="/assets/img/github-button.svg" /> Code</a>
     </td>
   </tr>
@@ -131,6 +139,7 @@ I learned a lot from [Prof. Shu Yin](https://sist.shanghaitech.edu.cn/yinshu_en/
         <b>A Unified, Practical, and Understandable Model of Non-transactional Consistency Levels in Distributed Replication</b><br/>
         <u>Guanzhou Hu</u>, Andrea Arpaci-Dusseau, Remzi Arpaci-Dusseau<br/>
         <a class="btn-arxiv" href="https://arxiv.org/abs/2409.01576" target="_blank"><img class="pub-btn" src="/assets/img/arxiv-button.svg" /> arXiv</a>
+        <a class="btn-pdf" href="https://arxiv.org/pdf/2409.01576" target="_blank"><img class="pub-btn" src="/assets/img/pdf-button.svg" /> PDF</a>
         <a class="btn-github" href="https://github.com/josehu07/jepsen.demo" target="_blank"><img class="pub-btn-small" src="/assets/img/github-button.svg" /> Code</a>
     </td>
   </tr>
@@ -140,6 +149,7 @@ I learned a lot from [Prof. Shu Yin](https://sist.shanghaitech.edu.cn/yinshu_en/
         <b>Foreactor: Exploiting Storage I/O Parallelism with Explicit Speculation</b><br/>
         <u>Guanzhou Hu</u>, Andrea Arpaci-Dusseau, Remzi Arpaci-Dusseau<br/>
         <a class="btn-arxiv" href="https://arxiv.org/abs/2409.01580" target="_blank"><img class="pub-btn" src="/assets/img/arxiv-button.svg" /> arXiv</a>
+        <a class="btn-pdf" href="https://arxiv.org/pdf/2409.01580" target="_blank"><img class="pub-btn" src="/assets/img/pdf-button.svg" /> PDF</a>
         <a class="btn-github" href="https://github.com/josehu07/foreactor" target="_blank"><img class="pub-btn-small" src="/assets/img/github-button.svg" /> Code</a>
     </td>
   </tr>

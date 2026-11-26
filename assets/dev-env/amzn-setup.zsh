@@ -73,7 +73,11 @@ function change_git_email {
 }
 
 function mcurl() {
-    /usr/bin/curl "$@" -L --cookie ~/.midway/cookie --cookie-jar ~/.midway/cookie
+    if command -v mcscli >/dev/null 2>&1; then
+        mcscli curl -L --anyauth "$@"
+    else
+        curl -c "$HOME/.midway/cookie" -b "$HOME/.midway/cookie" -L --anyauth "$@"
+    fi
 }
 
 # ensure in user home directory
@@ -141,7 +145,11 @@ append_to_file .zshrc ""
 append_to_file .zshrc "# mcurl"
 cat >> .zshrc << 'EOF'
 function mcurl() {
-    /usr/bin/curl "$@" -L --cookie ~/.midway/cookie --cookie-jar ~/.midway/cookie
+    if command -v mcscli >/dev/null 2>&1; then
+        mcscli curl -L --anyauth "$@"
+    else
+        curl -c "$HOME/.midway/cookie" -b "$HOME/.midway/cookie" -L --anyauth "$@"
+    fi
 }
 EOF
 reload_zshrc
@@ -223,7 +231,7 @@ EOF
 # om
 section_header "om"
 mkdir -p cli-models
-mcurl -Lo cli-models/c2j-model.json 'https://code.amazon.com/packages/AWSOMServiceModel/releases/1.0/latest_artifact?version_set=AWSOMService/development&path=smithyprojections/AWSOMServiceModel/aws-sdk-external/c2j/om-2018-05-10.json&download=true'
+mcurl -o cli-models/c2j-model.json 'https://code.amazon.com/packages/AWSOMServiceModel/releases/1.0/latest_artifact?version_set=AWSOMService/development&path=smithyprojections/AWSOMServiceModel/aws-sdk-external/c2j/om-2018-05-10.json&download=true'
 aws configure add-model --service-model file:///home/${USER}/cli-models/c2j-model.json --service-name om
 
 # isengard cli
